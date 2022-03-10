@@ -58,7 +58,12 @@
 	
 	<g2:no_escape>$[RenderHtmlOtherInstanceScanChecks()]</g2:no_escape>
 	
-
+	<h2>Helpful links</h2>
+	<ul>
+		<li><a href="https://community.servicenow.com/community?id=community_article&amp;sys_id=c910ba011b9338589f20ece7624bcb95" target="_blank">Linter check examples</a></li>
+		<li><a href="https://community.servicenow.com/community?id=community_article&amp;sys_id=210f8cce1beff810cd3b33bc1d4bcb4e" target="_blank">Data check examples</a></li>
+	</ul>
+	
 	<!--
 	<h2>Reference</h2>
 -->
@@ -88,7 +93,7 @@
 -->	
 
 	<h2>License</h2>
-	<g2:no_escape>$[docapi.RenderCopyright(2022,'TODO: Add name of copyright holder')]</g2:no_escape>
+	<g2:no_escape>$[docapi.RenderCopyright(2022,'Sascha Wildgrube')]</g2:no_escape>
 	<g2:no_escape>$[docapi.RenderLicense()]</g2:no_escape>
 	
 	<h2>Release Notes</h2>
@@ -112,13 +117,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 10:23:33</sys_updated_on>
+        <sys_updated_on>2022-03-10 10:38:22</sys_updated_on>
     </sys_ui_page>
 </record_update>

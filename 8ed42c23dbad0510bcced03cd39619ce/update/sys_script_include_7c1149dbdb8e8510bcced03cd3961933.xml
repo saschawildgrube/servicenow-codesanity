@@ -17,6 +17,10 @@
 				title: 'Documentation'
 			},
 			{
+				url: 'https://docs.servicenow.com/bundle/rome-application-development/page/app-store/dev_portal/API_reference/LinterCheckAstNode/concept/LinterCheckAstNodeAPIBoth.html',
+				title: 'LinterCheckAstNodeAPI'
+			},
+			{
 				url: 'https://community.servicenow.com/community?id=community_article&sys_id=c910ba011b9338589f20ece7624bcb95',
 				title: 'Linter check examples'
 			},
@@ -33,13 +37,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 12:54:42</sys_created_on>
         <sys_id>7c1149dbdb8e8510bcced03cd3961933</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>GetLinkDirectoryInstanceScan</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_7c1149dbdb8e8510bcced03cd3961933</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 13:07:33</sys_updated_on>
+        <sys_updated_on>2022-03-10 13:27:13</sys_updated_on>
     </sys_script_include>
 </record_update>

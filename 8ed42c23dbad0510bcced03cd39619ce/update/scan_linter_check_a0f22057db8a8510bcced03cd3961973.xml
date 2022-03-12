@@ -2,32 +2,24 @@
     <scan_linter_check action="INSERT_OR_UPDATE">
         <active>true</active>
         <category>manageability</category>
-        <description/>
+        <description>Checks if a script contains the string "[0]" which indicates the use of an anti-pattern where an element of an array is references by its absolute position instead by using an index variable (within a loop) or a an iterator pattern.</description>
         <documentation_url/>
         <name>CodeSanity - Check for the [0] anti-pattern</name>
         <priority>1</priority>
-        <resolution_details/>
+        <resolution_details>Review the code carefully and see if really the first element of an array is of interest and should be references explicitly.&#13;
+Why is it the first element? Has it been verified that the element really exists? How are subsequent elements of the array processed?</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
         <score_scale>1</score_scale>
         <script><![CDATA[(function (engine) {
 
-	//Debug(x_snc_devtools.RenderValue(engine.rootNode));
+	var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
 	
-	engine.rootNode.visit(function(node)
+	if (strSource.indexOf('[0]') != -1)
 	{
-		//Debug(x_snc_devtools.RenderValue(node));
-
-		Debug("CodeSanity - Check for the [0] anti-pattern: "+node.getTypeName()+": "+node.getNameIdentifier());
-		
-		/*
-		if (node.getTypeName() === "NAME" && node.getNameIdentifier() === "getXML" && node.getParent().getTypeName() === "GETPROP")
-		{
-			engine.finding.incrementWithNode(node);
-		}
-		*/
-	});
+		engine.finding.incrementWithNode(engine.rootNode);
+	}
 
 })(engine);]]></script>
         <short_description>Check for the [0] anti-pattern</short_description>
@@ -35,13 +27,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 10:42:06</sys_created_on>
         <sys_id>a0f22057db8a8510bcced03cd3961973</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>CodeSanity - Check for the [0] anti-pattern</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_a0f22057db8a8510bcced03cd3961973</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 12:30:30</sys_updated_on>
+        <sys_updated_on>2022-03-10 13:35:30</sys_updated_on>
     </scan_linter_check>
 </record_update>

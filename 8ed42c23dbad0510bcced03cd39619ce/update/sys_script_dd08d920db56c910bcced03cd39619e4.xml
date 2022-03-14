@@ -13,7 +13,7 @@
         <client_callable>false</client_callable>
         <collection>scan_check</collection>
         <condition/>
-        <description>If the application scope is "Code Sanity" then the name MUST start with "CodeSanity - ". The user will be warned and asked if they really want to extend the app or just create a new check that should be part of the suite.</description>
+        <description>If the category is "Code Sanity" then the new check should be added to the "Code Sanity" scan suite.</description>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
@@ -31,23 +31,47 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	//var strAppSysId = '8ed42c23dbad0510bcced03cd39619c'+'e';
-	var strSuiteSysId = '4fcb181bdb4a8510bcced03cd39619e'+'b';
+	var strSuiteSysId = '4fcb181bdb4a8510bcced03cd39619eb';
 	
-	/*
-	if (current.sys_scope == strAppSysId)
+	if (x_snc_devtools.GetStringValue(current.category) == 'code_sanity')
 	{
-		if (x_snc_devtools.GetStringValue(current.name).indexOf('CodeSanity - ') != 0)
-		{
-			gs.addErrorMessage(
-				'Are you sure that you want to add a new check to the CodeSanity app itself? Please keep in mind that the check might be deleted when the CodeSanity app is updated.\n'
-				+'It is recommended to add additional checks into a separate scoped app.\n'
-				+'If you really want to extend the CodeSanity app itself, the name of the new check must start with "CodeSanity - ".');
-			current.setAbortAction(true);
-			return;
-		}
+		
+		/*
+		
+	<scan_check_suite_check>
+<check display_value="CodeSanity - Check for SysId anti-pattern">9dda4d97dbce8510bcced03cd3961921</check>
+<score_weight>1</score_weight>
+<suite display_value="CodeSanity">4fcb181bdb4a8510bcced03cd39619eb</suite>
+<sys_class_name>scan_check_suite_check</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2022-03-10 14:48:04</sys_created_on>
+<sys_id>535b15d7db02c510bcced03cd3961997</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_name/>
+<sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+<sys_policy/>
+<sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+<sys_update_name>scan_check_suite_check_535b15d7db02c510bcced03cd3961997</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2022-03-10 14:48:04</sys_updated_on>
+</scan_check_suite_check>	
+		
+		
+		*/
+		
+		
+		var vResult = x_snc_devtools.RecordQueryOrInsert('scan_check_suite_check',
+			{
+				suite: strSuiteSysId,
+				check: current.sys_id,
+				sys_scope: current.sys_scope
+			},
+			{});
+		
+		gs.addInfoMessage('Adding new check to suite: '+x_snc_devtools.RenderValue(vResult));
+
+	
 	}
-	*/
 
 	/*
 	x_snc_devtools.RecordQueryOrInsert('scan_check_suite_check',
@@ -57,6 +81,7 @@
 			sys_scope: current.sys_scope
 		});
 */
+	//x_snc_devtools.SetRedirectURL()
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -65,7 +90,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>dd08d920db56c910bcced03cd39619e4</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>scan_check - Add to suite</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -73,7 +98,7 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_dd08d920db56c910bcced03cd39619e4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-14 12:10:53</sys_updated_on>
+        <sys_updated_on>2022-03-14 12:35:04</sys_updated_on>
         <template/>
         <when>after</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>

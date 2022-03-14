@@ -7,39 +7,69 @@
         <client_callable>false</client_callable>
         <description/>
         <name>HtmlRenderOtherInstanceScanChecks</name>
-        <script><![CDATA[function HtmlRenderOtherInstanceScanChecks()
+        <script><![CDATA[function HtmlRenderOtherInstanceScanChecks(docapi)
 {
-	/*
-	var grSC = new GlideRecord('scan_check');
-	grSC.addQuery('sys_scope','=',this.m_strAppSysId);
-	grSC.orderBy('name');
-	grSC.query();
-
-	var strHTML = '<ul>';
-	while (grSC.next())
+	
+	function HtmlRenderListItem(strItem, strURL, strText)
 	{
-		strHTML += this.RenderListItem(
-			grSC.getValue('name'),
-			'/scan_check.do?sys_id='+grSC.sys_id,
-			grSC.getValue('short_description'));
+		strURL = x_snc_devtools.GetStringValue(strURL);
+		var strHTML = '';
+		strHTML += '<li>';
+		if (strURL != '')
+		{
+			strHTML += x_snc_devtools.HtmlRenderLink(strURL,strItem,true);
+		}
+		else
+		{
+			strHTML += '<b>'+strItem +'</b>&#160;';
+		}
+		strHTML += '<p>'+strText+'</p>';
+		strHTML += '</li>';		
+		return strHTML;
 	}
+	
+	
+	
+	var strAppSysId = '8ed42c23dbad0510bcced03cd39619ce';
+	var strSuiteSysId = '4fcb181bdb4a8510bcced03cd39619eb';
+	
+	var grSSC = new GlideRecord('scan_check_suite_check');
+	grSSC.addQuery('sys_scope','!=',strAppSysId);
+	grSSC.addQuery('suite','=',strSuiteSysId);
+	grSSC.orderBy('check.name');
+	grSSC.query();
+
+	if (grSSC.getRowCount() == 0)
+	{
+		return '';
+	}
+	
+	
+	
+	var strHTML = '<h2>Instance Scan Checks contained in other apps</h2>';
+	strHTML += '<ul>';	
+	while (grSSC.next())
+	{
+		strHTML += HtmlRenderListItem(
+			grSSC.check.name,
+			'/scan_check.do?sys_id='+grSSC.check,
+			grSSC.check.short_description);
+	}
+	
 	strHTML += '</ul>';
 	return strHTML;	
-	*/
-	
-	return 'TODO';
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 10:24:05</sys_created_on>
         <sys_id>7dde905fdb4a8510bcced03cd3961983</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>HtmlRenderOtherInstanceScanChecks</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_7dde905fdb4a8510bcced03cd3961983</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 13:02:11</sys_updated_on>
+        <sys_updated_on>2022-03-14 15:59:35</sys_updated_on>
     </sys_script_include>
 </record_update>

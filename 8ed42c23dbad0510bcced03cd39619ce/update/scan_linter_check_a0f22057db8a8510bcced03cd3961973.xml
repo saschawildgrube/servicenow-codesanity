@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="scan_linter_check">
     <scan_linter_check action="INSERT_OR_UPDATE">
         <active>true</active>
-        <category>manageability</category>
+        <category>code_sanity</category>
         <description>Checks if a script contains the string "[0]" which indicates the use of an anti-pattern where an element of an array is references by its absolute position instead by using an index variable (within a loop) or a an iterator pattern.</description>
         <documentation_url/>
         <name>CodeSanity - Check for the [0] anti-pattern</name>
@@ -27,13 +27,13 @@ Why is it the first element? Has it been verified that the element really exists
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 10:42:06</sys_created_on>
         <sys_id>a0f22057db8a8510bcced03cd3961973</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>CodeSanity - Check for the [0] anti-pattern</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_a0f22057db8a8510bcced03cd3961973</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 13:35:30</sys_updated_on>
+        <sys_updated_on>2022-03-14 12:16:52</sys_updated_on>
     </scan_linter_check>
 </record_update>

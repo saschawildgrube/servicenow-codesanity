@@ -2,11 +2,11 @@
     <scan_linter_check action="INSERT_OR_UPDATE">
         <active>true</active>
         <category>code_sanity</category>
-        <description>SysIds should not be stated explicitly in source code. Code should be independent of specific records in the platform.</description>
+        <description>Sys Ids should not be stated explicitly in source code. Code should be independent of specific records in the platform.</description>
         <documentation_url/>
-        <name>CodeSanity - Check for SysId anti-pattern</name>
+        <name>CodeSanity - Sys Ids in scripts</name>
         <priority>2</priority>
-        <resolution_details>Move SysIds into system properties or into another dynamic source.</resolution_details>
+        <resolution_details>Move SysI ds into system properties or into another dynamic source.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -21,18 +21,18 @@
 	}
 
 })(engine);]]></script>
-        <short_description>Check for the SysId anti-pattern</short_description>
+        <short_description>Check for the Sys Id in script anti-pattern</short_description>
         <sys_class_name>scan_linter_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 13:40:27</sys_created_on>
         <sys_id>9dda4d97dbce8510bcced03cd3961921</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>CodeSanity - Check for SysId anti-pattern</sys_name>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>CodeSanity - Sys Ids in scripts</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9dda4d97dbce8510bcced03cd3961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-14 12:16:40</sys_updated_on>
+        <sys_updated_on>2022-03-15 16:58:43</sys_updated_on>
     </scan_linter_check>
 </record_update>

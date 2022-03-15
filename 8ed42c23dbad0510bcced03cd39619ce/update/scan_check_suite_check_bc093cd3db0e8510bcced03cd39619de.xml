@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="scan_check_suite_check">
     <scan_check_suite_check action="INSERT_OR_UPDATE">
-        <check display_value="CodeSanity - Check for the [0] anti-pattern">a0f22057db8a8510bcced03cd3961973</check>
+        <check display_value="CodeSanity - [0] anti-pattern">a0f22057db8a8510bcced03cd3961973</check>
         <score_weight>1</score_weight>
         <suite display_value="CodeSanity">4fcb181bdb4a8510bcced03cd39619eb</suite>
         <sys_class_name>scan_check_suite_check</sys_class_name>

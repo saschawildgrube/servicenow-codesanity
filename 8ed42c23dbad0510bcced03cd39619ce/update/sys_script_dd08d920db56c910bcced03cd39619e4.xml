@@ -31,57 +31,36 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var IsValidSysId = x_snc_devtools.IsValidSysId;
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
+	var RedirectToRecord = x_snc_devtools.RedirectToRecord;
+	
 	var strSuiteSysId = '4fcb181bdb4a8510bcced03cd39619eb';
 	
-	if (x_snc_devtools.GetStringValue(current.category) == 'code_sanity')
+	if (GetStringValue(current.category) == 'code_sanity')
 	{
 		
-		/*
-		
-	<scan_check_suite_check>
-<check display_value="CodeSanity - Check for SysId anti-pattern">9dda4d97dbce8510bcced03cd3961921</check>
-<score_weight>1</score_weight>
-<suite display_value="CodeSanity">4fcb181bdb4a8510bcced03cd39619eb</suite>
-<sys_class_name>scan_check_suite_check</sys_class_name>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2022-03-10 14:48:04</sys_created_on>
-<sys_id>535b15d7db02c510bcced03cd3961997</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_name/>
-<sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
-<sys_policy/>
-<sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-<sys_update_name>scan_check_suite_check_535b15d7db02c510bcced03cd3961997</sys_update_name>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2022-03-10 14:48:04</sys_updated_on>
-</scan_check_suite_check>	
-		
-		
-		*/
-		
-		
-		var vResult = x_snc_devtools.RecordQueryOrInsert('scan_check_suite_check',
+	
+		var vResult = RecordQueryOrInsert('scan_check_suite_check',
 			{
 				suite: strSuiteSysId,
 				check: current.sys_id,
 				sys_scope: current.sys_scope
 			},
 			{});
-		
-		gs.addInfoMessage('Adding new check to suite: '+x_snc_devtools.RenderValue(vResult));
 
-	
-	}
-
-	/*
-	x_snc_devtools.RecordQueryOrInsert('scan_check_suite_check',
+		if (IsValidSysId(vResult))
 		{
-			suite: strSuiteSysId,
-			check: current.sys_id,
-			sys_scope: current.sys_scope
-		});
-*/
-	//x_snc_devtools.SetRedirectURL()
+			gs.addInfoMessage('The new check "'+current.name+'" has been added to the Code Sanity scan suite.');
+		}
+		else
+		{
+			gs.addErrorMessage('Failed to add the new check "'+current.name+'" to the Code Sanity scan suite!');
+		}
+	}
+	
+	RedirectToRecord(current);
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -90,7 +69,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>dd08d920db56c910bcced03cd39619e4</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>scan_check - Add to suite</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -98,7 +77,7 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_dd08d920db56c910bcced03cd39619e4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-14 12:35:04</sys_updated_on>
+        <sys_updated_on>2022-03-15 16:56:40</sys_updated_on>
         <template/>
         <when>after</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>

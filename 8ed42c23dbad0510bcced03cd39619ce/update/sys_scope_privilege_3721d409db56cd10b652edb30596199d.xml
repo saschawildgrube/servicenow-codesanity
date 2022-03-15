@@ -5,17 +5,17 @@
         <status>allowed</status>
         <sys_class_name>sys_scope_privilege</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-03-10 12:57:01</sys_created_on>
-        <sys_id>9cf1811fdb8e8510bcced03cd3961913</sys_id>
+        <sys_created_on>2022-03-15 19:53:20</sys_created_on>
+        <sys_id>3721d409db56cd10b652edb30596199d</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>HtmlRenderLinkDirectory</sys_name>
+        <sys_name>SetProperty</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-        <sys_update_name>sys_scope_privilege_9cf1811fdb8e8510bcced03cd3961913</sys_update_name>
+        <sys_update_name>sys_scope_privilege_3721d409db56cd10b652edb30596199d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 12:57:01</sys_updated_on>
-        <target_name>HtmlRenderLinkDirectory</target_name>
+        <sys_updated_on>2022-03-15 19:53:20</sys_updated_on>
+        <target_name>SetProperty</target_name>
         <target_scope display_value="DevTools">d689f6901bd38450a89720a8ec4bcbfd</target_scope>
         <target_type>sys_script_include</target_type>
     </sys_scope_privilege>

@@ -31,24 +31,27 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	var strAppSysId = '8ed42c23dbad0510bcced03cd39619ce';
-	
-	if (current.sys_scope == strAppSysId)
+	var grApp = x_snc_devtools.GetAppRecord('x_snc_codesanity');
+	if (x_snc_devtools.IsValidRecord(grApp) == true)
 	{
-		if (   (x_snc_devtools.GetStringValue(current.name).indexOf('CodeSanity - ') != 0)
-			|| (x_snc_devtools.GetStringValue(current.category) != 'code_sanity'))
+		var strAppSysId = x_snc_devtools.GetStringValue(grApp.sys_id);
+
+		if (current.sys_scope == strAppSysId)
 		{
-			gs.addErrorMessage(
-				x_snc_devtools.HtmlEncode(
-				'Are you sure that you want to add a new check to the CodeSanity app itself?\n'
-				+'Please keep in mind that the check might be deleted when the CodeSanity app is updated.\n'
-				+'It is recommended to add additional checks into a separate scoped app.\n'
-				+'If you really want to extend the CodeSanity app itself, the name of the new check must start with "CodeSanity - " and the category must be "Code Sanity".'));
-			current.setAbortAction(true);
-			return;
+			if (   (x_snc_devtools.GetStringValue(current.name).indexOf('CodeSanity - ') != 0)
+				|| (x_snc_devtools.GetStringValue(current.category) != 'code_sanity'))
+			{
+				gs.addErrorMessage(
+					x_snc_devtools.HtmlEncode(
+					'Are you sure that you want to add a new check to the CodeSanity app itself?\n'
+					+'Please keep in mind that the check might be deleted when the CodeSanity app is updated.\n'
+					+'It is recommended to add additional checks into a separate scoped app.\n'
+					+'If you really want to extend the CodeSanity app itself, the name of the new check must start with "CodeSanity - " and the category must be "Code Sanity".'));
+				current.setAbortAction(true);
+			}
 		}
 	}
-
+		
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -56,7 +59,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a9e29623db0ec510b652edb30596197f</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>scan_check - Check name and category</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -64,7 +67,7 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_a9e29623db0ec510b652edb30596197f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-14 12:23:13</sys_updated_on>
+        <sys_updated_on>2022-04-05 15:39:56</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>

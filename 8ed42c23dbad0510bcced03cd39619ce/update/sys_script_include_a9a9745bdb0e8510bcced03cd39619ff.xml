@@ -5,7 +5,7 @@
         <api_name>x_snc_codesanity.AntiPatterns</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description>A function that contains a number of anti-patterns</description>
+        <description>A function that contains a number of anti-patterns. The script is intended to trigger findings in the CodeSanity scan suite to test and demonstrate the checks. </description>
         <name>AntiPatterns</name>
         <script><![CDATA[function AntiPatterns()
 {
@@ -19,24 +19,23 @@
 	
 	eval('gs.info("Using eval is evil!");');
 	
-	// Finally throwing an exception
-	throw 'This is so anti-social!';
-	
-	// Use Date() constructir without parameter
+	// Use of the Date() constructor without parameters
 	var date = Date();
-	
+
+	// Finally throwing an exception
+	throw 'This is so anti-social!';	
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 12:22:30</sys_created_on>
         <sys_id>a9a9745bdb0e8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>AntiPatterns</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_a9a9745bdb0e8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-01 07:05:36</sys_updated_on>
+        <sys_updated_on>2022-04-07 11:20:45</sys_updated_on>
     </sys_script_include>
 </record_update>

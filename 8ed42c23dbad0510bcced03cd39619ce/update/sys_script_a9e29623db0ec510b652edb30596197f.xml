@@ -38,8 +38,10 @@
 
 		if (current.sys_scope == strAppSysId)
 		{
-			if (   (x_snc_devtools.GetStringValue(current.name).indexOf('CodeSanity - ') != 0)
-				|| (x_snc_devtools.GetStringValue(current.category) != 'code_sanity'))
+			var strName = x_snc_devtools.GetStringValue(current.name);
+			var strCategory = x_snc_devtools.GetStringValue(current.category);
+			if (   (strName.indexOf('CodeSanity - ') != 0)
+				|| (strCategory != 'code_sanity'))
 			{
 				gs.addErrorMessage(
 					x_snc_devtools.HtmlEncode(
@@ -59,7 +61,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a9e29623db0ec510b652edb30596197f</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>scan_check - Check name and category</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -67,7 +69,7 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_a9e29623db0ec510b652edb30596197f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-05 15:39:56</sys_updated_on>
+        <sys_updated_on>2022-04-18 17:58:57</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>

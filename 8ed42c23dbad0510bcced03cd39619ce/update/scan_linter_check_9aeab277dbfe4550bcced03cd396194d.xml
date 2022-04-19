@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_linter_check">
+    <scan_linter_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>code_sanity</category>
+        <description>A closing bracket followed by a dot indicates that the result from a function is assumed to be an object that contains a specific member. That however may lead to errors if the reslt is not an object or if a returned object does not contain the specified member or member function.&#13;
+At the same time this check sanctions the questionable use of the method chaining pattern - which usually does not add any value and makes code more difficult to read.</description>
+        <documentation_url/>
+        <name>CodeSanity - bracket-dot anti-pattern</name>
+        <priority>1</priority>
+        <resolution_details>Assign the result of the function, then check the result explicitly and only reference member functions or values in the resulting object if it is confirmed.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	
+	var strSource = GetStringValue(engine.rootNode.toSource());
+	
+	if (strSource.indexOf(').') != -1)
+	{
+		engine.finding.incrementWithNode(engine.rootNode);
+	}
+
+})(engine);]]></script>
+        <short_description>Checks for the bracket-dot anti-pattern </short_description>
+        <sys_class_name>scan_linter_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-18 17:50:00</sys_created_on>
+        <sys_id>9aeab277dbfe4550bcced03cd396194d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CodeSanity - bracket-dot anti-pattern</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_linter_check_9aeab277dbfe4550bcced03cd396194d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-18 17:50:00</sys_updated_on>
+    </scan_linter_check>
+</record_update>

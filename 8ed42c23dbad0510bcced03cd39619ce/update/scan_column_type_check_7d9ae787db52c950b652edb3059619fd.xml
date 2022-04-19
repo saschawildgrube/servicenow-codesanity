@@ -3,11 +3,11 @@
         <active>true</active>
         <category>code_sanity</category>
         <column_type>script</column_type>
-        <description>Retrieving variables can be expensive if there are many of them. It should be avoided to use the variables object in scripted conditions which should be used to determine if the following script should be executed at all.</description>
+        <description>A string comparison to a text in short_description is an indicator that logic is based on user defined text - and hence unstable.</description>
         <documentation_url/>
-        <name>CodeSanity - Variables in conditions</name>
+        <name>CodeSanity - short_description in conditions</name>
         <priority>1</priority>
-        <resolution_details>If there is any logic that depends on the existence or specific values of variables it should be moved into the actual script block. </resolution_details>
+        <resolution_details/>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -21,29 +21,25 @@
 	{
 		var strCondition = GetStringValue(current.condition);
 	
-		if (strCondition.indexOf('.variables.') != -1)
+		if (strCondition.indexOf('short_description') != -1)
 		{
 			engine.finding.increment();
-		}
-		else if (strCondition.indexOf('.variables[') != -1)
-		{
-			engine.finding.increment();		 
 		}
 	}
 
 })(engine);]]></script>
-        <short_description>Checks if variables are used in scripted conditions</short_description>
+        <short_description>Checks if the field "short_description" is used in a condition statement</short_description>
         <sys_class_name>scan_column_type_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-03-15 16:49:53</sys_created_on>
-        <sys_id>8ae66b38db12cd10b652edb305961996</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>CodeSanity - Variables in conditions</sys_name>
+        <sys_created_on>2022-03-22 16:53:21</sys_created_on>
+        <sys_id>7d9ae787db52c950b652edb3059619fd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CodeSanity - short_description in conditions</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-        <sys_update_name>scan_column_type_check_8ae66b38db12cd10b652edb305961996</sys_update_name>
+        <sys_update_name>scan_column_type_check_7d9ae787db52c950b652edb3059619fd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-18 17:43:56</sys_updated_on>
+        <sys_updated_on>2022-04-18 17:43:48</sys_updated_on>
     </scan_column_type_check>
 </record_update>

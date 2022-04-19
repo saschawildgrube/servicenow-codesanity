@@ -9,15 +9,19 @@
         <name>HtmlRenderOtherInstanceScanChecks</name>
         <script><![CDATA[function HtmlRenderOtherInstanceScanChecks(docapi)
 {
+	var GetAppRecord = x_snc_devtools.GetAppRecord;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var HtmlRenderLink = x_snc_devtools.HtmlRenderLink;
 	
 	function HtmlRenderListItem(strItem, strURL, strText)
 	{
-		strURL = x_snc_devtools.GetStringValue(strURL);
+		strURL = GetStringValue(strURL);
 		var strHTML = '';
 		strHTML += '<li>';
 		if (strURL != '')
 		{
-			strHTML += x_snc_devtools.HtmlRenderLink(strURL,strItem,true);
+			strHTML += HtmlRenderLink(strURL,strItem,true);
 		}
 		else
 		{
@@ -29,9 +33,18 @@
 	}
 	
 	
-	
-	var strAppSysId = '8ed42c23dbad0510bcced03cd39619ce';
-	var strSuiteSysId = '4fcb181bdb4a8510bcced03cd39619eb';
+	var grApp = GetAppRecord('x_snc_codesanity');
+	if (IsValidRecord(grApp) == false)
+	{
+		return '';
+	}
+	var strAppSysId = GetStringValue(grApp.sys_id);
+	var grSuite = GetScanSuiteRecord();
+	if (IsValidRecord(grSuite) == false)
+	{
+		return '';
+	}
+	var strSuiteSysId = GetStringValue(grSuite.sys_id);
 	
 	var grSSC = new GlideRecord('scan_check_suite_check');
 	grSSC.addQuery('sys_scope','!=',strAppSysId);
@@ -63,13 +76,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 10:24:05</sys_created_on>
         <sys_id>7dde905fdb4a8510bcced03cd3961983</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>HtmlRenderOtherInstanceScanChecks</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_7dde905fdb4a8510bcced03cd3961983</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-14 15:59:35</sys_updated_on>
+        <sys_updated_on>2022-04-05 15:42:48</sys_updated_on>
     </sys_script_include>
 </record_update>

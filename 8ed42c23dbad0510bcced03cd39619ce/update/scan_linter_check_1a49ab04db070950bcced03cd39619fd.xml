@@ -18,21 +18,38 @@
 
 	var strSource = GetStringValue(engine.rootNode.toSource());
 	
-
-	var grApps = new GlideRecord('sys_app');
-	grApps.query();
-	while (grApps.next())
+	
+	var bException = false;
+	
+	if (GetStringValue(current.getRecordClassName()) == 'sys_script_include')
 	{
-		var strAppName =  GetStringValue(grApps.name);
-		
-		var strRegExp = "[\\\"\\']"+strAppName+"[\\\"\\']";
-		
-		if (StringCheckRegEx(strSource,strRegExp,'i') == true)
+		var strName = GetStringValue(current.name);
+		var strApiName = GetStringValue(current.api_name);
+		if (strName.indexOf('AppGetDependencies') != -1)
 		{
-			engine.finding.incrementWithNode(engine.rootNode);
+			// Any AppGetDependencies function may contain application names - which are usually used for display only.  
+			bException = true;
 		}
-		
+	}	
+
+	if (bException == false)
+	{
+		var grApps = new GlideRecord('sys_app');
+		grApps.query();
+		while (grApps.next())
+		{
+			var strAppName =  GetStringValue(grApps.name);
+
+			var strRegExp = "[\\\"\\']"+strAppName+"[\\\"\\']";
+
+			if (StringCheckRegEx(strSource,strRegExp,'') == true)
+			{
+				engine.finding.incrementWithNode(engine.rootNode);
+			}
+
+		}
 	}
+	
 	
 	
 
@@ -42,13 +59,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-19 15:52:30</sys_created_on>
         <sys_id>1a49ab04db070950bcced03cd39619fd</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>CodeSanity - Application names in code</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_1a49ab04db070950bcced03cd39619fd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-19 16:12:32</sys_updated_on>
+        <sys_updated_on>2022-04-19 17:23:59</sys_updated_on>
     </scan_linter_check>
 </record_update>

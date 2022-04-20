@@ -113,6 +113,7 @@
 	<ol>
 		<li>DevTools 1.38.0 is now required.</li>
 		<li>The check against application names in code now considers application name postfixes (like "WORK IN PROGRESS" etc.).</li>
+		<li>The check against application names in code now considers specific code patterns as exceptions where it is unlikely that the string is actually the application name - i.e. where the string is more likely a class name or the name of an extension point.</li>
 		<li>The check against application names in code now considers the function x_snc_codesanity.GetScanSuiteRecord() as an exception.</li>
 	</ol>
 	
@@ -142,13 +143,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-20 11:06:28</sys_updated_on>
+        <sys_updated_on>2022-04-20 11:27:49</sys_updated_on>
     </sys_ui_page>
 </record_update>

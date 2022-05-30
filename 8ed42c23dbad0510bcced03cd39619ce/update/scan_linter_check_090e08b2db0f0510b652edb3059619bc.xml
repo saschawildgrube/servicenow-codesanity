@@ -14,6 +14,7 @@
         <script><![CDATA[(function (engine) {
 
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
 	
 	var bException = false;
 	
@@ -29,6 +30,18 @@
 	
 	if (bException == false)
 	{
+		var strSource = GetStringValue(engine.rootNode.toSource());
+		
+		if (StringCheckRegEx(strSource,'gs\\.debug\\s*\\(') == true)
+		{
+			engine.finding.increment();
+		}
+		/*
+		if (StringCheckRegEx(strSource,'Debug\\s*\\(') == true)
+		{
+			engine.finding.increment();
+		}*/	
+		
 		engine.rootNode.visit(function(node)
 		{
 			var parent = node.getParent();
@@ -38,12 +51,7 @@
 			{
 				engine.finding.incrementWithNode(node);
 			}
-			if (node.getTypeName() === "NAME" &&
-				node.getNameIdentifier() === "gs.debug" &&
-				parent.getTypeName() === "CALL")
-			{
-				engine.finding.incrementWithNode(node);
-			}
+
 		});
 	}
 	
@@ -54,13 +62,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-27 12:57:14</sys_created_on>
         <sys_id>090e08b2db0f0510b652edb3059619bc</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>CodeSanity - Debug output</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_090e08b2db0f0510b652edb3059619bc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-27 13:01:51</sys_updated_on>
+        <sys_updated_on>2022-05-30 12:42:42</sys_updated_on>
     </scan_linter_check>
 </record_update>

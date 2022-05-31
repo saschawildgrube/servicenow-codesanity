@@ -35,30 +35,34 @@
 	var IsValidSysId = x_snc_devtools.IsValidSysId;
 	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
 	var RedirectToRecord = x_snc_devtools.RedirectToRecord;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	
-	var strSuiteSysId = '4fcb181bdb4a8510bcced03cd39619eb';
+	var grSuite = GetScanSuiteRecord();
 	
-	if (GetStringValue(current.category) == 'code_sanity')
+	if (IsValidRecord(grSuite) == true)
 	{
-			
-		var vResult = RecordQueryOrInsert('scan_check_suite_check',
-			{
-				suite: strSuiteSysId,
-				check: current.sys_id,
-				sys_scope: current.sys_scope
-			},
-			{});
+		if (GetStringValue(current.category) == 'code_sanity')
+		{
 
-		if (IsValidSysId(vResult))
-		{
-			gs.addInfoMessage('The new check "'+current.name+'" has been added to the Code Sanity scan suite.');
-		}
-		else
-		{
-			gs.addErrorMessage('Failed to add the new check "'+current.name+'" to the Code Sanity scan suite!');
+			var vResult = RecordQueryOrInsert('scan_check_suite_check',
+				{
+					suite: grSuite.sys_id,
+					check: current.sys_id,
+					sys_scope: current.sys_scope
+				},
+				{});
+
+			if (IsValidSysId(vResult))
+			{
+				gs.addInfoMessage('The new check "'+current.name+'" has been added to the Code Sanity scan suite.');
+			}
+			else
+			{
+				gs.addErrorMessage('Failed to add the new check "'+current.name+'" to the Code Sanity scan suite!');
+			}
 		}
 	}
-	
+		
 	RedirectToRecord(current);
 
 })(current, previous);]]></script>
@@ -68,7 +72,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>dd08d920db56c910bcced03cd39619e4</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>scan_check - Add to suite</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -76,7 +80,7 @@
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_dd08d920db56c910bcced03cd39619e4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-04 14:58:12</sys_updated_on>
+        <sys_updated_on>2022-05-31 11:15:35</sys_updated_on>
         <template/>
         <when>after</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>

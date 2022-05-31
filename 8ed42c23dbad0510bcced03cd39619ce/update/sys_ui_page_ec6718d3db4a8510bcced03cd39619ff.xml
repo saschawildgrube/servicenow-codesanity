@@ -26,7 +26,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Quebec,Rome',
+				'Rome,San Diego',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -51,6 +51,9 @@
 		<li>TODO: Add further steps required for installation...</li>
 -->
  </ol>
+	
+	<h2>Testing the CodeSanity scan suite</h2>
+	<p>Running the scan suite against the CodeSanity app itself will cause 10 findings in 2 script includes to verify the scan checks work properly. This is not ideal - to find a better way using ATF tests is on the backlog.</p>
 	
 	<h2>Extending the CodeSanity scan suite</h2>
 	<ol>
@@ -109,6 +112,18 @@
 	</ol>
 -->
 	
+	<h3>1.2.0 - 2022-05-31</h3>
+	<ol>
+		<li>DevTools 1.38.0 is now required.</li>
+		<li>Added check "CodeSanity - Script include must contain a class or function".</li>
+		<li>Added check "CodeSanity - Table check code pattern".</li>
+		<li>The check against application names in code now considers application name postfixes (like "WORK IN PROGRESS" etc.).</li>
+		<li>The check against application names in code now considers specific code patterns as exceptions where it is unlikely that the string is actually the application name - i.e. where the string is more likely a class name or the name of an extension point.</li>
+		<li>The check against application names in code now considers the function x_snc_codesanity.GetScanSuiteRecord() and any script include containing "GetLinkDirectory" in the name as an exception.</li>
+		<li>The check against the [0] anti pattern is now considering any constant number pre or postfixed by whitespace characters.</li>
+		<li>More exceptions have been added for the check against Sys IDs in scripts.</li>
+	</ol>
+	
 	<h3>1.1.0 - 2022-04-19</h3>
 	<ol>
 		<li>DevTools 1.37.0 is now required.</li>
@@ -135,13 +150,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-19 20:41:40</sys_updated_on>
+        <sys_updated_on>2022-05-31 16:42:58</sys_updated_on>
     </sys_ui_page>
 </record_update>

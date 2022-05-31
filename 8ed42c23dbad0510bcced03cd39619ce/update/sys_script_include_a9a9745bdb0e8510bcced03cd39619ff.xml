@@ -11,7 +11,7 @@
 {
 	// The [0] anti-pattern
 	var aArray = ['Alpha','Beta'];
-	gs.info(aArray[0]);
+	gs.info(aArray[23]);
 	
 	// The sys_id anti-pattern
 	var strSysId = '12345678901234567890123456789012';
@@ -21,6 +21,7 @@
 	var strSysId2 = "123456789012345678"+"90123456789012";
 	gs.info(strSysId2);
 	
+	// Using eval is evil
 	eval('gs.info("Using eval is evil!");');
 	
 	// Use of the Date() constructor without parameters
@@ -40,6 +41,10 @@
 	var strDevToolsAppName = 'DevTools';
 	var strDevToolsAppNameWIP = 'DevTools WORK IN PROGRESS';	
 	
+	// Debug output
+	Debug('huhu');
+	//gs.debu g'This is not good!');
+	
 	// Finally throwing an exception
 	throw 'This is so anti-social!';	
 }]]></script>
@@ -47,13 +52,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 12:22:30</sys_created_on>
         <sys_id>a9a9745bdb0e8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>AntiPatterns</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_a9a9745bdb0e8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-19 16:13:45</sys_updated_on>
+        <sys_updated_on>2022-05-31 11:22:34</sys_updated_on>
     </sys_script_include>
 </record_update>

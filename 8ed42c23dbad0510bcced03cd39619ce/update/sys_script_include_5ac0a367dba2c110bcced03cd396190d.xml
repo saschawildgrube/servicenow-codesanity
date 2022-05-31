@@ -25,19 +25,18 @@
 		return grSuite;
 	}
 	return false;
-//	return x_snc_devtools.GetRecord('scan_check_suite','4fcb181bdb4a8510bcced03cd39619eb');
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-05 15:43:23</sys_created_on>
         <sys_id>5ac0a367dba2c110bcced03cd396190d</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>GetScanSuiteRecord</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_5ac0a367dba2c110bcced03cd396190d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-05 15:50:42</sys_updated_on>
+        <sys_updated_on>2022-05-31 11:11:47</sys_updated_on>
     </sys_script_include>
 </record_update>

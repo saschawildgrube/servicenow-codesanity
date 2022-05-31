@@ -26,7 +26,7 @@
 	{
 		var strName = GetStringValue(current.name);
 		var strApiName = GetStringValue(current.api_name);
-		if (strName.indexOf('AppGetDependencies') != -1)
+		if (strName == 'AppGetDependencies')
 		{
 			// Any AppGetDependencies function may contain application names - which are usually used for display only.  
 			bException = true;
@@ -36,6 +36,12 @@
 			// Any GetLinkDirectory function may contain application names - which are usually used for display only.  
 			bException = true;
 		}		
+		if (strName == 'AppBuilder')
+		{
+			// AppBuilder may need to refer to the application name. The function is intended to be run only once
+			// during the life cycle of an application and hence is unlikely to cause any runtime issues.
+			bException = true;
+		}	
 		if (strApiName == 'x_snc_codesanity.GetScanSuiteRecord')
 		{
 			// The function contains the scan suite name which is the same as the application name. 
@@ -76,13 +82,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-19 15:52:30</sys_created_on>
         <sys_id>1a49ab04db070950bcced03cd39619fd</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>CodeSanity - Application names in code</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_1a49ab04db070950bcced03cd39619fd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-25 07:18:50</sys_updated_on>
+        <sys_updated_on>2022-05-31 13:25:37</sys_updated_on>
     </scan_linter_check>
 </record_update>

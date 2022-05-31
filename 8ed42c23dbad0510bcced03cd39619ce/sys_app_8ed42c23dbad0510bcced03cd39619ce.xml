@@ -14,7 +14,7 @@
         <license_model>none</license_model>
         <logo/>
         <menu/>
-        <name>CodeSanity WORK IN PROGRESS</name>
+        <name>CodeSanity</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
@@ -29,9 +29,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-14 08:56:58</sys_created_on>
         <sys_id>8ed42c23dbad0510bcced03cd39619ce</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-19 21:04:02</sys_updated_on>
+        <sys_updated_on>2022-05-31 16:41:56</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>

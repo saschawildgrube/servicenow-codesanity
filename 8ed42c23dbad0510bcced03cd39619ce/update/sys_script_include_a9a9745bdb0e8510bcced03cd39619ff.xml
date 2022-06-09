@@ -7,7 +7,21 @@
         <client_callable>false</client_callable>
         <description>A function that contains a number of anti-patterns. The script is intended to trigger findings in the CodeSanity scan suite to test and demonstrate the checks. </description>
         <name>AntiPatterns</name>
-        <script><![CDATA[function AntiPatterns()
+        <script><![CDATA[/*
+
+some comment @&.:
+
+*/
+
+
+/*
+
+
+some other stuff
+*/
+
+
+function AntiPatterns()
 {
 	// The [0] anti-pattern
 	var aArray = ['Alpha','Beta'];
@@ -52,13 +66,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 12:22:30</sys_created_on>
         <sys_id>a9a9745bdb0e8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>AntiPatterns</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_a9a9745bdb0e8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-08 09:45:31</sys_updated_on>
+        <sys_updated_on>2022-06-09 14:07:56</sys_updated_on>
     </sys_script_include>
 </record_update>

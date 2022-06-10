@@ -25,8 +25,11 @@
 
 	var bOK = false;
 	
-	var strRegExComment = '(\\/\\*[0-9A-Za-z\\@\\&\\!\\?\\$\\=\\(\\)\\%\\/\\#\\+\\-\\*\\.\\:\\s^\\*\\/]*\\*\\/)?';
+	//var strRegExComment = '(\\/\\*[0-9A-ZÄÖÜa-z\\ä\\ö\\ü\\ß\\@\\_\\&\\"\\\'\\§\\{\\}\\[\\]\\!\\?\\$\\=\\(\\)\\%\\\\/\\\\\\#\\+\\-\\*\\.\\,\\:\\;\\+\\s^\\*\\/]*\\*\\/)?';
 
+	var strRegExComment = '\\s*(\\/\\*[\\s\\S]*\\*\\/)?';
+
+	
 	if (StringCheckRegEx(strSource,'^'+strRegExComment+'\\s*var\\s+'+strName+'\\s*=\\s*Class\\.create\\s*\\(\\);','') == true)
 	{
 		bOK = true;
@@ -48,14 +51,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-05-25 14:55:44</sys_created_on>
         <sys_id>a625743fdb2f0914bcced03cd39619a8</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>CodeSanity - Script include must contain a class or function</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_a625743fdb2f0914bcced03cd39619a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-09 14:12:40</sys_updated_on>
+        <sys_updated_on>2022-06-10 15:17:09</sys_updated_on>
         <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

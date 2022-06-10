@@ -18,7 +18,7 @@
     </scan_check_suite_check>
     <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
+        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
         <file_path/>
         <instance_id>f492329ddb5849108aea21c405961946</instance_id>
         <instance_name>wildgrubedevquebec</instance_name>
@@ -51,10 +51,10 @@
         <sys_metadata>a3ef9b23dba2c110bcced03cd39619c4</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
         <sys_update_name>scan_check_suite_check_a3ef9b23dba2c110bcced03cd39619c4</sys_update_name>
         <sys_update_version display_value="scan_check_suite_check_a3ef9b23dba2c110bcced03cd39619c4">e3ef5f23dba2c110bcced03cd39619e2</sys_update_version>

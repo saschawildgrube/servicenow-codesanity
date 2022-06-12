@@ -5,7 +5,8 @@
         <description>A closing bracket followed by a dot indicates that the result from a function is assumed to be an object that contains a specific member. That however may lead to errors if the reslt is not an object or if a returned object does not contain the specified member or member function.&#13;
 At the same time this check sanctions the questionable use of the method chaining pattern - which usually does not add any value and makes code more difficult to read.</description>
         <documentation_url/>
-        <name>CodeSanity - bracket-dot anti-pattern</name>
+        <finding_type/>
+        <name>CodeSanity - Bracket-dot anti-pattern</name>
         <priority>1</priority>
         <resolution_details>Assign the result of the function, then check the result explicitly and only reference member functions or values in the resulting object if it is confirmed.</resolution_details>
         <run_condition/>
@@ -29,13 +30,13 @@ At the same time this check sanctions the questionable use of the method chainin
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-18 17:50:00</sys_created_on>
         <sys_id>9aeab277dbfe4550bcced03cd396194d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>CodeSanity - bracket-dot anti-pattern</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CodeSanity - Bracket-dot anti-pattern</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9aeab277dbfe4550bcced03cd396194d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-18 17:50:00</sys_updated_on>
+        <sys_updated_on>2022-06-12 14:15:51</sys_updated_on>
     </scan_linter_check>
 </record_update>

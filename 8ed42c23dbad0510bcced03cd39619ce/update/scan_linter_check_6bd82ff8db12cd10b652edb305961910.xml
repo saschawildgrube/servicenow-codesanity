@@ -4,6 +4,7 @@
         <category>code_sanity</category>
         <description>Throwing exceptions should be avoided if possible.</description>
         <documentation_url/>
+        <finding_type/>
         <name>CodeSanity - Throwing exceptions</name>
         <priority>1</priority>
         <resolution_details>Refactor the code in a way that throwing exceptions is not required.</resolution_details>
@@ -13,14 +14,13 @@
         <score_scale>1</score_scale>
         <script><![CDATA[(function (engine) {
 
-	var GetStringValue = x_snc_devtools.GetStringValue;
-
-	var strSource = GetStringValue(engine.rootNode.toSource());
-
-	if (strSource.indexOf('throw ') != -1)
+	engine.rootNode.visit(function(node)
 	{
-		engine.finding.incrementWithNode(engine.rootNode);
-	}	
+        if (node.getTypeName() === "THROW")
+		{
+            engine.finding.incrementWithNode(node);
+        }
+	});	
 
 })(engine);]]></script>
         <short_description>Checks if a script throws an exception</short_description>
@@ -28,13 +28,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 16:58:22</sys_created_on>
         <sys_id>6bd82ff8db12cd10b652edb305961910</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>CodeSanity - Throwing exceptions</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_6bd82ff8db12cd10b652edb305961910</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-05-30 12:57:50</sys_updated_on>
+        <sys_updated_on>2022-06-12 15:17:49</sys_updated_on>
     </scan_linter_check>
 </record_update>

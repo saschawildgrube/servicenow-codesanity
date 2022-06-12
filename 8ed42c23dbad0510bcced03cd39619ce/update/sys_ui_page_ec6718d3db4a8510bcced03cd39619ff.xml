@@ -106,11 +106,21 @@
 	<h2>Release Notes</h2>
 
 	<!--
-	<h3>1.1.0 - 2022-TODO</h3>
+	<h3>1._.0 - 2022-TODO</h3>
 	<ol>
 		<li>TODO: document changes here</li>
 	</ol>
 -->
+	
+	<h3>1.4.0 - 2022-06-12</h3>
+	<ol>
+		<li>DevTools 1.39.0 is now required.</li>
+		<li>Added check "CodeSanity - logging.verbosity system property".</li>
+		<li>The check "CodeSanity - Script include must contain a class or function" was improved to avoid false negatives.</li>
+		<li>The check "CodeSanity - Throwing exceptions" was improved to avoid false positives.</li>
+		<li>Added the "logging.verbosity" system property.</li>
+		<li>Added first ATF tests to verify the checks and removed the "AntiPattern" script includes.</li>
+	</ol>	
 	
 	<h3>1.3.0 - 2022-06-10</h3>
 	<ol>
@@ -157,13 +167,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>55</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-10 14:32:00</sys_updated_on>
+        <sys_updated_on>2022-06-12 16:09:34</sys_updated_on>
     </sys_ui_page>
 </record_update>

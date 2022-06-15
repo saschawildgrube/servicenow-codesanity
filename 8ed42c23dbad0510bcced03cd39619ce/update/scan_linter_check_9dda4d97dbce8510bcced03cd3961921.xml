@@ -6,6 +6,7 @@
 An execption are AppInstall() functions which may have to refer to specific records to perform changes during installation.&#13;
 Also, the function RunScriptInScope() must refer to a specific script include record to work.</description>
         <documentation_url/>
+        <finding_type/>
         <name>CodeSanity - Sys IDs in scripts</name>
         <priority>1</priority>
         <resolution_details>Refactor code to move Sys IDs into system properties or into another dynamic source - or retrieve the Sys IDs of records dynamically.</resolution_details>
@@ -66,7 +67,7 @@ Also, the function RunScriptInScope() must refer to a specific script include re
 	if (bException == false)
 	{
 		var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
-		if (StringCheckRegEx(strSource,'("|\')[0-9a-z]{32}("|\')','i') == true)
+		if (StringCheckRegEx(strSource,'("|\')[0-9a-f]{32}("|\')','i') == true)
 		{
 			engine.finding.incrementWithNode(engine.rootNode);
 		}
@@ -79,13 +80,13 @@ Also, the function RunScriptInScope() must refer to a specific script include re
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 13:40:27</sys_created_on>
         <sys_id>9dda4d97dbce8510bcced03cd3961921</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>CodeSanity - Sys IDs in scripts</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9dda4d97dbce8510bcced03cd3961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-05-31 12:23:34</sys_updated_on>
+        <sys_updated_on>2022-06-14 13:43:27</sys_updated_on>
     </scan_linter_check>
 </record_update>

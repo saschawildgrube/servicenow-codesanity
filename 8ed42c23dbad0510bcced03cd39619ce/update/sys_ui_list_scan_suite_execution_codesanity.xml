@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="scan_suite_execution" version="2" view="codesanity">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>result</element>
+            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">37787141db705d10dcbdd03cd396191d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-07-18 10:01:41</sys_created_on>
+            <sys_id>fb787141db705d10dcbdd03cd396191e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-07-18 10:01:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>suite</element>
+            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">37787141db705d10dcbdd03cd396191d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-07-18 10:01:41</sys_created_on>
+            <sys_id>73787141db705d10dcbdd03cd396191f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-07-18 10:01:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>scan_suite_execution</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-07-18 10:01:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>37787141db705d10dcbdd03cd396191d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>scan_suite_execution</sys_name>
+            <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+            <sys_update_name>sys_ui_list_scan_suite_execution_codesanity</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-07-18 10:01:41</sys_updated_on>
+            <sys_user/>
+            <view display_value="CodeSanity" name="codesanity">37787141db705d10dcbdd03cd3961919</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

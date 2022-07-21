@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-12 14:14:34</sys_created_on>
         <sys_id>b3a8916ddb8095109232dad1f3961964</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_b3a8916ddb8095109232dad1f3961964</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-05 16:11:31</sys_updated_on>
+        <sys_updated_on>2022-07-21 15:21:13</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Bracket-dot anti-pattern">10989d2ddb8095109232dad1f39619e8</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-12 14:14:34</sys_created_on>
         <sys_id>8929d16ddb8095109232dad1f396191f</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-05 16:11:31</sys_updated_on>
+        <sys_updated_on>2022-07-21 15:21:13</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -58,10 +58,17 @@
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test10',&#13;
-		'function _ATF_CODESANITY_Test10()\n'&#13;
+		'Test2',&#13;
+		'function _ATF_CODESANITY_Test2()\n'&#13;
 		+'{ var strTest = "Test"; var nLength = strTest.toLower().length; }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,true);	&#13;
+	&#13;
+	var strRecordSysId = testdata.CreateScriptInclude(&#13;
+		'global',&#13;
+		'Test3',&#13;
+		'function _ATF_CODESANITY_Test3()\n'&#13;
+		+'{ var strEmail = gs.getUser().getEmail(); }');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);		&#13;
 	&#13;
 	var strRecordSysId = testdata.CreateServicePortalWidget(&#13;
 		'global',&#13;
@@ -77,10 +84,24 @@
 		);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sp_widget',strRecordSysId,false);	&#13;
 	&#13;
-	&#13;
 	var strRecordSysId = testdata.CreateServicePortalWidget(&#13;
 		'global',&#13;
 		'Test2',&#13;
+		'Some Description',&#13;
+		'', // template&#13;
+		'', // css&#13;
+		'(function() {})();', // script&#13;
+		'api.controller=function() {\n' // client_script&#13;
+		+'var c = this;\n'&#13;
+		+'c.server.update().then(function(response){});\n'&#13;
+		+'};'&#13;
+		);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sp_widget',strRecordSysId,false);		&#13;
+	&#13;
+	&#13;
+	var strRecordSysId = testdata.CreateServicePortalWidget(&#13;
+		'global',&#13;
+		'Test3',&#13;
 		'Some Description',&#13;
 		'', // template&#13;
 		'', // css&#13;
@@ -95,7 +116,7 @@
 	&#13;
 	var strRecordSysId = testdata.CreateServicePortalWidget(&#13;
 		'global',&#13;
-		'Test3',&#13;
+		'Test4',&#13;
 		'Some Description',&#13;
 		'', // template&#13;
 		'', // css&#13;

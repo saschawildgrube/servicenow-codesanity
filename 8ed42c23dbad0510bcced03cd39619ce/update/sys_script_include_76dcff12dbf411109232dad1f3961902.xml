@@ -9,20 +9,92 @@
         <name>HtmlRenderCodingGuideline</name>
         <script><![CDATA[function HtmlRenderCodingGuideline()
 {
-	var strHtml = 'TODO';
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var HtmlRenderLink = x_snc_devtools.HtmlRenderLink;
+	var GetRecord = x_snc_devtools.GetRecord;
+
+	var grSuite = GetScanSuiteRecord();
+	if (IsValidRecord(grSuite) == false)
+	{
+		return 'Suite not found!';
+	}
+	var strSuiteSysId = GetStringValue(grSuite.sys_id);
+	
+	
+	
+	function HtmlRenderCodingGuidelineCheck(grCheck)
+	{
+		var IsValidRecord = x_snc_devtools.IsValidRecord;
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var HtmlRenderLink = x_snc_devtools.HtmlRenderLink;
+
+		if (IsValidRecord(grCheck) == false)
+		{
+			return false;
+		}
+		var strHtml = '';
+		strHtml += '<h3>' + grCheck.short_description + '</h3>';
+		strHtml += '<p>' + grCheck.description + '</p>';
+		strHtml += '<p>' + grCheck.resolution_details + '</p>';
+		
+		var strDocUrl = GetStringValue(grCheck.documentation_url);
+		if (strDocUrl != '')
+		{
+			strHtml += '<p>Further reading:<br/>' + HtmlRenderLink(strDocUrl,strDocUrl,true) + '</p>'; 
+		}
+		strHtml += '<p>' + HtmlRenderLink('/scan_check.do?sys_id='+grCheck.sys_id, grCheck.name,true) + '</p>'; 
+		return strHtml;
+	}
+	
+	
+
+	var strHtml = '';
+	
+	// general scripting rules
+	
+	
+	var grSSC = new GlideRecord('scan_check_suite_check');
+	grSSC.addQuery('suite','=',strSuiteSysId);
+	grSSC.addQuery('check.sys_class_name','=','scan_linter_check');
+	
+	grSSC.orderBy('check.name');
+	grSSC.query();
+
+	if (grSSC.getRowCount() > 0)
+	{
+		var strHtml = '<h2>General Coding Guidelines</h2>';
+		while (grSSC.next())
+		{
+			var grCheck = GetRecord('scan_check',grSSC.check);
+	
+			strHtml += HtmlRenderCodingGuidelineCheck(grCheck);
+		}
+	}
+	else
+	{
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	return strHtml;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-22 16:52:50</sys_created_on>
         <sys_id>76dcff12dbf411109232dad1f3961902</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>HtmlRenderCodingGuideline</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_76dcff12dbf411109232dad1f3961902</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-25 10:20:34</sys_updated_on>
+        <sys_updated_on>2022-07-25 16:24:22</sys_updated_on>
     </sys_script_include>
 </record_update>

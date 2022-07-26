@@ -13,7 +13,11 @@
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var HtmlRenderLink = x_snc_devtools.HtmlRenderLink;
 	var GetRecord = x_snc_devtools.GetRecord;
-
+	var GetKeys = x_snc_devtools.GetKeys;
+	var GetValue = x_snc_devtools.GetValue;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var Clone = x_snc_devtools.Clone;
+	
 	var grSuite = GetScanSuiteRecord();
 	if (IsValidRecord(grSuite) == false)
 	{
@@ -51,37 +55,60 @@
 
 	var strHtml = '';
 	
-	// general scripting rules
-	
-	
+	// General rules
 	var grSSC = new GlideRecord('scan_check_suite_check');
 	grSSC.addQuery('suite','=',strSuiteSysId);
 	grSSC.addQuery('check.sys_class_name','=','scan_linter_check');
 	grSSC.addQuery('check.active','=','true');
-	
-	grSSC.orderBy('check.name');
+	grSSC.orderBy('check.short_description');
 	grSSC.query();
-
 	if (grSSC.getRowCount() > 0)
 	{
-		var strHtml = '<h2>General Coding Guidelines</h2>';
+		strHtml += '<h2>General rules</h2>';
 		while (grSSC.next())
 		{
 			var grCheck = GetRecord('scan_check',grSSC.check);
-	
 			strHtml += HtmlRenderCodingGuidelineCheck(grCheck);
 		}
 	}
-	else
+	
+	
+	// Specific rules
+	var grSSC = new GlideRecord('scan_check_suite_check');
+	grSSC.addQuery('suite','=',strSuiteSysId);
+	grSSC.addQuery('check.sys_class_name','=','scan_table_check');
+	grSSC.addQuery('check.active','=','true');
+	grSSC.orderBy('check.table'); // doesn't work
+	grSSC.query();
+	
+	var table_checks = {};
+	
+	if (grSSC.getRowCount() > 0)
 	{
-		
+		while (grSSC.next())
+		{
+			var strTable = GetStringValue(grSSC.check.table);
+			var aChecks = GetArrayValue(GetValue(table_checks,strTable));
+			aChecks.push(GetRecord('scan_table_check',grSSC.check));
+			table_checks[strTable] = aChecks;
+		}
 	}
 	
-	
-	
-	
-	
-	
+	var aTables = GetKeys(table_checks);
+	aTables = aTables.sort();
+	for (var nTable = 0; nTable < aTables.length; nTable++)
+	{
+		var strTable = aTables[nTable];
+		strHtml += '<h2>Specific rules for records in '+strTable+'</h2>';
+		var aChecks = GetArrayValue(GetValue(table_checks,strTable));
+		for (var nCheck = 0; nCheck < aChecks.length; nCheck++)
+		{
+			var grCheck = aChecks[nCheck];
+			//strHtml += x_snc_devtools.RenderValue(grCheck);
+			strHtml += HtmlRenderCodingGuidelineCheck(grCheck);
+		}
+	}
+
 	
 	return strHtml;
 }]]></script>
@@ -89,13 +116,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-22 16:52:50</sys_created_on>
         <sys_id>76dcff12dbf411109232dad1f3961902</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>HtmlRenderCodingGuideline</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_76dcff12dbf411109232dad1f3961902</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-25 19:01:59</sys_updated_on>
+        <sys_updated_on>2022-07-26 12:57:33</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -73,7 +73,7 @@
 	}
 	
 	
-	// Specific rules
+	// Specific rules for tables
 	var grSSC = new GlideRecord('scan_check_suite_check');
 	grSSC.addQuery('suite','=',strSuiteSysId);
 	grSSC.addQuery('check.sys_class_name','=','scan_table_check');
@@ -109,6 +109,41 @@
 		}
 	}
 
+	// Specific rules for columns
+	var grSSC = new GlideRecord('scan_check_suite_check');
+	grSSC.addQuery('suite','=',strSuiteSysId);
+	grSSC.addQuery('check.sys_class_name','=','scan_column_type_check');
+	grSSC.addQuery('check.active','=','true');
+	grSSC.query();
+	
+	var column_type_checks = {};
+	
+	if (grSSC.getRowCount() > 0)
+	{
+		while (grSSC.next())
+		{
+			var strColumnType = GetStringValue(grSSC.check.column_type);
+			var aChecks = GetArrayValue(GetValue(column_type_checks,strColumnType));
+			aChecks.push(GetRecord('scan_column_type_check',grSSC.check));
+			column_type_checks[strColumnType] = aChecks;
+		}
+	}
+	
+	var aColumnTypes = GetKeys(column_type_checks);
+	aColumnTypes = aColumnTypes.sort();
+	for (var nColumnType = 0; nColumnType < aColumnTypes.length; nColumnType++)
+	{
+		var strColumnType = aColumnTypes[nColumnType];
+		strHtml += '<h2>Specific rules for '+strColumnType+' fields</h2>';
+		var aChecks = GetArrayValue(GetValue(column_type_checks,strColumnType));
+		for (var nCheck = 0; nCheck < aChecks.length; nCheck++)
+		{
+			var grCheck = aChecks[nCheck];
+			strHtml += HtmlRenderCodingGuidelineCheck(grCheck);
+		}
+	}
+	
+	
 	
 	return strHtml;
 }]]></script>
@@ -116,13 +151,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-22 16:52:50</sys_created_on>
         <sys_id>76dcff12dbf411109232dad1f3961902</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>HtmlRenderCodingGuideline</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_76dcff12dbf411109232dad1f3961902</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-26 12:57:33</sys_updated_on>
+        <sys_updated_on>2022-07-26 15:27:45</sys_updated_on>
     </sys_script_include>
 </record_update>

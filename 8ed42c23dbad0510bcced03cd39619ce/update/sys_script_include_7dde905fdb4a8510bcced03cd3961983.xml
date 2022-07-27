@@ -59,7 +59,7 @@
 	
 	
 	
-	var strHTML = '<h2>Instance Scan Checks contained in other apps</h2>';
+	var strHTML = '<h2>Instance Scan checks contained in other apps</h2>';
 	strHTML += '<ul>';	
 	while (grSSC.next())
 	{
@@ -76,13 +76,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 10:24:05</sys_created_on>
         <sys_id>7dde905fdb4a8510bcced03cd3961983</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>HtmlRenderOtherInstanceScanChecks</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_7dde905fdb4a8510bcced03cd3961983</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-05 15:42:48</sys_updated_on>
+        <sys_updated_on>2022-07-08 14:37:45</sys_updated_on>
     </sys_script_include>
 </record_update>

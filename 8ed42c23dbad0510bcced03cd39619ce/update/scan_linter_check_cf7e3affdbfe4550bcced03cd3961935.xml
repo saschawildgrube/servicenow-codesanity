@@ -24,18 +24,18 @@
 	}
 
 })(engine);]]></script>
-        <short_description>Checks against the string concatenation anti-pattern</short_description>
+        <short_description>Do not concatenate constant string literals</short_description>
         <sys_class_name>scan_linter_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-18 18:07:41</sys_created_on>
         <sys_id>cf7e3affdbfe4550bcced03cd3961935</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>CodeSanity - String concatenation anti-pattern</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_cf7e3affdbfe4550bcced03cd3961935</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-15 09:08:07</sys_updated_on>
+        <sys_updated_on>2022-07-25 16:20:24</sys_updated_on>
     </scan_linter_check>
 </record_update>

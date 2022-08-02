@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_codesanity.IsCheckInCodeSanitySuite</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns true if the given check is part of the CodeSanity scan suite, false if not.</description>
+        <name>IsCheckInCodeSanitySuite</name>
+        <script><![CDATA[function IsCheckInCodeSanitySuite(grCheck)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetValue = x_snc_devtools.GetValue;
+
+	if (IsValidRecord(grCheck) == false)
+	{
+		return false;
+	}
+	
+	var grChecksInSuite = new GlideRecord('scan_check_suite_check');
+	grChecksInSuite.addQuery('check','=',grCheck.sys_id);
+	grChecksInSuite.addQuery('suite','=',GetValue(GetScanSuiteRecord(),'sys_id'));
+	grChecksInSuite.query();
+	if (!grChecksInSuite.next())
+	{
+		return false;
+	}
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-08-02 08:24:27</sys_created_on>
+        <sys_id>f1d1fe71db8599109232dad1f3961932</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>IsCheckInCodeSanitySuite</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_script_include_f1d1fe71db8599109232dad1f3961932</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-08-02 08:29:46</sys_updated_on>
+    </sys_script_include>
+</record_update>

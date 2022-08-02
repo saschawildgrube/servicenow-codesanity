@@ -13,28 +13,32 @@
         <score_min>0</score_min>
         <score_scale>1</score_scale>
         <script><![CDATA[(function (engine) {
+	
+    if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{	
 
-	engine.rootNode.visit(function(node)
-	{
-        if (node.getTypeName() === "THROW")
+		engine.rootNode.visit(function(node)
 		{
-            engine.finding.incrementWithNode(node);
-        }
-	});	
-
+			if (node.getTypeName() === "THROW")
+			{
+				engine.finding.incrementWithNode(node);
+			}
+		});	
+	}
+		
 })(engine);]]></script>
         <short_description>Do not throw exceptions</short_description>
         <sys_class_name>scan_linter_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 16:58:22</sys_created_on>
         <sys_id>6bd82ff8db12cd10b652edb305961910</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>CodeSanity - Throwing exceptions</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_6bd82ff8db12cd10b652edb305961910</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-25 18:57:28</sys_updated_on>
+        <sys_updated_on>2022-08-02 12:28:54</sys_updated_on>
     </scan_linter_check>
 </record_update>

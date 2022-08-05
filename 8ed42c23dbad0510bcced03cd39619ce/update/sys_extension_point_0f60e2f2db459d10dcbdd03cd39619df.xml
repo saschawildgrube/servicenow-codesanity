@@ -21,7 +21,7 @@ CodeSanity.prototype = {
 		// To disable the check "CodeSanity - Bracket-dot anti-pattern"
 		rules.blacklist.push(
 			{
-				checks : ['CodeSanity - Throwing exceptions'],
+				checks : ['CodeSanity - Bracket-dot anti-pattern'],
 			});
 		
 		// To run the check "CodeSanity - Your specific check" only in scope "x_your_scope" and scope "x_your_other_scope"
@@ -42,13 +42,13 @@ CodeSanity.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-05 09:42:53</sys_created_on>
         <sys_id>0f60e2f2db459d10dcbdd03cd39619df</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>CodeSanity</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_extension_point_0f60e2f2db459d10dcbdd03cd39619df</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-05 13:04:12</sys_updated_on>
+        <sys_updated_on>2022-08-05 15:42:38</sys_updated_on>
     </sys_extension_point>
 </record_update>

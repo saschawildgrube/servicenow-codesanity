@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_codesanity.IsCheckApplicableToRecordByRules</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns true if the given check should be executed on the given record based on the given rules, false if not.</description>
+        <name>IsCheckApplicableToRecordByRules</name>
+        <script><![CDATA[function IsCheckApplicableToRecordByRules(grCheck,grRecord,rules)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetValue = x_snc_devtools.GetValue;
+	var GetRecord = x_snc_devtools.GetRecord;
+	var IsObject = x_snc_devtools.IsObject;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+
+	
+	if (IsValidRecord(grRecord) == false)
+	{
+		return false;
+	}
+	
+	if (IsValidRecord(grCheck) == false)
+	{
+		return false;
+	}
+	
+	if (IsObject(rules) == false)
+	{
+		return true;
+	}
+	
+	var bResult = true;
+	
+	
+	var aBlacklistRules = GetArrayValue(GetValue(rules,'blacklist'));
+	
+	for (var nRule = 0; nRule < aBlacklistRules.length; nRule++)
+	{
+		var rule = aBlacklistRules[nRule];
+		var aChecks = GetArrayValue(GetValue(rule,'checks'));
+		
+		var bAppliesToCheck = false;
+		
+		if (aChecks.length == 0) // no checks are specified in the rule: the rule applies to all checks
+		{
+			bAppliesToCheck = true;
+		}
+		else
+		{
+			for (var nCheck = 0; nCheck < aChecks.length; nCheck++)
+			{
+				var strCheck = aChecks[nCheck];
+				if (strCheck == grCheck.getValue('name') || strCheck == GetStringValue(grCheck.sys_id))
+				{
+					bAppliesToCheck = true;
+				}
+			}
+		}
+		
+		if (bAppliesToCheck == true)
+		{
+			var bAppliesToRecord = false;
+			
+			var aScopes = GetArrayValue(GetValue(rule,'scopes'));
+			
+			if (aScopes.length == 0)
+			{
+				bAppliesToRecord = true;
+			}
+			else
+			{
+				for (var nScope = 0; nScope < aScopes.length; nScope++)
+				{
+					var strScope = aScopes[nScope];
+					if (strScope == GetStringValue(grRecord.sys_scope.scope) || GetStringValue(grRecord.sys_scope) )
+					{
+						bAppliesToRecord = true;
+					}
+				}
+			}
+		}
+		if (bAppliesToCheck == true && bAppliesToRecord == true)
+		{
+			bResult = false;
+		}
+	}
+	
+	
+	
+	//var aWhitelistRules = GetArrayValue(GetValue(rules,'whitelist'));
+	
+	
+	
+
+	return bResult;
+
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-08-05 13:15:44</sys_created_on>
+        <sys_id>6181dbbadbc59d10dcbdd03cd396190e</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>IsCheckApplicableToRecordByRules</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_script_include_6181dbbadbc59d10dcbdd03cd396190e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-08-05 13:58:51</sys_updated_on>
+    </sys_script_include>
+</record_update>

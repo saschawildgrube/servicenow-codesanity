@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-05 13:46:52</sys_created_on>
         <sys_id>20a8d372db099d10dcbdd03cd396199c</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_20a8d372db099d10dcbdd03cd396199c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-08 15:19:27</sys_updated_on>
+        <sys_updated_on>2022-08-08 15:23:00</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - IsCheckApplicableToRecordByRules">e1981372db099d10dcbdd03cd396197d</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-05 13:46:52</sys_created_on>
         <sys_id>fda8d372db099d10dcbdd03cd39619b9</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-08 15:19:27</sys_updated_on>
+        <sys_updated_on>2022-08-08 15:23:00</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var GetRecord = x_snc_devtools.GetRecord;&#13;
@@ -185,6 +185,28 @@
 	TestCase_IsCheckApplicableToRecordByRules(grCheckSysIdsInScript,    grRecordDevToolsAppInstall,  rules, false);&#13;
 	TestCase_IsCheckApplicableToRecordByRules(grCheckThrowingExceptions,grRecordDevToolsAppInstall,  rules, true);	&#13;
 	&#13;
+	&#13;
+	// Multiple (seemingly) contradicting rules (whitelists ovveride blacklists)&#13;
+	// One check is blacklisted for scope x_snc_codesanity&#13;
+	// The same check is whitelisted for scope x_snc_codesanity&#13;
+	var rules = {&#13;
+		blacklist: [&#13;
+			{&#13;
+				scopes: ['x_snc_codesanity'],&#13;
+				checks: ['CodeSanity - Throwing exceptions']&#13;
+			}&#13;
+		],	&#13;
+		whitelist: [&#13;
+			{&#13;
+				scopes: ['x_snc_codesanity'],&#13;
+				checks: ['CodeSanity - Throwing exceptions']&#13;
+			}&#13;
+		]&#13;
+	};&#13;
+	TestCase_IsCheckApplicableToRecordByRules(grCheckSysIdsInScript,    grRecordCodeSanityAppInstall,rules, true);&#13;
+	TestCase_IsCheckApplicableToRecordByRules(grCheckThrowingExceptions,grRecordCodeSanityAppInstall,rules, true);&#13;
+	TestCase_IsCheckApplicableToRecordByRules(grCheckSysIdsInScript,    grRecordDevToolsAppInstall,  rules, true);&#13;
+	TestCase_IsCheckApplicableToRecordByRules(grCheckThrowingExceptions,grRecordDevToolsAppInstall,  rules, false);		&#13;
 	&#13;
 	&#13;
 	return test.GetResult();&#13;

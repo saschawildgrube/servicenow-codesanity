@@ -7,7 +7,7 @@
         <description>Checks are code and any code should be tested. ATF tests should cover all checks that are defined in an application.</description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
-        <name>CodeSanity - Checks must be tested using ATF</name>
+        <name>CodeSanity - ATF tests for checks</name>
         <priority>1</priority>
         <resolution_details>Add an ATF test in the same scope as the check. The ATF test name should contain the name of the check.</resolution_details>
         <run_condition/>
@@ -35,14 +35,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-02 08:38:37</sys_created_on>
         <sys_id>53d43af1db8599109232dad1f396192c</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>CodeSanity - Checks must be tested using ATF</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CodeSanity - ATF tests for checks</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_53d43af1db8599109232dad1f396192c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-02 08:42:07</sys_updated_on>
+        <sys_updated_on>2022-08-08 10:55:56</sys_updated_on>
         <table>scan_check</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

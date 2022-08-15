@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name/>
+        <active>false</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments>Runs the CodeSanity checks on the current record.</comments>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Code Sanity Check</name>
+        <onclick>onClick()</onclick>
+        <order>99999</order>
+        <script><![CDATA[function onClick()
+{
+	//alert('clicked');
+	
+	/*
+	
+function InstanceScanPointScan(strTable, strRecordSysId, bDetailed)
+{
+	strTable = GetStringValue(strTable);
+	strRecordSysId = GetStringValue(strRecordSysId);
+	
+	if (IsValidTable(strTable) == false)
+	{
+		return false;
+	}
+	if (IsValidSysId(strRecordSysId) == false)
+	{
+		return false;
+	}
+	
+	var sic = new sn_instance_scan.ScanInstance();
+	var strProgressSysId = '';
+	try 
+	{
+		strProgressSysId = sic.triggerPointScan(strTable, strRecordSysId);
+	}
+	catch (e)
+	{
+	}
+	
+	if (IsValidSysId(strProgressSysId) == false)
+	{
+		return false;
+	}
+	
+	var grProgress = new GlideRecord('sys_progress_worker');
+	var bProgress = true;
+	while (bProgress == true)
+	{
+		if (grProgress.get(strProgressSysId))
+		{
+			var strState = GetStringValue(grProgress.state);  
+			if (strState != 'starting' && strState != 'running')
+			{
+				bProgress = false;
+			}
+		}
+		else
+		{
+			bProgress = false;
+		}
+	}
+	
+	var grScanResult = new GlideRecord('scan_result');
+	grScanResult.addQuery('progress_id','=',strProgressSysId);
+	grScanResult.query();
+	if (grScanResult.next() == false)
+	{
+		return false;
+	}
+	
+	return InstanceScanGetScanResults(grScanResult.sys_id,bDetailed);
+}	
+	
+	
+	*/
+	
+}]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-08-10 08:31:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0f008c68db55d150dcbdd03cd396197f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Code Sanity Check</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_ui_action_0f008c68db55d150dcbdd03cd396197f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-08-10 08:37:55</sys_updated_on>
+        <table>global</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

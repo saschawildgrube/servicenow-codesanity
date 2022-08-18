@@ -15,6 +15,7 @@
 	var IsObject = x_snc_devtools.IsObject;
 	var GetArrayValue = x_snc_devtools.GetArrayValue;
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetBoolValue = x_snc_devtools.GetBoolValue;
 
 	
 	if (IsValidRecord(grRecord) == false)
@@ -75,15 +76,15 @@
 		if (bAppliesToCheck == true)
 		{
 			var bAppliesToRecord = false;
-			
-			var aScopes = GetArrayValue(GetValue(rule,'scopes'));
-			
-			if (aScopes.length == 0)
+
+			var bAll = GetBoolValue(GetValue(rule,'all'));
+			if (bAll == true)
 			{
 				bAppliesToRecord = true;
 			}
 			else
 			{
+				var aScopes = GetArrayValue(GetValue(rule,'scopes'));
 				for (var nScope = 0; nScope < aScopes.length; nScope++)
 				{
 					var strScope = aScopes[nScope];
@@ -93,6 +94,7 @@
 					}
 				}
 			}
+				
 			if (bAppliesToRecord == true)
 			{
 				bResult = false;
@@ -146,13 +148,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-05 13:15:44</sys_created_on>
         <sys_id>6181dbbadbc59d10dcbdd03cd396190e</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>IsCheckApplicableToRecordByRules</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_6181dbbadbc59d10dcbdd03cd396190e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-05 15:28:01</sys_updated_on>
+        <sys_updated_on>2022-08-18 11:55:31</sys_updated_on>
     </sys_script_include>
 </record_update>

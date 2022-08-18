@@ -66,7 +66,7 @@
 	&lt;p&gt;In a larger developer community there might be variations in the coding guideline. Each and every project might have different rules - sometimes because a coding guideline has been introduced when many applications are already built or just because there are special considerations or coding patterns in use in a project.&lt;/p&gt;&#13;
 	&lt;p&gt;Execution rules can be used to define which checks in the CodeSanity scan suite should run on which records and which should not.&lt;/p&gt;&#13;
 	&lt;h3&gt;Blacklisting&lt;/h3&gt;&#13;
-	&lt;p&gt;Blacklisting rules specify which checks should NOT run on records in specific app scopes. Use blacklisting rules if there are checks that just do not apply to one or more applications.&lt;/p&gt;&#13;
+	&lt;p&gt;Blacklisting rules specify which checks should NOT run on records in specific app scopes. Use blacklisting rules if there are checks that just do not apply to one or more applications or which should be deactivated completely.&lt;/p&gt;&#13;
 	&lt;h3&gt;Whitelisting&lt;/h3&gt;&#13;
 	&lt;p&gt;Whitelisting rules specify checks that should ONLY run on records in specific app scopes. Use whitelisting rules if there are checks that only apply to one or more applications.&lt;/p&gt;&#13;
 	&lt;p&gt;Whitelisting rules override blacklisting rules.&lt;/p&gt;&#13;
@@ -249,13 +249,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>109</sys_mod_count>
+        <sys_mod_count>110</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-18 10:41:04</sys_updated_on>
+        <sys_updated_on>2022-08-18 12:03:25</sys_updated_on>
     </sys_ui_page>
 </record_update>

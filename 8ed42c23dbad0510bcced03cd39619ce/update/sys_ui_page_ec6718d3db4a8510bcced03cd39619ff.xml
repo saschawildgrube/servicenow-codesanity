@@ -154,10 +154,10 @@
 	&lt;/ol&gt;&#13;
 --&gt;&#13;
 	&#13;
-	&lt;h3&gt;1.7.0 - 2022-TODO&lt;/h3&gt;&#13;
+	&lt;h3&gt;2.0.0 - 2022-08-18&lt;/h3&gt;&#13;
 	&lt;ol&gt;&#13;
 		&lt;li&gt;DevTools 1.42.0 is now required.&lt;/li&gt;&#13;
-		&lt;li&gt;Introducing the "Execution Rules" feature to control which checks should run on which records.&lt;/li&gt;&#13;
+		&lt;li&gt;Introducing the "Execution Rules" feature to control which checks should run on which records - this requires ALL CodeSanity checks to use new function IsCheckApplicableToRecord() to check if the check should run on the given record.&lt;/li&gt;&#13;
 		&lt;li&gt;Added guidance to the manual on how to create a coding guideline document based on CodeSanity checks.&lt;/li&gt;&#13;
 		&lt;li&gt;The function HtmlRenderCodingGuideline() now also renders the execution rules that apply to a check.&lt;/li&gt;&#13;
 		&lt;li&gt;When adding a new check the script field is prepopulated with the essential logic of a CodeSanity check.&lt;/li&gt;&#13;
@@ -251,13 +251,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>112</sys_mod_count>
+        <sys_mod_count>113</sys_mod_count>
         <sys_name>manual</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-18 12:56:00</sys_updated_on>
+        <sys_updated_on>2022-08-18 13:41:54</sys_updated_on>
     </sys_ui_page>
 </record_update>

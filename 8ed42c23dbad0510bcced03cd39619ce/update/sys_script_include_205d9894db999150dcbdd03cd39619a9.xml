@@ -10,6 +10,15 @@
         <script><![CDATA[function GetExecutionRulesForCheckByRules(grCheck,rules)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var SetValue = x_snc_devtools.SetValue;
+	var GetValue = x_snc_devtools.GetValue;
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var ArrayPushUnique = x_snc_devtools.ArrayPushUnique;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var ArrayRemoveValue = x_snc_devtools.ArrayRemoveValue;
+	var GetKeys = x_snc_devtools.GetKeys;
+	var IsEqual = x_snc_devtools.IsEqual;
+
 	
 	if (IsValidRecord(grCheck) == false)
 	{
@@ -21,7 +30,6 @@
 	
 	// BLACKLISTING - prevent specific checks from running
 	
-/*	
 	
 	var aBlacklistRules = GetArrayValue(GetValue(rules,'blacklist'));
 	
@@ -50,34 +58,32 @@
 		
 		if (bAppliesToCheck == true)
 		{
-			var bAppliesToRecord = false;
-			
 			var aScopes = GetArrayValue(GetValue(rule,'scopes'));
 			
 			if (aScopes.length == 0)
 			{
-				bAppliesToRecord = true;
+				var aScopesInRule = GetValue(rulesForCheck,'blacklist','scopes');
+				if (aScopesInRule == null)
+				{
+					SetValue([],rulesForCheck,'blacklist','scopes');
+				}
 			}
 			else
 			{
 				for (var nScope = 0; nScope < aScopes.length; nScope++)
 				{
-					var strScope = aScopes[nScope];
-					if (strScope == strRecordScopeName || strScope == GetStringValue(grRecord.sys_scope) )
-					{
-						bAppliesToRecord = true;
-					}
+					var aScopesInRule = GetArrayValue(GetValue(rulesForCheck,'blacklist','scopes'));
+					aScopesInRule = ArrayPushUnique(aScopesInRule,aScopes[nScope]);
+					SetValue(aScopesInRule,rulesForCheck,'blacklist','scopes');
 				}
-			}
-			if (bAppliesToRecord == true)
-			{
-				bResult = false;
-			}
+			}			
+			
 		}
+	
 	}
 	
 	
-	
+
 	// WHITELISTING - only run specific checks if conditions match
 	
 	var aWhitelistRules = GetArrayValue(GetValue(rules,'whitelist'));
@@ -100,21 +106,55 @@
 		
 		if (bAppliesToCheck == true)
 		{
-			bResult = false;
-			
 			var aScopes = GetArrayValue(GetValue(rule,'scopes'));
 			
-			for (var nScope = 0; nScope < aScopes.length; nScope++)
+			if (aScopes.length == 0)
 			{
-				var strScope = aScopes[nScope];
-				if (strScope == strRecordScopeName || strScope == GetStringValue(grRecord.sys_scope) )
+				var aScopesInRule = GetValue(rulesForCheck,'blacklist','scopes');
+				if (aScopesInRule == null)
 				{
-					bResult = true;
+					SetValue([],rulesForCheck,'whitelist','scopes');
 				}
 			}
+			else
+			{
+				for (var nScope = 0; nScope < aScopes.length; nScope++)
+				{
+					var aScopesInRule = GetArrayValue(GetValue(rulesForCheck,'whitelist','scopes'));
+					aScopesInRule = ArrayPushUnique(aScopesInRule,aScopes[nScope]);
+					SetValue(aScopesInRule,rulesForCheck,'whitelist','scopes');
+				}
+			}			
 		}
-	}	
-	*/
+	}
+	
+	// Cleanup blacklist based on contradicting whitelist
+	var aBlacklistScopes = GetValue(rulesForCheck,'blacklist','scopes');
+	var aWhitelistScopes = GetValue(rulesForCheck,'whitelist','scopes');
+	
+	if (aBlacklistScopes != null && aWhitelistScopes != null)
+	{
+		if (aBlacklistScopes.length > 0 && aWhitelistScopes.length > 0)
+		{
+			for (var nWhitelistScope = 0; nWhitelistScope < aWhitelistScopes.length; nWhitelistScope++)
+			{
+				aBlacklistScopes = ArrayRemoveValue(aBlacklistScopes,aWhitelistScopes[nWhitelistScope]);
+			}
+			if (aBlacklistScopes.length == 0)
+			{
+				delete rulesForCheck.blacklist.scopes;
+				if (IsEqual(GetKeys(rulesForCheck.blacklist),[]) == true)
+				{
+					delete rulesForCheck.blacklist;
+				}
+				//SetValue(aScopesInRule,rulesForCheck,'blacklist',null);	
+			}
+			else
+			{
+				SetValue(aBlacklistScopes,rulesForCheck,'blacklist','scopes');	
+			}
+		}
+	}
 	
 	return rulesForCheck;
 }]]></script>
@@ -122,13 +162,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-09 16:00:44</sys_created_on>
         <sys_id>205d9894db999150dcbdd03cd39619a9</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>GetExecutionRulesForCheckByRules</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_205d9894db999150dcbdd03cd39619a9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-09 16:01:22</sys_updated_on>
+        <sys_updated_on>2022-08-18 11:36:51</sys_updated_on>
     </sys_script_include>
 </record_update>

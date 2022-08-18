@@ -97,6 +97,11 @@
 	&lt;p&gt;The output of the UI page can then be transferred into a corporate wiki or the ui page acts as the coding guideline document itself.&lt;/p&gt;&#13;
 	&lt;p&gt;There might be guidelines which are difficult to check mechanically. However a check could be created that does not produce any findings but that contains the documentation of the guideline. CodeSanity checks may hence become the master source for all coding guidelines - no matter if they can be checked mechanically or not.&lt;/p&gt;&#13;
 &#13;
+	&lt;h2&gt;Limitations and Caveats&lt;/h2&gt;&#13;
+	&lt;ul&gt;&#13;
+		&lt;li&gt;Under yet unspecified circumstances a suite scan against an app may not produce all relevant findings. The ServiceNow product development team is made aware of that problem.&lt;/li&gt;&#13;
+		&lt;li&gt;Instance Scan does not work with scripts in Flow Designer. When scripted action steps are used such scripts are not considered in scans. The ServiceNow product development team is made aware of that problem.&lt;/li&gt;&#13;
+	&lt;/ul&gt;&#13;
 &#13;
 	&lt;!--&#13;
 	&lt;g2:no_escape&gt;$[HtmlRenderOtherInstanceScanChecks()]&lt;/g2:no_escape&gt;&#13;
@@ -244,13 +249,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>108</sys_mod_count>
+        <sys_mod_count>109</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-15 16:07:48</sys_updated_on>
+        <sys_updated_on>2022-08-18 10:41:04</sys_updated_on>
     </sys_ui_page>
 </record_update>

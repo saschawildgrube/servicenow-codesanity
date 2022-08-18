@@ -17,6 +17,9 @@
 	var GetValue = x_snc_devtools.GetValue;
 	var GetArrayValue = x_snc_devtools.GetArrayValue;
 	var Clone = x_snc_devtools.Clone;
+	var GetBoolValue = x_snc_devtools.GetBoolValue;
+	var GetAppRecord = x_snc_devtools.GetAppRecord;
+
 	
 	var grSuite = GetScanSuiteRecord();
 	if (IsValidRecord(grSuite) == false)
@@ -25,6 +28,8 @@
 	}
 	var strSuiteSysId = GetStringValue(grSuite.sys_id);
 	
+	var rules = GetExecutionRules();
+	
 	
 	
 	function HtmlRenderCodingGuidelineCheck(grCheck)
@@ -32,15 +37,65 @@
 		var IsValidRecord = x_snc_devtools.IsValidRecord;
 		var GetStringValue = x_snc_devtools.GetStringValue;
 		var HtmlRenderLink = x_snc_devtools.HtmlRenderLink;
+		var HtmlEncode = x_snc_devtools.HtmlEncode;
 
 		if (IsValidRecord(grCheck) == false)
 		{
 			return false;
 		}
 		var strHtml = '';
+
+		var rulesForCheck = GetExecutionRulesForCheckByRules(grCheck,rules);
+		if (GetBoolValue(GetValue(rulesForCheck,'all')) == true)
+		{
+			// if a check is blacklisted for all, we don't show it.
+			return '';
+		}	
+		
 		strHtml += '<h3>' + grCheck.short_description + '</h3>';
-		strHtml += '<p>' + grCheck.description + '</p>';
-		strHtml += '<p>' + grCheck.resolution_details + '</p>';
+		var aBlacklistScopes = GetArrayValue(GetValue(rulesForCheck,'blacklist','scopes'));
+		if (aBlacklistScopes.length > 0)
+		{
+			strHtml += '<p>This check is NOT applied to the following application(s): ';
+			for (var nScope = 0; nScope < aBlacklistScopes.length; nScope++)
+			{
+				if (nScope > 0)
+				{
+					strHtml += ', ';
+				}
+				var strApp = aBlacklistScopes[nScope];
+				var grApp = GetAppRecord(strApp);
+				if (IsValidRecord(grApp) == true)
+				{
+					strApp = GetStringValue(grApp.name);
+				}
+				strHtml += strApp;
+			}
+		}
+		
+		var aWhitelistScopes = GetArrayValue(GetValue(rulesForCheck,'whitelist','scopes'));
+		if (aWhitelistScopes.length > 0)
+		{
+			strHtml += '<p>This check is ONLY applied to the following application(s): ';
+			for (var nScope = 0; nScope < aWhitelistScopes.length; nScope++)
+			{
+				if (nScope > 0)
+				{
+					strHtml += ', ';
+				}
+				var strApp = aWhitelistScopes[nScope];
+				var grApp = GetAppRecord(strApp);
+				if (IsValidRecord(grApp) == true)
+				{
+					strApp = GetStringValue(grApp.name);
+				}
+				strHtml += strApp;
+			}
+		}
+			
+	
+		strHtml += '<p>' + HtmlEncode(grCheck.description) + '</p>';
+		strHtml += '<p>' + HtmlEncode(grCheck.resolution_details) + '</p>';
 		
 		var strDocUrl = GetStringValue(grCheck.documentation_url);
 		if (strDocUrl != '')
@@ -151,13 +206,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-22 16:52:50</sys_created_on>
         <sys_id>76dcff12dbf411109232dad1f3961902</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>HtmlRenderCodingGuideline</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_76dcff12dbf411109232dad1f3961902</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-26 15:27:45</sys_updated_on>
+        <sys_updated_on>2022-08-18 12:19:24</sys_updated_on>
     </sys_script_include>
 </record_update>

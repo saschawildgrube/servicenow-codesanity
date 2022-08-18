@@ -14,48 +14,52 @@
         <score_scale>1</score_scale>
         <script><![CDATA[(function (engine) {
 
-	var GetStringValue = x_snc_devtools.GetStringValue;
-	var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
 	
-	var bException = false;
+    if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{	
 	
-	if (GetStringValue(current.getRecordClassName()) == 'sys_script_include')
-	{
-		var strName = GetStringValue(current.name);
-		if (strName == 'Debug')
-		{
-			// An App's Debug script include contains the definition of the Debug() function.
-			bException = true;
-		}
-	}
-	
-	if (bException == false)
-	{
-		var strSource = GetStringValue(engine.rootNode.toSource());
-		
-		if (StringCheckRegEx(strSource,'gs\\.debug\\s*\\(') == true)
-		{
-			engine.finding.increment();
-		}
-		/*
-		if (StringCheckRegEx(strSource,'Debug\\s*\\(') == true)
-		{
-			engine.finding.increment();
-		}*/	
-		
-		engine.rootNode.visit(function(node)
-		{
-			var parent = node.getParent();
-			if (node.getTypeName() === "NAME" &&
-				node.getNameIdentifier() === "Debug" &&
-				parent.getTypeName() === "CALL")
-			{
-				engine.finding.incrementWithNode(node);
-			}
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
 
-		});
+		var bException = false;
+
+		if (GetStringValue(current.getRecordClassName()) == 'sys_script_include')
+		{
+			var strName = GetStringValue(current.name);
+			if (strName == 'Debug')
+			{
+				// An App's Debug script include contains the definition of the Debug() function.
+				bException = true;
+			}
+		}
+
+		if (bException == false)
+		{
+			var strSource = GetStringValue(engine.rootNode.toSource());
+
+			if (StringCheckRegEx(strSource,'gs\\.debug\\s*\\(') == true)
+			{
+				engine.finding.increment();
+			}
+			/*
+			if (StringCheckRegEx(strSource,'Debug\\s*\\(') == true)
+			{
+				engine.finding.increment();
+			}*/	
+
+			engine.rootNode.visit(function(node)
+			{
+				var parent = node.getParent();
+				if (node.getTypeName() === "NAME" &&
+					node.getNameIdentifier() === "Debug" &&
+					parent.getTypeName() === "CALL")
+				{
+					engine.finding.incrementWithNode(node);
+				}
+
+			});
+		}
 	}
-	
 
 })(engine);]]></script>
         <short_description>Do not leave debug output in scripts</short_description>
@@ -63,13 +67,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-27 12:57:14</sys_created_on>
         <sys_id>090e08b2db0f0510b652edb3059619bc</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>CodeSanity - Debug output</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_090e08b2db0f0510b652edb3059619bc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-25 16:12:14</sys_updated_on>
+        <sys_updated_on>2022-08-02 12:27:45</sys_updated_on>
     </scan_linter_check>
 </record_update>

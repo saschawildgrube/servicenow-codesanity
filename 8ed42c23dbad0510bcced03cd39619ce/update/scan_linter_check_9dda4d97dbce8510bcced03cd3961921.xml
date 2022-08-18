@@ -16,63 +16,66 @@ Also, the function RunScriptInScope() must refer to a specific script include re
         <score_scale>1</score_scale>
         <script><![CDATA[(function (engine) {
 	
-	var GetStringValue = x_snc_devtools.GetStringValue;
-	var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+    if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{	
 	
-	var bException = false;
-	
-	if (GetStringValue(current.getRecordClassName()) == 'sys_script_include')
-	{
-		var strName = GetStringValue(current.name);
-		var strApiName = GetStringValue(current.api_name);
-		
-		if (strName.indexOf('GetLinkDirectory') != -1)
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+
+		var bException = false;
+
+		if (GetStringValue(current.getRecordClassName()) == 'sys_script_include')
 		{
-			// Any GetLinkDirectory function may contain Sys IDs as it may contain links to specific OOTB records or community articles etc.  
-			bException = true;
-		}
-		else if (strName == 'AppInstall')
-		{
-			// AppInstall functions may have to refer to specific OOTB or other records to make modifications
-			// AppInstall is intended to be run only once after a deployment which does not make it prone to
-			// introduce runtime issues.
-			bException = true;
-		}
-		else if (strName == 'AppBuilder')
-		{
-			// AppBuilder functions may have to refer to specific OOTB or other records to built an application
-			// AppBuilder is intended to be run only once during the whole life cycle of an application.
-			bException = true;
-		}		
-		else if (strApiName == 'x_snc_devtools.IsUserDefaultAdmin')
-		{
-			// The sole purpose of IsUserDefaultAdmin is to check a given sys_id against the sys_id of the default OOTB admin
-			// user - hence the exception.
-			bException = true;
-		}
-		else if (strApiName == 'x_snc_devtools.RunScriptInScope')
-		{
-			// The x_snc_devtools.RunScriptInScope must refer to a specific script include record to work.
-			bException = true;
-		}
-		else if (strApiName == 'x_snc_devtools.InstanceReset')
-		{
-			// The x_snc_devtools.InstanceReset as the name suggests makes changes to various OOTB records and is intended to
-			// be run only once during the life cycle of an instance.
-			bException = true;
+			var strName = GetStringValue(current.name);
+			var strApiName = GetStringValue(current.api_name);
+
+			if (strName.indexOf('GetLinkDirectory') != -1)
+			{
+				// Any GetLinkDirectory function may contain Sys IDs as it may contain links to specific OOTB records or community articles etc.  
+				bException = true;
+			}
+			else if (strName == 'AppInstall')
+			{
+				// AppInstall functions may have to refer to specific OOTB or other records to make modifications
+				// AppInstall is intended to be run only once after a deployment which does not make it prone to
+				// introduce runtime issues.
+				bException = true;
+			}
+			else if (strName == 'AppBuilder')
+			{
+				// AppBuilder functions may have to refer to specific OOTB or other records to built an application
+				// AppBuilder is intended to be run only once during the whole life cycle of an application.
+				bException = true;
+			}		
+			else if (strApiName == 'x_snc_devtools.IsUserDefaultAdmin')
+			{
+				// The sole purpose of IsUserDefaultAdmin is to check a given sys_id against the sys_id of the default OOTB admin
+				// user - hence the exception.
+				bException = true;
+			}
+			else if (strApiName == 'x_snc_devtools.RunScriptInScope')
+			{
+				// The x_snc_devtools.RunScriptInScope must refer to a specific script include record to work.
+				bException = true;
+			}
+			else if (strApiName == 'x_snc_devtools.InstanceReset')
+			{
+				// The x_snc_devtools.InstanceReset as the name suggests makes changes to various OOTB records and is intended to
+				// be run only once during the life cycle of an instance.
+				bException = true;
+			}
+
 		}
 
-	}
-	
-	if (bException == false)
-	{
-		var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
-		if (StringCheckRegEx(strSource,'("|\')[0-9a-f]{32}("|\')','i') == true)
+		if (bException == false)
 		{
-			engine.finding.incrementWithNode(engine.rootNode);
+			var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
+			if (StringCheckRegEx(strSource,'("|\')[0-9a-f]{32}("|\')','i') == true)
+			{
+				engine.finding.incrementWithNode(engine.rootNode);
+			}
 		}
 	}
-	
 
 })(engine);]]></script>
         <short_description>Do not use Sys IDs in scripts</short_description>
@@ -80,13 +83,13 @@ Also, the function RunScriptInScope() must refer to a specific script include re
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 13:40:27</sys_created_on>
         <sys_id>9dda4d97dbce8510bcced03cd3961921</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>CodeSanity - Sys IDs in scripts</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9dda4d97dbce8510bcced03cd3961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-25 16:20:44</sys_updated_on>
+        <sys_updated_on>2022-08-02 11:58:34</sys_updated_on>
     </scan_linter_check>
 </record_update>

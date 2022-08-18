@@ -17,30 +17,31 @@ Another exception is made for client side code in sp_widget records to allow the
         <score_scale>1</score_scale>
         <script><![CDATA[(function (engine) {
 
-
-	var GetStringValue = x_snc_devtools.GetStringValue;
-	var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
-
-	var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
-	
-	if (GetStringValue(current.getRecordClassName()) == 'sp_widget')
+    if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
-		if (StringCheckRegEx(strSource,'(?<!\\$\\(.*|server\\.update\\()\\)\\s*\\.','j') == true)
-		{
-			engine.finding.incrementWithNode(engine.rootNode);
-		}
-	}
-	else
-	{
-		if (StringCheckRegEx(strSource,'(?<!gs\\.getUser\\()\\)\\s*\\.','j') == true)
-		{
-			engine.finding.incrementWithNode(engine.rootNode);
-		}
-	}
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
 
-	// the modifier 'j' causes the use of the Java (not JS) based regex engine which supports negative lookbehinds. 
-	// https://community.servicenow.com/community?id=community_article&sys_id=243449861be230d017d162c4bd4bcb3c	
-	
+		var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
+
+		if (GetStringValue(current.getRecordClassName()) == 'sp_widget')
+		{
+			if (StringCheckRegEx(strSource,'(?<!\\$\\(.*|server\\.update\\()\\)\\s*\\.','j') == true)
+			{
+				engine.finding.incrementWithNode(engine.rootNode);
+			}
+		}
+		else
+		{
+			if (StringCheckRegEx(strSource,'(?<!gs\\.getUser\\()\\)\\s*\\.','j') == true)
+			{
+				engine.finding.incrementWithNode(engine.rootNode);
+			}
+		}
+
+		// the modifier 'j' causes the use of the Java (not JS) based regex engine which supports negative lookbehinds. 
+		// https://community.servicenow.com/community?id=community_article&sys_id=243449861be230d017d162c4bd4bcb3c	
+	}
 
 })(engine);]]></script>
         <short_description>Avoid the bracket-dot anti-pattern</short_description>
@@ -48,13 +49,13 @@ Another exception is made for client side code in sp_widget records to allow the
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-18 17:50:00</sys_created_on>
         <sys_id>9aeab277dbfe4550bcced03cd396194d</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>CodeSanity - Bracket-dot anti-pattern</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9aeab277dbfe4550bcced03cd396194d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-25 16:13:36</sys_updated_on>
+        <sys_updated_on>2022-08-02 12:26:56</sys_updated_on>
     </scan_linter_check>
 </record_update>

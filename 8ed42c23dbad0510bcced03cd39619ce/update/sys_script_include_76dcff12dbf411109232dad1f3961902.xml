@@ -56,7 +56,7 @@
 		var aBlacklistScopes = GetArrayValue(GetValue(rulesForCheck,'blacklist','scopes'));
 		if (aBlacklistScopes.length > 0)
 		{
-			strHtml += '<p>This check is NOT applied to the following application(s): ';
+			strHtml += '<p>This does NOT apply to the following application(s): ';
 			for (var nScope = 0; nScope < aBlacklistScopes.length; nScope++)
 			{
 				if (nScope > 0)
@@ -76,7 +76,7 @@
 		var aWhitelistScopes = GetArrayValue(GetValue(rulesForCheck,'whitelist','scopes'));
 		if (aWhitelistScopes.length > 0)
 		{
-			strHtml += '<p>This check is ONLY applied to the following application(s): ';
+			strHtml += '<p>This ONLY applies to the following application(s): ';
 			for (var nScope = 0; nScope < aWhitelistScopes.length; nScope++)
 			{
 				if (nScope > 0)
@@ -102,7 +102,7 @@
 		{
 			strHtml += '<p>Further reading:<br/>' + HtmlRenderLink(strDocUrl,strDocUrl,true) + '</p>'; 
 		}
-		strHtml += '<p>' + HtmlRenderLink('/scan_check.do?sys_id='+grCheck.sys_id, grCheck.name,true) + '</p>'; 
+		strHtml += '<p>Instance Scan check:&#160;' + HtmlRenderLink('/scan_check.do?sys_id='+grCheck.sys_id, grCheck.name,true) + '</p>'; 
 		return strHtml;
 	}
 	
@@ -206,13 +206,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-22 16:52:50</sys_created_on>
         <sys_id>76dcff12dbf411109232dad1f3961902</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>HtmlRenderCodingGuideline</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_76dcff12dbf411109232dad1f3961902</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-18 12:19:24</sys_updated_on>
+        <sys_updated_on>2022-08-23 08:14:48</sys_updated_on>
     </sys_script_include>
 </record_update>

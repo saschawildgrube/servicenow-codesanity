@@ -2,7 +2,8 @@
     <scan_linter_check action="INSERT_OR_UPDATE">
         <active>true</active>
         <category>code_sanity</category>
-        <description>Using application names as constant string literals is dangerous. Application names may change over time and any logic based on string comparison may break. </description>
+        <description>Using application names as constant string literals is dangerous. Application names may change over time and any logic based on string comparison may break. &#13;
+A few exceptions as a view name may be the same as an application name - this covers sysrule_view records and a limited number of script includes. </description>
         <documentation_url/>
         <finding_type/>
         <name>CodeSanity - Application names in code</name>
@@ -59,6 +60,11 @@
 				bException = true;
 			}
 		}	
+		
+		if (GetStringValue(current.getRecordClassName()) == 'sysrule_view')
+		{
+			bException = true;
+		}
 
 		if (bException == false)
 		{
@@ -76,7 +82,7 @@
 
 					if (StringCheckRegEx(strSource,strRegExp,'') == false)
 					{
-						var strRegExp = "getExtensions\\(\\s?[\\\"\\']"+strAppName+"[\\\"\\']\\s?\\)";
+						var strRegExp = "getExtensions\\s?\\(\\s?[\\\"\\']"+strAppName+"[\\\"\\']\\s?\\)";
 						if (StringCheckRegEx(strSource,strRegExp,'') == false)
 						{
 							engine.finding.incrementWithNode(engine.rootNode);
@@ -93,13 +99,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-19 15:52:30</sys_created_on>
         <sys_id>1a49ab04db070950bcced03cd39619fd</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>CodeSanity - Application names in code</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_1a49ab04db070950bcced03cd39619fd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-02 12:28:40</sys_updated_on>
+        <sys_updated_on>2022-09-13 10:13:28</sys_updated_on>
     </scan_linter_check>
 </record_update>

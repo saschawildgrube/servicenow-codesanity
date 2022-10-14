@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-18 10:41:57</sys_created_on>
         <sys_id>aafa25cbdb991510dcbdd03cd3961953</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_aafa25cbdb991510dcbdd03cd3961953</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 06:56:57</sys_updated_on>
+        <sys_updated_on>2022-10-13 07:28:04</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - GetExecutionRulesForCheckByRules">e2eae1cbdb991510dcbdd03cd3961911</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-18 10:41:57</sys_created_on>
         <sys_id>bffa65cbdb991510dcbdd03cd39619c6</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 06:56:57</sys_updated_on>
+        <sys_updated_on>2022-10-13 07:28:04</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var GetRecord = x_snc_devtools.GetRecord;&#13;
@@ -280,6 +280,34 @@
 			}&#13;
 		});&#13;
 	&#13;
+	&#13;
+	// Multiple (seemingly) contradicting rules (whitelists ovveride blacklists)&#13;
+	// One check is blacklisted for scope x_snc_codesanity (reference by scope name)&#13;
+	// The same check is whitelisted for scope "CodeSanity" (reference by name)&#13;
+	// The expectation is that the function resolves the discrepancy&#13;
+	var rules = {&#13;
+		blacklist: [&#13;
+			{&#13;
+				scopes: ['x_snc_codesanity'],&#13;
+				checks: ['CodeSanity - Throwing exceptions']&#13;
+			}&#13;
+		],	&#13;
+		whitelist: [&#13;
+			{&#13;
+				scopes: ['CodeSanity'],&#13;
+				checks: ['CodeSanity - Throwing exceptions']&#13;
+			}&#13;
+		]&#13;
+	};&#13;
+	TestCase_GetExecutionRulesForCheckByRules(grCheckSysIdsInScript,    rules, {});&#13;
+	TestCase_GetExecutionRulesForCheckByRules(grCheckThrowingExceptions,rules,&#13;
+		{&#13;
+			whitelist:&#13;
+			{&#13;
+				scopes: ['CodeSanity']&#13;
+			}&#13;
+		});&#13;
+		&#13;
 	&#13;
 	&#13;
 	return test.GetResult();&#13;

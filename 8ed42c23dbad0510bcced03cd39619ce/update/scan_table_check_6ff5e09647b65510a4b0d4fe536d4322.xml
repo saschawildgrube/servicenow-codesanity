@@ -4,12 +4,13 @@
         <advanced>true</advanced>
         <category>code_sanity</category>
         <conditions/>
-        <description>All menu modules must at least require one user role to control access.</description>
+        <description>All menu modules must at least require one user role to control access or the modul's application menu must require at least one role.&#13;
+The snc_internal role does not count.</description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - Modules must require a role</name>
         <priority>1</priority>
-        <resolution_details>Add a role to the module - ideally a role that is defined in the same application.</resolution_details>
+        <resolution_details>Add a role to the module - ideally a role that is defined in the same application - or add a required role to the application menu.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -19,11 +20,24 @@
 	if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
 		var aRoles = x_snc_devtools.GetArrayValue(current.roles);
+		aRoles = x_snc_devtools.ArrayRemoveValue(aRoles,'snc_internal');
 		if (aRoles.length == 0)
 		{
-			engine.finding.increment();
+			var grAppMenu = x_snc_devtools.GetRecord('sys_app_application',current.application);
+			if (x_snc_devtools.IsValidRecord(grAppMenu) == true)
+			{
+				var aRoles = x_snc_devtools.GetArrayValue(grAppMenu.roles);
+				aRoles = x_snc_devtools.ArrayRemoveValue(aRoles,'snc_internal');
+				if (aRoles.length == 0)
+				{
+					engine.finding.increment();
+				}
+			}
+			else
+			{
+				engine.finding.increment();
+			}
 		}
-		
 	}
 
 })(engine);]]></script>
@@ -32,14 +46,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-29 11:22:00</sys_created_on>
         <sys_id>6ff5e09647b65510a4b0d4fe536d4322</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>CodeSanity - Modules must require a role</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_6ff5e09647b65510a4b0d4fe536d4322</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-29 11:26:28</sys_updated_on>
+        <sys_updated_on>2022-10-29 11:59:29</sys_updated_on>
         <table>sys_app_module</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

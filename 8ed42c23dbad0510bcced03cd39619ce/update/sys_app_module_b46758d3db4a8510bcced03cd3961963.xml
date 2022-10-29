@@ -17,14 +17,14 @@
         <override_menu_roles>false</override_menu_roles>
         <query>/x_snc_codesanity_manual.do</query>
         <report/>
-        <roles/>
+        <roles>x_snc_codesanity.admin</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:05</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b46758d3db4a8510bcced03cd3961963</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Manual</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -32,7 +32,7 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_app_module_b46758d3db4a8510bcced03cd3961963</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 09:51:05</sys_updated_on>
+        <sys_updated_on>2022-10-29 11:22:59</sys_updated_on>
         <timeline_page/>
         <title>Manual</title>
         <uncancelable>false</uncancelable>

@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-27 15:10:28</sys_created_on>
         <sys_id>5175d10cdb095510dcbdd03cd39619e4</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_5175d10cdb095510dcbdd03cd39619e4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-27 15:25:05</sys_updated_on>
+        <sys_updated_on>2022-11-02 10:14:35</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Avoid arrow functions">d665910cdb095510dcbdd03cd3961943</test>
         <timeout/>
@@ -50,16 +50,17 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-27 15:10:28</sys_created_on>
         <sys_id>aa75d10cdb095510dcbdd03cd396195a</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-27 15:25:05</sys_updated_on>
+        <sys_updated_on>2022-11-02 10:14:35</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
 	&#13;
 	test.SetResult(true);&#13;
 &#13;
-	var strCheck = '2f91d07bdb7015109232dad1f3961937';&#13;
+	var strCheck = 'cb9b346fdb3e91106a03dad1f3961993';&#13;
+	&#13;
 	&#13;
 	var testdata = new x_snc_devtools.TestDataAPI('_ATF_CODESANITY_');&#13;
 &#13;
@@ -70,14 +71,21 @@
 		+'{ var aArray = []; aArray.push("Apples");  }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);&#13;
 	&#13;
-	// As of now, arrow functions are not even supported, the linter will not process the arrow function statement and the check wwould not run&#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
 		'Test10',&#13;
 		'function _ATF_CODESANITY_Test10()\n'&#13;
 		+'{ var aArray = []; aArray.each( element =&gt; doSomething(element) ); }');&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,true);&#13;
 	&#13;
+	var grRecord = new GlideRecord('sys_ui_script');&#13;
+	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
+	grRecord.name = ' _ATF_CODESANITY_Test1';&#13;
+	grRecord.script = 'function _ATF_CODESANITY_Test1()\n'&#13;
+		+'{ var aArray = []; aArray.each( element =&gt; doSomething(element) ); }';&#13;
+	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_ui_script',strRecordSysId,true);&#13;
 	&#13;
 &#13;
 	test.Log(x_snc_devtools.RenderValue(testdata.GetAllData()));&#13;

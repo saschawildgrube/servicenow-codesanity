@@ -42,46 +42,38 @@
 	{
 		return;
 	}
+	
+	var strScript = 
+		"(function (engine) {\n"
+		+"\n"
+		+"\tif (x_snc_codesanity.IsCheckApplicableToRecord())\n"
+		+"\t{\n"
+		+"\t\t// Add your advanced code here\n"
+		+"\t\tif (1 == 1)\n"
+		+"\t\t{\n"
+		+"\t\t\tengine.finding.increment();\n"
+		+"\t\t}\n"
+		+"\t}\n"
+		+"\n"
+		+"})(engine);"
+		;
 
+	
+	current.script = strScript;
+	current.priority = '1';
+	current.name = 'CodeSanity - TODO';
+
+	
 	if (strClassName == 'scan_table_check')
 	{
 		current.advanced = true;
-		current.script = 
-			"(function (engine) {\n"
-			+"\n"
-			+"   if (x_snc_codesanity.IsCheckApplicableToRecord())\n"
-			+"   {\n"
-			+"      // Add your advanced code here\n"
-			+"   }\n"
-			+"\n"
-			+"})(engine);";
 	}
-
-	
 	if (strClassName == 'scan_linter_check')
 	{
-		current.script = 
-			"(function (engine) {\n"
-			+"\n"
-			+"   if (x_snc_codesanity.IsCheckApplicableToRecord())\n"
-			+"   {\n"
-			+"      // Add your advanced code here\n"
-			+"   }\n"
-			+"\n"
-			+"})(engine);";
 	}	
 	
 	if (strClassName == 'scan_column_type_check')
 	{
-		current.script = 
-			"(function (engine) {\n"
-			+"\n"
-			+"   if (x_snc_codesanity.IsCheckApplicableToRecord())\n"
-			+"   {\n"
-			+"      // Add your advanced code here\n"
-			+"   }\n"
-			+"\n"
-			+"})(engine);";
 	}		
 	
 	
@@ -90,13 +82,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-18 12:39:55</sys_created_on>
         <sys_id>9605c643db1d1510dcbdd03cd396194a</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>PrepareNewCheck</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_9605c643db1d1510dcbdd03cd396194a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-18 12:54:02</sys_updated_on>
+        <sys_updated_on>2022-11-02 09:49:33</sys_updated_on>
     </sys_script_include>
 </record_update>

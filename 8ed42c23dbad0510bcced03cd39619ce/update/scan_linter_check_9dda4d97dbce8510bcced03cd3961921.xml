@@ -3,8 +3,10 @@
         <active>true</active>
         <category>code_sanity</category>
         <description>Sys IDs should not be stated explicitly in source code. Code should be independent of specific records in the platform.&#13;
-An execption are AppInstall() functions which may have to refer to specific records to perform changes during installation.&#13;
-Also, the function RunScriptInScope() must refer to a specific script include record to work.</description>
+Exceptions are AppInstall() and AppBuilder() functions which may have to refer to specific records to perform changes during installation or application creation.&#13;
+Another exception are GetLinkDirectory() functions which may contain Sys IDs as part of links.&#13;
+Fix Scripts (sys_script_fix) are not checked either, as they may have to refer to specific records for one-off activities during deployments.&#13;
+The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmin() must also refer to specific records by design in order to work - and hence are not checked either.</description>
         <documentation_url/>
         <finding_type/>
         <name>CodeSanity - Sys IDs in scripts</name>
@@ -21,10 +23,17 @@ Also, the function RunScriptInScope() must refer to a specific script include re
 	
 		var GetStringValue = x_snc_devtools.GetStringValue;
 		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+		var StringReplace = x_snc_devtools.StringReplace;
 
+		
+		var strTable = GetStringValue(current.getRecordClassName());
 		var bException = false;
 
-		if (GetStringValue(current.getRecordClassName()) == 'sys_script_include')
+		if (strTable == 'sys_script_fix')
+		{
+			bException = true;
+		}
+		else if (strTable == 'sys_script_include')
 		{
 			var strName = GetStringValue(current.name);
 			var strApiName = GetStringValue(current.api_name);
@@ -70,6 +79,12 @@ Also, the function RunScriptInScope() must refer to a specific script include re
 		if (bException == false)
 		{
 			var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
+			strSource = StringReplace(strSource,' ','');
+			strSource = StringReplace(strSource,'\n','');
+			strSource = StringReplace(strSource,'\r','');
+			strSource = StringReplace(strSource,'"+"','');
+			strSource = StringReplace(strSource,"'+'",'');
+			
 			if (StringCheckRegEx(strSource,'("|\')[0-9a-f]{32}("|\')','i') == true)
 			{
 				engine.finding.incrementWithNode(engine.rootNode);
@@ -83,13 +98,13 @@ Also, the function RunScriptInScope() must refer to a specific script include re
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 13:40:27</sys_created_on>
         <sys_id>9dda4d97dbce8510bcced03cd3961921</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>CodeSanity - Sys IDs in scripts</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9dda4d97dbce8510bcced03cd3961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-02 11:58:34</sys_updated_on>
+        <sys_updated_on>2022-09-07 13:54:16</sys_updated_on>
     </scan_linter_check>
 </record_update>

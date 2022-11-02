@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_column_type_check">
+    <scan_column_type_check action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <category>code_sanity</category>
+        <column_type>script</column_type>
+        <description>The use of the spread operator is controversal. On the one hand it provides a syntax short hand. However it renders code to be less readable and less testable. The use of the spread operator in most cases does not provide any advantages over alternatives and hence should be avoided.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Avoid the spread operator</name>
+        <priority>1</priority>
+        <resolution_details>Refactor the code to avoid the spread operator.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{		
+		var GetStringValue = x_snc_devtools.GetStringValue;
+
+		var strSource = GetStringValue(engine.columnValue);
+		
+		strSource = strSource.replace(/".*"/,''); // Double quotes string literals
+		strSource = strSource.replace(/'.*'/,''); // single quotes string literals
+		strSource = strSource.replace(/\/\*.*\*\//,''); // multi-line comments
+		strSource = strSource.replace(/\/\/.*\\n/,''); // single-line comments
+		
+		if (strSource.indexOf('...') != -1)
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>Do not use the spread operator</short_description>
+        <sys_class_name>scan_column_type_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-02 10:31:01</sys_created_on>
+        <sys_id>2ed0c523db7e91106a03dad1f39619e1</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>CodeSanity - Avoid the spread operator</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_column_type_check_2ed0c523db7e91106a03dad1f39619e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-02 15:19:13</sys_updated_on>
+    </scan_column_type_check>
+</record_update>

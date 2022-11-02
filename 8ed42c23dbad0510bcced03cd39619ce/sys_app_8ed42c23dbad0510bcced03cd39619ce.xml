@@ -14,7 +14,7 @@
         <license_model>none</license_model>
         <logo/>
         <menu/>
-        <name>CodeSanity WORK IN PROGRESS</name>
+        <name>CodeSanity</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
@@ -39,5 +39,9 @@
         <vendor/>
         <vendor_prefix/>
         <version>2.1.0</version>
+        <x_snc_devtools_documentation_url/>
+        <x_snc_devtools_maintainer/>
+        <x_snc_devtools_maintainer_email/>
+        <x_snc_devtools_repo_url/>
     </sys_app>
 </record_update>

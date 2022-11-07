@@ -165,6 +165,7 @@
 	&lt;h3&gt;2.2.0 - 2022-TODO&lt;/h3&gt;&#13;
 	&lt;ol&gt;&#13;
 		&lt;li&gt;The check "CodeSanity - Script include must contain a class or function" now also support modern JavaScript class syntax as supported starting with Tokyo.&lt;/li&gt;&#13;
+		&lt;li&gt;The coding guideline is now rendered using "clean" application names (without "WORK IN PROGRESS" post-fixes).&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
 	&#13;
 	&lt;h3&gt;2.1.0 - 2022-11-02&lt;/h3&gt;&#13;
@@ -290,13 +291,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>143</sys_mod_count>
+        <sys_mod_count>144</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-07 07:18:37</sys_updated_on>
+        <sys_updated_on>2022-11-07 14:39:38</sys_updated_on>
     </sys_ui_page>
 </record_update>

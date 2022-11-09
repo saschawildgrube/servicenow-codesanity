@@ -14,7 +14,7 @@
         <license_model>none</license_model>
         <logo/>
         <menu/>
-        <name>CodeSanity WORK IN PROGRESS</name>
+        <name>Sascha Wildgrube</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
@@ -29,9 +29,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-14 08:56:58</sys_created_on>
         <sys_id>8ed42c23dbad0510bcced03cd39619ce</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-02 16:02:35</sys_updated_on>
+        <sys_updated_on>2022-11-09 10:55:17</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
@@ -39,9 +39,9 @@
         <vendor/>
         <vendor_prefix/>
         <version>2.2.0</version>
-        <x_snc_devtools_documentation_url/>
-        <x_snc_devtools_maintainer/>
-        <x_snc_devtools_maintainer_email/>
-        <x_snc_devtools_repo_url/>
+        <x_snc_devtools_documentation_url>https://www.wildgrube.com/servicenow-codesanity</x_snc_devtools_documentation_url>
+        <x_snc_devtools_maintainer>Sascha Wildgrube</x_snc_devtools_maintainer>
+        <x_snc_devtools_maintainer_email>sascha.wildgrube@servicenow.com</x_snc_devtools_maintainer_email>
+        <x_snc_devtools_repo_url>https://github.com/saschawildgrube/servicenow-codesanity.git</x_snc_devtools_repo_url>
     </sys_app>
 </record_update>

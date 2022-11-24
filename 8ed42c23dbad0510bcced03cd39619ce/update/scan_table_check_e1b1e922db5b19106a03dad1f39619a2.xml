@@ -4,19 +4,19 @@
         <advanced>true</advanced>
         <category>code_sanity</category>
         <conditions/>
-        <description>Checks are code and any code should be tested. ATF tests should cover all checks that are defined in an application.</description>
+        <description>Each script include must be tested and verified through ATF tests. Hence for every script include there must be an ATF test the verifies its functionality. An ATF test must exist in the same application as the script include that contains the name of the script include. </description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
-        <name>CodeSanity - ATF tests for checks</name>
+        <name>CodeSanity - ATF tests for script includes</name>
         <priority>1</priority>
-        <resolution_details>Add an ATF test in the same scope as the check. The ATF test name should contain the name of the check.</resolution_details>
+        <resolution_details>Create an ATF test that checks the behavior of the script include. Make sure that the name of the script include is contained in the name of the ATF test. </resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
         <score_scale>1</score_scale>
         <script><![CDATA[(function (engine) {
 
-    if (x_snc_codesanity.IsCheckApplicableToRecord())
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
 		var grTest = new GlideRecord('sys_atf_test');
 		grTest.addQuery('sys_scope','=',current.sys_scope);
@@ -29,20 +29,20 @@
 	}
 
 })(engine);]]></script>
-        <short_description>All checks should be tested using ATF tests</short_description>
+        <short_description>All script includes must be tested by ad dedicated ATF test</short_description>
         <sys_class_name>scan_table_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-08-02 08:38:37</sys_created_on>
-        <sys_id>53d43af1db8599109232dad1f396192c</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>CodeSanity - ATF tests for checks</sys_name>
+        <sys_created_on>2022-11-24 06:54:13</sys_created_on>
+        <sys_id>e1b1e922db5b19106a03dad1f39619a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CodeSanity - ATF tests for script includes</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-        <sys_update_name>scan_table_check_53d43af1db8599109232dad1f396192c</sys_update_name>
+        <sys_update_name>scan_table_check_e1b1e922db5b19106a03dad1f39619a2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-24 06:53:58</sys_updated_on>
-        <table>scan_check</table>
+        <sys_updated_on>2022-11-24 06:54:13</sys_updated_on>
+        <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
 </record_update>

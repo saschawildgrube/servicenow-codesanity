@@ -8,6 +8,67 @@
         <script><![CDATA[function CodeSanityScanApp(strAppSysId)
 {
 
+	function OnExecutionComplete(dialog,tracker)
+	{
+		console.log('complete: '+RenderValue(tracker));
+
+		var strResultSysId = GetStringValue(GetValue(tracker,'result','sys_id'));
+		if (IsValidSysId(strResultSysId) == false)
+		{
+			strResultSysId = GetStringValue(GetValue(tracker,'result','result_id'));
+		}
+		console.log(strResultSysId);
+		
+		var buttonViewResults = GetElementById('sysparm_button_view_results');
+			
+		if (buttonViewResults)
+		{
+			if (IsValidSysId(strResultSysId) == true)
+			{
+				buttonViewResults.on('click', function()
+					{
+						RedirectToRecord('scan_result',strResultSysId,'',true);
+					});
+			}
+			else
+			{
+				buttonViewResults.style.display = "none";
+			}
+		}
+	
+		var buttonClose = GetElementById('sysparm_button_close');
+		console.log('buttonClose: '+RenderValue(buttonClose));
+		
+        if (buttonClose)
+		{
+            buttonClose.on('click', function()
+				{
+					dialog.destroy();
+				});
+        }
+	}
+
+
+	DoModalProgress(
+		'CodeSanity',
+		'Scan',
+		'x_snc_codesanity.CodeSanityClientAPI',
+		{
+			app_sys_id: strAppSysId
+		},
+		{
+			view_results:
+			{
+				title: 'View Results'
+			},
+			close:
+			{
+				title: 'Close'
+			}
+		},
+		OnExecutionComplete);
+	
+	/*
 	var dialogClass = GetGlideDialogClass();
 	var dd = new dialogClass("simple_progress_viewer", true, "40em", "10em");
 	
@@ -66,7 +127,8 @@
 		reloadWindow(window); //reload current form after closing the progress viewer dialog
 	});	
     
-    dd.render();	
+    dd.render();
+	*/
 	
 	//var map = new GwtMessage().getMessages(["Refresh Repository", "Close"]);
 /*
@@ -99,14 +161,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-25 14:12:45</sys_created_on>
         <sys_id>da709c4fdb5799106a03dad1f39619dc</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>x_snc_codesanity.CodeSanityScanApp</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_script_da709c4fdb5799106a03dad1f39619dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-26 23:45:03</sys_updated_on>
+        <sys_updated_on>2022-11-27 18:29:20</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
     </sys_ui_script>

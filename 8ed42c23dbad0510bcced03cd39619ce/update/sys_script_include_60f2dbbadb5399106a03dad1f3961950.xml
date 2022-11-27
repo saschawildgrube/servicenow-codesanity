@@ -29,11 +29,13 @@ CodeSanityClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcesso
 		var GetAppRecord = x_snc_devtools.GetAppRecord;
 		var IsValidRecord = x_snc_devtools.IsValidRecord;
 		var GetAppName = x_snc_devtools.GetAppName;
+		var GetStringValue = x_snc_devtools.GetStringValue;
 
-		
+		/*
 		var trackerId = this.check();
 		if (trackerId != '')
 			return trackerId;
+			*/
 
 		var strAppSysId = this.getParameter("sysparm_ajax_processor_app_sys_id");
 		
@@ -53,54 +55,34 @@ CodeSanityClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcesso
 		params['strAppSysId'] = x_snc_devtools.GetStringValue(grApp.sys_id);
 
 		
-		return x_snc_devtools.StartWorker(
+		var strWorkerId = x_snc_devtools.StartWorker(
 			strProgressName,
 			'x_snc_devtools.DevToolsWorkerAPI',
 			'InstanceScanSuiteOnApp',
 			params);
-	
 		
-		/*
-		return x_snc_devtools.StartWorker(
-			strProgressName,
-			'x_snc_codesanity.CodeSanityClientAPI',
-			'ScanApplication',
-			params);
-*/
 
-
-		/*
-		return x_snc_devtools.StartWorker(
-			strProgressName,
-			'x_snc_devtools.DevToolsClientAPI',
-			'InstanceScanSuiteOnApp',
-			params);
-		*/
+		var nCountDown = 1000;
+		while (nCountDown > 0)
+		{
+			var grTracker = new GlideRecord('sys_execution_tracker');
+			grTracker.orderByDesc('sys_created_on');
+			grTracker.addQuery('source_table','=','scan_result');
+			grTracker.addQuery('type','=','instance_scan');
+			grTracker.addQuery('state', 'IN', '0,1');
+			grTracker.query();
+			if (grTracker.next())
+			{
+				Log('Found the Instance Scan execution tracker!!! sys_execution_tracker: '+nCountDown);
+				return GetStringValue(grTracker.sys_id);
+			}
+			nCountDown--;
+		}
 		
-		/*
-		var worker = new GlideScriptedHierarchicalWorker();
-		worker.setProgressName(strProgressName);
-		worker.setScriptIncludeName("x_snc_codesanity.CodeSanityClientAPI");
-		worker.setScriptIncludeMethod('ScanApplication');
-		//worker.putMethodArg('strAppSysId', params.strAppSysId);
-		worker.putMethodArg('strAppSysId', grApp.sys_id);
-		
-		worker.setBackground(true);
-		worker.start();
-		
-		return worker.getProgressID();		
-		*/
-		
+		return strWorkerId;
 	},
 	
-	/*
-	ScanApplication: function(strSuiteSysId,strAppSysId)
-	{
-		var InstanceScanSuiteOnApp = x_snc_devtools.InstanceScanSuiteOnApp;
-		//var grSuite = GetScanSuiteRecord();
-		return InstanceScanSuiteOnApp(strSuiteSysId,strAppSysId);
-	},
-	*/
+
 	
 	
     type: 'CodeSanityClientAPI'
@@ -109,13 +91,13 @@ CodeSanityClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcesso
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-25 09:43:52</sys_created_on>
         <sys_id>60f2dbbadb5399106a03dad1f3961950</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>65</sys_mod_count>
         <sys_name>CodeSanityClientAPI</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_60f2dbbadb5399106a03dad1f3961950</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-27 13:45:40</sys_updated_on>
+        <sys_updated_on>2022-11-27 18:32:11</sys_updated_on>
     </sys_script_include>
 </record_update>

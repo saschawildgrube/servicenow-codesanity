@@ -32,126 +32,7 @@
         <order>99999</order>
         <script><![CDATA[function onClick()
 {
-	alert('Run CodeSanity Check');
-	
-	var strAppSysId = GetCurrentRecordSysId();
-
-	//RedirectToRecord('scan_result','7ec15b5adbdfd5106a03dad1f3961949','',true);
-
-	//RedirectToRecord('sys_app',strAppSysId,'');
-
-	//return;
-
-	
-	function onDone(results)
-	{
-		var strSysId = GetValue(results,'sys_id');
-		RedirectToRecord('scan_result',strSysId,'',true);
-		//RedirectToRecord('sys_app',strAppSysId,'');
-		
-	}
-	
-	ServerRequest('x_snc_devtools.DevToolsClientAPI','InstanceScanSuiteOnApp',
-		{
-			app: strAppSysId,
-			suite: '4fcb181bdb4a8510bcced03cd39619eb',
-			detailed: false
-		}, onDone);
-	
-	/*
-	var dialogClass = window.GlideModal ? GlideModal : GlideDialogWindow;
-	var dd = new dialogClass("simple_progress_viewer", true, "40em", "10em");
-	dd.on("beforeclose", function() {
-		refreshNav();
-		reloadWindow(window); //reload current form after closing the progress viewer dialog
-	});
-
-	//var map = new GwtMessage().getMessages(["Refresh Repository", "Close"]);
-
-	dd.setTitle(map["Refresh Repository"]);
-
-	dd.setPreference('sysparm_ajax_processor', 'SourceControlAjax');
-	dd.setPreference('sysparm_ajax_processor_type','refresh_repo');
-	dd.setPreference('sysparm_ajax_processor_sys_repo_config_id', rowSysId);
-
-	dd.setPreference('sysparm_renderer_progress_title', "Run Code Sanity check on application");
-	dd.setPreference('sysparm_button_close', "Close");
-
-	dd.on("executionComplete", function(trackerObj) {
-		var closeBtn = $("sysparm_button_close");
-		if (closeBtn) {
-			closeBtn.onclick = function() {
-				dd.destroy();
-			};
-		}
-	});
-
-	dd.render();	
-	*/
-	
-	/*
-	
-function InstanceScanPointScan(strTable, strRecordSysId, bDetailed)
-{
-	strTable = GetStringValue(strTable);
-	strRecordSysId = GetStringValue(strRecordSysId);
-	
-	if (IsValidTable(strTable) == false)
-	{
-		return false;
-	}
-	if (IsValidSysId(strRecordSysId) == false)
-	{
-		return false;
-	}
-	
-	var sic = new sn_instance_scan.ScanInstance();
-	var strProgressSysId = '';
-	try 
-	{
-		strProgressSysId = sic.triggerPointScan(strTable, strRecordSysId);
-	}
-	catch (e)
-	{
-	}
-	
-	if (IsValidSysId(strProgressSysId) == false)
-	{
-		return false;
-	}
-	
-	var grProgress = new GlideRecord('sys_progress_worker');
-	var bProgress = true;
-	while (bProgress == true)
-	{
-		if (grProgress.get(strProgressSysId))
-		{
-			var strState = GetStringValue(grProgress.state);  
-			if (strState != 'starting' && strState != 'running')
-			{
-				bProgress = false;
-			}
-		}
-		else
-		{
-			bProgress = false;
-		}
-	}
-	
-	var grScanResult = new GlideRecord('scan_result');
-	grScanResult.addQuery('progress_id','=',strProgressSysId);
-	grScanResult.query();
-	if (grScanResult.next() == false)
-	{
-		return false;
-	}
-	
-	return InstanceScanGetScanResults(grScanResult.sys_id,bDetailed);
-}	
-	
-	
-	*/
-	
+	CodeSanityScanApp(GetCurrentRecordSysId());
 }]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -163,7 +44,7 @@ function InstanceScanPointScan(strTable, strRecordSysId, bDetailed)
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0f008c68db55d150dcbdd03cd396197f</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_name>CodeSanity Scan</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -171,7 +52,7 @@ function InstanceScanPointScan(strTable, strRecordSysId, bDetailed)
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_action_0f008c68db55d150dcbdd03cd396197f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-23 20:29:45</sys_updated_on>
+        <sys_updated_on>2022-11-25 14:13:32</sys_updated_on>
         <table>sys_app</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

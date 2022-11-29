@@ -167,6 +167,7 @@
 		&lt;li&gt;DevTools 1.47.0 is now required.&lt;/li&gt;&#13;
 		&lt;li&gt;Tokyo is now actively supported.&lt;/li&gt;&#13;
 		&lt;li&gt;Added the UI action "CodeSanity Scan" to the custom application form.&lt;/li&gt;&#13;
+		&lt;li&gt;Renamed the CodeSanity category to "CodeSanity".&lt;/li&gt;&#13;
 		&lt;li&gt;Added check "CodeSanity - App documentation".&lt;/li&gt;&#13;
 		&lt;li&gt;Added check "CodeSanity - ATF test must be in an ATF suite".&lt;/li&gt;&#13;
 		&lt;li&gt;Added check "CodeSanity - ATF tests for script includes".&lt;/li&gt;&#13;
@@ -302,13 +303,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>157</sys_mod_count>
+        <sys_mod_count>158</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-29 11:08:26</sys_updated_on>
+        <sys_updated_on>2022-11-29 11:27:13</sys_updated_on>
     </sys_ui_page>
 </record_update>

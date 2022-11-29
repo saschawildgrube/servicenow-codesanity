@@ -8,7 +8,8 @@
         <name>CodeSanity - Constant array index anti-pattern</name>
         <priority>1</priority>
         <resolution_details>Review the code carefully and see if really the first element of an array is of interest and should be references explicitly.&#13;
-Why is it the first element? Has it been verified that the element really exists? How are subsequent elements of the array processed?</resolution_details>
+Why is it the first element? Has it been verified that the element really exists? How are subsequent elements of the array processed?&#13;
+If you are sure that you need to reference an array element at a specific position, you may use the DevTools function GetValue() to safely retrieve array elements or object members. The GetValue() function is available both on the server and on the client. In case the requested value does not exist the function will gracefully return null instead of causing evaluator errors.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -17,11 +18,13 @@ Why is it the first element? Has it been verified that the element really exists
 	
     if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{	
-
 		var GetStringValue = x_snc_devtools.GetStringValue;
 		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+		var ScriptEmptyStringLiterals = x_snc_devtools.ScriptEmptyStringLiterals;
 
 		var strSource = GetStringValue(engine.rootNode.toSource());
+		
+		strSource = ScriptEmptyStringLiterals(strSource);
 
 		if (StringCheckRegEx(strSource,'\\[\\s*[0-9]+\\s*\\]',''))
 		{
@@ -35,13 +38,13 @@ Why is it the first element? Has it been verified that the element really exists
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 10:42:06</sys_created_on>
         <sys_id>a0f22057db8a8510bcced03cd3961973</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>CodeSanity - Constant array index anti-pattern</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_a0f22057db8a8510bcced03cd3961973</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-02 12:28:23</sys_updated_on>
+        <sys_updated_on>2022-11-24 11:13:05</sys_updated_on>
     </scan_linter_check>
 </record_update>

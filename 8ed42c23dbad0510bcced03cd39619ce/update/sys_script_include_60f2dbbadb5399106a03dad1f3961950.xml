@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_codesanity.CodeSanityClientAPI</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>The CodeSanityClientAPI class contains CodeSanity functions to be called from client side code. </description>
+        <name>CodeSanityClientAPI</name>
+        <script><![CDATA[var CodeSanityClientAPI = Class.create();
+CodeSanityClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
+{
+
+	start: function()
+	{
+		var GetAppRecord = x_snc_devtools.GetAppRecord;
+		var IsValidRecord = x_snc_devtools.IsValidRecord;
+		var GetAppName = x_snc_devtools.GetAppName;
+		var GetStringValue = x_snc_devtools.GetStringValue;
+
+		var strAppSysId = this.getParameter("sysparm_ajax_processor_app_sys_id");
+		
+		var grApp = GetAppRecord(strAppSysId);
+		if (IsValidRecord(grApp) == false)
+		{
+			return false;
+		}
+		
+		var grSuite = GetScanSuiteRecord();
+		
+		var strProgressName = "Performing CodeSanity check on application "+grApp.name+' '+grApp.version;
+		
+		var params = {};
+		params['strSuiteSysId'] = x_snc_devtools.GetStringValue(grSuite.sys_id);
+		params['strAppSysId'] = x_snc_devtools.GetStringValue(grApp.sys_id);
+
+		
+		var strWorkerId = x_snc_devtools.StartWorker(
+			strProgressName,
+			'x_snc_devtools.DevToolsWorkerAPI',
+			'InstanceScanSuiteOnApp',
+			params);
+		
+
+		var nCountDown = 1000;
+		while (nCountDown > 0)
+		{
+			var grTracker = new GlideRecord('sys_execution_tracker');
+			grTracker.orderByDesc('sys_created_on');
+			grTracker.addQuery('source_table','=','scan_result');
+			grTracker.addQuery('type','=','instance_scan');
+			grTracker.addQuery('state', 'IN', '0,1');
+			grTracker.query();
+			if (grTracker.next())
+			{
+				return GetStringValue(grTracker.sys_id);
+			}
+			nCountDown--;
+		}
+		
+		return strWorkerId;
+	},
+	
+
+	
+	
+    type: 'CodeSanityClientAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-25 09:43:52</sys_created_on>
+        <sys_id>60f2dbbadb5399106a03dad1f3961950</sys_id>
+        <sys_mod_count>67</sys_mod_count>
+        <sys_name>CodeSanityClientAPI</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_script_include_60f2dbbadb5399106a03dad1f3961950</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-29 13:41:11</sys_updated_on>
+    </sys_script_include>
+</record_update>

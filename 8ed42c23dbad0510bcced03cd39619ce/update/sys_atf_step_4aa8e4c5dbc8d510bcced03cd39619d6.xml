@@ -14,16 +14,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-10 21:25:52</sys_created_on>
         <sys_id>4aa8e4c5dbc8d510bcced03cd39619d6</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_4aa8e4c5dbc8d510bcced03cd39619d6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-12 13:40:18</sys_updated_on>
+        <sys_updated_on>2022-11-17 12:43:48</sys_updated_on>
         <table/>
-        <test display_value="CodeSanity - [0] anti-pattern">8b98a4c5dbc8d510bcced03cd3961948</test>
+        <test display_value="CodeSanity - Constant array index anti-pattern">8b98a4c5dbc8d510bcced03cd3961948</test>
         <timeout/>
         <warning_message/>
     </sys_atf_step>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-10 21:25:52</sys_created_on>
         <sys_id>6fa828c5dbc8d510bcced03cd3961907</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-12 13:40:18</sys_updated_on>
+        <sys_updated_on>2022-11-17 12:43:49</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -62,8 +62,14 @@
 		'function _ATF_CODESANITY_Test2()\n'&#13;
 		+'{ var aArray = ["Alpha","Beta"]; nIndex = 0; gs.info(aArray[nIndex]); }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);	&#13;
-	&#13;
 &#13;
+	var strRecordSysId = testdata.CreateScriptInclude(&#13;
+		'global',&#13;
+		'Test3',&#13;
+		'function _ATF_CODESANITY_Test3()\n'&#13;
+		+'{ var strTest = "A string with the anti pattern [0] that should NOT trigger the check!"; }');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);	&#13;
+	&#13;
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;

@@ -3,77 +3,92 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>result</element>
-            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">433c71e7dbdf1d106a03dad1f396191c</list_id>
+            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">ded0efcc1ba751105b76777d8b4bcbaa</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-27 11:19:48</sys_created_on>
-            <sys_id>0f3cb1e7dbdf1d106a03dad1f3961915</sys_id>
+            <sys_created_on>2022-11-29 07:56:21</sys_created_on>
+            <sys_id>56d0efcc1ba751105b76777d8b4bcbac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-27 11:19:48</sys_updated_on>
+            <sys_updated_on>2022-11-29 07:56:21</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>sys_created_on</element>
-            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">433c71e7dbdf1d106a03dad1f396191c</list_id>
+            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">ded0efcc1ba751105b76777d8b4bcbaa</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-27 11:19:48</sys_created_on>
-            <sys_id>833cb1e7dbdf1d106a03dad1f3961916</sys_id>
+            <sys_created_on>2022-11-29 07:56:21</sys_created_on>
+            <sys_id>1ed0efcc1ba751105b76777d8b4bcbac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-27 11:19:48</sys_updated_on>
+            <sys_updated_on>2022-11-29 07:56:21</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>suite</element>
-            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">433c71e7dbdf1d106a03dad1f396191c</list_id>
+            <element>sys_created_by</element>
+            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">ded0efcc1ba751105b76777d8b4bcbaa</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-27 11:19:48</sys_created_on>
-            <sys_id>073cb1e7dbdf1d106a03dad1f3961916</sys_id>
+            <sys_created_on>2022-11-29 07:56:21</sys_created_on>
+            <sys_id>9ed0efcc1ba751105b76777d8b4bcbac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-27 11:19:48</sys_updated_on>
+            <sys_updated_on>2022-11-29 07:56:21</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>result.finding_count</element>
-            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">433c71e7dbdf1d106a03dad1f396191c</list_id>
+            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">ded0efcc1ba751105b76777d8b4bcbaa</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-27 11:19:48</sys_created_on>
-            <sys_id>873cb1e7dbdf1d106a03dad1f3961916</sys_id>
+            <sys_created_on>2022-11-29 07:56:21</sys_created_on>
+            <sys_id>12d0efcc1ba751105b76777d8b4bcbad</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-27 11:19:48</sys_updated_on>
+            <sys_updated_on>2022-11-29 07:56:21</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>result.state</element>
-            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">433c71e7dbdf1d106a03dad1f396191c</list_id>
+            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">ded0efcc1ba751105b76777d8b4bcbaa</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-27 11:19:48</sys_created_on>
-            <sys_id>0b3cb1e7dbdf1d106a03dad1f3961916</sys_id>
+            <sys_created_on>2022-11-29 07:56:21</sys_created_on>
+            <sys_id>92d0efcc1ba751105b76777d8b4bcbad</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-27 11:19:48</sys_updated_on>
+            <sys_updated_on>2022-11-29 07:56:21</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>suite</element>
+            <list_id display_value="scan_suite_execution" element="NULL" name="scan_suite_execution" parent="NULL" relationship="NULL" sys_domain="global" view="37787141db705d10dcbdd03cd3961919">ded0efcc1ba751105b76777d8b4bcbaa</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-11-29 07:56:21</sys_created_on>
+            <sys_id>16d0efcc1ba751105b76777d8b4bcbad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-11-29 07:56:21</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -87,10 +102,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-27 11:19:48</sys_created_on>
+            <sys_created_on>2022-11-29 07:56:21</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>433c71e7dbdf1d106a03dad1f396191c</sys_id>
+            <sys_id>ded0efcc1ba751105b76777d8b4bcbaa</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>scan_suite_execution</sys_name>
             <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -98,7 +113,7 @@
             <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
             <sys_update_name>sys_ui_list_scan_suite_execution_codesanity</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-27 11:19:48</sys_updated_on>
+            <sys_updated_on>2022-11-29 07:56:21</sys_updated_on>
             <sys_user/>
             <view display_value="CodeSanity" name="codesanity">37787141db705d10dcbdd03cd3961919</view>
             <view_name/>

@@ -12,12 +12,10 @@
 	var GetArrayValue = x_snc_devtools.GetArrayValue;
 	
 	aApps = GetArrayValue(aApps);
-	Debug('GetAppIdentifiers '+x_snc_devtools.RenderValue(aApps));
 	var aAppIdentifiers = [];
 	for (var nApp = 0; nApp < aApps.length; nApp++)
 	{
 		var strAppIdentifier = GetAppIdentifier(aApps[nApp]);
-		Debug('GetAppIdentifiers: '+nApp+' '+strAppIdentifier);
 		if (strAppIdentifier != false)
 		{
 			aAppIdentifiers.push(strAppIdentifier);
@@ -29,13 +27,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-31 14:43:20</sys_created_on>
         <sys_id>c5e7273adb3a11106a03dad1f39619de</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>GetAppIdentifiers</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_c5e7273adb3a11106a03dad1f39619de</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-30 16:28:21</sys_updated_on>
+        <sys_updated_on>2022-11-30 16:43:10</sys_updated_on>
     </sys_script_include>
 </record_update>

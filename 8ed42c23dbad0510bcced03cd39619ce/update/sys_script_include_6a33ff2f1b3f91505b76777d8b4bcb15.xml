@@ -45,7 +45,6 @@
 			grScanTarget.query();
 			if (grScanTarget.next())
 			{
-				SetValue('Found a scan_target!',status,'applications',aApps[nApp],'codesanity_findings');
 				var grCombo = new GlideRecord('scan_combo');
 				grCombo.addQuery('targets','=',grScanTarget.sys_id);
 				grCombo.addQuery('sources','=',grScanSource.sys_id);
@@ -67,6 +66,10 @@
 						SetValue('n/a',status,'applications',aApps[nApp],'codesanity_findings');
 					}
 				}
+				else
+				{
+					SetValue('n/a',status,'applications',aApps[nApp],'codesanity_findings');
+				}
 			}
 			else
 			{
@@ -81,13 +84,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-22 16:31:06</sys_created_on>
         <sys_id>6a33ff2f1b3f91505b76777d8b4bcb15</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>DevToolsGetApplicationStatus</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_6a33ff2f1b3f91505b76777d8b4bcb15</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-22 17:09:14</sys_updated_on>
+        <sys_updated_on>2022-12-22 17:13:49</sys_updated_on>
     </sys_script_include>
 </record_update>

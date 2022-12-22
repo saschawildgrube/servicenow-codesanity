@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-09 10:39:55</sys_created_on>
         <sys_id>f17645fddbc3d9106a03dad1f3961918</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_f17645fddbc3d9106a03dad1f3961918</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-22 15:52:41</sys_updated_on>
+        <sys_updated_on>2022-12-22 18:01:37</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - App documentation">656681fddbc3d9106a03dad1f396197f</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-09 10:39:55</sys_created_on>
         <sys_id>9f7605fddbc3d9106a03dad1f39619c8</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-22 15:52:41</sys_updated_on>
+        <sys_updated_on>2022-12-22 18:01:37</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
     var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
 &#13;
@@ -63,21 +63,28 @@
     var grApp = x_snc_devtools.GetAppRecord('x_snc_codesanity');&#13;
     test.TestCase_InstanceScanCheck(strCheck, 'sys_app', grApp.sys_id, false);&#13;
 &#13;
-	// Invalid Email&#13;
-	grApp.x_snc_devtools_maintainer_email = 'The Example Team &lt;info@example.com&gt;';&#13;
-	x_snc_devtools.GlideRecordUpdate(grApp);&#13;
-    test.TestCase_InstanceScanCheck(strCheck, 'sys_app', grApp.sys_id, true);	&#13;
+	var grApp = new GlideRecord('sys_app');&#13;
+	grApp.initialize();&#13;
+	grApp.name = 'Test';&#13;
+	var strAppId = x_snc_devtools.GlideRecordInsert(grApp);&#13;
+	test.TestCase_InstanceScanCheck(strCheck, 'sys_app', strAppId, true);&#13;
 	&#13;
-	// Empty short descriptoin&#13;
-	grApp.x_snc_devtools_maintainer_email = 'info@example.com';&#13;
-	grApp.short_description = '';&#13;
+	grApp.short_description = 'This is a test';&#13;
+	grApp.x_snc_devtools_maintainer = 'John Doe';&#13;
+	grApp.x_snc_devtools_documentation_url = 'https://www.example.com';&#13;
+	grApp.x_snc_devtools_repo_url = 'https://www.example.com';&#13;
 	x_snc_devtools.GlideRecordUpdate(grApp);&#13;
-    test.TestCase_InstanceScanCheck(strCheck, 'sys_app', grApp.sys_id, true);&#13;
+	test.TestCase_InstanceScanCheck(strCheck, 'sys_app', strAppId, true);&#13;
 	&#13;
-	// Repair (but why is this necessary???)&#13;
-	grApp.x_snc_devtools_maintainer_email = 'sascha.wildgrube@servicenow.com';&#13;
-	grApp.short_description = 'The CodeSanity app contains a number of instance scan checks to validate source code and other application files.';&#13;
+	&#13;
+	grApp.x_snc_devtools_maintainer_email = 'invalid';&#13;
 	x_snc_devtools.GlideRecordUpdate(grApp);&#13;
+	test.TestCase_InstanceScanCheck(strCheck, 'sys_app', strAppId, true);	&#13;
+&#13;
+	grApp.x_snc_devtools_maintainer_email = 'john@example.com';&#13;
+	x_snc_devtools.GlideRecordUpdate(grApp);&#13;
+	test.TestCase_InstanceScanCheck(strCheck, 'sys_app', strAppId, false);	&#13;
+&#13;
 &#13;
     return test.GetResult();&#13;
 &#13;

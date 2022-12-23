@@ -20,7 +20,7 @@
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>x_snc_codesanity</scope>
         <scoped_administration>false</scoped_administration>
-        <short_description>Contains a number of instance scan checks to validate source code and application files</short_description>
+        <short_description>The CodeSanity app contains a number of instance scan checks to validate source code and other application files.</short_description>
         <source>x_snc_codesanity</source>
         <store_correlation_id/>
         <store_url/>
@@ -29,16 +29,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-14 08:56:58</sys_created_on>
         <sys_id>8ed42c23dbad0510bcced03cd39619ce</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-29 14:34:47</sys_updated_on>
+        <sys_updated_on>2022-12-22 18:00:35</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
         <user_role/>
         <vendor/>
         <vendor_prefix/>
-        <version>2.3.0</version>
+        <version>2.4.0</version>
         <x_snc_devtools_documentation_url>https://www.wildgrube.com/servicenow-codesanity</x_snc_devtools_documentation_url>
         <x_snc_devtools_maintainer>Sascha Wildgrube</x_snc_devtools_maintainer>
         <x_snc_devtools_maintainer_email>sascha.wildgrube@servicenow.com</x_snc_devtools_maintainer_email>

@@ -162,6 +162,22 @@
  &lt;/ol&gt;  &#13;
 --&gt;&#13;
 	&#13;
+	&lt;h3&gt;2.4.0 - 2022-12-23&lt;/h3&gt;&#13;
+	&lt;ol&gt;&#13;
+		&lt;li&gt;DevTools 1.51.0 is now required.&lt;/li&gt;&#13;
+		&lt;li&gt;CodeSanity now supports the "DevTools Application Overview" page and displays the date and amount of findings of the most recent CodeSanity scan.&lt;/li&gt;&#13;
+		&lt;li&gt;Added check "CodeSanity - Avoid the spread operator".&lt;/li&gt;&#13;
+		&lt;li&gt;Added check "CodeSanity - Do not use fix scripts".&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - App documentation" now detects invalid maintainer email addresses.&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - Script Include description" treats the AppBuilder() function as an exception as it is only for internal use.&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - Application ATF test suite" now runs on sys_app instead of sys_scope.&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - ATF tests for script includes" treats the new DevToolsGetApplicationStatus() function as an exception.&lt;/li&gt;&#13;
+		&lt;li&gt;The UI action "CodeSanity Scan" now checks if a scan is already running using the UI script function InstanceScanIsRunning().&lt;/li&gt;&#13;
+		&lt;li&gt;Added the coding guideline page.&lt;/li&gt;&#13;
+		&lt;li&gt;Added ATF test for GetScanSuiteRecord().&lt;/li&gt;&#13;
+		&lt;li&gt;ATF for check "CodeSanity - Application ATF test suite" now uses ad-hoc test data to provoke a finding.&lt;/li&gt;&#13;
+	&lt;/ol&gt;  &#13;
+	&#13;
 	&lt;h3&gt;2.3.0 - 2022-11-30&lt;/h3&gt;&#13;
 	&lt;ol&gt;&#13;
 		&lt;li&gt;DevTools 1.48.0 is now required.&lt;/li&gt;&#13;
@@ -314,13 +330,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>169</sys_mod_count>
+        <sys_mod_count>185</sys_mod_count>
         <sys_name>manual</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-30 16:37:20</sys_updated_on>
+        <sys_updated_on>2022-12-23 13:43:33</sys_updated_on>
     </sys_ui_page>
 </record_update>

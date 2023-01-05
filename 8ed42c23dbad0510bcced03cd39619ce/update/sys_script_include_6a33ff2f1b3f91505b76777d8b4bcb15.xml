@@ -16,7 +16,8 @@
 	var GetAppRecord = x_snc_devtools.GetAppRecord;
 	var GetInstanceRecordURL = x_snc_devtools.GetInstanceRecordURL;
 	var HtmlRenderLink = x_snc_devtools.HtmlRenderLink;
-
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	
 	SetValue('CodeSanity<br/>Last Run',status,'columns','codesanity_last_run','header');
 	SetValue('CodeSanity<br/>Findings',status,'columns','codesanity_findings','header');
 	SetValue('right',status,'columns','codesanity_findings','horizontal');
@@ -24,11 +25,12 @@
 	
 	var grCodeSanitySuite = GetScanSuiteRecord();
 	
-	var grScanSource = new GlideRecord('scan_source');
-	grScanSource.addQuery('table','=','scan_check_suite');
-	grScanSource.addQuery('record_id','=',grCodeSanitySuite.sys_id);
-	grScanSource.query();
-	var bScanSource = grScanSource.next();
+	var grScanSource = GetScanSourceRecord();
+	var bScanSource = false;
+	if (IsValidRecord(grScanSource))
+	{
+		bScanSource = true;
+	}
 
 	var aApps = GetKeys(GetValue(status,'applications'));
 	for (var nApp = 0; nApp < aApps.length; nApp++)
@@ -91,13 +93,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-22 16:31:06</sys_created_on>
         <sys_id>6a33ff2f1b3f91505b76777d8b4bcb15</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>DevToolsGetApplicationStatus</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_6a33ff2f1b3f91505b76777d8b4bcb15</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-23 13:40:05</sys_updated_on>
+        <sys_updated_on>2023-01-05 13:37:17</sys_updated_on>
     </sys_script_include>
 </record_update>

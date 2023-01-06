@@ -168,6 +168,7 @@
 		&lt;li&gt;Added check "CodeSanity - ATF suite contains at least one test".&lt;/li&gt;&#13;
 		&lt;li&gt;Added check 'CodeSanity - Avoid "Copy of"'.&lt;/li&gt;&#13;
 		&lt;li&gt;Added check "CodeSanity - Deprecated logging".&lt;/li&gt;&#13;
+		&lt;li&gt;Added check 'CodeSanity - Avoid "Utils" classes'.&lt;/li&gt;&#13;
 		&lt;li&gt;The application overview page now shows the duration of the last scan in minutes.&lt;/li&gt;&#13;
 		&lt;li&gt;The check "CodeSanity - App documentation" now verifies if a valid url has been provided for the documentation and repository links.&lt;/li&gt;&#13;
 		&lt;li&gt;The check "CodeSanity - ATF tests for script includes" now excludes "ClientAPI" script includes which are client callable.&lt;/li&gt;&#13;
@@ -347,13 +348,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>199</sys_mod_count>
+        <sys_mod_count>200</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-06 13:10:47</sys_updated_on>
+        <sys_updated_on>2023-01-06 13:32:24</sys_updated_on>
     </sys_ui_page>
 </record_update>

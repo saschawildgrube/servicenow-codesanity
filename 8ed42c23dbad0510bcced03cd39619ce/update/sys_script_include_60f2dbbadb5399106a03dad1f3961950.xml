@@ -63,17 +63,18 @@ CodeSanityClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcesso
 		}
 		else
 		{
-			var strRecordSysId = GetStringValue(this.getParameter("sysparm_ajax_processor_record_sys_id"));
 			var strRecordTable = GetStringValue(this.getParameter("sysparm_ajax_processor_record_table"));
+			var strRecordSysId = GetStringValue(this.getParameter("sysparm_ajax_processor_record_sys_id"));
+			
 			
 			var grRecord = GetRecord(strRecordTable,strRecordSysId);
 			if (IsValidRecord(grRecord) == false)
 			{
 				return '';
 			}			
-			params['strRecordSysId'] = strRecordSysId;
 			params['strRecordTable'] = strRecordTable;
-
+			params['strRecordSysId'] = strRecordSysId;
+			
 			strWorkerId = x_snc_devtools.StartWorker(
 				strProgressName,
 				'x_snc_devtools.DevToolsWorkerAPI',
@@ -116,13 +117,13 @@ CodeSanityClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcesso
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-25 09:43:52</sys_created_on>
         <sys_id>60f2dbbadb5399106a03dad1f3961950</sys_id>
-        <sys_mod_count>74</sys_mod_count>
+        <sys_mod_count>75</sys_mod_count>
         <sys_name>CodeSanityClientAPI</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_60f2dbbadb5399106a03dad1f3961950</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-22 18:44:39</sys_updated_on>
+        <sys_updated_on>2023-01-22 18:59:30</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="DELETE">
+        <abort_on_failure>false</abort_on_failure>
+        <order/>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-17 17:37:07</sys_created_on>
+        <sys_id>5bab3508db6025106a03dad1f3961978</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>44cbe1e41be3d1105b76777d8b4bcbf3</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_5bab3508db6025106a03dad1f3961978</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-17 17:37:07</sys_updated_on>
+        <test display_value="DevTools - IsTestRunning">44cbe1e41be3d1105b76777d8b4bcbf3</test>
+        <test_suite display_value="DataSilos - DevTools">302c54251b763810edf3642aab4bcb0d</test_suite>
+    </sys_atf_test_suite_test>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>01bfa2ffdb5ecd104d2bac44d496195a</instance_id>
+        <instance_name>wildgrubetestsandiego</instance_name>
+        <name>sys_atf_test_suite_test_5bab3508db6025106a03dad1f3961978</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test"><sys_atf_test_suite_test action="INSERT_OR_UPDATE"><abort_on_failure>false</abort_on_failure><order/><sys_class_name>sys_atf_test_suite_test</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-01-17 17:37:07</sys_created_on><sys_id>5bab3508db6025106a03dad1f3961978</sys_id><sys_mod_count>0</sys_mod_count><sys_name>44cbe1e41be3d1105b76777d8b4bcbf3</sys_name><sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package><sys_policy/><sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope><sys_update_name>sys_atf_test_suite_test_5bab3508db6025106a03dad1f3961978</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-01-17 17:37:07</sys_updated_on><test display_value="DevTools - IsTestRunning">44cbe1e41be3d1105b76777d8b4bcbf3</test><test_suite display_value="DataSilos - DevTools">302c54251b763810edf3642aab4bcb0d</test_suite></sys_atf_test_suite_test></record_update>]]></payload>
+        <payload_hash>-1671554409</payload_hash>
+        <record_name>44cbe1e41be3d1105b76777d8b4bcbf3</record_name>
+        <reverted_from/>
+        <source>50ec1903db2311106a03dad1f3961944</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2022-12-08 06:01:33</sys_created_on>
+        <sys_id>2429f8cfdbac21506a03dad1f3961963</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>184f0532a480000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Test Suite Test</type>
+        <update_guid>e029f8cf4fac2150643a0574c4428263</update_guid>
+        <update_guid_history>e029f8cf4fac2150643a0574c4428263:-1671554409</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-26 20:28:09</sys_created_on>
+        <sys_db_object display_value="" name="sys_atf_test_suite_test">sys_atf_test_suite_test</sys_db_object>
+        <sys_id>0699730ff41a471a85d50d1587367a44</sys_id>
+        <sys_metadata>5bab3508db6025106a03dad1f3961978</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>44cbe1e41be3d1105b76777d8b4bcbf3</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>sys_atf_test_suite_test_5bab3508db6025106a03dad1f3961978</sys_update_name>
+        <sys_update_version display_value="sys_atf_test_suite_test_5bab3508db6025106a03dad1f3961978">2429f8cfdbac21506a03dad1f3961963</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-26 20:28:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

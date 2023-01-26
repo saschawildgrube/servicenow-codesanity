@@ -11,12 +11,17 @@
 {
 	var RenderValue = x_snc_devtools.RenderValue;
 	var GetValue = x_snc_devtools.GetValue;
+	var IsObject = x_snc_devtools.IsObject;
 
 	var transactionCache = new x_snc_devtools.TransactionCacheAPI('CODESANITY');
 	var beancount = transactionCache.GetItem('beancount');	
 	
-	var strAppName = GetValue(beancount,'app');
+	if (IsObject(beancount) == false)
+	{
+		return;
+	}
 	
+	var strAppName = GetValue(beancount,'app');
 	Log('BeanCount:\n' + 'Scanning app: ' + strAppName + '\n' + RenderValue(beancount));
 }
 ]]></script>
@@ -24,13 +29,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-17 15:00:44</sys_created_on>
         <sys_id>5b879540db2ce1106a03dad1f396190a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>LogBeanCount</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_5b879540db2ce1106a03dad1f396190a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-17 15:15:19</sys_updated_on>
+        <sys_updated_on>2023-01-26 19:03:32</sys_updated_on>
     </sys_script_include>
 </record_update>

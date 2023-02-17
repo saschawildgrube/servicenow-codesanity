@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-17 11:42:13</sys_created_on>
         <sys_id>35b31c061bc129505b76777d8b4bcbcd</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_35b31c061bc129505b76777d8b4bcbcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-17 11:53:50</sys_updated_on>
+        <sys_updated_on>2023-02-17 21:36:30</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - UI Action must have a unique onClick function">a17350061bc129505b76777d8b4bcb42</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-17 11:42:13</sys_created_on>
         <sys_id>7eb35c061bc129505b76777d8b4bcb4b</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-17 11:53:50</sys_updated_on>
+        <sys_updated_on>2023-02-17 21:36:30</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -62,6 +62,14 @@
 	grRecord.onclick = 'onClickThisIsSomeTestData()';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_ui_action',strRecordSysId,true);&#13;
+	&#13;
+	var grRecord = new GlideRecord('sys_ui_action');&#13;
+	grRecord.initialize();&#13;
+	grRecord.name = '_ATF_CODESANITY_TEST3';&#13;
+	grRecord.client = false;&#13;
+	grRecord.onclick = 'onClickThisIsSomeTestData()';&#13;
+	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_ui_action',strRecordSysId,false);	&#13;
 	&#13;
 	return test.GetResult();&#13;
 	&#13;

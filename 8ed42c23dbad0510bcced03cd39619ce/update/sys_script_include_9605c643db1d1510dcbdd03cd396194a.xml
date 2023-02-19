@@ -15,17 +15,17 @@
 
 	if (IsValidRecord(grCheck) == false)
 	{
-		return;
+		return false;
 	}
 	
 	if (grCheck.isNewRecord() == false)
 	{
-		return;
+		return false;
 	}
 	
 	if (GetStringValue(grCheck.category) != 'code_sanity')
 	{
-		return;
+		return false;
 	}
 
 	var strClassName = grCheck.getRecordClassName();
@@ -33,14 +33,14 @@
 	if (strClassName == 'scan_script_only_check')
 	{
 		gs.addErrorMessage('Script only checks will not run when scanning a scoped application or a point scan.<br/>They are not suitable for the CodeSanity suite.<br/>Are you sure you want to add a script only check to the CodeSanity suite?');
-		return;
+		return false;
 	}
 	
 	if (   strClassName != 'scan_table_check'
 		&& strClassName != 'scan_column_type_check'
 		&& strClassName != 'scan_linter_check')
 	{
-		return;
+		return false;
 	}
 	
 	var strScript = 
@@ -59,14 +59,14 @@
 		;
 
 	
-	current.script = strScript;
-	current.priority = '1';
-	current.name = 'CodeSanity - TODO';
+	grCheck.script = strScript;
+	grCheck.priority = '1';
+	grCheck.name = 'CodeSanity - TODO';
 
 	
 	if (strClassName == 'scan_table_check')
 	{
-		current.advanced = true;
+		grCheck.advanced = true;
 	}
 	if (strClassName == 'scan_linter_check')
 	{
@@ -76,19 +76,19 @@
 	{
 	}		
 	
-	
+	return true;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-18 12:39:55</sys_created_on>
         <sys_id>9605c643db1d1510dcbdd03cd396194a</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>PrepareNewCheck</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_9605c643db1d1510dcbdd03cd396194a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-02 09:49:33</sys_updated_on>
+        <sys_updated_on>2023-02-19 19:39:51</sys_updated_on>
     </sys_script_include>
 </record_update>

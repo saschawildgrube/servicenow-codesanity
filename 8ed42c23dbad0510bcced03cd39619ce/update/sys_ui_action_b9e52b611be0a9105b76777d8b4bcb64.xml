@@ -28,9 +28,9 @@
         <list_style/>
         <messages/>
         <name>CodeSanity Point Scan</name>
-        <onclick>onClick()</onclick>
+        <onclick>onClickCodeSanityPointScan()</onclick>
         <order>99999</order>
-        <script><![CDATA[function onClick()
+        <script><![CDATA[function onClickCodeSanityPointScan()
 {
 	CodeSanityScanRecord(GetCurrentRecordTableName(),GetCurrentRecordSysId());
 }]]></script>
@@ -44,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b9e52b611be0a9105b76777d8b4bcb64</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>CodeSanity Point Scan</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -52,7 +52,7 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_action_b9e52b611be0a9105b76777d8b4bcb64</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-06 14:58:44</sys_updated_on>
+        <sys_updated_on>2023-02-19 19:24:15</sys_updated_on>
         <table>global</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

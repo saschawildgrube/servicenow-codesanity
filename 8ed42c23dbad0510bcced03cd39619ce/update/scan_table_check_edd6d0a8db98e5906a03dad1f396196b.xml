@@ -4,7 +4,7 @@
         <advanced>true</advanced>
         <category>code_sanity</category>
         <conditions/>
-        <description>A class is usually representing either a real life object, a connection between different things, an interface or a capability. Sometimes however classes end up being just a bucket with all sorts of different things - that do not necessarily belong together.  Sometimes these classes have names that end with "Utils". Such a design should be avoided. Each class should have a distinct and clearly identifyable (and understandable) scope. The fact that the features or methods in a class were created by one person or a team or during a specific project do usually not justify to pack them together. Features should be distributed into different classes (or functions) in a way that makes sense. </description>
+        <description>A class is usually representing either a real-life object, a connection between different things, an interface or a capability. Sometimes however, classes end up being just a bucket with all sorts of different things - that do not necessarily belong together.  Sometimes these classes have names that end with "Utils". Such a design should be avoided. Each class should have a distinct and clearly identifiable (and understandable) scope. The fact that the features or methods in a class were created by one person or a team or during a specific project do usually not justify packing them together. Features should be distributed into different classes (or functions) in a way that makes sense. </description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - Avoid "Utils" classes</name>
@@ -31,14 +31,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-06 13:26:16</sys_created_on>
         <sys_id>edd6d0a8db98e5906a03dad1f396196b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>CodeSanity - Avoid "Utils" classes</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_edd6d0a8db98e5906a03dad1f396196b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-06 13:26:16</sys_updated_on>
+        <sys_updated_on>2023-02-23 16:58:54</sys_updated_on>
         <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

@@ -14,7 +14,7 @@ This may lead to new roles without any specific meaning that do not add any valu
         <name>CodeSanity - Avoid roles ending with "_user"</name>
         <priority>1</priority>
         <resolution_details>Roles cannot be renamed easily.&#13;
-In order to fix this finding, define new and/or identify existing personas. Replace any roles ending with "_user" with roles that really represent defined personas. Assign these new roles to all ACLs and other places where access is controlled.&#13;
+To fix this finding, define new and/or identify existing personas. Replace any roles ending with "_user" with roles that really represent defined personas. Assign these new roles to all ACLs and other places where access is controlled.&#13;
 Then remove the existing roles ending with "_user". </resolution_details>
         <run_condition/>
         <score_max>100</score_max>
@@ -33,14 +33,14 @@ Then remove the existing roles ending with "_user". </resolution_details>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-22 19:49:34</sys_created_on>
         <sys_id>5c20732b1b85e1105b76777d8b4bcb18</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>CodeSanity - Avoid roles ending with "_user"</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_5c20732b1b85e1105b76777d8b4bcb18</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-22 19:49:34</sys_updated_on>
+        <sys_updated_on>2023-02-23 17:13:01</sys_updated_on>
         <table>sys_user_role</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

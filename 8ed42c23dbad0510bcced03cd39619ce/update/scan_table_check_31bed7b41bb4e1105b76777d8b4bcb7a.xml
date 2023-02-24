@@ -4,7 +4,7 @@
         <advanced>true</advanced>
         <category>code_sanity</category>
         <conditions/>
-        <description>A scoped application may contain a script include named "AppInstall" and this script include then must contain a single function of the same name.&#13;
+        <description>A scoped application may contain a Script Include named "AppInstall" and this Script Include then must contain a single function of the same name.&#13;
 The function is supposed to contain one-time installation activities to be performed AFTER the application is installed (or updated) on an instance. &#13;
 The function should NOT call any AppInstall() functions from other application scopes.&#13;
 The AppInstall() function must use the x_snc_devtools.InstallerAPI class to perform its operations and return the result of the installer object Finish() method.&#13;
@@ -24,8 +24,8 @@ function AppInstall()&#13;
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - AppInstall</name>
         <priority>1</priority>
-        <resolution_details>If the "AppInstall" script include exists but contains a class, refactor the code to a single function: AppInstall().&#13;
-If the AppInstall() function calls AppInstall() functions from other scopes (e.g.  from its dependencies) - this is done by using the x_snc_Devtools.InstallApp() function which calls the AppInstall() function of the given scope and of all its required apps (i.e. documented dependencies). </resolution_details>
+        <resolution_details>If the "AppInstall" Script Include exists but contains a class, refactor the code to a single function: AppInstall().&#13;
+If the AppInstall() function calls AppInstall() functions from other scopes (e.g.  from its dependencies) - this is done by using the x_snc_Devtools.InstallApp() function which calls the AppInstall() function of the given scope and of all its required apps (i.e. its documented dependencies). </resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -56,19 +56,19 @@ If the AppInstall() function calls AppInstall() functions from other scopes (e.g
 	}
 
 })(engine);]]></script>
-        <short_description>The AppInstall script include must be implemented properly</short_description>
+        <short_description>The AppInstall Script Include must be implemented properly</short_description>
         <sys_class_name>scan_table_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-01 19:06:59</sys_created_on>
         <sys_id>31bed7b41bb4e1105b76777d8b4bcb7a</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>CodeSanity - AppInstall</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_31bed7b41bb4e1105b76777d8b4bcb7a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-01 20:15:06</sys_updated_on>
+        <sys_updated_on>2023-02-24 02:15:32</sys_updated_on>
         <table>sys_app</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

@@ -34,18 +34,18 @@ Expose features using Flows and Subflows to low-code/no-code developers where ne
 	}
 
 })(engine);]]></script>
-        <short_description>Scripts must not run Flows.</short_description>
+        <short_description>Scripts must not run Flows</short_description>
         <sys_class_name>scan_linter_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-15 15:49:46</sys_created_on>
         <sys_id>ed3393c6dbd951109232dad1f39619cf</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>CodeSanity - Do not run Flows from scripts</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_ed3393c6dbd951109232dad1f39619cf</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-23 14:10:01</sys_updated_on>
+        <sys_updated_on>2023-03-03 10:14:45</sys_updated_on>
     </scan_linter_check>
 </record_update>

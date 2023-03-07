@@ -2,7 +2,7 @@
     <scan_linter_check action="INSERT_OR_UPDATE">
         <active>true</active>
         <category>code_sanity</category>
-        <description>Using exceptions is a highly questionable and disputed coding practise. Although it may appear elegant zu fork out of the execution flow at any time and implement error handling somewhere else, experience shows that many exceptions are either not catched or not processed properly. In most cases, just returning from a function and returning an error state is the more robust option.  Unless there is a very strict architectural concept about when exceptions should be thrown and how the errors should be handled, using that technique results in less readable code and less robust applications. Some even argue that throwing exceptions is like dumping your garbage into the backyard of your neighbor - as usually its not the developer who throws the exception will be the one who handles it. Hence throwing exceptions must be avoided.</description>
+        <description>Using exceptions is a highly questionable and disputed coding practice. Although it may appear elegant zu fork out of the execution flow at any time and implement error handling somewhere else, experience shows that many exceptions are either not being catched or not processed properly. In most cases, just returning from a function and returning an error state is the more robust option.  Unless there is a very strict architectural concept about when exceptions should be thrown and how the errors should be handled, using that technique results in less readable code and less robust applications. Some even argue that throwing exceptions is like dumping your garbage into the backyard of your neighbor - as usually its not the developer who throws the exception will be the one who handles it. Hence throwing exceptions must be avoided.</description>
         <documentation_url/>
         <finding_type/>
         <name>CodeSanity - Throwing exceptions</name>
@@ -31,13 +31,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 16:58:22</sys_created_on>
         <sys_id>6bd82ff8db12cd10b652edb305961910</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>CodeSanity - Throwing exceptions</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_6bd82ff8db12cd10b652edb305961910</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-05 14:03:34</sys_updated_on>
+        <sys_updated_on>2023-02-23 14:05:31</sys_updated_on>
     </scan_linter_check>
 </record_update>

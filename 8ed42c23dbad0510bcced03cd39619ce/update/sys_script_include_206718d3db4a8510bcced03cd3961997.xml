@@ -5,12 +5,10 @@
         <api_name>x_snc_codesanity.AppInstall</api_name>
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
-        <description>This script installs Code Sanity.</description>
+        <description>This script installs CodeSanity.</description>
         <name>AppInstall</name>
         <script><![CDATA[function AppInstall()
-{
-	x_snc_devtools.AppInstall();
-	
+{	
 	var installer = new x_snc_devtools.InstallerAPI(x_snc_devtools.GetAppName('x_snc_codesanity'));
 	
 	installer.RecordInsertOrUpdate(
@@ -35,25 +33,21 @@
 		'max_duration','21600');
 	// Refer to https://docs.servicenow.com/bundle/tokyo-servicenow-platform/page/administer/health-scan/task/hs-full-scan-quota-rule.html
 	
-	installer.RecordSetValue(
-		'Setting the column scan_combo.target no_truncate attribute',
-		'sys_dictionary','505bfabb1bd201103297fd9b8b4bcb87',
-		'attributes','no_sort=true,slushbucket_ref_no_expand=true,no_truncate=true');
-
+	installer.SetTableColumnAttribute('scan_combo','targets','no_truncate','true');
+	
 	return installer.Finish();
-}
-]]></script>
+}]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>206718d3db4a8510bcced03cd3961997</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>AppInstall</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_206718d3db4a8510bcced03cd3961997</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-05 15:35:25</sys_updated_on>
+        <sys_updated_on>2023-03-07 16:02:00</sys_updated_on>
     </sys_script_include>
 </record_update>

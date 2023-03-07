@@ -2,7 +2,7 @@
     <scan_linter_check action="INSERT_OR_UPDATE">
         <active>true</active>
         <category>code_sanity</category>
-        <description>Debug output should always be temporary and should be removed as soon as the analysed issue has been resolved. </description>
+        <description>Debug output should always be temporary and should be removed as soon as the analyzed issue has been resolved. </description>
         <documentation_url/>
         <finding_type/>
         <name>CodeSanity - Debug output</name>
@@ -67,13 +67,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-04-27 12:57:14</sys_created_on>
         <sys_id>090e08b2db0f0510b652edb3059619bc</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>CodeSanity - Debug output</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_090e08b2db0f0510b652edb3059619bc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-02 12:27:45</sys_updated_on>
+        <sys_updated_on>2023-02-23 14:04:50</sys_updated_on>
     </scan_linter_check>
 </record_update>

@@ -4,12 +4,12 @@
         <advanced>true</advanced>
         <category>code_sanity</category>
         <conditions/>
-        <description>A script include that does neither starts with "function", "class" nor "var" may unintendedly inject symbols into the global namespace - which may lead to unintended side-effects when the code is being executed. Script includes should always contain exectly one function or class definition.</description>
+        <description>A Script Include that does neither starts with "function", "class" nor "var" may unintendedly inject symbols into the global namespace - which may lead to unintended side-effects when the code is being executed. Script Includes should always contain exactly one function or class definition.</description>
         <documentation_url/>
         <finding_type/>
-        <name>CodeSanity - Script include must contain a class or function</name>
+        <name>CodeSanity - Script Include must contain a class or function</name>
         <priority>1</priority>
-        <resolution_details>Refactor the code in the script include to be contained either in a function or a class of the same name of the script include itself.</resolution_details>
+        <resolution_details>Refactor the code in the Script Include to contain either a function or a class of the same name of the Script Include itself.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -54,19 +54,19 @@
 	}
 	
 })(engine);]]></script>
-        <short_description>A script include must start with "function", "var" or "class to avoid globals</short_description>
+        <short_description>A Script Include must start with "function", "var" or "class to avoid globals</short_description>
         <sys_class_name>scan_table_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-05-25 14:55:44</sys_created_on>
         <sys_id>a625743fdb2f0914bcced03cd39619a8</sys_id>
-        <sys_mod_count>40</sys_mod_count>
-        <sys_name>CodeSanity - Script include must contain a class or function</sys_name>
+        <sys_mod_count>41</sys_mod_count>
+        <sys_name>CodeSanity - Script Include must contain a class or function</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_a625743fdb2f0914bcced03cd39619a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-07 07:14:27</sys_updated_on>
+        <sys_updated_on>2023-02-23 17:08:15</sys_updated_on>
         <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

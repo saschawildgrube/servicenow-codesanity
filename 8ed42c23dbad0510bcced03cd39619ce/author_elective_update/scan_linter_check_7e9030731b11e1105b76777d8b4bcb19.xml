@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_linter_check">
+    <scan_linter_check action="DELETE">
+        <active>true</active>
+        <category>code_sanity</category>
+        <description>A source code comment containing "TODO" (and other typical patterns) indicates unfinished work or unaltered template code. When an application version is baselined, such cases whould be resolved. </description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Comment containing "TODO"</name>
+        <priority>1</priority>
+        <resolution_details>Finish the unfinished work and/or modify template code so that the reason for the "TODO" comment is resolved. </resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var StringFindRegEx = x_snc_devtools.StringFindRegEx;
+
+		var strSource = GetStringValue(engine.rootNode.toSource());
+		
+		if (StringFindRegEx(strSource,'\\\/\\\/\\s*TODO','i') != -1)
+		{
+			engine.finding.increment();
+		}
+		/*if (StringFindRegEx(strSource,'\/\\*\\s*TODO','i') != -1)
+		{
+			engine.finding.increment();
+		}*/		
+	}
+
+})(engine);]]></script>
+        <short_description>Source code comments should not contain "TODO"</short_description>
+        <sys_class_name>scan_linter_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-07 10:57:19</sys_created_on>
+        <sys_id>7e9030731b11e1105b76777d8b4bcb19</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>CodeSanity - Comment containing "TODO"</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_linter_check_7e9030731b11e1105b76777d8b4bcb19</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-07 11:20:05</sys_updated_on>
+    </scan_linter_check>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>01bfa2ffdb5ecd104d2bac44d496195a</instance_id>
+        <instance_name>wildgrubetestsandiego</instance_name>
+        <name>scan_linter_check_7e9030731b11e1105b76777d8b4bcb19</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="scan_linter_check"&gt;&lt;scan_linter_check action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;category&gt;code_sanity&lt;/category&gt;&lt;description&gt;A source code comment containing "TODO" (and other typical patterns) indicates unfinished work or unaltered template code. When an application version is baselined, such cases whould be resolved. &lt;/description&gt;&lt;documentation_url/&gt;&lt;finding_type&gt;scan_finding&lt;/finding_type&gt;&lt;name&gt;CodeSanity - Comment containing "TODO"&lt;/name&gt;&lt;priority&gt;1&lt;/priority&gt;&lt;resolution_details&gt;Finish the unfinished work and/or modify template code so that the reason for the "TODO" comment is resolved. &lt;/resolution_details&gt;&lt;run_condition/&gt;&lt;score_max&gt;100&lt;/score_max&gt;&lt;score_min&gt;0&lt;/score_min&gt;&lt;score_scale&gt;1&lt;/score_scale&gt;&lt;script&gt;&lt;![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var StringFindRegEx = x_snc_devtools.StringFindRegEx;
+
+		var strSource = GetStringValue(engine.rootNode.toSource());
+		
+		if (StringFindRegEx(strSource,'\\\/\\\/\\s*TODO','i') != -1)
+		{
+			engine.finding.increment();
+		}
+		/*if (StringFindRegEx(strSource,'\/\\*\\s*TODO','i') != -1)
+		{
+			engine.finding.increment();
+		}*/		
+	}
+
+})(engine);]]&gt;&lt;/script&gt;&lt;short_description&gt;Source code comments should not contain "TODO"&lt;/short_description&gt;&lt;sys_class_name&gt;scan_linter_check&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-03-07 10:57:19&lt;/sys_created_on&gt;&lt;sys_id&gt;7e9030731b11e1105b76777d8b4bcb19&lt;/sys_id&gt;&lt;sys_mod_count&gt;11&lt;/sys_mod_count&gt;&lt;sys_name&gt;CodeSanity - Comment containing "TODO"&lt;/sys_name&gt;&lt;sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity"&gt;8ed42c23dbad0510bcced03cd39619ce&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="CodeSanity WORK IN PROGRESS"&gt;8ed42c23dbad0510bcced03cd39619ce&lt;/sys_scope&gt;&lt;sys_update_name&gt;scan_linter_check_7e9030731b11e1105b76777d8b4bcb19&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-03-07 11:20:05&lt;/sys_updated_on&gt;&lt;/scan_linter_check&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-642844089</payload_hash>
+        <record_name>CodeSanity - Comment containing "TODO"</record_name>
+        <reverted_from/>
+        <source>1f7faf701b38e1105b76777d8b4bcb94</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-07 11:20:05</sys_created_on>
+        <sys_id>8a4b383f1b11e1105b76777d8b4bcb8f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>186bbccca0b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-07 11:20:05</sys_updated_on>
+        <type>Linter Check</type>
+        <update_guid>824b383fc111e110a7df383c9564088f</update_guid>
+        <update_guid_history>824b383fc111e110a7df383c9564088f:-642844089,423b783fa711e110449680f62b1e4244:-1863220723,e4caf8fb5b11e110bcb1457d4a575104:-2035214675,7c7ab4fb4a11e110f964d35bb82b3ba3:-804722905,291a38bb1e11e110874bff06be5028a2:1307843013,62f7f83b3711e110a5ea4c7ebc4bdf28:-818633537,dee7b83bcb11e110f49464521e957116:1147539699,14d7383b8e11e1108e334b8e6fe93766:383325171,72c7343baa11e110f438008f2139cb40:-605292069,a78730f7e811e110b8f52e2b18ad0809:-1707650629,b2b634f7ef11e110ac6262e6308002b7:1689850462,60163073cc11e110b5f6fe362f0a6948:273614174</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="CodeSanity - Comment containing &quot;TODO&quot;">fa2c38bf1b11e1105b76777d8b4bcb51</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-07 11:23:58</sys_created_on>
+        <sys_db_object display_value="" name="scan_linter_check">scan_linter_check</sys_db_object>
+        <sys_id>371d2e52cb4e44d893ab79e20b3de310</sys_id>
+        <sys_metadata>7e9030731b11e1105b76777d8b4bcb19</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CodeSanity - Comment containing "TODO"</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>scan_linter_check_7e9030731b11e1105b76777d8b4bcb19</sys_update_name>
+        <sys_update_version display_value="scan_linter_check_7e9030731b11e1105b76777d8b4bcb19">8a4b383f1b11e1105b76777d8b4bcb8f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-07 11:23:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

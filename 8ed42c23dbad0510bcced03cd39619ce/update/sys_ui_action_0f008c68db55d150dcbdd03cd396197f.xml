@@ -28,9 +28,9 @@
         <list_style/>
         <messages/>
         <name>CodeSanity Scan</name>
-        <onclick>onClick()</onclick>
+        <onclick>onClickCodeSanityScan()</onclick>
         <order>99999</order>
-        <script><![CDATA[function onClick()
+        <script><![CDATA[function onClickCodeSanityScan()
 {
 	CodeSanityScanApp(GetCurrentRecordSysId());
 }]]></script>
@@ -44,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0f008c68db55d150dcbdd03cd396197f</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>CodeSanity Scan</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -52,7 +52,7 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_action_0f008c68db55d150dcbdd03cd396197f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-22 17:12:50</sys_updated_on>
+        <sys_updated_on>2023-02-17 13:12:03</sys_updated_on>
         <table>sys_app</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

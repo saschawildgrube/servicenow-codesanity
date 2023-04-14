@@ -165,6 +165,7 @@
 		&lt;li&gt;DevTools 1.60.0 is now required.&lt;/li&gt;&#13;
 		&lt;li&gt;San Diego is no longer actively supported.&lt;/li&gt;&#13;
 		&lt;li&gt;CodeSanity is now fully tested in Utah.&lt;/li&gt;&#13;
+		&lt;li&gt;Added check "CodeSanity - Complex scripts in the right place".&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - Comment containing "TODO"" no longer creates findings if the TODO pattern is within a string literal.&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - Bracket-dot anti-pattern" no longer creates findings if the anti-pattern contained in a string literal.&lt;/li&gt; &#13;
 		&lt;li&gt;Check "CodeSanity - Debug output" no longer creates findings of debug output statements are contained in a string literals.&lt;/li&gt;&#13;
@@ -404,13 +405,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>256</sys_mod_count>
+        <sys_mod_count>257</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-14 11:06:03</sys_updated_on>
+        <sys_updated_on>2023-04-14 12:07:52</sys_updated_on>
     </sys_ui_page>
 </record_update>

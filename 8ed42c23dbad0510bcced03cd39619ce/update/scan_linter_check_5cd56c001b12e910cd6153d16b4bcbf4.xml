@@ -32,7 +32,12 @@ Scripts contained in Application Files that "inject" functionality or "hook" int
 			'sys_ui_script',
 			'sys_extension_point',
 			'sys_ui_page',
-			'sys_atf_step_config'
+			'sp_widget',
+			'sys_atf_step_config',
+			'scan_table_check',
+			'scan_linter_check',
+			'scan_column_type_check',
+			'scan_script_only_check'
 			];
 		
 		if (ArrayValueExists(aClassNames,strClassName) == false)
@@ -43,10 +48,10 @@ Scripts contained in Application Files that "inject" functionality or "hook" int
 			strSource = ScriptEmptyStringLiterals(strSource);
 			strSource = ScriptRemoveComments(strSource);
 			
-			var nMaxLines = 20;
+			var nMaxLines = 30;
 			if (strClassName == 'sys_ui_action')
 			{
-				nMaxLines = 40;
+				nMaxLines = 50;
 			}
 			
 			if (StringCheckRegEx(strSource,'(.*\\n){'+nMaxLines+'}','i') == true)
@@ -68,13 +73,13 @@ Scripts contained in Application Files that "inject" functionality or "hook" int
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-04-14 11:29:17</sys_created_on>
         <sys_id>5cd56c001b12e910cd6153d16b4bcbf4</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>CodeSanity - Complex scripts in the right place</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_5cd56c001b12e910cd6153d16b4bcbf4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-14 11:54:38</sys_updated_on>
+        <sys_updated_on>2023-04-14 12:16:26</sys_updated_on>
     </scan_linter_check>
 </record_update>

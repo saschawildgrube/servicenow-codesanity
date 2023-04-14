@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="DELETE">
+        <choices/>
+        <description>Controls if the Code Sanity application produces log output.</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_snc_codesanity.log.active</name>
+        <read_roles/>
+        <suffix>active</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-10 09:51:01</sys_created_on>
+        <sys_id>4467d4d3db4a8510bcced03cd39619f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_codesanity.log.active</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_properties_4467d4d3db4a8510bcced03cd39619f3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-10 09:51:01</sys_updated_on>
+        <type>boolean</type>
+        <value>true</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="DELETE" query="documentkey=4467d4d3db4a8510bcced03cd39619f3"/>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>84975bb2db8d919c4d2bac44d4961989</instance_id>
+        <instance_name>wildgrubetokyo</instance_name>
+        <name>sys_properties_4467d4d3db4a8510bcced03cd39619f3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Controls if the Code Sanity application produces log output.</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_snc_codesanity.log.active</name>
+        <read_roles/>
+        <suffix>active</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-10 09:51:01</sys_created_on>
+        <sys_id>4467d4d3db4a8510bcced03cd39619f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_codesanity.log.active</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_properties_4467d4d3db4a8510bcced03cd39619f3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-10 09:51:01</sys_updated_on>
+        <type>boolean</type>
+        <value>true</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=4467d4d3db4a8510bcced03cd39619f3"/>
+</record_update>]]></payload>
+        <payload_hash>1160215910</payload_hash>
+        <record_name>x_snc_codesanity.log.active</record_name>
+        <reverted_from/>
+        <source>410e3cd91be5515009d2dc61ab4bcb26</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-08-25 07:11:54</sys_created_on>
+        <sys_id>8b0ebcd91be5515009d2dc61ab4bcbf4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>182d3d7d7c20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-08-25 07:11:54</sys_updated_on>
+        <type>System Property</type>
+        <update_guid>4b0ebcd910e551509e7fdfdb27f03ff4</update_guid>
+        <update_guid_history>4b0ebcd910e551509e7fdfdb27f03ff4:1160215910</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-14 08:49:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_properties">sys_properties</sys_db_object>
+        <sys_id>46d01864fd4f4d2cbbdd52c4390886b1</sys_id>
+        <sys_metadata>4467d4d3db4a8510bcced03cd39619f3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_codesanity.log.active</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>sys_properties_4467d4d3db4a8510bcced03cd39619f3</sys_update_name>
+        <sys_update_version display_value="sys_properties_4467d4d3db4a8510bcced03cd39619f3">8b0ebcd91be5515009d2dc61ab4bcbf4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-14 08:49:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

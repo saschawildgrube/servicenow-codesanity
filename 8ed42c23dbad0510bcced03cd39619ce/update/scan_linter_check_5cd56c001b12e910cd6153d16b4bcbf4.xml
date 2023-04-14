@@ -10,7 +10,19 @@ Scripts contained in Application Files that "inject" functionality or "hook" int
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - Complex scripts in the right place</name>
         <priority>1</priority>
-        <resolution_details>Refactor complex code contained in Application Files (like Business Rules, UI Actions, ACLs, etc.) into classes and functions defined in Script Includes or UI Scripts.</resolution_details>
+        <resolution_details>Refactor complex code contained in Application Files (like Business Rules, UI Actions, ACLs, etc.) into classes and functions defined in Script Includes or UI Scripts.&#13;
+The following record classes are allowed to contain complex scripts:&#13;
+sys_script_include&#13;
+sys_ui_script&#13;
+sys_extension_point&#13;
+sys_ui_page&#13;
+sp_widget&#13;
+sp_angular_provider&#13;
+sys_atf_step_config&#13;
+scan_table_check&#13;
+scan_linter_check&#13;
+scan_column_type_check&#13;
+scan_script_only_check</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -33,6 +45,7 @@ Scripts contained in Application Files that "inject" functionality or "hook" int
 			'sys_extension_point',
 			'sys_ui_page',
 			'sp_widget',
+			'sp_angular_provider',
 			'sys_atf_step_config',
 			'scan_table_check',
 			'scan_linter_check',
@@ -73,13 +86,13 @@ Scripts contained in Application Files that "inject" functionality or "hook" int
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-04-14 11:29:17</sys_created_on>
         <sys_id>5cd56c001b12e910cd6153d16b4bcbf4</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>CodeSanity - Complex scripts in the right place</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_5cd56c001b12e910cd6153d16b4bcbf4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-14 12:16:26</sys_updated_on>
+        <sys_updated_on>2023-04-14 12:22:18</sys_updated_on>
     </scan_linter_check>
 </record_update>

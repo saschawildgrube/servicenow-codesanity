@@ -19,17 +19,11 @@
 	if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
 		var grSuites = new GlideRecord('sys_atf_test_suite');
-		grSuites.addQuery('sys_scope','=',current.sys_id);
+		grSuites.addQuery('name','=',current.name);
 		grSuites.query();
-		while (grSuites.next())
+		if (grSuites.getRowCount() != 1)
 		{
-			var grSuites2 = new GlideRecord('sys_atf_test_suite');
-			grSuites2.addQuery('name','=',grSuites.name);
-			grSuites2.query();
-			if (grSuites2.getRowCount() != 1)
-			{
-				engine.finding.increment();
-			}
+			engine.finding.increment();
 		}
 	}
 
@@ -39,15 +33,15 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-06 17:31:33</sys_created_on>
         <sys_id>e3bd4f8397622910a6a07767f053af4d</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>CodeSanity - ATF suite name is unique</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_e3bd4f8397622910a6a07767f053af4d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-05-06 17:31:48</sys_updated_on>
-        <table>sys_app</table>
+        <sys_updated_on>2023-05-06 19:23:31</sys_updated_on>
+        <table>sys_atf_test_suite</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
 </record_update>

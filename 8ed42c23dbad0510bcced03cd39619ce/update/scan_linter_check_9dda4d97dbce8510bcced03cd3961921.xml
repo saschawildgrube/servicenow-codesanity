@@ -73,7 +73,13 @@ The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmi
 				// be run only once during the life cycle of an instance.
 				bException = true;
 			}
-
+			else if (strApiName == 'x_snc_devtools.AppSanity')
+			{
+				// The x_snc_devtools.AppSanity functions cleans up application files from a scoped application.
+				// Most of them are created or modified by the platform due to errors.
+				// Some of them can be identified systematically, others are referenced by their SysIds.
+				bException = true;
+			}
 		}
 
 		if (bException == false)
@@ -98,13 +104,13 @@ The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmi
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 13:40:27</sys_created_on>
         <sys_id>9dda4d97dbce8510bcced03cd3961921</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>CodeSanity - Sys IDs in scripts</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9dda4d97dbce8510bcced03cd3961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-09-07 13:54:16</sys_updated_on>
+        <sys_updated_on>2023-06-16 11:09:16</sys_updated_on>
     </scan_linter_check>
 </record_update>

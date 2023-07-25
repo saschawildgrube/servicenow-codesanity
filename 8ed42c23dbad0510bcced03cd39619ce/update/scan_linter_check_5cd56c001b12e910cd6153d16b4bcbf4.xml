@@ -5,9 +5,9 @@
         <description>Many Application Files may contain scripts. More complex scripts (more lines of code or statements) are usually more difficult to maintain and to test. Some places make it easier to maintain and test code than others.&#13;
 Script Includes and UI Scripts are more suitable places for complex scripts than Business Rules and UI Actions or ACLs.&#13;
 If complex logic is implemented as separate classes or functions it is easier to test them separately.&#13;
-Scripts contained in Application Files that "inject" functionality or "hook" into transactions (like Business Rules, ACLs, UI Actions, Scheduled Jobs and many more) can not be tested without actually triggering the mechanism that activates the Application File - e.g. in case of a Business Rule that responds to a record update, a record needs to be created and updated in order to trigger the rule and to test the code that is contained in the Business Rule.&#13;
+Scripts contained in Application Files that "inject" functionality or "hook" into transactions (like Business Rules, ACLs, UI Actions, Scheduled Jobs and many more) can not be tested without actually triggering the mechanism that activates the script contained in the Application File - e.g. in case of a Business Rule that responds to a record update, a record needs to be created and updated in order to trigger the rule and to test the code that is contained in the Business Rule.&#13;
 &#13;
-The following record classes are allowed to contain complex scripts (up to 30 lines):&#13;
+The following record classes are allowed to contain high complex scripts with more than 80 lines:&#13;
 sys_script_include&#13;
 sys_ui_script&#13;
 sys_extension_point&#13;
@@ -21,7 +21,7 @@ scan_column_type_check&#13;
 scan_script_only_check&#13;
 x_snc_reactor_component&#13;
 &#13;
-The following record classes may contain slightly more complex scripts (up to 100 lines):&#13;
+The following record classes may contain medium complex scripts (more than 40 lines):&#13;
 sys_ui_action&#13;
 sys_ws_operation</description>
         <documentation_url/>
@@ -45,7 +45,7 @@ sys_ws_operation</description>
 		
 		var strClassName = current.getRecordClassName();
 		
-		var aExceptionClassNames = [
+		var aHighComplexityClassNames = [
 			'sys_script_include',
 			'sys_ui_script',
 			'sys_extension_point',
@@ -66,7 +66,7 @@ sys_ws_operation</description>
 			];
 		
 		
-		if (ArrayValueExists(aExceptionClassNames,strClassName) == false)
+		if (ArrayValueExists(aHighComplexityClassNames,strClassName) == false)
 		{
 			var bComplexScript = false;
 			
@@ -74,11 +74,11 @@ sys_ws_operation</description>
 			strSource = ScriptEmptyStringLiterals(strSource);
 			strSource = ScriptRemoveComments(strSource);
 			
-			var nMaxLines = 30;
+			var nMaxLines = 40;
 			
 			if (ArrayValueExists(aMediumComplexityClassNames,strClassName) == true)
 			{
-				nMaxLines = 75;
+				nMaxLines = 80;
 			}
 			
 			if (StringCheckRegEx(strSource,'(.*\\n){'+nMaxLines+'}','i') == true)
@@ -100,13 +100,13 @@ sys_ws_operation</description>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-04-14 11:29:17</sys_created_on>
         <sys_id>5cd56c001b12e910cd6153d16b4bcbf4</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>CodeSanity - Complex scripts in the right place</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_5cd56c001b12e910cd6153d16b4bcbf4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-25 06:44:46</sys_updated_on>
+        <sys_updated_on>2023-07-25 13:44:51</sys_updated_on>
     </scan_linter_check>
 </record_update>

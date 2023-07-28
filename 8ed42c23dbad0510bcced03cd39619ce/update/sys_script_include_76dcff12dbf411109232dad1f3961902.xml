@@ -47,7 +47,7 @@
 		var strHtml = '';
 
 		var rulesForCheck = GetExecutionRulesForCheckByRules(grCheck,rules);
-		if (GetBoolValue(GetValue(rulesForCheck,'all')) == true)
+		if (GetBoolValue(GetValue(rulesForCheck,'blacklist','all')) == true)
 		{
 			// if a check is blacklisted for all, we don't show it.
 			return '';
@@ -120,12 +120,18 @@
 	grSSC.query();
 	if (grSSC.getRowCount() > 0)
 	{
-		strHtml += '<h2>General rules</h2>';
+		var strHtmlChecks = '';
 		while (grSSC.next())
 		{
 			var grCheck = GetRecord('scan_check',grSSC.check);
-			strHtml += HtmlRenderCodingGuidelineCheck(grCheck);
+			strHtmlChecks += HtmlRenderCodingGuidelineCheck(grCheck);
 		}
+		if (strHtmlChecks != '')
+		{
+			strHtml += '<h2>General rules</h2>';
+			strHtml += strHtmlChecks;
+		}			
+		
 	}
 	
 	
@@ -155,13 +161,18 @@
 	for (var nTable = 0; nTable < aTables.length; nTable++)
 	{
 		var strTable = aTables[nTable];
-		strHtml += '<h2>Specific rules for records in '+strTable+'</h2>';
+		var strHtmlChecks = '';
 		var aChecks = GetArrayValue(GetValue(table_checks,strTable));
 		for (var nCheck = 0; nCheck < aChecks.length; nCheck++)
 		{
 			var grCheck = aChecks[nCheck];
 			//strHtml += x_snc_devtools.RenderValue(grCheck);
-			strHtml += HtmlRenderCodingGuidelineCheck(grCheck);
+			strHtmlChecks += HtmlRenderCodingGuidelineCheck(grCheck);
+		}
+		if (strHtmlChecks != '')
+		{
+			strHtml += '<h2>Specific rules for records in '+strTable+'</h2>';
+			strHtml += strHtmlChecks;
 		}
 	}
 
@@ -190,13 +201,18 @@
 	for (var nColumnType = 0; nColumnType < aColumnTypes.length; nColumnType++)
 	{
 		var strColumnType = aColumnTypes[nColumnType];
-		strHtml += '<h2>Specific rules for '+strColumnType+' fields</h2>';
+		var strHtmlChecks = '';
 		var aChecks = GetArrayValue(GetValue(column_type_checks,strColumnType));
 		for (var nCheck = 0; nCheck < aChecks.length; nCheck++)
 		{
 			var grCheck = aChecks[nCheck];
-			strHtml += HtmlRenderCodingGuidelineCheck(grCheck);
+			strHtmlChecks += HtmlRenderCodingGuidelineCheck(grCheck);
 		}
+		if (strHtmlChecks != '')
+		{
+			strHtml += '<h2>Specific rules for '+strColumnType+' fields</h2>';
+			strHtml += strHtmlChecks;
+		}		
 	}
 	
 	
@@ -207,13 +223,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-22 16:52:50</sys_created_on>
         <sys_id>76dcff12dbf411109232dad1f3961902</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>HtmlRenderCodingGuideline</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_76dcff12dbf411109232dad1f3961902</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-07 14:46:33</sys_updated_on>
+        <sys_updated_on>2023-07-28 08:21:29</sys_updated_on>
     </sys_script_include>
 </record_update>

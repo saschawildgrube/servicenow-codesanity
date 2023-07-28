@@ -18,8 +18,13 @@
 	if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{		
 		var GetStringValue = x_snc_devtools.GetStringValue;
+		var ScriptRemoveComments = x_snc_devtools.ScriptRemoveComments;
+		var ScriptEmptyStringLiterals = x_snc_devtools.ScriptEmptyStringLiterals;
 
 		var strSource = GetStringValue(engine.columnValue);
+		
+		strSource = ScriptRemoveComments(strSource);
+		strSource = ScriptEmptyStringLiterals(strSource);		
 		
 		if (strSource.indexOf('=>') != -1)
 		{
@@ -33,13 +38,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-02 10:13:23</sys_created_on>
         <sys_id>cb9b346fdb3e91106a03dad1f3961993</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>CodeSanity - Avoid arrow functions</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_column_type_check_cb9b346fdb3e91106a03dad1f3961993</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-23 17:15:58</sys_updated_on>
+        <sys_updated_on>2023-06-06 16:35:53</sys_updated_on>
     </scan_column_type_check>
 </record_update>

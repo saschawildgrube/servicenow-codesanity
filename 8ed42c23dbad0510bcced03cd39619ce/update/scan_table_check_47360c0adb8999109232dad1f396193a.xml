@@ -14,7 +14,8 @@
         <score_max>100</score_max>
         <score_min>0</score_min>
         <score_scale>1</score_scale>
-        <script><![CDATA[(function (engine) {
+        <script><![CDATA[// This comment is to check if this check ignores comments properly
+(function (engine) {
 
     if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
@@ -22,11 +23,14 @@
 		{
 			var GetStringValue = x_snc_devtools.GetStringValue;
 			var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+			var ScriptRemoveComments = x_snc_devtools.ScriptRemoveComments;
 
 			var strScript = GetStringValue(current.script);
-			var strRegEx = '^\\(function\\s*\\(\\s*engine\\s*\\)\\s*\\{\\s*if\\s*\\(\\s*x_snc_codesanity.IsCheckApplicableToRecord\\(\\s*\\)\\)\\s*\\{';
+			strScript = ScriptRemoveComments(strScript);
 
-			if (StringCheckRegEx(strScript,strRegEx,'') == false)
+			var strRegEx = '^\\s*\\(function\\s*\\(\\s*engine\\s*\\)\\s*\\{\\s*if\\s*\\(\\s*x_snc_codesanity.IsCheckApplicableToRecord\\(\\s*\\)\\)\\s*\\{';
+
+			if (StringCheckRegEx(strScript,strRegEx) == false)
 			{
 				engine.finding.increment();
 			}
@@ -39,15 +43,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-02 14:33:38</sys_created_on>
         <sys_id>47360c0adb8999109232dad1f396193a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>CodeSanity - CodeSanity column type checks apply rules</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_47360c0adb8999109232dad1f396193a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-02 14:33:38</sys_updated_on>
+        <sys_updated_on>2023-11-09 13:42:12</sys_updated_on>
         <table>scan_column_type_check</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=47360c0adb8999109232dad1f396193a"/>
 </record_update>

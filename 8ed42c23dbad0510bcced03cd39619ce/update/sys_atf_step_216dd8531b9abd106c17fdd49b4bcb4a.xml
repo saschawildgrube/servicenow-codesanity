@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-09 09:06:52</sys_created_on>
         <sys_id>216dd8531b9abd106c17fdd49b4bcb4a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_216dd8531b9abd106c17fdd49b4bcb4a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-09 09:09:32</sys_updated_on>
+        <sys_updated_on>2023-11-09 09:16:36</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - LDAP Server Configs must not contain credentials">121c14131b9abd106c17fdd49b4bcb9a</test>
         <timeout/>
@@ -35,9 +35,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-09 09:06:52</sys_created_on>
         <sys_id>877d5c531b9abd106c17fdd49b4bcb39</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-09 09:09:32</sys_updated_on>
+        <sys_updated_on>2023-11-09 09:16:36</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -49,15 +49,15 @@
 	var grRecord = new GlideRecord('ldap_server_config');&#13;
 	grRecord.initialize();&#13;
 	grRecord.name = '_ATF_CODESANITY_TEST1';&#13;
+	grRecord.rdn = 'xxx';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'ldap_server_config',strRecordSysId,false);&#13;
 &#13;
-	test.Log(grRecord);&#13;
-	&#13;
 	var grRecord = new GlideRecord('ldap_server_config');&#13;
 	grRecord.initialize();&#13;
 	grRecord.name = '_ATF_CODESANITY_TEST2';&#13;
 	grRecord.password = 'test';&#13;
+	grRecord.rdn = 'xxx';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'ldap_server_config',strRecordSysId,true);&#13;
 	&#13;
@@ -65,6 +65,7 @@
 	grRecord.initialize();&#13;
 	grRecord.name = '_ATF_CODESANITY_TEST3';&#13;
 	grRecord.dn = 'test@example.com';&#13;
+	grRecord.rdn = 'xxx';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'ldap_server_config',strRecordSysId,true);	&#13;
 &#13;

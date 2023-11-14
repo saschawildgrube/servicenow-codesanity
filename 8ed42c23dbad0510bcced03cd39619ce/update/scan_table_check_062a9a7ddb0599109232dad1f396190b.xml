@@ -22,11 +22,14 @@
 		{
 			var GetStringValue = x_snc_devtools.GetStringValue;
 			var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+			var ScriptRemoveComments = x_snc_devtools.ScriptRemoveComments;
 
 			var strScript = GetStringValue(current.script);
-			var strRegEx = '^\\(function\\s*\\(\\s*engine\\s*\\)\\s*\\{\\s*if\\s*\\(\\s*x_snc_codesanity.IsCheckApplicableToRecord\\(\\s*\\)\\)\\s*\\{';
+			strScript = ScriptRemoveComments(strScript);
+			
+			var strRegEx = '^\\s*\\(function\\s*\\(\\s*engine\\s*\\)\\s*\\{\\s*if\\s*\\(\\s*x_snc_codesanity.IsCheckApplicableToRecord\\(\\s*\\)\\)\\s*\\{';
 
-			if (StringCheckRegEx(strScript,strRegEx,'') == false)
+			if (StringCheckRegEx(strScript,strRegEx) == false)
 			{
 				engine.finding.increment();
 			}
@@ -39,15 +42,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-02 06:43:05</sys_created_on>
         <sys_id>062a9a7ddb0599109232dad1f396190b</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>CodeSanity - CodeSanity table checks apply rules</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_062a9a7ddb0599109232dad1f396190b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-02 08:25:39</sys_updated_on>
+        <sys_updated_on>2023-11-09 13:39:30</sys_updated_on>
         <table>scan_table_check</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=062a9a7ddb0599109232dad1f396190b"/>
 </record_update>

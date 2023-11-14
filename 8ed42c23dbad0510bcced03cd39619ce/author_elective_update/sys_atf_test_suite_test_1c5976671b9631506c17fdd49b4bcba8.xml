@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="DELETE">
+        <abort_on_failure>false</abort_on_failure>
+        <order>0</order>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-10 15:06:11</sys_created_on>
+        <sys_id>1c5976671b9631506c17fdd49b4bcba8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>585976671b9631506c17fdd49b4bcba5</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_1c5976671b9631506c17fdd49b4bcba8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 15:06:11</sys_updated_on>
+        <test display_value="CodeSanity - New Test">585976671b9631506c17fdd49b4bcba5</test>
+        <test_suite display_value="CodeSanity">2c6758d3db4a8510bcced03cd396191d</test_suite>
+    </sys_atf_test_suite_test>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>25322e70dbb92590c1a4c5970596192e</instance_id>
+        <instance_name>wildgrubeutah</instance_name>
+        <name>sys_atf_test_suite_test_1c5976671b9631506c17fdd49b4bcba8</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test"><sys_atf_test_suite_test action="INSERT_OR_UPDATE"><abort_on_failure>false</abort_on_failure><order>0</order><sys_class_name>sys_atf_test_suite_test</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-11-10 15:06:11</sys_created_on><sys_id>1c5976671b9631506c17fdd49b4bcba8</sys_id><sys_mod_count>0</sys_mod_count><sys_name>585976671b9631506c17fdd49b4bcba5</sys_name><sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package><sys_policy/><sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope><sys_update_name>sys_atf_test_suite_test_1c5976671b9631506c17fdd49b4bcba8</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-11-10 15:06:11</sys_updated_on><test display_value="CodeSanity - New Test">585976671b9631506c17fdd49b4bcba5</test><test_suite display_value="CodeSanity">2c6758d3db4a8510bcced03cd396191d</test_suite></sys_atf_test_suite_test></record_update>]]></payload>
+        <payload_hash>-348964673</payload_hash>
+        <record_name>585976671b9631506c17fdd49b4bcba5</record_name>
+        <reverted_from/>
+        <source>bf85ed801b92e5506c17fdd49b4bcb72</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-10 15:06:12</sys_created_on>
+        <sys_id>585976671b9631506c17fdd49b4bcbaa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18bb9c4eac50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 15:06:12</sys_updated_on>
+        <type>Test Suite Test</type>
+        <update_guid>5c597667d996315093a2ee4be8e2b4a9</update_guid>
+        <update_guid_history>5c597667d996315093a2ee4be8e2b4a9:-348964673</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-10 15:08:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_atf_test_suite_test">sys_atf_test_suite_test</sys_db_object>
+        <sys_id>b9b06acad7c841eb91f50a0e24dc86d9</sys_id>
+        <sys_metadata>1c5976671b9631506c17fdd49b4bcba8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>585976671b9631506c17fdd49b4bcba5</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>sys_atf_test_suite_test_1c5976671b9631506c17fdd49b4bcba8</sys_update_name>
+        <sys_update_version display_value="sys_atf_test_suite_test_1c5976671b9631506c17fdd49b4bcba8">585976671b9631506c17fdd49b4bcbaa</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-10 15:08:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

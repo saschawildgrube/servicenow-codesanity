@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_check_suite_check">
+    <scan_check_suite_check action="DELETE">
+        <check display_value="CodeSanity - AppInstall must not modify records directly">818218611bb77d106c17fdd49b4bcb91</check>
+        <score_weight>1</score_weight>
+        <suite display_value="CodeSanity">4fcb181bdb4a8510bcced03cd39619eb</suite>
+        <sys_class_name>scan_check_suite_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-17 11:23:46</sys_created_on>
+        <sys_id>198218611bb77d106c17fdd49b4bcb94</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_check_suite_check_198218611bb77d106c17fdd49b4bcb94</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-17 11:23:46</sys_updated_on>
+    </scan_check_suite_check>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>25322e70dbb92590c1a4c5970596192e</instance_id>
+        <instance_name>wildgrubeutah</instance_name>
+        <name>scan_check_suite_check_198218611bb77d106c17fdd49b4bcb94</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_check_suite_check"><scan_check_suite_check action="INSERT_OR_UPDATE"><check display_value="CodeSanity - AppInstall must not modify records directly">818218611bb77d106c17fdd49b4bcb91</check><score_weight>1</score_weight><suite display_value="CodeSanity">4fcb181bdb4a8510bcced03cd39619eb</suite><sys_class_name>scan_check_suite_check</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-01-17 11:23:46</sys_created_on><sys_id>198218611bb77d106c17fdd49b4bcb94</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package><sys_policy/><sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope><sys_update_name>scan_check_suite_check_198218611bb77d106c17fdd49b4bcb94</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-01-17 11:23:46</sys_updated_on></scan_check_suite_check></record_update>]]></payload>
+        <payload_hash>-1496886036</payload_hash>
+        <record_name>818218611bb77d106c17fdd49b4bcb91</record_name>
+        <reverted_from/>
+        <source>bf85ed801b92e5506c17fdd49b4bcb72</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-17 11:23:47</sys_created_on>
+        <sys_id>d18218611bb77d106c17fdd49b4bcb97</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18d1729b9ec0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-17 11:23:47</sys_updated_on>
+        <type>Suite Check</type>
+        <update_guid>d5821861acb77d10d49969697cb41996</update_guid>
+        <update_guid_history>d5821861acb77d10d49969697cb41996:-1496886036</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">d32594251bb77d106c17fdd49b4bcb33</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-17 11:35:23</sys_created_on>
+        <sys_db_object display_value="" name="scan_check_suite_check">scan_check_suite_check</sys_db_object>
+        <sys_id>b0effa8c31ba4268ab702cc9ec82d840</sys_id>
+        <sys_metadata>198218611bb77d106c17fdd49b4bcb94</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>scan_check_suite_check_198218611bb77d106c17fdd49b4bcb94</sys_update_name>
+        <sys_update_version display_value="scan_check_suite_check_198218611bb77d106c17fdd49b4bcb94">d18218611bb77d106c17fdd49b4bcb97</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-17 11:35:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

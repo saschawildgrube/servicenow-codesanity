@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_linter_check">
+    <scan_linter_check action="DELETE">
+        <active>true</active>
+        <category>code_sanity</category>
+        <description>The AppInstall() function of a scoped application is designed to be executed as part of the installation process. Whatever cannot be shipped as part of the scoped application can be done via script within the AppInstall() function. However, no changes to records should be done "directly" using GlideRecord or other OOTB API functions. Instead only functions contained in the DevTools InstallerAPI class should be used. This ensures consistent logging and error handling and allows to determine which modifications are to be expected from the AppInstall() script without actually performing the modifications. As a result update(), insert() and updateMultiple() and deleteRecord() functions are not allowed with AppInstall Script Includes.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - AppInstall must not modify records directly</name>
+        <priority>1</priority>
+        <resolution_details>Use functions contained in the DevTools InstallerAPI class instead to perform record modifications.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+	
+    if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{	
+	
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+		var StringReplace = x_snc_devtools.StringReplace;
+
+		
+		var strTable = GetStringValue(current.getRecordClassName());
+		var bException = false;
+
+		if (strTable == 'sys_script_fix')
+		{
+			bException = true;
+		}
+		else if (strTable == 'sys_script_include')
+		{
+			var strName = GetStringValue(current.name);
+			var strApiName = GetStringValue(current.api_name);
+
+			if (strName.indexOf('GetLinkDirectory') != -1)
+			{
+				// Any GetLinkDirectory function may contain Sys IDs as it may contain links to specific OOTB records or community articles etc.  
+				bException = true;
+			}
+			else if (strName.startsWith('AppInstall'))
+			{
+				// AppInstall functions may have to refer to specific OOTB or other records to make modifications
+				// AppInstall is intended to be run only once after a deployment which does not make it prone to
+				// introduce runtime issues.
+				bException = true;
+			}
+			else if (strName == 'AppBuilder')
+			{
+				// AppBuilder functions may have to refer to specific OOTB or other records to built an application
+				// AppBuilder is intended to be run only once during the whole life cycle of an application.
+				bException = true;
+			}
+			else if (strName == 'AppBaseline')
+			{
+				// AppBaseline functions are run while an application is baselined. They may have to make modifications to specific records that may be identified by their Sys IDs
+				bException = true;
+			}				
+			else if (strName == 'AppSetDefaults')
+			{
+				// AppSetDefaults functions are run while an application is baselined to set system properties to their default values. Such system properties may contain Sys IDs.
+				bException = true;
+			}				
+			else if (strApiName == 'x_snc_devtools.IsUserDefaultAdmin')
+			{
+				// The sole purpose of IsUserDefaultAdmin is to check a given sys_id against the sys_id of the default OOTB admin
+				// user - hence the exception.
+				bException = true;
+			}
+			else if (strApiName == 'x_snc_devtools.RunScriptInScope')
+			{
+				// The x_snc_devtools.RunScriptInScope must refer to a specific script include record to work.
+				bException = true;
+			}
+			else if (strApiName == 'x_snc_devtools.InstanceReset')
+			{
+				// The x_snc_devtools.InstanceReset as the name suggests makes changes to various OOTB records and is intended to
+				// be run only once during the life cycle of an instance.
+				bException = true;
+			}
+			else if (strApiName == 'x_snc_devtools.AppSanity')
+			{
+				// The x_snc_devtools.AppSanity functions cleans up application files from a scoped application.
+				// Most of them are created or modified by the platform due to errors.
+				// Some of them can be identified systematically, others are referenced by their SysIds.
+				bException = true;
+			}
+		}
+
+		if (bException == false)
+		{
+			var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
+			strSource = StringReplace(strSource,' ','');
+			strSource = StringReplace(strSource,'\n','');
+			strSource = StringReplace(strSource,'\r','');
+			strSource = StringReplace(strSource,'"+"','');
+			strSource = StringReplace(strSource,"'+'",'');
+			
+			if (StringCheckRegEx(strSource,'("|\')[0-9a-f]{32}("|\')','i') == true)
+			{
+				engine.finding.incrementWithNode(engine.rootNode);
+			}
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>AppInstall must not modify records directly</short_description>
+        <sys_class_name>scan_linter_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-17 11:23:46</sys_created_on>
+        <sys_id>818218611bb77d106c17fdd49b4bcb91</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CodeSanity - AppInstall must not modify records directly</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_linter_check_818218611bb77d106c17fdd49b4bcb91</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-17 11:28:15</sys_updated_on>
+    </scan_linter_check>
+    <sys_translated_text action="DELETE" query="documentkey=818218611bb77d106c17fdd49b4bcb91"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>25322e70dbb92590c1a4c5970596192e</instance_id>
+        <instance_name>wildgrubeutah</instance_name>
+        <name>scan_linter_check_818218611bb77d106c17fdd49b4bcb91</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="scan_linter_check"&gt;&lt;scan_linter_check action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;category&gt;code_sanity&lt;/category&gt;&lt;description&gt;The AppInstall() function of a scoped application is designed to be executed as part of the installation process. Whatever cannot be shipped as part of the scoped application can be done via script within the AppInstall() function. However, no changes to records should be done "directly" using GlideRecord or other OOTB API functions. Instead only functions contained in the DevTools InstallerAPI class should be used. This ensures consistent logging and error handling and allows to determine which modifications are to be expected from the AppInstall() script without actually performing the modifications. As a result update(), insert() and updateMultiple() and deleteRecord() functions are not allowed with AppInstall Script Includes.&lt;/description&gt;&lt;documentation_url/&gt;&lt;finding_type&gt;scan_finding&lt;/finding_type&gt;&lt;name&gt;CodeSanity - AppInstall must not modify records directly&lt;/name&gt;&lt;priority&gt;1&lt;/priority&gt;&lt;resolution_details&gt;Use functions contained in the DevTools InstallerAPI class instead to perform record modifications.&lt;/resolution_details&gt;&lt;run_condition/&gt;&lt;score_max&gt;100&lt;/score_max&gt;&lt;score_min&gt;0&lt;/score_min&gt;&lt;score_scale&gt;1&lt;/score_scale&gt;&lt;script&gt;&lt;![CDATA[(function (engine) {
+	
+    if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{	
+	
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+		var StringReplace = x_snc_devtools.StringReplace;
+
+		
+		var strTable = GetStringValue(current.getRecordClassName());
+		var bException = false;
+
+		if (strTable == 'sys_script_fix')
+		{
+			bException = true;
+		}
+		else if (strTable == 'sys_script_include')
+		{
+			var strName = GetStringValue(current.name);
+			var strApiName = GetStringValue(current.api_name);
+
+			if (strName.indexOf('GetLinkDirectory') != -1)
+			{
+				// Any GetLinkDirectory function may contain Sys IDs as it may contain links to specific OOTB records or community articles etc.  
+				bException = true;
+			}
+			else if (strName.startsWith('AppInstall'))
+			{
+				// AppInstall functions may have to refer to specific OOTB or other records to make modifications
+				// AppInstall is intended to be run only once after a deployment which does not make it prone to
+				// introduce runtime issues.
+				bException = true;
+			}
+			else if (strName == 'AppBuilder')
+			{
+				// AppBuilder functions may have to refer to specific OOTB or other records to built an application
+				// AppBuilder is intended to be run only once during the whole life cycle of an application.
+				bException = true;
+			}
+			else if (strName == 'AppBaseline')
+			{
+				// AppBaseline functions are run while an application is baselined. They may have to make modifications to specific records that may be identified by their Sys IDs
+				bException = true;
+			}				
+			else if (strName == 'AppSetDefaults')
+			{
+				// AppSetDefaults functions are run while an application is baselined to set system properties to their default values. Such system properties may contain Sys IDs.
+				bException = true;
+			}				
+			else if (strApiName == 'x_snc_devtools.IsUserDefaultAdmin')
+			{
+				// The sole purpose of IsUserDefaultAdmin is to check a given sys_id against the sys_id of the default OOTB admin
+				// user - hence the exception.
+				bException = true;
+			}
+			else if (strApiName == 'x_snc_devtools.RunScriptInScope')
+			{
+				// The x_snc_devtools.RunScriptInScope must refer to a specific script include record to work.
+				bException = true;
+			}
+			else if (strApiName == 'x_snc_devtools.InstanceReset')
+			{
+				// The x_snc_devtools.InstanceReset as the name suggests makes changes to various OOTB records and is intended to
+				// be run only once during the life cycle of an instance.
+				bException = true;
+			}
+			else if (strApiName == 'x_snc_devtools.AppSanity')
+			{
+				// The x_snc_devtools.AppSanity functions cleans up application files from a scoped application.
+				// Most of them are created or modified by the platform due to errors.
+				// Some of them can be identified systematically, others are referenced by their SysIds.
+				bException = true;
+			}
+		}
+
+		if (bException == false)
+		{
+			var strSource = x_snc_devtools.GetStringValue(engine.rootNode.toSource());
+			strSource = StringReplace(strSource,' ','');
+			strSource = StringReplace(strSource,'\n','');
+			strSource = StringReplace(strSource,'\r','');
+			strSource = StringReplace(strSource,'"+"','');
+			strSource = StringReplace(strSource,"'+'",'');
+			
+			if (StringCheckRegEx(strSource,'("|\')[0-9a-f]{32}("|\')','i') == true)
+			{
+				engine.finding.incrementWithNode(engine.rootNode);
+			}
+		}
+	}
+
+})(engine);]]&gt;&lt;/script&gt;&lt;short_description&gt;AppInstall must not modify records directly&lt;/short_description&gt;&lt;sys_class_name&gt;scan_linter_check&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-01-17 11:23:46&lt;/sys_created_on&gt;&lt;sys_id&gt;818218611bb77d106c17fdd49b4bcb91&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;CodeSanity - AppInstall must not modify records directly&lt;/sys_name&gt;&lt;sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity"&gt;8ed42c23dbad0510bcced03cd39619ce&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="CodeSanity WORK IN PROGRESS"&gt;8ed42c23dbad0510bcced03cd39619ce&lt;/sys_scope&gt;&lt;sys_update_name&gt;scan_linter_check_818218611bb77d106c17fdd49b4bcb91&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-01-17 11:28:15&lt;/sys_updated_on&gt;&lt;/scan_linter_check&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=818218611bb77d106c17fdd49b4bcb91"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>970054725</payload_hash>
+        <record_name>CodeSanity - AppInstall must not modify records directly</record_name>
+        <reverted_from/>
+        <source>bf85ed801b92e5506c17fdd49b4bcb72</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-17 11:28:16</sys_created_on>
+        <sys_id>c78354a11bb77d106c17fdd49b4bcb4b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18d172dd6570000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-17 11:28:16</sys_updated_on>
+        <type>Linter Check</type>
+        <update_guid>4f839461bab77d107e8ce241be6eb5dc</update_guid>
+        <update_guid_history>4f839461bab77d107e8ce241be6eb5dc:970054725,d182186161b77d107684fc7df28b7d98:1771985871</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="CodeSanity - AppInstall must not modify records directly">532594251bb77d106c17fdd49b4bcb39</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-17 11:35:23</sys_created_on>
+        <sys_db_object display_value="" name="scan_linter_check">scan_linter_check</sys_db_object>
+        <sys_id>8b2bfd65de5044e6a1a3072c1fd92841</sys_id>
+        <sys_metadata>818218611bb77d106c17fdd49b4bcb91</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CodeSanity - AppInstall must not modify records directly</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>scan_linter_check_818218611bb77d106c17fdd49b4bcb91</sys_update_name>
+        <sys_update_version display_value="scan_linter_check_818218611bb77d106c17fdd49b4bcb91">c78354a11bb77d106c17fdd49b4bcb4b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-17 11:35:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

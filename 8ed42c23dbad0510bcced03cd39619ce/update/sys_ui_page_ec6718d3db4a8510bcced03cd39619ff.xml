@@ -21,6 +21,7 @@
 	&lt;p&gt;The CodeSanity scan suite can act as the foundation and master source for a coding guideline document.&lt;/p&gt;&#13;
 	&lt;p&gt;Execution rules can be used to control which checks run on which applications and which do not.&lt;/p&gt;&#13;
 	&lt;p&gt;CodeSanity checks are intended to scan applications (and the contained application files) - it is not intended to scan data or OOTB components - let alone the whole instance.&lt;/p&gt;&#13;
+	&lt;p&gt;The CodeSanity checks shall start a discussion in the development team. Which checks are to be used? Which are not? What additional checks should be created?&lt;/p&gt;&#13;
 &#13;
 	&lt;h2&gt;Disclaimer&lt;/h2&gt;&#13;
 	&lt;g2:no_escape&gt;$[docapi.RenderDisclaimer()]&lt;/g2:no_escape&gt;	&#13;
@@ -29,7 +30,7 @@
 	&lt;ul&gt;&#13;
 		&lt;g2:no_escape&gt;$[&#13;
 			docapi.RenderSystemRequirements(&#13;
-				'Tokyo,Utah',&#13;
+				'Utah,Vancouver',&#13;
 				true,&#13;
 				AppGetDependencies());&#13;
 		]&lt;/g2:no_escape&gt;	&#13;
@@ -90,8 +91,10 @@
 	&lt;/ol&gt;&#13;
 	&lt;p&gt;Checks and scopes can be referenced by Sys Id or by their name. Both options obviously have pros and cons. Sys Ids are not going to change, but names are easier to read - a tough decision.&lt;/p&gt; &#13;
 	&#13;
-	&lt;h2&gt;Creating a coding guideline document&lt;/h2&gt;&#13;
-	&lt;p&gt;CodeSanity checks can become the foundation of a coding guideline document. The CodeSanity app contains the function&amp;#160;&lt;a href="/nav_to.do?uri=sys_script_include.do?sys_id=76dcff12dbf411109232dad1f3961902" target="_blank"&gt;HtmlRenderCodingGuideline&lt;/a&gt;&amp;#160;which outputs the descriptions of all checks contained in the CodeSanity scan suite so that they can be integrated into an html page. Follow these steps to create a UI page that can act as the organization's coding guideline document:&lt;/p&gt;&#13;
+	&lt;h2&gt;Creating a Coding Guideline document&lt;/h2&gt;&#13;
+	&lt;p&gt;CodeSanity checks can become the foundation of a Coding Guideline document.&lt;/p&gt;&#13;
+	&lt;p&gt;An example Coding Guideline document can be found here:&amp;#160;&lt;a href="/nav_to.do?uri=%2Fx_snc_codesanity_coding_guideline.do%3F" target="_blank"&gt;Coding Guideline&lt;/a&gt;. You can use the same mechanism to integrate the content in your own UI pages or create a document of your own.&lt;/p&gt;&#13;
+	&lt;p&gt;The CodeSanity app contains the function&amp;#160;&lt;a href="/nav_to.do?uri=sys_script_include.do?sys_id=76dcff12dbf411109232dad1f3961902" target="_blank"&gt;HtmlRenderCodingGuideline&lt;/a&gt;&amp;#160;which outputs the descriptions of all checks contained in the CodeSanity scan suite so that they can be integrated into an html page. Follow these steps to create a UI page that can act as the organization's Coding Guideline document:&lt;/p&gt;&#13;
 	&lt;ol&gt;&#13;
 		&lt;li&gt;Switch the scope to the app that should contain the new UI page - this should NOT be "CodeSanity".&lt;/li&gt;&#13;
 		&lt;li&gt;Create a new&amp;#160;&lt;a href="/nav_to.do?uri=%2Fsys_ui_page_list.do%3F" target="_blank"&gt;UI page&lt;/a&gt;.&lt;/li&gt;&#13;
@@ -110,6 +113,7 @@
 	&lt;ul&gt;&#13;
 		&lt;li&gt;Under yet unspecified circumstances a suite scan triggered via the "Execute Scan Suite" button on the suite form against an app may not produce all relevant findings. The ServiceNow product development team is made aware of that problem. Use the "CodeSanity Scan" button on the application form instead!&lt;/li&gt;&#13;
 		&lt;li&gt;Instance Scan does not work with scripts in Flow Designer. When scripted action steps are used such scripts are not considered in scans. The ServiceNow product development team is made aware of that problem.&lt;/li&gt;&#13;
+		&lt;li&gt;Instance Scan does not allow to run multiple scans at the same time. This may annoy larger development teams when multiple developers try to scan applications or individual application files at the same time.&lt;/li&gt;&#13;
 	&lt;/ul&gt;&#13;
 &#13;
 	&lt;!--&#13;
@@ -160,6 +164,17 @@
 		&lt;li&gt;TODO: document changes here&lt;/li&gt;&#13;
 	&lt;/ol&gt;  &#13;
 --&gt;&#13;
+	&#13;
+	&lt;h3&gt;2.12.0 - 2023-01-18&lt;/h3&gt;&#13;
+	&lt;ol&gt;&#13;
+		&lt;li&gt;Tokyo is no longer actively supported.&lt;/li&gt;&#13;
+		&lt;li&gt;CodeSanity has been fully tested in Vancouver.&lt;/li&gt;&#13;
+		&lt;li&gt;The OOTB UI Action "Run Point Scan" is deactivated by setting the "glide.scan.enable_point_scan_ui_action" to false.&lt;/li&gt;&#13;
+		&lt;li&gt;The OOTB UI Action "Scan Application" is deactivated.&lt;/li&gt;&#13;
+		&lt;li&gt;Added check "CodeSanity - AppInstall must not modify records directly".&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - Sys IDs in scripts" considers any Script Includes that start with "AppInstall" as exceptions. This allows to use sub functions in AppInstall() scripts.&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - Script Include must contain a class or function" now copes well with all kinds of comments in the source code.&lt;/li&gt;&#13;
+	&lt;/ol&gt;  	&#13;
 	&#13;
 	&lt;h3&gt;2.11.0 - 2023-11-14&lt;/h3&gt;&#13;
 	&lt;ol&gt;&#13;
@@ -434,13 +449,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>293</sys_mod_count>
+        <sys_mod_count>305</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-14 12:33:54</sys_updated_on>
+        <sys_updated_on>2024-01-18 11:22:28</sys_updated_on>
     </sys_ui_page>
 </record_update>

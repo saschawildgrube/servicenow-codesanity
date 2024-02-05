@@ -29,7 +29,7 @@ In addition, the function or class must be named exactly like the Script Include
 
 		var bOK = false;
 
-		if (StringCheckRegEx(strSource,'^\\s*var\\s+'+strName+'\\s*=\\s*Class\\.create\\s*\\(\\);','') == true)
+		if (StringCheckRegEx(strSource,'^\\s*var\\s+'+strName+'\\s*=\\s*Class\\.create\\s*\\(\\s*\\)\\s*;','') == true)
 		{
 			bOK = true;
 		}
@@ -51,19 +51,19 @@ In addition, the function or class must be named exactly like the Script Include
 	}
 	
 })(engine);]]></script>
-        <short_description>A Script Include must start with "function", "var" or "class to avoid globals</short_description>
+        <short_description>A Script Include must start with "function", "var" or "class" to avoid globals</short_description>
         <sys_class_name>scan_table_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-05-25 14:55:44</sys_created_on>
         <sys_id>a625743fdb2f0914bcced03cd39619a8</sys_id>
-        <sys_mod_count>43</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>CodeSanity - Script Include must contain a class or function</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_a625743fdb2f0914bcced03cd39619a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-17 15:53:05</sys_updated_on>
+        <sys_updated_on>2024-02-05 09:47:25</sys_updated_on>
         <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

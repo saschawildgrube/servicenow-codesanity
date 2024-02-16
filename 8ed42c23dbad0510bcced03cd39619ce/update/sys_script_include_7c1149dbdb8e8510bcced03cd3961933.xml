@@ -13,7 +13,7 @@
 		'Helpful links on Instance Scan':
 		[
 			{
-				url: 'https://docs.servicenow.com/bundle/washingtondc-platform-administration/page/administer/health-scan/reference/hs-landing-page.html',
+				url: 'https://docs.servicenow.com/csh?topicname=hs-landing-page.html&version=latest',
 				title: 'Documentation'
 			},
 			{
@@ -50,13 +50,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 12:54:42</sys_created_on>
         <sys_id>7c1149dbdb8e8510bcced03cd3961933</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>GetLinkDirectoryInstanceScan</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_7c1149dbdb8e8510bcced03cd3961933</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-02-07 08:05:03</sys_updated_on>
+        <sys_updated_on>2024-02-16 15:17:35</sys_updated_on>
     </sys_script_include>
 </record_update>

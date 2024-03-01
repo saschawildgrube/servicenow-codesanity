@@ -33,6 +33,9 @@
 		'max_duration','21600');
 	// Refer to https://docs.servicenow.com/bundle/tokyo-servicenow-platform/page/administer/health-scan/task/hs-full-scan-quota-rule.html
 	
+	// Prevent timeouts on individual checks
+	installer.SetProperty('glide.scan.process_check.time_out','1800');
+
 	installer.SetTableColumnAttribute('scan_combo','targets','no_truncate','true');
 	
 	// Deactivate "Run Point Scan" UI action
@@ -48,13 +51,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>206718d3db4a8510bcced03cd3961997</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>AppInstall</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_206718d3db4a8510bcced03cd3961997</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-29 12:02:45</sys_updated_on>
+        <sys_updated_on>2024-03-01 12:51:10</sys_updated_on>
     </sys_script_include>
 </record_update>

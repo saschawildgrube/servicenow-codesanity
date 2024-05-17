@@ -5,6 +5,7 @@
         <enforce_license>log</enforce_license>
         <guided_setup_guid/>
         <hide_on_ui>false</hide_on_ui>
+        <ide_created/>
         <installed_as_dependency>false</installed_as_dependency>
         <js_level>helsinki_es5</js_level>
         <licensable>true</licensable>
@@ -24,21 +25,22 @@
         <source>x_snc_codesanity</source>
         <store_correlation_id/>
         <store_url/>
+        <subscription_entitlement/>
         <sys_class_name>sys_app</sys_class_name>
         <sys_code/>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-14 08:56:58</sys_created_on>
         <sys_id>8ed42c23dbad0510bcced03cd39619ce</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>79</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-14 14:43:55</sys_updated_on>
+        <sys_updated_on>2024-01-18 13:24:16</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
         <user_role/>
         <vendor/>
         <vendor_prefix/>
-        <version>2.12.0</version>
+        <version>2.13.0</version>
         <x_snc_devtools_documentation_url>https://www.wildgrube.com/servicenow-codesanity</x_snc_devtools_documentation_url>
         <x_snc_devtools_maintainer>Sascha Wildgrube</x_snc_devtools_maintainer>
         <x_snc_devtools_maintainer_email>sascha.wildgrube@servicenow.com</x_snc_devtools_maintainer_email>

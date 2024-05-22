@@ -15,7 +15,7 @@
         <license_model>none</license_model>
         <logo/>
         <menu/>
-        <name>CodeSanity</name>
+        <name>CodeSanity WORK IN PROGRESS</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
@@ -40,7 +40,7 @@
         <user_role/>
         <vendor/>
         <vendor_prefix/>
-        <version>2.13.1</version>
+        <version>2.14.0</version>
         <x_snc_devtools_documentation_url>https://www.wildgrube.com/servicenow-codesanity</x_snc_devtools_documentation_url>
         <x_snc_devtools_maintainer>Sascha Wildgrube</x_snc_devtools_maintainer>
         <x_snc_devtools_maintainer_email>sascha.wildgrube@servicenow.com</x_snc_devtools_maintainer_email>

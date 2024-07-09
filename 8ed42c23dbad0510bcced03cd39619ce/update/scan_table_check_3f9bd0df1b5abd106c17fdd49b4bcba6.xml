@@ -9,7 +9,7 @@
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - LDAP Server Configs must not contain credentials</name>
         <priority>1</priority>
-        <resolution_details>In order to make use of LDAP Server Config in an application that is maintained in a source control system, the required credentials must be added to the record before the LDAP Server is used for data import and then removed afterwards. Specifically the record must not contain any credentials when it is committed to source control.</resolution_details>
+        <resolution_details>In order to make use of LDAP Server Config in an application that is maintained in a source control system, the required credentials must be added to the record before the LDAP Server is used for data import and then removed afterwards. The record must not contain any credentials when it is committed to source control - as credentials would then be exposed to everyone with read access to the repository. In that scenario credentials must be changed immediately.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -34,14 +34,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-09 08:58:43</sys_created_on>
         <sys_id>3f9bd0df1b5abd106c17fdd49b4bcba6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>CodeSanity - LDAP Server Configs must not contain credentials</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_3f9bd0df1b5abd106c17fdd49b4bcba6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-09 09:00:23</sys_updated_on>
+        <sys_updated_on>2024-07-02 10:04:31</sys_updated_on>
         <table>ldap_server_config</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

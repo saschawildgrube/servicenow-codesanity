@@ -156,7 +156,13 @@
 	&lt;g2:no_escape&gt;$[docapi.RenderCopyright(2022,'Sascha Wildgrube')]&lt;/g2:no_escape&gt;&#13;
 	&lt;g2:no_escape&gt;$[docapi.RenderLicense()]&lt;/g2:no_escape&gt;&#13;
 	&#13;
-	&lt;h2&gt;Release Notes&lt;/h2&gt;&#13;
+	&lt;h2&gt;Release Notes&lt;/h2&gt;
+
+	&lt;h3&gt;2.15.0 - TODO&lt;/h3&gt;
+	&lt;ol&gt;
+		&lt;li&gt;TODO: Document changes here...&lt;/li&gt;
+	&lt;/ol&gt;
+&#13;
 &#13;
 	&lt;h3&gt;2.14.0 - 2024-07-09&lt;/h3&gt;&#13;
 	&lt;ol&gt;&#13;
@@ -473,9 +479,9 @@
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
         <sys_mod_count>325</sys_mod_count>
         <sys_name>manual</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-07-09 14:12:35</sys_updated_on>

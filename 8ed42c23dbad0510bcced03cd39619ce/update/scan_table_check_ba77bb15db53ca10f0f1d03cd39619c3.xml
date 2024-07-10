@@ -7,7 +7,8 @@
         <description>UI Actions should either be executed on the server side or on the client side. However, the platform supports a pattern that allows a mix of server and client side code. This pattern is described in KB1005843 and is used in some OOTB UI Actions.&#13;
 This pattern should NOT be used for the following reasons:&#13;
 1. Including server-side code in a UI Action script that is executed on the client-side exposes logic that is to be executed on the server - which may potentially be used by an attacker - and hence implies a security risk.&#13;
-2. To maintain code quality Instance Scan checks or othe rstatic code analysis tools can used to analyse code. However, different rules may apply for client-side and server-side code - which makes it extremely difficult to assess compliance to the coding guideline if client-side and server-side code is mixed in a single script.</description>
+2. To maintain code quality Instance Scan checks or other static code analysis tools can used to analyze code. However, different rules may apply for client-side and server-side code - which makes it extremely difficult to assess compliance to the coding guideline if client-side and server-side code is mixed in a single script.&#13;
+3. Server-side code in a UI Action script field is more difficult to test in isolation. Any server-side logic should be placed in a Script Include which can then be tested in server-side test steps in ATFs anyway. So the only server-side code in UI Actions should be calling functions from Script Include and potentially generate error and success messages to be displayed to the user anyway. If code is not mixed in a UI Action, any client-sided UI Action would not contain ANY server-side code, which results in more server-side logic being placed in Script Includes - which then results in better testability. </description>
         <documentation_url>https://support.servicenow.com/kb?id=kb_article_view&amp;sysparm_article=KB1005843</documentation_url>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - UI Action must not mix client and server code</name>
@@ -33,7 +34,11 @@ This pattern also allows to start lengthy operations while displaying a progress
 			{
 				bFinding = true;
 			}
-			if (strScript.indexOf('window') != -1)
+			if (strScript.indexOf('typeof window') != -1)
+			{
+				bFinding = true;
+			}
+			if (strScript.indexOf('GetType(window)') != -1)
 			{
 				bFinding = true;
 			}
@@ -50,14 +55,14 @@ This pattern also allows to start lengthy operations while displaying a progress
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-07-09 09:07:54</sys_created_on>
         <sys_id>ba77bb15db53ca10f0f1d03cd39619c3</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>CodeSanity - UI Action must not mix client and server code</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_ba77bb15db53ca10f0f1d03cd39619c3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-07-09 09:48:17</sys_updated_on>
+        <sys_updated_on>2024-07-10 09:36:08</sys_updated_on>
         <table>sys_ui_action</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

@@ -138,20 +138,6 @@
 	&lt;h3&gt;Script Includes&lt;/h3&gt;&#13;
 	&lt;g2:no_escape&gt;$[docapi.RenderScriptIncludes()]&lt;/g2:no_escape&gt;&#13;
 &#13;
-	&lt;!--&#13;
-	&lt;h3&gt;UI Scripts&lt;/h3&gt;&#13;
-	&lt;g2:no_escape&gt;$[docapi.RenderUIScripts()]&lt;/g2:no_escape&gt;	&#13;
-	&#13;
-	&lt;h3&gt;Test step configurations&lt;/h3&gt;&#13;
-	&lt;g2:no_escape&gt;$[docapi.RenderTestStepConfigurations()]&lt;/g2:no_escape&gt;&#13;
-	&#13;
-	&lt;h3&gt;Extension Points&lt;/h3&gt;&#13;
-	&lt;g2:no_escape&gt;$[docapi.RenderExtensionPoints()]&lt;/g2:no_escape&gt;		&#13;
-&#13;
-	&lt;h3&gt;Business Rules&lt;/h3&gt;&#13;
-	&lt;g2:no_escape&gt;$[docapi.RenderBusinessRules()]&lt;/g2:no_escape&gt;	&#13;
---&gt;	&#13;
-&#13;
 	&lt;h2&gt;License&lt;/h2&gt;&#13;
 	&lt;g2:no_escape&gt;$[docapi.RenderCopyright(2022,'Sascha Wildgrube')]&lt;/g2:no_escape&gt;&#13;
 	&lt;g2:no_escape&gt;$[docapi.RenderLicense()]&lt;/g2:no_escape&gt;&#13;
@@ -161,6 +147,7 @@
 	&lt;h3&gt;2.15.0 - TODO&lt;/h3&gt;&#13;
 	&lt;ol&gt;&#13;
 		&lt;li&gt;Improved check "CodeSanity - UI Action must not mix client and server code" to avoid false positives and added more reasons not to use the mixed code pattern.&lt;/li&gt;&#13;
+		&lt;li&gt;Improved check "CodeSanity - AppInstall must not modify records directly" to avoid false positives.&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
 &#13;
 &#13;
@@ -477,13 +464,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>327</sys_mod_count>
+        <sys_mod_count>329</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-07-10 10:12:31</sys_updated_on>
+        <sys_updated_on>2024-07-10 15:44:00</sys_updated_on>
     </sys_ui_page>
 </record_update>

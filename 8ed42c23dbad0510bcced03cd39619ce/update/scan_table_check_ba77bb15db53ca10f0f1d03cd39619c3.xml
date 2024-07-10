@@ -27,9 +27,11 @@ This pattern also allows to start lengthy operations while displaying a progress
 	if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
 		var bFinding = false;
-		var strScript = x_snc_devtools.GetStringValue(current.script);
 		if (current.client == true)
 		{
+			var strScript = x_snc_devtools.GetStringValue(current.script);
+			strScript = x_snc_devtools.ScriptRemoveComments(strScript);
+			strScript = x_snc_devtools.ScriptEmptyStringLiterals(strScript);			
 			if (strScript.indexOf('current') != -1)
 			{
 				bFinding = true;
@@ -55,14 +57,14 @@ This pattern also allows to start lengthy operations while displaying a progress
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-07-09 09:07:54</sys_created_on>
         <sys_id>ba77bb15db53ca10f0f1d03cd39619c3</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>CodeSanity - UI Action must not mix client and server code</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_ba77bb15db53ca10f0f1d03cd39619c3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-07-10 10:09:49</sys_updated_on>
+        <sys_updated_on>2024-07-10 15:42:15</sys_updated_on>
         <table>sys_ui_action</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

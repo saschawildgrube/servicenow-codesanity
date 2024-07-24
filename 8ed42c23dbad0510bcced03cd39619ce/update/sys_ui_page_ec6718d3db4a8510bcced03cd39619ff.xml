@@ -114,7 +114,21 @@
 		&lt;li&gt;Under yet unspecified circumstances a suite scan triggered via the "Execute Scan Suite" button on the suite form against an app may not produce all relevant findings. The ServiceNow product development team is made aware of that problem. Use the "CodeSanity Scan" button on the application form instead!&lt;/li&gt;&#13;
 		&lt;li&gt;Instance Scan does not work with scripts in Flow Designer. When scripted action steps are used such scripts are not considered in scans. The ServiceNow product development team is made aware of that problem.&lt;/li&gt;&#13;
 		&lt;li&gt;Instance Scan does not allow to run multiple scans at the same time. This may annoy larger development teams when multiple developers try to scan applications or individual application files at the same time.&lt;/li&gt;&#13;
+		&lt;li&gt;Instance Scan linter checks do not support ECMAScript 2021 classes.&lt;/li&gt;&#13;
 	&lt;/ul&gt;&#13;
+&#13;
+	&lt;h2&gt;How to unblock Instance Scan?&lt;/h2&gt;&#13;
+	&lt;p&gt;On rare occasions an Instance Scan run does not finish properly and remains in an undefined state. This prevents further Instance Scan checks to run. Follow these instructions to unblock Instance Scan and to enable further scan operations:&lt;/p&gt;&#13;
+	&lt;ol&gt;&#13;
+		&lt;li&gt;Navigate to the list of&amp;#160;&lt;a href="/now/nav/ui/classic/params/target/loading_transactions.do" target="_blank"&gt;active transactions&lt;/a&gt;.&lt;/li&gt;&#13;
+		&lt;li&gt;If there is a transaction of Type "instance_scan", select it and choose "Kill".&lt;/li&gt;&#13;
+		&lt;li&gt;Navigate to the &amp;#160;&lt;a href="now/nav/ui/classic/params/target/scan_result_list.do" target="_blank"&gt;Scan Results list&lt;/a&gt;.&lt;/li&gt;&#13;
+		&lt;li&gt;Check if there is a Scan Result record in status "In Progress". Delete this Scan Result record.&lt;/li&gt;&#13;
+		&lt;li&gt;Navigate to the &amp;#160;&lt;a href="now/nav/ui/classic/params/target/sys_progress_worker_list.do" target="_blank"&gt;Progress Workers list&lt;/a&gt;.&lt;/li&gt;&#13;
+		&lt;li&gt;Check if there is a Progress Worker record with name "Instance Scan" in state "Running". Delete this Progress Worker record.&lt;/li&gt;		&#13;
+		&lt;li&gt;Navigate to the &amp;#160;&lt;a href="now/nav/ui/classic/params/target/sys_execution_tracker_list.do" target="_blank"&gt;Execution Trackers list&lt;/a&gt;.&lt;/li&gt;&#13;
+		&lt;li&gt;Check if there is an Execution Tracker record with name "Instance Scan" and completion time "empty". Delete this Execution Tracker record.&lt;/li&gt;			&#13;
+	&lt;/ol&gt;&#13;
 &#13;
 	&lt;!--&#13;
 	&lt;g2:no_escape&gt;$[HtmlRenderOtherInstanceScanChecks()]&lt;/g2:no_escape&gt;&#13;
@@ -148,6 +162,7 @@
 	&lt;ol&gt;&#13;
 		&lt;li&gt;Improved check "CodeSanity - UI Action must not mix client and server code" to avoid false positives and added more reasons not to use the mixed code pattern.&lt;/li&gt;&#13;
 		&lt;li&gt;Improved check "CodeSanity - AppInstall must not modify records directly" to avoid false positives.&lt;/li&gt;&#13;
+		&lt;li&gt;Added chapter "How to unblock Instance Scan?".&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
 &#13;
 &#13;
@@ -464,13 +479,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>329</sys_mod_count>
+        <sys_mod_count>336</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-07-10 15:44:00</sys_updated_on>
+        <sys_updated_on>2024-07-24 08:56:34</sys_updated_on>
     </sys_ui_page>
 </record_update>

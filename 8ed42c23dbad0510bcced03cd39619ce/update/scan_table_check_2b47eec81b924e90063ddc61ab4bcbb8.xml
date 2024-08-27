@@ -45,7 +45,7 @@ Consider a migration strategy to transform existing production data from the old
 			'constructor',
 			'class',
 			'function',
-			// DevTools defines x_snc_devtools_technical_debt.switch
+			// DevTools 1.x defines x_snc_devtools_technical_debt.switch
 			//'switch',
 			'while',
 			'if',
@@ -57,7 +57,7 @@ Consider a migration strategy to transform existing production data from the old
 			'next'
 			];
 
-		// DevTools defines x_snc_devtools_technical_debt.switch
+		// DevTools 1.x defines x_snc_devtools_technical_debt.switch
 		if (current.sys_scope.scope != 'x_snc_devtools')
 		{
 			aForbidden.push('switch');
@@ -75,14 +75,14 @@ Consider a migration strategy to transform existing production data from the old
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-16 13:14:39</sys_created_on>
         <sys_id>2b47eec81b924e90063ddc61ab4bcbb8</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>CodeSanity - Forbidden column names</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_2b47eec81b924e90063ddc61ab4bcbb8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-08-27 13:47:14</sys_updated_on>
+        <sys_updated_on>2024-08-27 13:51:10</sys_updated_on>
         <table>sys_dictionary</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

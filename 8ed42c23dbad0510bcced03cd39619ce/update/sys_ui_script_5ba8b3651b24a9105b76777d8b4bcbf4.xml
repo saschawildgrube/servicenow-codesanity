@@ -73,6 +73,18 @@
 		return;
 	}
 
+	if (strRecordTable == 'sys_dictionary')
+	{
+		DoModalMessage(
+			strTitle,
+			'Records in table sys_dictionary cannot be scanned directly due to a defect in the GlideAPI!\n\nUntil a workaround is identified, please scan the complete application instead!',
+			function()
+			{
+				dialog.destroy();
+			});		
+		return;
+	}
+
 	DoModalProgress(
 		strTitle, // to avoid a false positive finding
 		'Scan',
@@ -102,16 +114,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-22 18:34:09</sys_created_on>
         <sys_id>5ba8b3651b24a9105b76777d8b4bcbf4</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>x_snc_codesanity.CodeSanityScanRecord</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_script_5ba8b3651b24a9105b76777d8b4bcbf4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-22 18:36:07</sys_updated_on>
+        <sys_updated_on>2024-08-27 12:37:57</sys_updated_on>
         <ui_type>0</ui_type>
         <use_scoped_format>false</use_scoped_format>
-        <x_snc_devtools_global>false</x_snc_devtools_global>
+        <x_snc_devtools_global>true</x_snc_devtools_global>
     </sys_ui_script>
 </record_update>

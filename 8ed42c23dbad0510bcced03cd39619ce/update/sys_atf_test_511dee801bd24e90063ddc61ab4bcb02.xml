@@ -8,6 +8,7 @@
         <name>CodeSanity - Forbidden column names</name>
         <parameters/>
         <remember/>
+        <sn_atf_tg_generated>false</sn_atf_tg_generated>
         <sys_class_name>sys_atf_test</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-16 13:25:09</sys_created_on>

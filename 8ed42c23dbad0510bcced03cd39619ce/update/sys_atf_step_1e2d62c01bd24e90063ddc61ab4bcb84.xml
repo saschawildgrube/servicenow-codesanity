@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-16 13:25:35</sys_created_on>
         <sys_id>1e2d62c01bd24e90063ddc61ab4bcb84</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_1e2d62c01bd24e90063ddc61ab4bcb84</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-05-16 14:18:47</sys_updated_on>
+        <sys_updated_on>2024-08-30 12:21:25</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Forbidden column names">511dee801bd24e90063ddc61ab4bcb02</test>
         <timeout/>
@@ -49,9 +49,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-05-16 13:25:35</sys_created_on>
         <sys_id>ef2d62c01bd24e90063ddc61ab4bcb50</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-05-16 14:18:48</sys_updated_on>
+        <sys_updated_on>2024-08-30 12:21:25</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -78,31 +78,24 @@
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_dictionary',strRecordSysId,true);	&#13;
 &#13;
-	//test.TestCase_InstanceScanCheck(strCheck,'sys_dictionary','',false);&#13;
-	&#13;
-	/*&#13;
-	var grRecord = new GlideRecord('sys_ui_action');&#13;
+	var grRecord = new GlideRecord('sys_dictionary');&#13;
 	grRecord.initialize();&#13;
-	grRecord.name = '_ATF_CODESANITY_TEST10';&#13;
-	grRecord.action_name = '';&#13;
+	grRecord.name = 'x_snc_devtools_test';&#13;
+	grRecord.element = 'switch';&#13;
+	grRecord.internal_type = 'string';&#13;
+	grRecord.sys_scope = 'd689f6901bd38450a89720a8ec4bcbfd'; // DevTools&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_ui_action',strRecordSysId,true);&#13;
-	&#13;
-	var grRecord = new GlideRecord('sys_ui_action');&#13;
-	grRecord.initialize();&#13;
-	grRecord.name = '_ATF_CODESANITY_TEST11';&#13;
-	grRecord.action_name = 'atf_codesanity_test_duplicate';&#13;
-	var strRecord1SysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_ui_action',strRecord1SysId,false);	&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_dictionary',strRecordSysId,false);		&#13;
 &#13;
-	var grRecord = new GlideRecord('sys_ui_action');&#13;
+	var grRecord = new GlideRecord('sys_dictionary');&#13;
 	grRecord.initialize();&#13;
-	grRecord.name = '_ATF_CODESANITY_TEST12';&#13;
-	grRecord.action_name = 'atf_codesanity_test_duplicate';&#13;
-	var strRecord2SysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_ui_action',strRecord1SysId,true);		&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_ui_action',strRecord2SysId,true);		&#13;
-*/&#13;
+	grRecord.name = 'x_snc_devtools_test';&#13;
+	grRecord.element = 'if';&#13;
+	grRecord.internal_type = 'string';&#13;
+	grRecord.sys_scope = 'd689f6901bd38450a89720a8ec4bcbfd'; // DevTools&#13;
+	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_dictionary',strRecordSysId,true);		&#13;
+&#13;
 	&#13;
 	return test.GetResult();&#13;
 	&#13;

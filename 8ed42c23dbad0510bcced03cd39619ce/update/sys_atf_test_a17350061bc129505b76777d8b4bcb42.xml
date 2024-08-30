@@ -8,6 +8,7 @@
         <name>CodeSanity - UI Action must have a unique onClick function</name>
         <parameters/>
         <remember/>
+        <sn_atf_tg_generated>false</sn_atf_tg_generated>
         <sys_class_name>sys_atf_test</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-17 11:41:03</sys_created_on>

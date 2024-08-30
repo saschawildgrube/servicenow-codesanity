@@ -8,6 +8,7 @@
         <name>CodeSanity - AppInstall must not modify records directly</name>
         <parameters/>
         <remember/>
+        <sn_atf_tg_generated>false</sn_atf_tg_generated>
         <sys_class_name>sys_atf_test</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-01-17 11:19:36</sys_created_on>

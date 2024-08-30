@@ -5,6 +5,7 @@
         <input_filter/>
         <name>CodeSanity</name>
         <parent/>
+        <sn_atf_tg_generated>false</sn_atf_tg_generated>
         <sys_class_name>sys_atf_test_suite</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>

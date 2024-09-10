@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-06 10:34:53</sys_created_on>
         <sys_id>228177dcdbd4e5906a03dad1f396197f</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_228177dcdbd4e5906a03dad1f396197f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-06 10:37:51</sys_updated_on>
+        <sys_updated_on>2024-09-10 16:34:03</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Avoid &quot;Copy of&quot;">3351ff9cdbd4e5906a03dad1f396197c</test>
         <timeout/>
@@ -35,15 +35,38 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-06 10:34:53</sys_created_on>
         <sys_id>878177dcdbd4e5906a03dad1f39619c6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-06 10:37:51</sys_updated_on>
+        <sys_updated_on>2024-09-10 16:34:03</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
 	&#13;
 	test.SetResult(true);&#13;
 &#13;
+	var strCheck = '194835f9c3a056105a37f907050131d2';&#13;
+&#13;
+	var grApp = new GlideRecord('sys_app');&#13;
+	grApp.initialize();&#13;
+	grApp.name = 'Test App';&#13;
+	grApp.scope = 'x_test_app';&#13;
+	var strAppSysId = x_snc_devtools.GlideRecordInsert(grApp);&#13;
+&#13;
+	var grWidget = new GlideRecord('sp_widget');&#13;
+	grWidget.initialize();&#13;
+	grWidget.sys_scope = strAppSysId;&#13;
+	grWidget.name = 'Test';&#13;
+	var strWidgetSysId = x_snc_devtools.GlideRecordInsert(grWidget);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_app',strAppSysId,false);		&#13;
+&#13;
+	var grWidget = new GlideRecord('sp_widget');&#13;
+	grWidget.initialize();&#13;
+	grWidget.sys_scope = strAppSysId;&#13;
+	grWidget.name = 'Copy of Test';&#13;
+	var strWidgetSysId = x_snc_devtools.GlideRecordInsert(grWidget);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_app',strAppSysId,true);	&#13;
+&#13;
+/*&#13;
 	var strCheck = 'e45f271cdbd4e5906a03dad1f3961974';&#13;
 	&#13;
 	var testdata = new x_snc_devtools.TestDataAPI('_ATF_CODESANITY_');&#13;
@@ -67,7 +90,7 @@
 	grWidget.name = 'Copy of Test1';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grWidget);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sp_widget',strRecordSysId,true);		&#13;
-&#13;
+*/&#13;
 	&#13;
 	return test.GetResult();&#13;
 	&#13;

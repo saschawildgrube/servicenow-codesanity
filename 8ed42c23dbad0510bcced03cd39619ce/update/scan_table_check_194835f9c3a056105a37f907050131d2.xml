@@ -5,7 +5,7 @@
         <category>code_sanity</category>
         <conditions/>
         <description>An application file (any record in sys_metadata) where the name starts with "Copy of" indicates work in progress, a file that is no longer used or just a copy that has been created by mistake. Such records should not be contained in any deployment.&#13;
-For performance reasons the check operates directly on the application (sys_app), not on the individual Application Files (sys_metadata). A finding will point to the Application.</description>
+For performance reasons the check operates directly on the application (sys_app), not on the individual Application Files (sys_metadata). Findings however will point to the affected Application Files.</description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - Avoid "Copy of"</name>
@@ -27,6 +27,7 @@ For performance reasons the check operates directly on the application (sys_app)
 			var strName = x_snc_devtools.GetStringValue(grMetaData.sys_name);
 			if (strName.startsWith('Copy of'))
 			{
+				engine.finding.setCurrentSource(grMetaData);
 				engine.finding.increment();
 			}
 		}
@@ -38,14 +39,14 @@ For performance reasons the check operates directly on the application (sys_app)
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-10 16:25:03</sys_created_on>
         <sys_id>194835f9c3a056105a37f907050131d2</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>CodeSanity - Avoid "Copy of"</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_194835f9c3a056105a37f907050131d2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-10 16:36:22</sys_updated_on>
+        <sys_updated_on>2024-09-10 16:42:27</sys_updated_on>
         <table>sys_app</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

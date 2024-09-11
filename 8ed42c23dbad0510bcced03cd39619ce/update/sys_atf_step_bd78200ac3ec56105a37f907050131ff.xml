@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-11 05:14:52</sys_created_on>
+        <sys_id>bd78200ac3ec56105a37f907050131ff</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_atf_step_bd78200ac3ec56105a37f907050131ff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-11 05:20:27</sys_updated_on>
+        <table/>
+        <test display_value="CodeSanity - Persona role in User Criteria">5b68ecc6c3ec56105a37f9070501318c</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=bd78200ac3ec56105a37f907050131ff"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>bd78200ac3ec56105a37f907050131ff</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-11 05:14:53</sys_created_on>
+        <sys_id>3d78600ac3ec56105a37f90705013101</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-11 05:14:53</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>bd78200ac3ec56105a37f907050131ff</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-11 05:14:53</sys_created_on>
+        <sys_id>7578600ac3ec56105a37f90705013102</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-11 05:20:27</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
+    var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+&#13;
+    test.SetResult(true);&#13;
+&#13;
+    var strCheck = '93c760c6c3ec56105a37f907050131d7';&#13;
+&#13;
+	var grApp = new GlideRecord('sys_app');&#13;
+	grApp.initialize();&#13;
+	grApp.name = 'Test';&#13;
+	grApp.scope = 'test';&#13;
+	var strAppSysId = x_snc_devtools.GlideRecordInsert(grApp);&#13;
+&#13;
+	var grRole = new GlideRecord('sys_user_role');&#13;
+	grRole.initialize();&#13;
+	grRole.sys_scope = strAppSysId;&#13;
+	grRole.name = 'test.persona_test';&#13;
+	var strRolePersonaSysId = x_snc_devtools.GlideRecordInsert(grRole);&#13;
+&#13;
+	var grUC = new GlideRecord('user_criteria');&#13;
+	grUC.initialize();&#13;
+	grUC.sys_scope = strAppSysId;&#13;
+	grUC.name = 'Test';&#13;
+	var strUCSysId = x_snc_devtools.GlideRecordInsert(grUC);&#13;
+&#13;
+	var strRoleItilSysId = '';&#13;
+&#13;
+	test.TestCase_InstanceScanCheck(strCheck, 'user_criteria', strUCSysId, false);&#13;
+&#13;
+	x_snc_devtools.RecordSetValue('user_criteria', strUCSysId,&#13;
+		'role', strRoleItilSysId);&#13;
+	test.TestCase_InstanceScanCheck(strCheck, 'user_criteria', strUCSysId, false);&#13;
+&#13;
+	x_snc_devtools.RecordSetValue('user_criteria', strUCSysId,&#13;
+		'role',strRolePersonaSysId);&#13;
+	test.TestCase_InstanceScanCheck(strCheck, 'user_criteria', strUCSysId, true);&#13;
+&#13;
+	x_snc_devtools.RecordSetValue('user_criteria', strUCSysId,&#13;
+		'role', strRoleItilSysId+','+strRolePersonaSysId);&#13;
+	test.TestCase_InstanceScanCheck(strCheck, 'user_criteria', strUCSysId, true);&#13;
+&#13;
+&#13;
+    return test.GetResult();&#13;
+&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

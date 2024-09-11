@@ -8,14 +8,14 @@
 &#13;
 As a result, the best place to define the persona roles is the Platform application (as described in chapter “Application Architecture and Dependency Management”). The Platform application is the root of the dependency tree – nothing depends on it, but it depends on every other application. This makes the Platform application the natural place for persona role definitions.&#13;
 &#13;
-This also implies that no Application Files should depend on persona roles. This includes Application Menus.&#13;
+This also implies that no Application Files should depend on persona roles. This includes User Criteria.&#13;
 &#13;
 For more details on the concept of persona roles, refer to chapter "Personas and roles" in the referenced whitepaper.</description>
         <documentation_url>https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf</documentation_url>
         <finding_type>scan_finding</finding_type>
-        <name>CodeSanity - Persona role in Menus</name>
+        <name>CodeSanity - Persona role in User Criteria</name>
         <priority>1</priority>
-        <resolution_details>The Application Menu should rather require an application specific or existing OOTB role. And the persona role should then contain this more specific role.</resolution_details>
+        <resolution_details>The User Criteria should rather require an application specific or existing OOTB role. And the persona role should then contain this more specific role.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -24,11 +24,11 @@ For more details on the concept of persona roles, refer to chapter "Personas and
 
 	if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
-		var strRoleNames = x_snc_devtools.GetStringValue(current.roles);
-		var aRoleNames = x_snc_devtools.GetArrayValue(strRoleNames);
-		for (var nRole = 0; nRole < aRoleNames.length; nRole++)
+		var strRoleSysIds = x_snc_devtools.GetStringValue(current.role);
+		var aRoleSysIds = x_snc_devtools.GetArrayValue(strRoleSysIds);
+		for (var nRole = 0; nRole < aRoleSysIds.length; nRole++)
 		{
-			var grRole = x_snc_devtools.GetRoleRecord(aRoleNames[nRole]);
+			var grRole = x_snc_devtools.GetRoleRecord(aRoleSysIds[nRole]);
 			if (x_snc_devtools.IsValidRecord(grRole))
 			{
 				var bPersonaRole = x_snc_devtools.IsPersonaRole(grRole);
@@ -41,21 +41,21 @@ For more details on the concept of persona roles, refer to chapter "Personas and
 	}
 
 })(engine);]]></script>
-        <short_description>An Application Menu must not depend on a persona role</short_description>
+        <short_description>A User Criteria must not depend on a persona role</short_description>
         <sys_class_name>scan_table_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-11 04:28:29</sys_created_on>
-        <sys_id>5edd50cac3ac56105a37f90705013176</sys_id>
+        <sys_created_on>2024-09-11 05:11:59</sys_created_on>
+        <sys_id>93c760c6c3ec56105a37f907050131d7</sys_id>
         <sys_mod_count>2</sys_mod_count>
-        <sys_name>CodeSanity - Persona role in Menus</sys_name>
+        <sys_name>CodeSanity - Persona role in User Criteria</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-        <sys_update_name>scan_table_check_5edd50cac3ac56105a37f90705013176</sys_update_name>
+        <sys_update_name>scan_table_check_93c760c6c3ec56105a37f907050131d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-11 05:11:13</sys_updated_on>
-        <table>sys_app_application</table>
+        <sys_updated_on>2024-09-11 05:14:26</sys_updated_on>
+        <table>user_criteria</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
-    <sys_translated_text action="delete_multiple" query="documentkey=5edd50cac3ac56105a37f90705013176"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=93c760c6c3ec56105a37f907050131d7"/>
 </record_update>

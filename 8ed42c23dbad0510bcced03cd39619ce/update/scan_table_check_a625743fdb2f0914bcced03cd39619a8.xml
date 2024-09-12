@@ -58,9 +58,9 @@ In addition, the function or class must be named exactly like the Script Include
         <sys_id>a625743fdb2f0914bcced03cd39619a8</sys_id>
         <sys_mod_count>46</sys_mod_count>
         <sys_name>CodeSanity - Script Include must contain a class or function</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_a625743fdb2f0914bcced03cd39619a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-02-05 09:47:25</sys_updated_on>

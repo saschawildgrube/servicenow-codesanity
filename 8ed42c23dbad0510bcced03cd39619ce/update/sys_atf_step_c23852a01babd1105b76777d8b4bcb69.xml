@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-30 15:56:04</sys_created_on>
         <sys_id>c23852a01babd1105b76777d8b4bcb69</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_c23852a01babd1105b76777d8b4bcb69</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-30 16:00:03</sys_updated_on>
+        <sys_updated_on>2024-09-12 12:40:45</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Script Include description">6a28de601babd1105b76777d8b4bcba1</test>
         <timeout/>
@@ -35,9 +35,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-30 15:56:04</sys_created_on>
         <sys_id>033852a01babd1105b76777d8b4bcb46</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-30 16:00:03</sys_updated_on>
+        <sys_updated_on>2024-09-12 12:40:45</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -45,8 +45,6 @@
 	test.SetResult(true);&#13;
 &#13;
 	var strCheck = 'f1c6d66c1b6bd1105b76777d8b4bcbb9';&#13;
-	&#13;
-	var testdata = new x_snc_devtools.TestDataAPI('_ATF_CODESANITY_');&#13;
 &#13;
 	// no description is a fail&#13;
 	var grSI = new GlideRecord('sys_script_include');&#13;

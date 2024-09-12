@@ -30,6 +30,8 @@ For more details on the concept of persona roles, refer to chapter "Personas and
 			var bPersonaRole = x_snc_devtools.IsPersonaRole(grRole);
 			if (bPersonaRole == true)
 			{
+				var grAcl = x_snc_devtools.GetRecord('sys_ui_action',current.sys_security_acl);
+				engine.finding.setCurrentSource(grAcl);				
 				engine.finding.increment();
 			}
 		}
@@ -41,14 +43,14 @@ For more details on the concept of persona roles, refer to chapter "Personas and
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-10 19:07:11</sys_created_on>
         <sys_id>4c6d9235c36456105a37f90705013158</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>CodeSanity - Persona role in ACLs</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_4c6d9235c36456105a37f90705013158</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-10 20:06:45</sys_updated_on>
+        <sys_updated_on>2024-09-12 10:58:03</sys_updated_on>
         <table>sys_security_acl_role</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

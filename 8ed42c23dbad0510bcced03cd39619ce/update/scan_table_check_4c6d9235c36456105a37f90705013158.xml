@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>Persona roles may contain roles defined in other applications and OOTB roles – which implies a dependency from the application that contains the persona role to those applications which define other, more specific roles.&#13;
+&#13;
+As a result, the best place to define the persona roles is the Platform application (as described in chapter “Application Architecture and Dependency Management”). The Platform application is the root of the dependency tree – nothing depends on it, but it depends on every other application. This makes the Platform application the natural place for persona role definitions.&#13;
+&#13;
+This also implies that no Application Files should depend on persona roles. This includes ACLs.&#13;
+&#13;
+For more details on the concept of persona roles, refer to chapter "Personas and roles" in the referenced whitepaper.</description>
+        <documentation_url>https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf</documentation_url>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Persona role in ACLs</name>
+        <priority>1</priority>
+        <resolution_details>The ACL should rather require an application specific or existing OOTB role. And the persona role should then contain this more specific role.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var grRole = x_snc_devtools.GetRecord('sys_user_role',current.sys_user_role);
+		if (x_snc_devtools.IsValidRecord(grRole))
+		{
+			var bPersonaRole = x_snc_devtools.IsPersonaRole(grRole);
+			if (bPersonaRole == true)
+			{
+				var grAcl = x_snc_devtools.GetRecord('sys_security_acl',current.sys_security_acl);
+				engine.finding.setCurrentSource(grAcl);				
+				engine.finding.increment();
+			}
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>An ACL must not depend on a persona role</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 19:07:11</sys_created_on>
+        <sys_id>4c6d9235c36456105a37f90705013158</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>CodeSanity - Persona role in ACLs</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_4c6d9235c36456105a37f90705013158</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-12 11:00:26</sys_updated_on>
+        <table>sys_security_acl_role</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=4c6d9235c36456105a37f90705013158"/>
+</record_update>

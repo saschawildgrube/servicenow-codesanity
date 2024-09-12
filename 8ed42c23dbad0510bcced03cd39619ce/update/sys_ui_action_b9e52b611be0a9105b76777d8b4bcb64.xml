@@ -7,7 +7,7 @@
 
 }]]></client_script_v2>
         <comments>Runs the CodeSanity checks on the selected application file.</comments>
-        <condition>IsActive() &amp;&amp; x_snc_devtools.IsDerivedFromTable(current,'sys_metadata')</condition>
+        <condition>(IsActive() == true) &amp;&amp; (x_snc_devtools.IsDerivedFromTable(current,'sys_metadata') == true)</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -44,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b9e52b611be0a9105b76777d8b4bcb64</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>CodeSanity Point Scan</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -52,7 +52,7 @@
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_action_b9e52b611be0a9105b76777d8b4bcb64</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-12 11:55:03</sys_updated_on>
+        <sys_updated_on>2024-09-12 13:08:34</sys_updated_on>
         <table>global</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

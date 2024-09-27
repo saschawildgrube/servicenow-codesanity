@@ -5,18 +5,18 @@
         <status>allowed</status>
         <sys_class_name>sys_scope_privilege</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-08-10 16:21:46</sys_created_on>
-        <sys_id>eb0ce924dbd9d150dcbdd03cd39619fd</sys_id>
+        <sys_created_on>2024-09-27 12:53:14</sys_created_on>
+        <sys_id>88daa85f83385610ed925100feaad339</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>ScriptedExtensionPoint.getExtensions</sys_name>
+        <sys_name>InstallApp</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-        <sys_update_name>sys_scope_privilege_eb0ce924dbd9d150dcbdd03cd39619fd</sys_update_name>
+        <sys_update_name>sys_scope_privilege_88daa85f83385610ed925100feaad339</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-08-10 16:21:46</sys_updated_on>
-        <target_name>ScriptedExtensionPoint.getExtensions</target_name>
-        <target_scope display_value="Global">global</target_scope>
-        <target_type>scriptable</target_type>
+        <sys_updated_on>2024-09-27 12:53:14</sys_updated_on>
+        <target_name>InstallApp</target_name>
+        <target_scope display_value="DevTools">d689f6901bd38450a89720a8ec4bcbfd</target_scope>
+        <target_type>sys_script_include</target_type>
     </sys_scope_privilege>
 </record_update>

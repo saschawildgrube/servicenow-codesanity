@@ -169,6 +169,7 @@
 		&lt;li&gt;Added check "CodeSanity - REST API must have a default ACL".&lt;/li&gt;&#13;
 		&lt;li&gt;Added check "CodeSanity - REST API Resource default ACL".&lt;/li&gt;&#13;
 		&lt;li&gt;Added check "CodeSanity - REST API must have a short description".&lt;/li&gt;&#13;
+		&lt;li&gt;Added check "CodeSanity - REST API Resource must have a short description".&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
 &#13;
 &#13;
@@ -519,13 +520,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>363</sys_mod_count>
+        <sys_mod_count>364</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 15:59:45</sys_updated_on>
+        <sys_updated_on>2024-10-03 16:15:59</sys_updated_on>
     </sys_ui_page>
 </record_update>

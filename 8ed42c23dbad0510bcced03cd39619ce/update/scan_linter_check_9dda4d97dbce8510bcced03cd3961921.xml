@@ -5,7 +5,7 @@
         <description>Sys IDs should not be stated explicitly in source code. Code should be independent of specific records in the platform.&#13;
 Exceptions are AppInstall(), AppSetDefaults(), AppBaseline() and AppBuilder() functions which may have to refer to specific records to perform changes during installation or application creation.&#13;
 Another exception are GetLinkDirectory() functions which may contain Sys IDs as part of links.&#13;
-Fix Scripts (sys_script_fix) are not checked either, as they may have to refer to specific records for one-off activities during deployments.&#13;
+Instance Scan checks may also have to refer to OOTB records via Sys IDs.&#13;
 The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmin() must also refer to specific records by design in order to work - and hence are not checked either.</description>
         <documentation_url/>
         <finding_type/>
@@ -29,7 +29,7 @@ The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmi
 		var strTable = GetStringValue(current.getRecordClassName());
 		var bException = false;
 
-		if (IsDerivedFromTable(strTable == 'scan_check') == true)
+		if (IsDerivedFromTable(strTable,'scan_check') == true)
 		{
 			// Instance Scan checks may have to refer to OOTB records via Sys IDs
 			bException = true;
@@ -115,14 +115,14 @@ The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmi
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 13:40:27</sys_created_on>
         <sys_id>9dda4d97dbce8510bcced03cd3961921</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>CodeSanity - Sys IDs in scripts</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9dda4d97dbce8510bcced03cd3961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-10 13:46:40</sys_updated_on>
+        <sys_updated_on>2024-10-10 13:50:36</sys_updated_on>
     </scan_linter_check>
     <sys_translated_text action="delete_multiple" query="documentkey=9dda4d97dbce8510bcced03cd3961921"/>
 </record_update>

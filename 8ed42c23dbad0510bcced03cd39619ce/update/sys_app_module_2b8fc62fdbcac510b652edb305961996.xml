@@ -4,7 +4,7 @@
         <application display_value="CodeSanity">b86758d3db4a8510bcced03cd396195c</application>
         <assessment/>
         <device_type/>
-        <filter table="scan_check">category=code_sanity^name=CodeSanity - New Check^priority=1^EQ<item display_value="code_sanity" endquery="false" field="category" goto="false" newquery="false" operator="=" or="false" value="code_sanity"/>
+        <filter table="scan_check">category=code_sanity^name=CodeSanity - New Check^priority=1^EQ<item display_value="CodeSanity" endquery="false" field="category" goto="false" newquery="false" operator="=" or="false" value="code_sanity"/>
             <item endquery="false" field="name" goto="false" newquery="false" operator="=" or="false" value="CodeSanity - New Check"/>
             <item display_value="1 - Critical" endquery="false" field="priority" goto="false" newquery="false" operator="=" or="false" value="1"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>

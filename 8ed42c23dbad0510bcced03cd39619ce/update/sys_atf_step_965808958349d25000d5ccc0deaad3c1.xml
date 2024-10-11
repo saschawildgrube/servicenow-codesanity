@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-03 15:30:31</sys_created_on>
+        <sys_id>965808958349d25000d5ccc0deaad3c1</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_atf_step_965808958349d25000d5ccc0deaad3c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-03 16:11:38</sys_updated_on>
+        <table/>
+        <test display_value="CodeSanity - REST API Resource default ACL">033804958349d25000d5ccc0deaad393</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=965808958349d25000d5ccc0deaad3c1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>965808958349d25000d5ccc0deaad3c1</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-03 15:30:31</sys_created_on>
+        <sys_id>125848958349d25000d5ccc0deaad3c9</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-03 16:11:38</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+&#13;
+	var strCheck = 'cd578c158349d25000d5ccc0deaad3f9';&#13;
+	&#13;
+	var grWS = new GlideRecord('sys_ws_definition');&#13;
+	grWS.initialize();&#13;
+	grWS.name = 'Test1';&#13;
+	grWS.base_uri = 'test1';&#13;
+	var strWSSysId = x_snc_devtools.GlideRecordInsert(grWS);&#13;
+&#13;
+	// Default ACL is a fail&#13;
+	var grWSO = new GlideRecord('sys_ws_operation');&#13;
+	grWSO.initialize();&#13;
+	grWSO.name = 'Resource1';&#13;
+	grWSO.relative_path = 'res1';&#13;
+	grWSO.web_service_definition = strWSSysId;&#13;
+	grWSO.enforce_acl = 'cf9d01d3e73003009d6247e603f6a990';&#13;
+	var strWSO1SysId = x_snc_devtools.GlideRecordInsert(grWSO);&#13;
+	test.Log(x_snc_devtools.RenderValue(x_snc_devtools.GetRecord('sys_ws_operation',strWSO1SysId)));&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_ws_operation',strWSO1SysId,true);	&#13;
+&#13;
+	// Any other ACL is ok&#13;
+	var grWSO = new GlideRecord('sys_ws_operation');&#13;
+	grWSO.initialize();&#13;
+	grWSO.name = 'Resource2';&#13;
+	grWSO.relative_path = 'res2';&#13;
+	grWSO.web_service_definition = strWSSysId;&#13;
+	grWSO.enforce_acl = 'fb347a677713230001fb4311a81061aa';&#13;
+	var strWSO2SysId = x_snc_devtools.GlideRecordInsert(grWS);&#13;
+	test.Log(x_snc_devtools.RenderValue(x_snc_devtools.GetRecord('sys_ws_operation',strWSO2SysId)));&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_ws_operation',strWSO2SysId,false);	&#13;
+	&#13;
+	// No ACL is ok&#13;
+	var grWSO = new GlideRecord('sys_ws_operation');&#13;
+	grWSO.initialize();&#13;
+	grWSO.name = 'Resource3';&#13;
+	grWSO.relative_path = 'res3';&#13;
+	grWSO.web_service_definition = strWSSysId;&#13;
+	grWSO.enforce_acl = '';&#13;
+	var strWSO3SysId = x_snc_devtools.GlideRecordInsert(grWS);&#13;
+	test.Log(x_snc_devtools.RenderValue(x_snc_devtools.GetRecord('sys_ws_operation',strWSO3SysId)));&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_ws_operation',strWSO3SysId,false);	&#13;
+&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>965808958349d25000d5ccc0deaad3c1</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-03 15:30:31</sys_created_on>
+        <sys_id>d65848958349d25000d5ccc0deaad3c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-03 15:30:31</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+</record_update>

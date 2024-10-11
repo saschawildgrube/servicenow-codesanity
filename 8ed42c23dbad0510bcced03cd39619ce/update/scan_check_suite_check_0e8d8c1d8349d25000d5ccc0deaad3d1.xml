@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_check_suite_check">
+    <scan_check_suite_check action="INSERT_OR_UPDATE">
+        <check display_value="CodeSanity - REST API Resource must have a short description">ca8d8c1d8349d25000d5ccc0deaad3cf</check>
+        <score_weight>1</score_weight>
+        <suite display_value="CodeSanity">4fcb181bdb4a8510bcced03cd39619eb</suite>
+        <sys_class_name>scan_check_suite_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-03 15:53:09</sys_created_on>
+        <sys_id>0e8d8c1d8349d25000d5ccc0deaad3d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_check_suite_check_0e8d8c1d8349d25000d5ccc0deaad3d1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-03 15:53:09</sys_updated_on>
+    </scan_check_suite_check>
+</record_update>

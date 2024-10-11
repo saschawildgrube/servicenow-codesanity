@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>A REST API must be preotected against unathorized external use. The specific security requirements to access the REST API must be specified by a (default) ACL.&#13;
+When creating a new Scripted REST API the default ACL is set to the OOTB ACL "Scripted REST External Default" which limits access to "internal" users - which is obviously not sufficient for the vast majority of use cases.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - REST API must have a default ACL</name>
+        <priority>1</priority>
+        <resolution_details>Create an specific ACL to control access to the REST API.&#13;
+Ideally a specific role is required which can then be assigned to technical users that should be allowed to access the API. &#13;
+The ACL must be of type "REST_Endpoint" and the operation must be set to "execute".</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var aAcls = x_snc_devtools.GetArrayValue(current.enforce_acl);
+		if (aAcls.length == 0)
+		{
+			engine.finding.increment();
+		}
+		if (x_snc_devtools.ArrayValueExists(aAcls,'cf9d01d3e73003009d6247e603f6a990') == true)
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>A REST API must specifiy at least one default ACL</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-29 13:04:09</sys_created_on>
+        <sys_id>8bce3e3783f45e1000d5ccc0deaad3d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CodeSanity - REST API must have a default ACL</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_8bce3e3783f45e1000d5ccc0deaad3d4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 13:04:09</sys_updated_on>
+        <table>sys_ws_definition</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=8bce3e3783f45e1000d5ccc0deaad3d4"/>
+</record_update>

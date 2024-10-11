@@ -13,9 +13,9 @@ DevTools 1.102.0 is required due to deprecated functions.</reason>
         <sys_id>32d6786ddbf799106a03dad1f3961967</sys_id>
         <sys_mod_count>19</sys_mod_count>
         <sys_name>DevTools</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>x_snc_devtools_dependency_32d6786ddbf799106a03dad1f3961967</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-10-10 13:40:00</sys_updated_on>

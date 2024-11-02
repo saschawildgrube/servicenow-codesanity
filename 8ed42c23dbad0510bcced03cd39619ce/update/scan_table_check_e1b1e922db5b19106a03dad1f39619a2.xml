@@ -64,6 +64,13 @@ Script Includes ending with "WorkerAPI" should only contain proxy functions and 
 			return;
 		}		
 		
+		var grTest = x_snc_devtools.GetTestRecord(current);
+		if (x_snc_devtools.IsValidRecord(grTest) == false)
+		{
+			engine.finding.increment();	
+		}
+
+		/*
 		var grTest = new GlideRecord('sys_atf_test');
 		grTest.addQuery('sys_scope','=',current.sys_scope);
 		grTest.addQuery('name','CONTAINS',strName);
@@ -72,6 +79,8 @@ Script Includes ending with "WorkerAPI" should only contain proxy functions and 
 		{
 			engine.finding.increment();
 		}
+		*/
+
 	}
 
 })(engine);]]></script>
@@ -80,14 +89,14 @@ Script Includes ending with "WorkerAPI" should only contain proxy functions and 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-24 06:54:13</sys_created_on>
         <sys_id>e1b1e922db5b19106a03dad1f39619a2</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>CodeSanity - ATF tests for Script Includes</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_e1b1e922db5b19106a03dad1f39619a2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-02 11:49:05</sys_updated_on>
+        <sys_updated_on>2024-11-02 12:23:43</sys_updated_on>
         <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

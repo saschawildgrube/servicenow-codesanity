@@ -5,7 +5,9 @@
         <category>code_sanity</category>
         <conditions/>
         <description>Each Script Include must be tested and verified through ATF tests. Hence for every Script Include there must be an ATF test the verifies its functionality. An ATF test must exist in the same application as the Script Include that contains the name of the Script Include. &#13;
-Various exceptions are being made for Script Includes that contain standard application functions created by the DevTools AppBuilder function (like Log, Debug, AppGetDependencies etc.). Also script includes which end with "ClientAPI" and are client callable are not considered as they are supposed to be called from the client side and require specific testing approaches.</description>
+Various exceptions are being made for Script Includes that contain standard application functions created by the DevTools AppBuilder function (like Log, Debug, AppGetDependencies etc.).&#13;
+Script Includes which end with "ClientAPI" and are client callable are considered exceptions as they are supposed to be called from the client side and require specific testing approaches.&#13;
+Script Includes ending with "WorkerAPI" should only contain proxy functions and should only be used to start such functions as length background processes and hence are also considered as an exception.</description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - ATF tests for Script Includes</name>
@@ -51,10 +53,16 @@ Various exceptions are being made for Script Includes that contain standard appl
 		}
 		
 		// ClientAPIs are supposed to be called from the client side and should not contain any signifcant logic of their own
-		if (strName.endsWith('ClientAPI')  && current.client_callable == true)
+		if ((strName.endsWith('ClientAPI') == true) && (current.client_callable == true))
 		{
 			return;
 		}
+
+		// WorkerAPIs are supposed to be used as proxies to other functions to invoke them as background processes
+		if (strName.endsWith('WorkerAPI') == true)
+		{
+			return;
+		}		
 		
 		var grTest = new GlideRecord('sys_atf_test');
 		grTest.addQuery('sys_scope','=',current.sys_scope);
@@ -72,14 +80,14 @@ Various exceptions are being made for Script Includes that contain standard appl
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-24 06:54:13</sys_created_on>
         <sys_id>e1b1e922db5b19106a03dad1f39619a2</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>CodeSanity - ATF tests for Script Includes</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_e1b1e922db5b19106a03dad1f39619a2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-21 16:25:34</sys_updated_on>
+        <sys_updated_on>2024-11-02 11:49:05</sys_updated_on>
         <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

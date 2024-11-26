@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-31 15:03:31</sys_created_on>
         <sys_id>3f7ceb7edb7a11106a03dad1f39619bb</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_3f7ceb7edb7a11106a03dad1f39619bb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-31 15:23:01</sys_updated_on>
+        <sys_updated_on>2024-11-26 09:33:53</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Modules must require a role">897ce77edb7a11106a03dad1f3961989</test>
         <timeout/>
@@ -49,9 +49,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-31 15:03:31</sys_created_on>
         <sys_id>f48cef7edb7a11106a03dad1f396190e</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-31 15:23:01</sys_updated_on>
+        <sys_updated_on>2024-11-26 09:33:53</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -59,10 +59,6 @@
 	test.SetResult(true);&#13;
 &#13;
 	var strCheck = '6ff5e09647b65510a4b0d4fe536d4322';&#13;
-	&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_app',x_snc_devtools.GetAppRecord('x_snc_codesanity').sys_id,false);&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_app',x_snc_devtools.GetAppRecord('x_snc_devtools').sys_id,false);&#13;
-	&#13;
 	&#13;
 	var grAppMenu = new GlideRecord('sys_app_application');&#13;
 	grAppMenu.initialize();&#13;
@@ -76,9 +72,41 @@
 	grAppModule.title = '_TEST1';&#13;
 	grAppModule.application = strAppMenuSysId;&#13;
 	x_snc_devtools.GlideRecordInsert(grAppModule);&#13;
+&#13;
+	test.Log('Module and menu have no roles');&#13;
+	test.TestCase_InstanceScanCheck(&#13;
+		strCheck,'sys_app_module',&#13;
+		grAppModule.sys_id,true);&#13;
+&#13;
+	test.Log('Module has itil role');&#13;
+	grAppModule.roles = 'itil';&#13;
+	x_snc_devtools.GlideRecordUpdate(grAppModule);&#13;
+	test.TestCase_InstanceScanCheck(&#13;
+		strCheck,'sys_app_module',&#13;
+		grAppModule.sys_id,false);	&#13;
 	&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_app',x_snc_devtools.GetAppRecord('x_snc_codesanity').sys_id,true);&#13;
-		&#13;
+	test.Log('Module has snc_internal role');&#13;
+	grAppModule.roles = 'snc_internal';&#13;
+	x_snc_devtools.GlideRecordUpdate(grAppModule);&#13;
+	test.TestCase_InstanceScanCheck(&#13;
+		strCheck,'sys_app_module',&#13;
+		grAppModule.sys_id,true);	&#13;
+&#13;
+	test.Log('Menu has itil role');&#13;
+	grAppMenu.roles = 'itil';&#13;
+	x_snc_devtools.GlideRecordUpdate(grAppMenu);&#13;
+	test.TestCase_InstanceScanCheck(&#13;
+		strCheck,'sys_app_module',&#13;
+		grAppModule.sys_id,false);	&#13;
+&#13;
+	test.Log('Module has no role and Menu is "System Update Set"');&#13;
+	grAppModule.roles = '';&#13;
+	grAppModule.application = 'import_sets';&#13;
+	x_snc_devtools.GlideRecordUpdate(grAppModule);&#13;
+	test.TestCase_InstanceScanCheck(&#13;
+		strCheck,'sys_app_module',&#13;
+		grAppModule.sys_id,false);			&#13;
+&#13;
 	return test.GetResult();&#13;
 	&#13;
 })(outputs, steps, stepResult, assertEqual);</value>

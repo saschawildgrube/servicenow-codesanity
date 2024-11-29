@@ -86,7 +86,7 @@
 		&lt;li&gt;If not done already create a new application that contains the execution rules.&lt;/li&gt;&#13;
 		&lt;li&gt;Open the new app in Studio.&lt;/li&gt;&#13;
 		&lt;li&gt;Create a script include based on the&amp;#160;&lt;a href="/nav_to.do?uri=sys_extension_point.do?sys_id=0f60e2f2db459d10dcbdd03cd39619df" target="_blank"&gt;CodeSanity extension point&lt;/a&gt;&amp;#160;example code.&lt;/li&gt;&#13;
-		&lt;li&gt;Modify the function GetExecutionRules() - the examples demostrate how it works.&lt;/li&gt;&#13;
+		&lt;li&gt;Modify the function GetExecutionRules() - the examples demonstrate how it works.&lt;/li&gt;&#13;
 		&lt;li&gt;Create an extension point implementation and link it to the script include and the CodeSanity extension point.&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
 	&lt;p&gt;Checks and scopes can be referenced by Sys Id or by their name. Both options obviously have pros and cons. Sys Ids are not going to change, but names are easier to read - a tough decision.&lt;/p&gt; &#13;
@@ -286,7 +286,7 @@
 		&lt;li&gt;The check "CodeSanity - Avoid arrow functions" no longer produces false positives if "=&gt;" is contained in comments and string literals.&lt;/li&gt;&#13;
 		&lt;li&gt;The check "CodeSanity - Complex scripts in the right place" now makes a difference between high complexity scripts (more than 80 lines) and medium complexity scripts (more than 40 lines).&lt;/li&gt;&#13;
 		&lt;li&gt;The check "CodeSanity - Complex scripts in the right place" now considers x_snc_reactor_component records as high complexity scripts.&lt;/li&gt;&#13;
-		&lt;li&gt;The check "CodeSanity - Complex scripts in the right place" now considers records in sys_ui_action and sys_ws_operation as medium complexity scrpts.&lt;/li&gt; &#13;
+		&lt;li&gt;The check "CodeSanity - Complex scripts in the right place" now considers records in sys_ui_action and sys_ws_operation as medium complexity scripts.&lt;/li&gt; &#13;
 		&lt;li&gt;The check "CodeSanity - Sys IDs in scripts" now considers x_snc_devtools.AppSanity() as an exception.&lt;/li&gt;&#13;
 		&lt;li&gt;A defect caused a blacklisted check to appear in the coding guideline. This has been fixed.&lt;/li&gt;&#13;
 		&lt;li&gt;The documentation of check "CodeSanity - Script Include must contain a class or function" has been improved.&lt;/li&gt;&#13;
@@ -303,7 +303,7 @@
 		&lt;li&gt;Check "CodeSanity - Debug output" no longer creates findings of debug output statements are contained in a string literals.&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - ATF test must contain steps" now checks if steps are active.&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - ATF suite contains at least one test" now also considers child test suites.&lt;/li&gt;&#13;
-		&lt;li&gt;Removed the log.actve system property.&lt;/li&gt; &#13;
+		&lt;li&gt;Removed the log.active system property.&lt;/li&gt; &#13;
 	&lt;/ol&gt;  	&#13;
 &#13;
 	&lt;h3&gt;2.8.0 - 2023-03-07&lt;/h3&gt;&#13;
@@ -537,13 +537,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>377</sys_mod_count>
+        <sys_mod_count>380</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-29 12:39:05</sys_updated_on>
+        <sys_updated_on>2024-11-29 14:16:29</sys_updated_on>
     </sys_ui_page>
 </record_update>

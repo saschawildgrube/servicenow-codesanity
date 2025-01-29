@@ -42,10 +42,14 @@
         <vendor/>
         <vendor_prefix/>
         <version>2.19.0</version>
+        <x_snc_azure_test_x_snc_devtools_showstopper>false</x_snc_azure_test_x_snc_devtools_showstopper>
+        <x_snc_azure_test_x_snc_devtools_showstopper_details/>
         <x_snc_devtools_documentation_url>https://www.wildgrube.com/servicenow-codesanity</x_snc_devtools_documentation_url>
         <x_snc_devtools_maintainer>Sascha Wildgrube</x_snc_devtools_maintainer>
         <x_snc_devtools_maintainer_email>sascha.wildgrube@servicenow.com</x_snc_devtools_maintainer_email>
         <x_snc_devtools_repo_url>https://github.com/saschawildgrube/servicenow-codesanity.git</x_snc_devtools_repo_url>
+        <x_snc_devtools_showstopper>false</x_snc_devtools_showstopper>
+        <x_snc_devtools_showstopper_details/>
         <x_snc_wildgrubelab_test/>
         <x_snc_wildgrubelab_test2/>
     </sys_app>

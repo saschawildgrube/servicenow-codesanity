@@ -14,7 +14,7 @@
         <sys_update_name>sys_atf_test_suite_test_33c7756edb9b19106a03dad1f3961972</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-11-24 09:58:33</sys_updated_on>
-        <test display_value="CodeSanity - ATF tests for script includes">77c7756edb9b19106a03dad1f396196e</test>
+        <test display_value="CodeSanity - ATF tests for Script Includes">77c7756edb9b19106a03dad1f396196e</test>
         <test_suite display_value="CodeSanity">2c6758d3db4a8510bcced03cd396191d</test_suite>
     </sys_atf_test_suite_test>
 </record_update>

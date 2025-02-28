@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="DELETE">
+        <operation>execute</operation>
+        <source_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-25 21:26:05</sys_created_on>
+        <sys_id>70d3b5c7db1f99106a03dad1f396199f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetInstanceRecordURL</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_scope_privilege_70d3b5c7db1f99106a03dad1f396199f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-25 21:26:05</sys_updated_on>
+        <target_name>GetInstanceRecordURL</target_name>
+        <target_scope display_value="DevTools WORK IN PROGRESS">d689f6901bd38450a89720a8ec4bcbfd</target_scope>
+        <target_type>sys_script_include</target_type>
+    </sys_scope_privilege>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
+        <instance_name>wildwashington</instance_name>
+        <name>sys_scope_privilege_70d3b5c7db1f99106a03dad1f396199f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>execute</operation>
+        <source_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-25 21:26:05</sys_created_on>
+        <sys_id>70d3b5c7db1f99106a03dad1f396199f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetInstanceRecordURL</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_scope_privilege_70d3b5c7db1f99106a03dad1f396199f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-25 21:26:05</sys_updated_on>
+        <target_name>GetInstanceRecordURL</target_name>
+        <target_scope display_value="DevTools WORK IN PROGRESS">d689f6901bd38450a89720a8ec4bcbfd</target_scope>
+        <target_type>sys_script_include</target_type>
+    </sys_scope_privilege>
+</record_update>]]></payload>
+        <payload_hash>-1255600863</payload_hash>
+        <record_name>GetInstanceRecordURL</record_name>
+        <reverted_from/>
+        <source>2794ad20c3d45e505a37f9070501314f</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-08-25 07:31:24</sys_created_on>
+        <sys_id>77a46960c3d45e505a37f90705013158</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191887266650000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-08-25 07:31:24</sys_updated_on>
+        <type>Cross scope privilege</type>
+        <update_guid>33a46960c4d45e5006030ce2e7b00258</update_guid>
+        <update_guid_history>33a46960c4d45e5006030ce2e7b00258:0,2158cda1c95b42907f18423be03655db:0,c86e782544d7429087a724e11b63f8e6:0,6fd6864aac968ad00c4f6a2aa468cb14:0,10ad29ce07d28ad03335b29099ee6976:0,e2eb0714f75ac2d03fee42e8a6e921d8:0,9777a8beb52d0610446426420906d875:-1255600863</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 13:17:04</sys_created_on>
+        <sys_db_object display_value="" name="sys_scope_privilege">sys_scope_privilege</sys_db_object>
+        <sys_id>221b677e548c4e3ea9e1a2e63406bea9</sys_id>
+        <sys_metadata>70d3b5c7db1f99106a03dad1f396199f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetInstanceRecordURL</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>sys_scope_privilege_70d3b5c7db1f99106a03dad1f396199f</sys_update_name>
+        <sys_update_version display_value="sys_scope_privilege_70d3b5c7db1f99106a03dad1f396199f">77a46960c3d45e505a37f90705013158</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 13:17:04</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

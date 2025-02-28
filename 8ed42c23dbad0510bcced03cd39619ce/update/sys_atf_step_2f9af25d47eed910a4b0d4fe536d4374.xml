@@ -22,7 +22,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-10-14 14:12:13</sys_updated_on>
         <table/>
-        <test display_value="CodeSanity - ATF tests for checks">f09a325d47eed910a4b0d4fe536d43a7</test>
+        <test display_value="CodeSanity - ATF tests for Checks">f09a325d47eed910a4b0d4fe536d43a7</test>
         <timeout/>
         <warning_message/>
     </sys_atf_step>

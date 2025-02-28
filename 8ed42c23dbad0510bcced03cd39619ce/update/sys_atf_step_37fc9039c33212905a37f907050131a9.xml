@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-31 06:07:33</sys_created_on>
+        <sys_id>37fc9039c33212905a37f907050131a9</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_atf_step_37fc9039c33212905a37f907050131a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-31 06:16:30</sys_updated_on>
+        <table/>
+        <test display_value="CodeSanity - ATF tests for Scripted REST Resource">77fc9039c33212905a37f90705013178</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=37fc9039c33212905a37f907050131a9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>37fc9039c33212905a37f907050131a9</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-31 06:07:34</sys_created_on>
+        <sys_id>b3fc9039c33212905a37f907050131ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-31 06:07:34</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>37fc9039c33212905a37f907050131a9</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-31 06:07:34</sys_created_on>
+        <sys_id>bbfc9039c33212905a37f907050131ab</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-31 06:16:30</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+&#13;
+	var strCheck = '0bab98b5c33212905a37f90705013113';&#13;
+&#13;
+	var grApp = x_snc_devtools.GetAppRecord('x_snc_codesanity');&#13;
+	&#13;
+	var grWS = new GlideRecord('sys_ws_definition');&#13;
+	grWS.initialize();&#13;
+	grWS.sys_scope = grApp.sys_id;&#13;
+	grWS.name = 'Test1';&#13;
+	grWS.base_uri = 'test1';&#13;
+	var strWSSysId = x_snc_devtools.GlideRecordInsert(grWS);&#13;
+&#13;
+	var grWSO = new GlideRecord('sys_ws_operation');&#13;
+	grWSO.initialize();&#13;
+	grWSO.sys_scope = grApp.sys_id;&#13;
+	grWSO.name = 'Resource1';&#13;
+	grWSO.relative_path = 'res1';&#13;
+	grWSO.web_service_definition = strWSSysId;&#13;
+	var strWSOSysId = x_snc_devtools.GlideRecordInsert(grWSO);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_ws_operation',strWSOSysId,true);	&#13;
+	&#13;
+	var grTest = new GlideRecord('sys_atf_test');&#13;
+	grTest.initialize();&#13;
+	grTest.sys_scope = grApp.sys_id;&#13;
+	grTest.name = x_snc_devtools.MakeTestNameForRecord(grWSO);&#13;
+	x_snc_devtools.GlideRecordInsert(grTest);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_ws_operation',strWSOSysId,false);	&#13;
+	&#13;
+	&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

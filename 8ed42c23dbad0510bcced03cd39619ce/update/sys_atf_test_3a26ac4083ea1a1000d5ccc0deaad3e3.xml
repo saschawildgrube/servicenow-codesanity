@@ -5,22 +5,22 @@
         <description/>
         <enable_parameterized_testing>false</enable_parameterized_testing>
         <fail_on_server_error>false</fail_on_server_error>
-        <name>CodeSanity - ATF tests for Script Includes</name>
+        <name>CodeSanity - Role suffix must not be "user"</name>
         <parameters/>
         <remember/>
         <sn_atf_tg_generated>false</sn_atf_tg_generated>
         <sys_class_name>sys_atf_test</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-11-24 08:26:32</sys_created_on>
-        <sys_id>77c7756edb9b19106a03dad1f396196e</sys_id>
+        <sys_created_on>2024-12-13 10:02:33</sys_created_on>
+        <sys_id>3a26ac4083ea1a1000d5ccc0deaad3e3</sys_id>
         <sys_mod_count>2</sys_mod_count>
-        <sys_name>CodeSanity - ATF tests for Script Includes</sys_name>
+        <sys_name>CodeSanity - Role suffix must not be "user"</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-        <sys_update_name>sys_atf_test_77c7756edb9b19106a03dad1f396196e</sys_update_name>
+        <sys_update_name>sys_atf_test_3a26ac4083ea1a1000d5ccc0deaad3e3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-31 06:08:21</sys_updated_on>
+        <sys_updated_on>2024-12-13 10:16:00</sys_updated_on>
     </sys_atf_test>
-    <sys_variable_value action="delete_multiple" query="document_key=77c7756edb9b19106a03dad1f396196e"/>
+    <sys_variable_value action="delete_multiple" query="document_key=3a26ac4083ea1a1000d5ccc0deaad3e3"/>
 </record_update>

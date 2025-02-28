@@ -21,7 +21,7 @@
     </sys_scope_privilege>
 <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
         <file_path/>
         <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
         <instance_name>wildwashington</instance_name>
@@ -75,10 +75,10 @@
         <sys_metadata>70d3b5c7db1f99106a03dad1f396199f</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>GetInstanceRecordURL</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
         <sys_update_name>sys_scope_privilege_70d3b5c7db1f99106a03dad1f396199f</sys_update_name>
         <sys_update_version display_value="sys_scope_privilege_70d3b5c7db1f99106a03dad1f396199f">77a46960c3d45e505a37f90705013158</sys_update_version>

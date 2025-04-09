@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>Gets a system property of this application.</description>
+        <mobile_callable>false</mobile_callable>
         <name>AppGetProperty</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function AppGetProperty(strSuffix)
 {
 	return x_snc_devtools.GetProperty('x_snc_codesanity.'+strSuffix);

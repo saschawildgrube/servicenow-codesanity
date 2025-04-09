@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>The DevToolsGetParentRecord function is called by the DevTools extension point instance class and returns a parent record for the given record if it can be determined.</description>
+        <mobile_callable>false</mobile_callable>
         <name>DevToolsGetParentRecord</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function DevToolsGetParentRecord(grRecord)
 {
 	var GetRecord = x_snc_devtools.GetRecord;

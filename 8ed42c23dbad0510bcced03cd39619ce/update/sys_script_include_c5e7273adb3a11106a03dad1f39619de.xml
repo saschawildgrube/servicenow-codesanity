@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the an array scope names for scoped apps or the application names for global scoped apps.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetAppIdentifiers</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetAppIdentifiers(aApps)
 {
 	var GetArrayValue = x_snc_devtools.GetArrayValue;

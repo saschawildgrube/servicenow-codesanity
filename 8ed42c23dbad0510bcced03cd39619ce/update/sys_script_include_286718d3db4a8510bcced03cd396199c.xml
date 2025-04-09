@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>Implements the extension point for DevTools.</description>
+        <mobile_callable>false</mobile_callable>
         <name>DevTools</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var DevTools = Class.create();
 DevTools.prototype = {
 	initialize: function()

@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Scans an app and all of its dependencies using the CodeSanity suite.</description>
+        <mobile_callable>false</mobile_callable>
         <name>ScanAppWithDependencies</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function ScanAppWithDependencies(vApp, bDetailed)
 {
 	var grSuite = GetScanSuiteRecord();

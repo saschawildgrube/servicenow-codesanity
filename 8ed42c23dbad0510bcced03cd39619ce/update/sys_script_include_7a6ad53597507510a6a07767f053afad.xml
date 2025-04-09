@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>The function DevToolsRenderDebugDump is called by the DevTools extension point instance class and returns additional debug information provided by the application.</description>
+        <mobile_callable>false</mobile_callable>
         <name>DevToolsRenderDebugDump</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function DevToolsRenderDebugDump()
 {
 	return '';

@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Writes the current bean count state to the log.</description>
+        <mobile_callable>false</mobile_callable>
         <name>LogBeanCount</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function LogBeanCount()
 {
 	var RenderValue = x_snc_devtools.RenderValue;

@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>Sets a system property of this application.</description>
+        <mobile_callable>false</mobile_callable>
         <name>AppSetProperty</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function AppSetProperty(strSuffix,vValue)
 {
 	return x_snc_devtools.SetProperty('x_snc_codesanity.'+strSuffix,vValue);

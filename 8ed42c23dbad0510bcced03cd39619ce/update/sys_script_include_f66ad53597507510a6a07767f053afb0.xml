@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>The function DevToolsGetInstancePipelineName is called by the DevTools extension point instance class and returns the pipeline name of an instance based on the given actual name.</description>
+        <mobile_callable>false</mobile_callable>
         <name>DevToolsGetInstancePipelineName</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function DevToolsGetInstancePipelineName(strInstanceName)
 {
 	return '';

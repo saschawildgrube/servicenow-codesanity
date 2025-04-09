@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>true</client_callable>
         <description>The CodeSanityClientAPI class contains CodeSanity functions to be called from client side code. </description>
+        <mobile_callable>false</mobile_callable>
         <name>CodeSanityClientAPI</name>
+        <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var CodeSanityClientAPI = Class.create();
 CodeSanityClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 {

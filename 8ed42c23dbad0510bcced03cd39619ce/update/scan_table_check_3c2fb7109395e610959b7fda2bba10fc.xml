@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>Business Rules execute one after another. The order value provides guidance in which exact sequence the Business Rules will run. If multiple Business Rules share the exact same execution order, the sequence in which these Business Rules are executed is not defined - this means that Business Rules execute in random order.&#13;
+In many cases this is no problem. If these Business Rules do not interfere or set the same values (e.g. when updating or inserting a record) the exact sequence of their execution may not make any difference. Sometimes Business Rules may interfere - especially if Business Rules abort the transaction under specific circumstances.&#13;
+It is good practise to set a unique execution order on all custom Business Rules to avoid random behavior.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Business Rule unique order</name>
+        <priority>1</priority>
+        <resolution_details>Set the order value of the Business Rule to a unique value. That is a different value than any other Business Rules running on the same or parent tables.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var aParentTables = x_snc_devtools.GetParentTables(current.collection)
+		var grBR = new GlideRecord('sys_script');
+		var condition = grBR.addQuery('collection','=',current.collection);
+		for (var nParentTable = 0; nParentTable < aParentTables.length; nParentTable++)
+		{
+			condition.addOrCondition('collection','=',aParentTables[nParentTable]);
+		}
+		grBR.addQuery('sys_id','!=',current.sys_id);
+		grBR.addQuery('order','=',current.order);
+		grBR.query();
+		while (grBR.next())
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>Business Rules must have a unique execution order</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 13:26:51</sys_created_on>
+        <sys_id>3c2fb7109395e610959b7fda2bba10fc</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CodeSanity - Business Rule unique order</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_3c2fb7109395e610959b7fda2bba10fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 13:52:13</sys_updated_on>
+        <table>sys_script</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=3c2fb7109395e610959b7fda2bba10fc"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>3c2fb7109395e610959b7fda2bba10fc</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 13:26:51</sys_created_on>
+        <sys_id>bc50c8209395e610959b7fda2bba1053</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 13:26:51</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the one and only scan suite contained in the CodeSanity app.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetScanSuiteRecord</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetScanSuiteRecord()
 {
 	var GetAppRecord = x_snc_devtools.GetAppRecord;

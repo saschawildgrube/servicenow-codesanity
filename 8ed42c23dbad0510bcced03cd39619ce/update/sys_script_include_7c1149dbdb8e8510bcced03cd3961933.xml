@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Provides helpful links about Instance Scan for the link directory.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetLinkDirectoryInstanceScan</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetLinkDirectoryInstanceScan()
 {
 	var linkdirectory = {

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>In Yokohama the behavior around database views has changed. If a database view is configured to join multiple tables each of the defined tables must have a unique order to be processed properly. Until Xanadu the engine was agnostic to multiple tables being set to the same order - but starting in Yokohama each table definition must have a unique order.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Database View Tables unique order</name>
+        <priority>1</priority>
+        <resolution_details>Change the order of the tables defined for the database view to be unique.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var grDbViewTables = new GlideRecord('sys_db_view_table');
+		grDbViewTables.addQuery('view','=',current.sys_id);
+		grDbViewTables.orderBy('order');
+		grDbViewTables.query();
+		var nPreviousOrder = -999999;
+		while (grDbViewTables.next())
+		{
+			if (nPreviousOrder == grDbViewTables.order)
+			{
+				engine.finding.increment();
+				return;
+			}
+			nPreviousOrder = x_snc_devtools.GetIntegerValue(grDbViewTables.order);
+		}
+	}    
+
+})(engine);]]></script>
+        <short_description>A Database View Table definition must have a unique order number</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 12:43:57</sys_created_on>
+        <sys_id>ecc5b3149355e610959b7fda2bba1096</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CodeSanity - Database View Tables unique order</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_ecc5b3149355e610959b7fda2bba1096</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 13:08:17</sys_updated_on>
+        <table>sys_db_view</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=ecc5b3149355e610959b7fda2bba1096"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>ecc5b3149355e610959b7fda2bba1096</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 12:43:56</sys_created_on>
+        <sys_id>d8863f149355e610959b7fda2bba1043</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 12:43:56</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

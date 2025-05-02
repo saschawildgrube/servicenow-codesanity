@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the one and only scan source record that refers to the CodeSanity scan suite record.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetScanSourceRecord</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetScanSourceRecord()
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;

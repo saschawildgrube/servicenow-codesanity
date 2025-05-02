@@ -12,7 +12,7 @@ Script Includes ending with "WorkerAPI" should only contain proxy functions and 
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - ATF tests for Script Includes</name>
         <priority>1</priority>
-        <resolution_details>Create an ATF test that checks the behavior of the Script Include. Make sure that the name of the Script Include is contained in the name of the ATF test. </resolution_details>
+        <resolution_details>Create an ATF test that checks the behavior of the Script Include. Make sure that the name of the ATF test complies with the behavior of x_snc_devtools.MakeTestNameForRecord() - that is "&lt;Name of the Application&gt; - &lt;Name of the Script Include&gt;". </resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -79,16 +79,27 @@ Script Includes ending with "WorkerAPI" should only contain proxy functions and 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-24 06:54:13</sys_created_on>
         <sys_id>e1b1e922db5b19106a03dad1f39619a2</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>CodeSanity - ATF tests for Script Includes</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_e1b1e922db5b19106a03dad1f39619a2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-02-28 10:06:03</sys_updated_on>
+        <sys_updated_on>2025-04-09 17:02:26</sys_updated_on>
         <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
     <sys_translated_text action="delete_multiple" query="documentkey=e1b1e922db5b19106a03dad1f39619a2"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e1b1e922db5b19106a03dad1f39619a2</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-09 17:02:26</sys_created_on>
+        <sys_id>464860b593f0aa10959b7fda2bba10b1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-09 17:02:26</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>The DevToolsGetApplicationStatus is called by the DevTools extension point instance class and returns the application status object with additional status information to be displayed on the Application overview page.</description>
+        <mobile_callable>false</mobile_callable>
         <name>DevToolsGetApplicationStatus</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function DevToolsGetApplicationStatus(status)
 {
 	var GetStringValue = x_snc_devtools.GetStringValue;

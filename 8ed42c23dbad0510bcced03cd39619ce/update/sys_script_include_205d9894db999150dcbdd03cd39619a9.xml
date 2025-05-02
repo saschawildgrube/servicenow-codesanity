@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns the rules that are applicable to the given check based on the given execution rules.</description>
+        <mobile_callable>false</mobile_callable>
         <name>GetExecutionRulesForCheckByRules</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function GetExecutionRulesForCheckByRules(grCheck,rules)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;

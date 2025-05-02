@@ -21,7 +21,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>scan_result - Log bean count</name>
-        <order>100</order>
+        <order>42500</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -40,7 +40,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4e74e88fdb2c21506a03dad1f39619e4</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>scan_result - Log bean count</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -48,10 +48,21 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_4e74e88fdb2c21506a03dad1f39619e4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-19 19:55:30</sys_updated_on>
+        <sys_updated_on>2025-05-02 06:54:21</sys_updated_on>
         <template/>
         <when>before</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=4e74e88fdb2c21506a03dad1f39619e4"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>4e74e88fdb2c21506a03dad1f39619e4</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-02 06:54:20</sys_created_on>
+        <sys_id>66a9b445935daa10959b7fda2bba1025</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-02 06:54:20</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

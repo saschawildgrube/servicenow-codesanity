@@ -19,7 +19,7 @@
         <is_rest>false</is_rest>
         <message/>
         <name>scan_check - Prepare new check</name>
-        <order>100</order>
+        <order>42500</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -38,7 +38,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>86d4c243db1d1510dcbdd03cd3961998</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>scan_check - Prepare new check</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
@@ -46,10 +46,21 @@
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_86d4c243db1d1510dcbdd03cd3961998</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-19 19:56:03</sys_updated_on>
+        <sys_updated_on>2025-05-02 06:58:38</sys_updated_on>
         <template/>
         <when>before_display</when>
         <x_snc_datasilos_created>false</x_snc_datasilos_created>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=86d4c243db1d1510dcbdd03cd3961998"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>86d4c243db1d1510dcbdd03cd3961998</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-02 06:58:38</sys_created_on>
+        <sys_id>a9aaf885935daa10959b7fda2bba1028</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-02 06:58:38</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

@@ -32,9 +32,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-14 08:56:58</sys_created_on>
         <sys_id>8ed42c23dbad0510bcced03cd39619ce</sys_id>
-        <sys_mod_count>81</sys_mod_count>
+        <sys_mod_count>82</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-11 12:02:11</sys_updated_on>
+        <sys_updated_on>2025-05-17 15:20:22</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
@@ -46,8 +46,8 @@
         <x_snc_devtools_maintainer>Sascha Wildgrube</x_snc_devtools_maintainer>
         <x_snc_devtools_maintainer_email>sascha.wildgrube@servicenow.com</x_snc_devtools_maintainer_email>
         <x_snc_devtools_repo_url>https://github.com/saschawildgrube/servicenow-codesanity.git</x_snc_devtools_repo_url>
-        <x_snc_devtools_showstopper>false</x_snc_devtools_showstopper>
-        <x_snc_devtools_showstopper_details/>
+        <x_snc_devtools_showstopper>true</x_snc_devtools_showstopper>
+        <x_snc_devtools_showstopper_details>test for "CodeSanity - Script Include has a valid name" does not work</x_snc_devtools_showstopper_details>
         <x_snc_wildgrubelab_test/>
         <x_snc_wildgrubelab_test2/>
     </sys_app>

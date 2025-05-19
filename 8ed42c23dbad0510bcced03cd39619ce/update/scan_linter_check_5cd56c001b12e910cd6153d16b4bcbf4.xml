@@ -48,7 +48,7 @@ scan_script_only_check</description>
 
 		var aBannedClasses = [
 			'GlideRecord',
-			'GliderecordSecure',
+			'GlideRecordSecure',
 			'GlideAggregate',
 			'GlideQuery'
 			];
@@ -77,14 +77,25 @@ scan_script_only_check</description>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-04-14 11:29:17</sys_created_on>
         <sys_id>5cd56c001b12e910cd6153d16b4bcbf4</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>CodeSanity - Use GlideRecord at the right place</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_5cd56c001b12e910cd6153d16b4bcbf4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-31 09:44:12</sys_updated_on>
+        <sys_updated_on>2025-05-19 14:11:10</sys_updated_on>
     </scan_linter_check>
     <sys_translated_text action="delete_multiple" query="documentkey=5cd56c001b12e910cd6153d16b4bcbf4"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>5cd56c001b12e910cd6153d16b4bcbf4</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-19 13:33:06</sys_created_on>
+        <sys_id>e9f7712693216a50959b7fda2bba10b1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-19 13:33:06</sys_updated_on>
+        <table>scan_linter_check</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>An OOTB record (Out-of-the-box) record is any record that is shipped as part of the ServiceNow platform or one of its plugins. Such records MUST NOT be moved into a custom application. If OOTB records are moved into custom application, various unintended side-effects must be expected - updates in family upgrades may be ignored or overwritten or records might be deleted unintentionally when installing or updating custom applications that contain such records.</description>
+        <documentation_url>https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf</documentation_url>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - App must not contain OOTB records</name>
+        <priority>1</priority>
+        <resolution_details>Move any OOTB record that has been moved into a custom application back out of the app - this may be done via background script.&#13;
+In order to apply changes to such OOTB records, create your own version of the record in your own custom app and deactivate such OOTB records through installation scripts.&#13;
+See chapter "Installation Scripts" in the the linked whitepaper "A mature development and deployment process" for more guidance. </resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var GetValue = x_snc_devtools.GetValue;
+
+		var aUsers = [
+			'system',
+			'glide.maint',
+			'service.now',
+			'maint',
+			'tectonic',
+			'@@snc_write_audit@@',
+			'@@snc_write_audit_external_acl@@',
+			'admin.maint',
+			'abel.tuter',
+			'abraham.lincoln'
+		]
+
+		var grMetadata = new GlideRecord('sys_metadata');
+		grMetadata.addQuery('sys_scope','=',current.sys_id);
+		var condition = grMetadata.addQuery('sys_created_by','=',GetValue(aUsers,0));
+		for (var nUser = 1; nUser < aUsers.length; nUser++)
+		{
+			condition.addOrCondition('sys_created_by','=',GetValue(aUsers,nUser));
+		}
+		grMetadata.query();
+		while (grMetadata.next())
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>An application must not contain OOTB records.</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-20 08:53:26</sys_created_on>
+        <sys_id>5a000ebe93e1aa50959b7fda2bba10cd</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>CodeSanity - App must not contain OOTB records</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_5a000ebe93e1aa50959b7fda2bba10cd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-20 10:40:25</sys_updated_on>
+        <table>sys_app</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=5a000ebe93e1aa50959b7fda2bba10cd"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>5a000ebe93e1aa50959b7fda2bba10cd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-20 08:53:26</sys_created_on>
+        <sys_id>668146329325aa50959b7fda2bba10a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-20 08:53:26</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

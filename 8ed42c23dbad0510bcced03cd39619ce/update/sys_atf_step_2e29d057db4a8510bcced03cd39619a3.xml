@@ -42,4 +42,5 @@
         <value>8ed42c23dbad0510bcced03cd39619ce</value>
         <variable display_value="">8a0aaa9f1bac2090a89720a8ec4bcbc8</variable>
     </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_786a921f1b6c2090a89720a8ec4bcbc9^id=2e29d057db4a8510bcced03cd39619a3"/>
 </record_update>

@@ -3,11 +3,11 @@
         <active>true</active>
         <category>code_sanity</category>
         <description>The system property "instance_name" contains the technical name of the instance. Code should not use the system property value to control any logic. Code should NOT depend on the specific instance the code is running on.</description>
-        <documentation_url/>
+        <documentation_url>https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf</documentation_url>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - Do not use "instance_name"</name>
         <priority>1</priority>
-        <resolution_details/>
+        <resolution_details>If application logic must behave differently on different instances, the behavior should be configured through system properties - and setting the system properties depending on the specific instance should be subject to specific installation scripts. See the whitepaper "A mature development and deployment process" in chapter "Installation Scripts" for more details.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -50,14 +50,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-20 13:40:26</sys_created_on>
         <sys_id>98e24ffe9329aa50959b7fda2bba1084</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>CodeSanity - Do not use "instance_name"</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_98e24ffe9329aa50959b7fda2bba1084</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-20 15:46:22</sys_updated_on>
+        <sys_updated_on>2025-05-20 15:55:00</sys_updated_on>
     </scan_linter_check>
     <sys_translated_text action="delete_multiple" query="documentkey=98e24ffe9329aa50959b7fda2bba1084"/>
     <sys_es_latest_script action="INSERT_OR_UPDATE">

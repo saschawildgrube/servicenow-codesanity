@@ -37,9 +37,9 @@ Hence all UI Actions should at least require one role to access the UI Action.</
         <sys_id>4a51902e1b7869105b76777d8b4bcbd1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>CodeSanity - UI Action requires a role</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_4a51902e1b7869105b76777d8b4bcbd1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2023-02-06 14:38:14</sys_updated_on>

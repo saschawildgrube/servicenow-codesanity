@@ -22,7 +22,6 @@
 		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
 
 		var strName = GetStringValue(current.name);
-
 		if (StringCheckRegEx(strName,'^[a-zA-Z_]\\w{2,}$','') == false)
 		{
 			engine.finding.increment();
@@ -35,16 +34,27 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-08 14:51:39</sys_created_on>
         <sys_id>98e81f71dbac91109232dad1f3961929</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>CodeSanity - Script Include has a valid name</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_98e81f71dbac91109232dad1f3961929</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-13 13:16:41</sys_updated_on>
+        <sys_updated_on>2025-05-17 15:36:36</sys_updated_on>
         <table>sys_script_include</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
     <sys_translated_text action="delete_multiple" query="documentkey=98e81f71dbac91109232dad1f3961929"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>98e81f71dbac91109232dad1f3961929</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-17 15:17:14</sys_created_on>
+        <sys_id>df9c7bb193e96250ae97b4aa6aba1087</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-17 15:17:14</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

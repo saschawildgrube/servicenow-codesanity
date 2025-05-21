@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-31 08:00:12</sys_created_on>
         <sys_id>b1c6fcb1c3b212905a37f90705013194</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_b1c6fcb1c3b212905a37f90705013194</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-31 09:42:17</sys_updated_on>
+        <sys_updated_on>2025-05-19 14:10:05</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Use GlideRecord at the right place">bdc6bcb1c3b212905a37f907050131fe</test>
         <timeout/>
@@ -49,9 +49,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-31 08:00:12</sys_created_on>
         <sys_id>79c6fcb1c3b212905a37f90705013196</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-31 09:42:17</sys_updated_on>
+        <sys_updated_on>2025-05-19 14:10:05</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -70,7 +70,8 @@
 		+'\tvar new GlideRecord("incident");\n'&#13;
 		+'}');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);&#13;
-	&#13;
+&#13;
+&#13;
 	var grBR = new GlideRecord('sys_script');&#13;
 	grBR.sys_scope = 'global';&#13;
 	grBR.script =&#13;
@@ -90,7 +91,16 @@
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grBR);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script',strRecordSysId,true);&#13;
 	&#13;
-	&#13;
+	var grBR = new GlideRecord('sys_script');&#13;
+	grBR.sys_scope = 'global';&#13;
+	grBR.script =&#13;
+		'(function executeRule(current, previous /*null when async*/) {\n'&#13;
+		+'\tvar grRecord = new GlideRecordSecure("incident");'&#13;
+		+'})(current, previous);';&#13;
+	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grBR);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script',strRecordSysId,true);&#13;
+&#13;
+&#13;
 	&#13;
 	return test.GetResult();&#13;
 	&#13;

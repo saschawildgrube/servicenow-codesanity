@@ -458,6 +458,7 @@ gs.info(strOutput);
 		var grMetadata = new GlideRecord('sys_metadata');
 		grMetadata.addQuery('sys_scope','=',current.sys_id);
 		grMetadata.addQuery('sys_class_name','!=','sys_scope_privilege');
+		grMetadata.addQuery('sys_class_name','!=','sys_metadata_delete');
 		var condition = grMetadata.addQuery('sys_created_by','=',GetValue(aUsers,0));
 		for (var nUser = 1; nUser < aUsers.length; nUser++)
 		{
@@ -477,14 +478,14 @@ gs.info(strOutput);
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-20 08:53:26</sys_created_on>
         <sys_id>5a000ebe93e1aa50959b7fda2bba10cd</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>CodeSanity - App must not contain OOTB records</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_5a000ebe93e1aa50959b7fda2bba10cd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-21 07:47:41</sys_updated_on>
+        <sys_updated_on>2025-06-03 09:48:18</sys_updated_on>
         <table>sys_app</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

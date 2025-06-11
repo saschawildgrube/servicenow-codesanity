@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>Code must not depend on data. This is a fundemantal architectural guard rail. The ServiceNow platform had not been designed with this constraint in mind in the beginning. More and more capabilities have been added that allow for a clear distinction between code and data. User Criteria however is one of the examples where this distinction is not well-supported. User Criteria by design allow code to depend on data (groups, users, companies, etc.) and this should, of course, be avoided.&#13;
+See chapter "Data vs. Code" in the whitepaper "A mature development and deployment process" for further details.</description>
+        <documentation_url>https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf</documentation_url>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - User Criteria depends on data</name>
+        <priority>1</priority>
+        <resolution_details>Remove all references to users, groups, companies, departments and locations.&#13;
+Use one of the following alternatives:&#13;
+1. Use roles and/or a scripted condition that determines the eligible part of the organization dynamically based on configuration.&#13;
+2. Deploy the User Criteria WITHOUT references to data and use Business Rules or Scheduled Jobs to populate these references dynamically post deployment.&#13;
+3. Treat User Criteria as data and allow specific users on the production environment to manage and maintain User Criteria as if it was production data - make sure however that these user-generated User Critera are always associated to the global scope. </resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		if (	current.user != ''
+			||  current.group != ''
+			||	current.company != ''
+			||	current.location != ''
+			||	current.department != '')
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>A User Criteria must not depend on data</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 13:34:33</sys_created_on>
+        <sys_id>380a75d593862210ae97b4aa6aba1090</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CodeSanity - User Criteria depends on data</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_380a75d593862210ae97b4aa6aba1090</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 13:42:57</sys_updated_on>
+        <table>user_criteria</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=380a75d593862210ae97b4aa6aba1090"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>380a75d593862210ae97b4aa6aba1090</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 13:34:32</sys_created_on>
+        <sys_id>dfa10ad993862210ae97b4aa6aba10c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 13:34:32</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

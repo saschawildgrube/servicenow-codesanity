@@ -166,6 +166,7 @@
 &#13;
 	&lt;h3&gt;2.22.0 - TODO&lt;/h3&gt;&#13;
 	&lt;ol&gt;&#13;
+		&lt;li&gt;Added check "CodeSanity - User Criteria depends on data".&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - App must not contain OOTB records" now ignores deleted application files.&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - App must not contain OOTB records" now ignores auto-generated "query_range" ACLs (see KB2046494) - as it turned out not to be practical to flag these ACLs as findings.&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
@@ -177,7 +178,7 @@
 		&lt;li&gt;Added check "CodeSanity - App must not contain OOTB records".&lt;/li&gt;&#13;
 		&lt;li&gt;Added check "CodeSanity - Do not use "instance_name"".&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - ATF tests for Script Includes" considers the "DevToolsIsTechnicalUser" Script Include as an exception.&lt;/li&gt;&#13;
-		&lt;li&gt;Check "CodeSanity - Use GlideRecord at the right place" now also detects improper use fo GlideRecordSecure.&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - Use GlideRecord at the right place" now also detects improper use of GlideRecordSecure.&lt;/li&gt;&#13;
 		&lt;li&gt;Updated test for "CodeSanity - Script include has a valid name" because the test case for Script Includes without names started failing on 2025-05-11 for unknown reasons.&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
 &#13;
@@ -583,14 +584,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>414</sys_mod_count>
+        <sys_mod_count>416</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-09 12:55:11</sys_updated_on>
+        <sys_updated_on>2025-06-11 11:44:44</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>ec6718d3db4a8510bcced03cd39619ff</id>

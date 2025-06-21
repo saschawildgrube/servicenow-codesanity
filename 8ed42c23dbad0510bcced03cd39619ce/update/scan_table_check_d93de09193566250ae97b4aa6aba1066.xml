@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>Code must not depend on data. This is a fundemantal architectural guard rail. The ServiceNow platform had not been designed with this constraint in mind in the beginning. More and more capabilities have been added that allow for a clear distinction between code and data. Catalog Items however is one of the examples where this distinction is not well-supported. Catalog Items by design allow code to depend on data (e.g. owner) and this should, of course, be avoided.&#13;
+See chapter "Data vs. Code" in the whitepaper "A mature development and deployment process" for further details.</description>
+        <documentation_url>https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf</documentation_url>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Catalog Item depends on data</name>
+        <priority>1</priority>
+        <resolution_details>Remove all references to users.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		if (	current.owner != ''
+			||  current.vendor != ''
+			||	current.group != ''
+			||	current.location != '')
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>A Catalog Item must not depend on data</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 17:41:12</sys_created_on>
+        <sys_id>d93de09193566250ae97b4aa6aba1066</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>CodeSanity - Catalog Item depends on data</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_d93de09193566250ae97b4aa6aba1066</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 18:22:22</sys_updated_on>
+        <table>sc_cat_item</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=d93de09193566250ae97b4aa6aba1066"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>d93de09193566250ae97b4aa6aba1066</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 17:41:27</sys_created_on>
+        <sys_id>114da49193566250ae97b4aa6aba1099</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 17:41:27</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

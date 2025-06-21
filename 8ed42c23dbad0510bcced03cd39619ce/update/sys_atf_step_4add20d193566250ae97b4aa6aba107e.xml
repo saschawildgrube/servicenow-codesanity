@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 17:43:58</sys_created_on>
+        <sys_id>4add20d193566250ae97b4aa6aba107e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_atf_step_4add20d193566250ae97b4aa6aba107e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 18:13:48</sys_updated_on>
+        <table/>
+        <test display_value="CodeSanity - Catalog Item depends on data">35dd20d193566250ae97b4aa6aba1027</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=4add20d193566250ae97b4aa6aba107e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>4add20d193566250ae97b4aa6aba107e</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 17:43:58</sys_created_on>
+        <sys_id>4add20d193566250ae97b4aa6aba108d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 17:43:58</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>4add20d193566250ae97b4aa6aba107e</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 17:43:58</sys_created_on>
+        <sys_id>c2dd20d193566250ae97b4aa6aba108e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 18:13:49</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+	&#13;
+	var strCheck = 'd93de09193566250ae97b4aa6aba1066';&#13;
+	&#13;
+	// Test cases that provoke findings:&#13;
+	&#13;
+	var grApp = x_snc_devtools.GetAppRecord('x_snc_codesanity');&#13;
+&#13;
+	var grUser = new GlideRecord('sys_user');&#13;
+	grUser.initialize();&#13;
+	grUser.name = '_ATF_TEST_CODESANITY_1';&#13;
+	var strUserSysId = x_snc_devtools.GlideRecordInsert(grUser);&#13;
+&#13;
+	test.Log(x_snc_devtools.GetRecord('sys_user',strUserSysId));&#13;
+&#13;
+	var grRecord = new GlideRecord('sc_cat_item');&#13;
+	grRecord.initialize();&#13;
+	grRecord.name = '_ATF_TEST_CODESANITY_SC_CAT_ITEM_1';&#13;
+	grRecord.sys_scope = grApp.sys_id;&#13;
+	grRecord.owner = strUserSysId;&#13;
+	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
+	test.Log(x_snc_devtools.GetRecord('sc_cat_item',grRecord.sys_id));&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sc_cat_item',strRecordSysId,true);&#13;
+	&#13;
+	&#13;
+	// Test cases that do NOT provoke findings:&#13;
+	&#13;
+	var grRecord = new GlideRecord('sc_cat_item');&#13;
+	grRecord.initialize();&#13;
+	grRecord.name = '_ATF_TEST_CODESANITY_SC_CAT_ITEM_2';&#13;
+	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
+	x_snc_devtools.RecordSetValue('sc_cat_item',strRecordSysId,'owner','');&#13;
+	test.Log(x_snc_devtools.GetRecord('sc_cat_item',grRecord.sys_id));&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sc_cat_item',strRecordSysId,false);&#13;
+	&#13;
+	&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>

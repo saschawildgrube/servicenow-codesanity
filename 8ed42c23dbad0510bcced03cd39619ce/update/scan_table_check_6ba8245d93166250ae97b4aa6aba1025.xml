@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>It may be tempting to hard code an authentication token into the HTTP Header definition for an outbound REST message. However, it should be obvious that an authentication token is to be considered a secret credential that must not be stored in code.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - HTTP Header contains authentication token</name>
+        <priority>1</priority>
+        <resolution_details>Remove the authentication token from the HTTP header. Configure to use a credential alias when invoking the REST message instead.&#13;
+If the Application File has been committed to source control, the authentication token must be considered as compromised and replaced.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var strName = x_snc_devtools.GetStringValue(current.name);
+		if (strName.startsWith('Auth') == true)
+		{
+			engine.finding.increment();
+		}
+		if (strName.startsWith('bearer') == true)
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>An HTTP Header must not contain any authentication tokens</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 17:30:43</sys_created_on>
+        <sys_id>6ba8245d93166250ae97b4aa6aba1025</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CodeSanity - HTTP Header contains authentication token</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_6ba8245d93166250ae97b4aa6aba1025</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 17:34:11</sys_updated_on>
+        <table>sys_rest_message_fn_headers</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=6ba8245d93166250ae97b4aa6aba1025"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>6ba8245d93166250ae97b4aa6aba1025</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-21 17:30:42</sys_created_on>
+        <sys_id>fbcaac9d93166250ae97b4aa6aba10b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-21 17:30:42</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

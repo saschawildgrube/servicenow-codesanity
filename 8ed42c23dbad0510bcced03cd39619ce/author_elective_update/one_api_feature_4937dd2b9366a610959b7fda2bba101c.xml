@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="one_api_feature">
+    <one_api_feature action="DELETE">
+        <input_processor display_value="OneExtendGenericCapabilityRequestProcessor">a7eb538353111110c271ddeeff7b12a8</input_processor>
+        <name>1dbdf571fc387110f87736513ef7b2af</name>
+        <output_processor display_value="OneExtendCapabilityResponseProcessor">3a90ff027f50121032d293f10d866518</output_processor>
+        <short_description>Auto Generated </short_description>
+        <sys_class_name>one_api_feature</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 06:46:41</sys_created_on>
+        <sys_id>4937dd2b9366a610959b7fda2bba101c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1dbdf571fc387110f87736513ef7b2af</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>one_api_feature_4937dd2b9366a610959b7fda2bba101c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 06:46:41</sys_updated_on>
+    </one_api_feature>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>220092723b73421816e44a8aa4e45ab1</instance_id>
+        <instance_name>wildxanadu</instance_name>
+        <name>one_api_feature_4937dd2b9366a610959b7fda2bba101c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="one_api_feature"><one_api_feature action="INSERT_OR_UPDATE"><input_processor display_value="OneExtendGenericCapabilityRequestProcessor">a7eb538353111110c271ddeeff7b12a8</input_processor><name>1dbdf571fc387110f87736513ef7b2af</name><output_processor display_value="OneExtendCapabilityResponseProcessor">3a90ff027f50121032d293f10d866518</output_processor><short_description>Auto Generated </short_description><sys_class_name>one_api_feature</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-11 06:46:41</sys_created_on><sys_id>4937dd2b9366a610959b7fda2bba101c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1dbdf571fc387110f87736513ef7b2af</sys_name><sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package><sys_policy/><sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope><sys_update_name>one_api_feature_4937dd2b9366a610959b7fda2bba101c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-11 06:46:41</sys_updated_on></one_api_feature></record_update>]]></payload>
+        <payload_hash>-1011341633</payload_hash>
+        <record_name>1dbdf571fc387110f87736513ef7b2af</record_name>
+        <reverted_from/>
+        <source>5b91a01a9321e650959b7fda2bba10c0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-11 06:46:41</sys_created_on>
+        <sys_id>c137dd2b9366a610959b7fda2bba1020</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197f83c76530000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-11 06:46:41</sys_updated_on>
+        <type>One API Feature</type>
+        <update_guid>4537dd2bee66a6100567ba51f7f61f1f</update_guid>
+        <update_guid_history>4537dd2bee66a6100567ba51f7f61f1f:-1011341633</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1dbdf571fc387110f87736513ef7b2af">4585dac893cfa610959b7fda2bba103b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-25 10:51:36</sys_created_on>
+        <sys_db_object display_value="" name="one_api_feature">one_api_feature</sys_db_object>
+        <sys_id>01241ea3f8f640fc8168d82a41618710</sys_id>
+        <sys_metadata>4937dd2b9366a610959b7fda2bba101c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1dbdf571fc387110f87736513ef7b2af</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>one_api_feature_4937dd2b9366a610959b7fda2bba101c</sys_update_name>
+        <sys_update_version display_value="one_api_feature_4937dd2b9366a610959b7fda2bba101c">c137dd2b9366a610959b7fda2bba1020</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-25 10:51:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

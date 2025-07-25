@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>All Script Includes that contain a client callable class must must be protected by at least one "execution" ACL.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Client callable Script Include ACL</name>
+        <priority>1</priority>
+        <resolution_details>Add an ACL to protect the client callable Script Include.&#13;
+If the individual functions check security requirements individually and the some of the functions may be executed by not logged in users, one can associate the "public" role to the ACL - in which case the ACL does not provide any protection at all - but at least the ACL would represent the result of a conscious decision.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var GetStringValue = x_snc_devtools.GetStringValue;
+
+		if (current.client_callable == true)
+		{
+			var strName = GetStringValue(current.name);
+
+			var grACL = new GlideRecord('sys_security_acl');
+			grACL.addQuery('sys_scope','=',current.sys_scope);
+			grACL.addQuery('name','=',strName);
+			grACL.addQuery('operation','=','execute');
+			grACL.addQuery('type','=','client_callable_script_include');
+			grACL.query();
+			if (grACL.getRowCount() == 0)
+			{
+				engine.finding.increment();
+			}
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>Client callable Script Include must be protected by an ACL</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-25 10:54:20</sys_created_on>
+        <sys_id>49265e0c93cfa610959b7fda2bba1003</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CodeSanity - Client callable Script Include ACL</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_49265e0c93cfa610959b7fda2bba1003</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-25 11:00:44</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=49265e0c93cfa610959b7fda2bba1003"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>49265e0c93cfa610959b7fda2bba1003</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-25 10:57:24</sys_created_on>
+        <sys_id>3dd6164c93cfa610959b7fda2bba1000</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-25 10:57:24</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -172,7 +172,7 @@
 		&lt;li&gt;The Check "CodeSanity - UI Action requires a role" now also verifies that at least one record that associates the UI Action with a role is in the same scope / application as the UI Action itself.&lt;/li&gt;&#13;
 		&lt;li&gt;The Check "CodeSanity - App must not contain OOTB records" now uses DevTools' IsOotbRecord() function to identify OOTB records and hence detects more records and avoids several false-positive findings.&lt;/li&gt;&#13;
 		&lt;li&gt;The Check "CodeSanity - App must not contain OOTB records" now also displays the actual Application File Type properly in the findings list.&lt;/li&gt;&#13;
-		&lt;li&gt;The Check "CodeSanity - Sys IDs in scripts" now considers AppBuilderPlatform() as an exception.&lt;/li&gt;&#13;
+		&lt;li&gt;The Checks "CodeSanity - Sys IDs in scripts" and "CodeSanity - Application names in code" now consider AppBuilderPlatform() as an exception.&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
 &#13;
 &#13;
@@ -598,14 +598,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>425</sys_mod_count>
+        <sys_mod_count>426</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-04 09:12:44</sys_updated_on>
+        <sys_updated_on>2025-08-04 09:17:07</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>ec6718d3db4a8510bcced03cd39619ff</id>

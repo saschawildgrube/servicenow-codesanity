@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>A Flow Action should never depend on specific data records. This follows the doctrine that no code should ever depend on data.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Flow Action depends on data</name>
+        <priority>1</priority>
+        <resolution_details>Modify the Flow Action logic so that it does not depend on specific data records. If specific data records (users, groups, departments, etc.) are relevant for the flow logic, these must be loaded dynamically or configured explicitly - e.g. using System Properties.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var grSteps = new GlideRecord('sys_hub_step_instance');
+		grSteps.addQuery('action','=',current.sys_id);
+		grSteps.query();
+		while (grSteps.next())
+		{
+			var grValues = new GlideRecord('sys_variable_value');
+			grValues.addQuery('document_key','=',grSteps.sys_id);
+			grValues.query();
+			while (grValues.next())
+			{
+				var strValue = x_snc_devtools.GetStringValue(grValues.value);
+				var aSysIds = x_snc_devtools.GetSysIdsFromString(strValue);
+				var bDataRecordFound = false;
+				for (var nSysId = 0; nSysId < aSysIds.length; nSysId++)
+				{
+					var strSysId = aSysIds[nSysId];
+					if (x_snc_devtools.IsDataRecord(strSysId) == true)
+					{
+						bDataRecordFound = true;
+					}
+				}
+			}
+		}
+		if (bDataRecordFound == true)
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>Flow Actions must not depend on data</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-26 12:16:29</sys_created_on>
+        <sys_id>09ab1f523be7661062bf612c95e45ad1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CodeSanity - Flow Action depends on data</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_09ab1f523be7661062bf612c95e45ad1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-26 12:33:36</sys_updated_on>
+        <table>sys_hub_action_type_definition</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=09ab1f523be7661062bf612c95e45ad1"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>09ab1f523be7661062bf612c95e45ad1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-26 12:16:29</sys_created_on>
+        <sys_id>10dbdf523be7661062bf612c95e45a60</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-26 12:16:29</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -65,7 +65,7 @@
 	&lt;g2:no_escape&gt;$[docapi.RenderInstanceScanChecks()]&lt;/g2:no_escape&gt;	&#13;
 	&#13;
 	&lt;h2&gt;Testing the CodeSanity scan suite&lt;/h2&gt;&#13;
-	&lt;p&gt;Each CodeSanity check comes with a corresponding ATF test to ensure its function. All tests are part of the CodeSanity&amp;#160;&lt;a href="/nav_to.do?uri=sys_atf_test_suite.do?sys_id=2c6758d3db4a8510bcced03cd396191d%26sysparm_view=DevTools" target="_blank"&gt;test suite&lt;/a&gt;. The check "&lt;a href="/nav_to.do?uri=scan_table_check.do?sys_id=53d43af1db8599109232dad1f396192c" target="_blank"&gt;CodeSanity - ATF tests for checks&lt;/a&gt;" verifies that there is an ATF test for each CodeSanity check.&lt;/p&gt;&#13;
+	&lt;p&gt;Each CodeSanity check comes with a corresponding ATF test to ensure its function. All tests are part of the CodeSanity&amp;#160;&lt;a href="/nav_to.do?uri=sys_atf_test_suite.do?sys_id=2c6758d3db4a8510bcced03cd396191d%26sysparm_view=DevTools" target="_blank"&gt;Test Suite&lt;/a&gt;. The check "&lt;a href="/nav_to.do?uri=scan_table_check.do?sys_id=53d43af1db8599109232dad1f396192c" target="_blank"&gt;CodeSanity - ATF tests for checks&lt;/a&gt;" verifies that there is an ATF test for each CodeSanity check.&lt;/p&gt;&#13;
 	&#13;
 	&lt;h2&gt;Adding checks to the CodeSanity scan suite&lt;/h2&gt;&#13;
 	&lt;ol&gt;&#13;
@@ -177,6 +177,7 @@
 		&lt;li&gt;The Check "CodeSanity - App must not contain OOTB records" now uses DevTools' IsOotbRecord() function to identify OOTB records and hence detects more records and avoids several false-positive findings.&lt;/li&gt;&#13;
 		&lt;li&gt;The Check "CodeSanity - App must not contain OOTB records" now also displays the actual Application File Type properly in the findings list.&lt;/li&gt;&#13;
 		&lt;li&gt;The Checks "CodeSanity - Sys IDs in scripts" and "CodeSanity - Application names in code" now consider AppBuilderPlatform() as an exception.&lt;/li&gt;&#13;
+		&lt;li&gt;Renamed the check "CodeSanity - Application ATF test suite" to "CodeSanity - Application ATF Test Suite".&lt;/li&gt;&#13;
 		&lt;li&gt;The number of findings is now rendered emphasized in the Application Overview.&lt;/li&gt;&#13;
 		&lt;li&gt;The Application Overview now displays date and time of the last scan according to the user's time zone setting.&lt;/li&gt;&#13;
 		&lt;li&gt;Added a table of contents to the coding guideline.&lt;/li&gt;&#13;
@@ -371,7 +372,7 @@
 		&lt;li&gt;Check "CodeSanity - Bracket-dot anti-pattern" no longer creates findings if the anti-pattern contained in a string literal.&lt;/li&gt; &#13;
 		&lt;li&gt;Check "CodeSanity - Debug output" no longer creates findings of debug output statements are contained in a string literals.&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - ATF test must contain steps" now checks if steps are active.&lt;/li&gt;&#13;
-		&lt;li&gt;Check "CodeSanity - ATF suite contains at least one test" now also considers child test suites.&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - ATF suite contains at least one test" now also considers child Test Suites.&lt;/li&gt;&#13;
 		&lt;li&gt;Removed the log.active system property.&lt;/li&gt; &#13;
 	&lt;/ol&gt;  	&#13;
 &#13;
@@ -446,12 +447,12 @@
 		&lt;li&gt;Added check "CodeSanity - Do not use fix scripts".&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - App documentation" now detects invalid maintainer email addresses.&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - Script Include description" treats the AppBuilder() function as an exception as it is only for internal use.&lt;/li&gt;&#13;
-		&lt;li&gt;Check "CodeSanity - Application ATF test suite" now runs on sys_app instead of sys_scope.&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - Application ATF Test Suite" now runs on sys_app instead of sys_scope.&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - ATF tests for script includes" treats the new DevToolsGetApplicationStatus() function as an exception.&lt;/li&gt;&#13;
 		&lt;li&gt;The UI action "CodeSanity Scan" now checks if a scan is already running using the UI script function InstanceScanIsRunning().&lt;/li&gt;&#13;
 		&lt;li&gt;Added the coding guideline page.&lt;/li&gt;&#13;
 		&lt;li&gt;Added ATF test for GetScanSuiteRecord().&lt;/li&gt;&#13;
-		&lt;li&gt;ATF for check "CodeSanity - Application ATF test suite" now uses ad-hoc test data to provoke a finding.&lt;/li&gt;&#13;
+		&lt;li&gt;ATF for check "CodeSanity - Application ATF Test Suite" now uses ad-hoc test data to provoke a finding.&lt;/li&gt;&#13;
 	&lt;/ol&gt;  &#13;
 	&#13;
 	&lt;h3&gt;2.3.0 - 2022-11-30&lt;/h3&gt;&#13;
@@ -606,14 +607,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>434</sys_mod_count>
+        <sys_mod_count>435</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-26 11:48:57</sys_updated_on>
+        <sys_updated_on>2025-08-26 11:52:57</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>ec6718d3db4a8510bcced03cd39619ff</id>

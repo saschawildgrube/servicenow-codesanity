@@ -4,12 +4,12 @@
         <advanced>true</advanced>
         <category>code_sanity</category>
         <conditions/>
-        <description>Writing automated tests is a good habit. And its never too late to get started. Each application should at least have an ATF test suite (named after the application itself) so that there is a place to group all tests that are related to the application.</description>
+        <description>Writing automated tests is a good habit. And its never too late to get started. Each application should at least have an ATF Test Suite (named after the application itself) so that there is a place to group all tests that are related to the application.</description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
-        <name>CodeSanity - Application ATF test suite</name>
+        <name>CodeSanity - Application ATF Test Suite</name>
         <priority>1</priority>
-        <resolution_details>Add an ATF test suite in the scope of the application. Name the suite exactly like the application.</resolution_details>
+        <resolution_details>Add an ATF Test Suite in the scope of the application. Name the suite exactly like the application.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -29,19 +29,19 @@
 	}
 
 })(engine);]]></script>
-        <short_description>An application should have an ATF test suite named after the application</short_description>
+        <short_description>An application should have an ATF Test Suite named after the application</short_description>
         <sys_class_name>scan_table_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-14 09:12:53</sys_created_on>
         <sys_id>31583a9947eed910a4b0d4fe536d432a</sys_id>
-        <sys_mod_count>15</sys_mod_count>
-        <sys_name>CodeSanity - Application ATF test suite</sys_name>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>CodeSanity - Application ATF Test Suite</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_31583a9947eed910a4b0d4fe536d432a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-06 13:55:45</sys_updated_on>
+        <sys_updated_on>2025-08-26 11:51:48</sys_updated_on>
         <table>sys_app</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

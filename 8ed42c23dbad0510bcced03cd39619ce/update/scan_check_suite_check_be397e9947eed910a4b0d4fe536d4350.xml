@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="scan_check_suite_check">
     <scan_check_suite_check action="INSERT_OR_UPDATE">
-        <check display_value="CodeSanity - Application ATF test suite">31583a9947eed910a4b0d4fe536d432a</check>
+        <check display_value="CodeSanity - Application ATF Test Suite">31583a9947eed910a4b0d4fe536d432a</check>
         <score_weight>1</score_weight>
         <suite display_value="CodeSanity">4fcb181bdb4a8510bcced03cd39619eb</suite>
         <sys_class_name>scan_check_suite_check</sys_class_name>

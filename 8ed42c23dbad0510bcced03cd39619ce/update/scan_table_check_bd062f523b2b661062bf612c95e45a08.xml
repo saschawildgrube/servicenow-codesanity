@@ -4,13 +4,13 @@
         <advanced>true</advanced>
         <category>code_sanity</category>
         <conditions/>
-        <description>A Flow Action should never depend on specific data records. This follows the doctrine that no code should ever depend on data.&#13;
+        <description>A Flow or Subflow should never depend on specific data records. This follows the doctrine that no code should ever depend on data.&#13;
 See chapter "Data vs. Code" in the whitepaper.</description>
         <documentation_url>https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf</documentation_url>
         <finding_type>scan_finding</finding_type>
-        <name>CodeSanity - Flow Action depends on data</name>
+        <name>CodeSanity - Flow or Subflow depends on data</name>
         <priority>1</priority>
-        <resolution_details>Modify the Flow Action logic so that it does not depend on specific data records. If specific data records (users, groups, departments, etc.) are relevant for the flow logic, these must be loaded dynamically or configured explicitly - e.g. using System Properties.</resolution_details>
+        <resolution_details>Modify the Flow or Subflow logic so that it does not depend on specific data records. If specific data records (users, groups, departments, etc.) are relevant for the flow logic, these must be loaded dynamically or configured explicitly - e.g. using System Properties.</resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -19,6 +19,7 @@ See chapter "Data vs. Code" in the whitepaper.</description>
 
 	if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
+		/*
 		var grSteps = new GlideRecord('sys_hub_step_instance');
 		grSteps.addQuery('action','=',current.sys_id);
 		grSteps.query();
@@ -46,34 +47,35 @@ See chapter "Data vs. Code" in the whitepaper.</description>
 		{
 			engine.finding.increment();
 		}
+		*/
 	}
 
 })(engine);]]></script>
-        <short_description>Flow Actions must not depend on data</short_description>
+        <short_description>A Flow or Subflow must not depend on data</short_description>
         <sys_class_name>scan_table_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-08-26 12:16:29</sys_created_on>
-        <sys_id>09ab1f523be7661062bf612c95e45ad1</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>CodeSanity - Flow Action depends on data</sys_name>
+        <sys_created_on>2025-08-26 13:03:41</sys_created_on>
+        <sys_id>bd062f523b2b661062bf612c95e45a08</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CodeSanity - Flow or Subflow depends on data</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-        <sys_update_name>scan_table_check_09ab1f523be7661062bf612c95e45ad1</sys_update_name>
+        <sys_update_name>scan_table_check_bd062f523b2b661062bf612c95e45a08</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-26 14:47:23</sys_updated_on>
-        <table>sys_hub_action_type_definition</table>
+        <sys_updated_on>2025-08-26 14:48:28</sys_updated_on>
+        <table>sys_hub_flow</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
-    <sys_translated_text action="delete_multiple" query="documentkey=09ab1f523be7661062bf612c95e45ad1"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=bd062f523b2b661062bf612c95e45a08"/>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>09ab1f523be7661062bf612c95e45ad1</id>
+        <id>bd062f523b2b661062bf612c95e45a08</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-08-26 12:16:29</sys_created_on>
-        <sys_id>10dbdf523be7661062bf612c95e45a60</sys_id>
+        <sys_created_on>2025-08-26 13:03:40</sys_created_on>
+        <sys_id>bf96e7923b2b661062bf612c95e45a33</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-26 12:16:29</sys_updated_on>
+        <sys_updated_on>2025-08-26 13:03:40</sys_updated_on>
         <table>scan_table_check</table>
         <use_es_latest>true</use_es_latest>
     </sys_es_latest_script>

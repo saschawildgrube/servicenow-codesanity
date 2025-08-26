@@ -47,7 +47,7 @@
         <update_guid_history>4137dd2ba666a6101a6f08559fea5e23:1900920588</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="Form Autocomplete provider">cd851ec893cfa610959b7fda2bba109a</sys_audit_delete>
+        <sys_audit_delete display_value="">cd851ec893cfa610959b7fda2bba109a</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-07-25 10:51:36</sys_created_on>

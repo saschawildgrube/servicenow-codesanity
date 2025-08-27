@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
     <scan_table_check action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <advanced>true</advanced>
         <category>code_sanity</category>
         <conditions/>
         <description>A Flow or Subflow should never depend on specific data records. This follows the doctrine that no code should ever depend on data.&#13;
-See chapter "Data vs. Code" in the whitepaper.</description>
+See chapter "Data vs. Code" in the whitepaper.&#13;
+Note that this Check currently looks into trigger conditions ONLY.</description>
         <documentation_url>https://www.wildgrube.com/download/A%20mature%20Development%20and%20Deployment%20Process.pdf</documentation_url>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - Flow or Subflow depends on data</name>
@@ -19,20 +20,19 @@ See chapter "Data vs. Code" in the whitepaper.</description>
 
 	if (x_snc_codesanity.IsCheckApplicableToRecord())
 	{
-		/*
-		var grSteps = new GlideRecord('sys_hub_step_instance');
-		grSteps.addQuery('action','=',current.sys_id);
-		grSteps.query();
-		while (grSteps.next())
+		var bDataRecordFound = false;
+
+		var grTriggerPlan = new GlideRecord('sys_flow_trigger_plan');
+		grTriggerPlan.addQuery('plan_id','=',current.sys_id);
+		grTriggerPlan.query();
+		while (grTriggerPlan.next())
 		{
-			var grValues = new GlideRecord('sys_variable_value');
-			grValues.addQuery('document_key','=',grSteps.sys_id);
-			grValues.query();
-			while (grValues.next())
+			var grRecordTrigger =
+				x_snc_devtools.GetRecord('sys_flow_record_trigger',grTriggerPlan.trigger);
+			if (x_snc_devtools.IsValidRecord(grRecordTrigger) == true)
 			{
-				var strValue = x_snc_devtools.GetStringValue(grValues.value);
+				var strValue = x_snc_devtools.GetStringValue(grRecordTrigger.condition);
 				var aSysIds = x_snc_devtools.GetSysIdsFromString(strValue);
-				var bDataRecordFound = false;
 				for (var nSysId = 0; nSysId < aSysIds.length; nSysId++)
 				{
 					var strSysId = aSysIds[nSysId];
@@ -40,14 +40,13 @@ See chapter "Data vs. Code" in the whitepaper.</description>
 					{
 						bDataRecordFound = true;
 					}
-				}
+				}				
+			}
+			if (bDataRecordFound == true)
+			{
+				engine.finding.increment();
 			}
 		}
-		if (bDataRecordFound == true)
-		{
-			engine.finding.increment();
-		}
-		*/
 	}
 
 })(engine);]]></script>
@@ -56,14 +55,14 @@ See chapter "Data vs. Code" in the whitepaper.</description>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-26 13:03:41</sys_created_on>
         <sys_id>bd062f523b2b661062bf612c95e45a08</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>CodeSanity - Flow or Subflow depends on data</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_bd062f523b2b661062bf612c95e45a08</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-26 14:48:28</sys_updated_on>
+        <sys_updated_on>2025-08-27 09:21:31</sys_updated_on>
         <table>sys_hub_flow</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

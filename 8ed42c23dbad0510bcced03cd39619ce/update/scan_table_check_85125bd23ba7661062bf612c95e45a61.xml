@@ -5,7 +5,8 @@
         <category>code_sanity</category>
         <conditions/>
         <description>A UI Policy without a condition does not make any sense. UI Policies are intended to modify field attributes depending on conditions to respond to selections in other fields dynamically.&#13;
-If read-only, mandatory or visibility attributes should be changed permanently, that should be done through Dictionary or Dictionary Override records. </description>
+If read-only, mandatory or visibility attributes should be changed permanently, that should be done through Dictionary or Dictionary Override records.&#13;
+If all UI Policy Actions relate to referenced (i.e. dot-walked) fields, it is however allowed to not specify a condition - e.g. to render the fields of referenced records as always read-only.</description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - UI Policy without condition</name>
@@ -21,7 +22,22 @@ If read-only, mandatory or visibility attributes should be changed permanently, 
 	{
 		if (current.conditions == '')
 		{
-			engine.finding.increment();
+			var bOnlyReferenced = true;
+			var grUiPolicyActions = new GlideRecord('sys_ui_policy_action');
+			grUiPolicyActions.addQuery('ui_policy','=',current.sys_id);
+			grUiPolicyActions.query();
+			while (grUiPolicyActions.next())
+			{
+				var strField = x_snc_devtools.GetStringValue(grUiPolicyActions.field);
+				if (strField.indexOf('.') == -1)
+				{
+					bOnlyReferenced = false;
+				}
+			}
+			if (bOnlyReferenced == false || grUiPolicyActions.getRowCount() == 0)
+			{
+				engine.finding.increment();
+			}
 		}
 	}
 
@@ -31,14 +47,14 @@ If read-only, mandatory or visibility attributes should be changed permanently, 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-26 11:37:14</sys_created_on>
         <sys_id>85125bd23ba7661062bf612c95e45a61</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>CodeSanity - UI Policy without condition</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_85125bd23ba7661062bf612c95e45a61</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-26 11:38:55</sys_updated_on>
+        <sys_updated_on>2025-09-14 19:09:07</sys_updated_on>
         <table>sys_ui_policy</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

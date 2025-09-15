@@ -19,7 +19,7 @@
     </sys_db_view_table_field>
     <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
+        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
         <file_path/>
         <instance_id>220092723b73421816e44a8aa4e45ab1</instance_id>
         <instance_name>wildxanadu</instance_name>
@@ -52,10 +52,10 @@
         <sys_metadata>5647444f931e6a50ae97b4aa6aba106c</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_snc_datasilos_ghost</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
         <sys_update_name>sys_db_view_table_field_5647444f931e6a50ae97b4aa6aba106c</sys_update_name>
         <sys_update_version display_value="sys_db_view_table_field_5647444f931e6a50ae97b4aa6aba106c">1a47444f931e6a50ae97b4aa6aba106e</sys_update_version>

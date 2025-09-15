@@ -51,7 +51,7 @@ The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmi
 				// introduce runtime issues.
 				bException = true;
 			}
-			else if (strName == 'AppBuilder')
+			else if (strName == 'AppBuilder' || strName == 'AppBuilderPlatform')
 			{
 				// AppBuilder functions may have to refer to specific OOTB or other records to built an application
 				// AppBuilder is intended to be run only once during the whole life cycle of an application.
@@ -115,14 +115,25 @@ The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmi
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 13:40:27</sys_created_on>
         <sys_id>9dda4d97dbce8510bcced03cd3961921</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>CodeSanity - Sys IDs in scripts</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9dda4d97dbce8510bcced03cd3961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-10 13:50:36</sys_updated_on>
+        <sys_updated_on>2025-08-04 09:11:58</sys_updated_on>
     </scan_linter_check>
     <sys_translated_text action="delete_multiple" query="documentkey=9dda4d97dbce8510bcced03cd3961921"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>9dda4d97dbce8510bcced03cd3961921</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-04 09:11:58</sys_created_on>
+        <sys_id>839ed1d793036e10959b7fda2bba1063</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-04 09:11:58</sys_updated_on>
+        <table>scan_linter_check</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

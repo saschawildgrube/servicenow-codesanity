@@ -35,8 +35,22 @@
 		}
 		if (IsValidRecord(grRecord) == false)
 		{
+			if (typeof engine != 'undefined')
+			{
+				if (typeof engine.current != 'undefined')
+				{
+					grRecord = engine.current;
+				}
+			}
+		}			
+		if (IsValidRecord(grRecord) == false)
+		{
 			grRecord = x_snc_devtools.RunScriptInScope(grCheck.sys_scope,'result = current;');
 		}
+		if (IsValidRecord(grRecord) == false)
+		{
+			grRecord = x_snc_devtools.RunScriptInScope(grCheck.sys_scope,'result = engine.current;');
+		}		
 		if (IsValidRecord(grRecord) == false)
 		{
 			return false;
@@ -61,13 +75,25 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-08-01 14:54:49</sys_created_on>
         <sys_id>f9410ba9db8959109232dad1f3961988</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>IsCheckApplicableToRecord</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_f9410ba9db8959109232dad1f3961988</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-08-30 13:59:03</sys_updated_on>
+        <sys_updated_on>2025-07-01 16:18:44</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f9410ba9db8959109232dad1f3961988</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 16:18:43</sys_created_on>
+        <sys_id>3e3a73dc93266610ae97b4aa6aba10b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-01 16:18:43</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

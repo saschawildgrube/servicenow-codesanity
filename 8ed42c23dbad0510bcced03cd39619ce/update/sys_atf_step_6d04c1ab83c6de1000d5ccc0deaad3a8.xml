@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
     <sys_atf_step action="INSERT_OR_UPDATE">
         <active>true</active>
+        <callable_outputs/>
         <copied_from/>
         <description>Run Server Side Validation Script</description>
         <display_name>Run Server Side Script</display_name>
@@ -22,7 +23,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-11-29 12:48:35</sys_updated_on>
         <table/>
-        <test display_value="CodeSanity - Client callable Script Includes">07f381ab83c6de1000d5ccc0deaad347</test>
+        <test display_value="CodeSanity - Client callable Script Include name">07f381ab83c6de1000d5ccc0deaad347</test>
         <timeout/>
         <warning_message/>
     </sys_atf_step>

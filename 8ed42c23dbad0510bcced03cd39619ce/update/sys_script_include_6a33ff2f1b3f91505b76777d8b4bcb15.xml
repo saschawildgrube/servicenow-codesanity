@@ -20,8 +20,9 @@
 	var HtmlRenderLink = x_snc_devtools.HtmlRenderLink;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
-
-	
+	var HtmlRenderTextEmphasized = x_snc_devtools.HtmlRenderTextEmphasized;
+	var RenderDateTimeUser = x_snc_devtools.RenderDateTimeUser;
+		
 	SetValue('CodeSanity<br/>Last Run',status,'columns','codesanity_last_run','header');
 	SetValue('CodeSanity<br/>Findings',status,'columns','codesanity_findings','header');
 	SetValue('right',status,'columns','codesanity_findings','horizontal');
@@ -51,7 +52,10 @@
 			if (IsValidRecord(grScanResult) == true)
 			{
 				var strResultUrl = GetInstanceRecordUrl('scan_result',grScanResult.sys_id);
-				var strContent = HtmlRenderLink(strResultUrl,grScanResult.sys_updated_on,true);
+				var strContent = HtmlRenderLink(
+					strResultUrl,
+					RenderDateTimeUser(grScanResult.sys_updated_on),
+					true);
 				var nMinutes = GetIntegerValue(grScanResult.execution_time / 60 / 1000);
 				strContent += '<br/>';
 				var nMinutes = GetIntegerValue(grScanResult.execution_time / 60 / 1000);
@@ -68,8 +72,17 @@
 					strContent += nMinutes + ' minutes';
 				}
 				SetValue(strContent,status,'applications',aApps[nApp],'codesanity_last_run');
-
-				SetValue(GetStringValue(grScanResult.finding_count),status,'applications',aApps[nApp],'codesanity_findings');	
+				var nFindingCount = GetIntegerValue(grScanResult.finding_count);
+				var strFindingCount = '';
+				if (nFindingCount == 0)
+				{
+					strFindingCount = '0';
+				}
+				else
+				{
+					strFindingCount = HtmlRenderTextEmphasized(nFindingCount);
+				}
+				SetValue(strFindingCount,status,'applications',aApps[nApp],'codesanity_findings');	
 			}
 			else
 			{
@@ -84,13 +97,25 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-22 16:31:06</sys_created_on>
         <sys_id>6a33ff2f1b3f91505b76777d8b4bcb15</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>DevToolsGetApplicationStatus</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_script_include_6a33ff2f1b3f91505b76777d8b4bcb15</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-08 12:43:15</sys_updated_on>
+        <sys_updated_on>2025-08-14 16:27:44</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>6a33ff2f1b3f91505b76777d8b4bcb15</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-04 09:20:23</sys_created_on>
+        <sys_id>9a80295b93036e10959b7fda2bba1006</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-04 09:20:23</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

@@ -24,8 +24,7 @@ The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmi
 		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
 		var StringReplace = x_snc_devtools.StringReplace;
 		var IsDerivedFromTable = x_snc_devtools.IsDerivedFromTable;
-		IsDerivedFromTable('incident','task');
-		
+				
 		var strTable = GetStringValue(current.getRecordClassName());
 		var bException = false;
 
@@ -115,14 +114,14 @@ The DevTools functions RunScriptInScope(), InstanceReset() and IsUserDefaultAdmi
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 13:40:27</sys_created_on>
         <sys_id>9dda4d97dbce8510bcced03cd3961921</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>CodeSanity - Sys IDs in scripts</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9dda4d97dbce8510bcced03cd3961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-04 09:11:58</sys_updated_on>
+        <sys_updated_on>2025-09-23 12:19:01</sys_updated_on>
     </scan_linter_check>
     <sys_translated_text action="delete_multiple" query="documentkey=9dda4d97dbce8510bcced03cd3961921"/>
     <sys_es_latest_script action="INSERT_OR_UPDATE">

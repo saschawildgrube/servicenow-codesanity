@@ -170,6 +170,7 @@
 	&lt;h3&gt;2.24.0 - TODO&lt;/h3&gt;&#13;
 	&lt;ol&gt;&#13;
 		&lt;li&gt;Added Check "CodeSanity - System Property contains JSON".&lt;/li&gt;&#13;
+		&lt;li&gt;Optimized Check "CodeSanity - Forbidden column names" to ignore all custom columns starting with "x_".&lt;/li&gt;&#13;
 		&lt;li&gt;Added function IsCheckScriptCompliant().&lt;/li&gt;&#13;
 		&lt;li&gt;Refactored the following Checks to use IsCheckScriptCompliant(): "CodeSanity - CodeSanity column type checks apply rules", "CodeSanity - CodeSanity linter checks apply rules" and "CodeSanity - CodeSanity table checks apply rules".&lt;/li&gt;&#13;
 		&lt;li&gt;Improved test for "CodeSanity - Catalog Item depends on data" to avoid test data to be created in random application scopes.&lt;/li&gt;&#13;
@@ -621,14 +622,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>447</sys_mod_count>
+        <sys_mod_count>448</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-09-26 15:38:42</sys_updated_on>
+        <sys_updated_on>2025-09-29 09:25:58</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>ec6718d3db4a8510bcced03cd39619ff</id>

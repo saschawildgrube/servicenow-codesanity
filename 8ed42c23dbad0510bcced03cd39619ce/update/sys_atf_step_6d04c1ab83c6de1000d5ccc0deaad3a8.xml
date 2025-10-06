@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-29 12:40:20</sys_created_on>
         <sys_id>6d04c1ab83c6de1000d5ccc0deaad3a8</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_6d04c1ab83c6de1000d5ccc0deaad3a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-29 12:48:35</sys_updated_on>
+        <sys_updated_on>2025-10-06 07:33:09</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Client callable Script Include name">07f381ab83c6de1000d5ccc0deaad347</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-11-29 12:40:20</sys_created_on>
         <sys_id>2504c1ab83c6de1000d5ccc0deaad3ab</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-29 12:48:35</sys_updated_on>
+        <sys_updated_on>2025-10-06 07:33:09</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -49,6 +49,7 @@
 	&#13;
 	var grSI = new GlideRecord('sys_script_include');&#13;
 	grSI.initialize();&#13;
+	grSI.sys_scope = 'global';&#13;
 	grSI.name = 'Test1';&#13;
 	grSI.script = 'Test1.prototype = Object.extendsObject(global.AbstractAjaxProcessor,\n'&#13;
 		+'{\n'&#13;
@@ -59,6 +60,7 @@
 &#13;
 	var grSI = new GlideRecord('sys_script_include');&#13;
 	grSI.initialize();&#13;
+	grSI.sys_scope = 'global';&#13;
 	grSI.name = 'Test1';&#13;
 	grSI.client_callable = true;&#13;
 	grSI.script = 'Test1.prototype = Object.extendsObject(global.AbstractAjaxProcessor,\n'&#13;
@@ -70,6 +72,7 @@
 &#13;
 	var grSI = new GlideRecord('sys_script_include');&#13;
 	grSI.initialize();&#13;
+	grSI.sys_scope = 'global';&#13;
 	grSI.name = 'Test1ClientAPI';&#13;
 	grSI.client_callable = true;&#13;
 	grSI.script = 'Test1ClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,\n'&#13;

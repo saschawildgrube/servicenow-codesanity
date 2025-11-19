@@ -174,6 +174,7 @@
 		&lt;li&gt;Added Check "CodeSanity - UI Page ACL".&lt;/li&gt;&#13;
 		&lt;li&gt;Optimized Check "CodeSanity - Forbidden column names" to ignore all custom columns starting with "x_".&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - Role has a valid name" produced false-positives if roles are defined in a global application. This has been fixed.&lt;/li&gt;&#13;
+		&lt;li&gt;Check "CodeSanity - ATF test must be in an ATF suite" produced false-positives for callable Tests. This has been fixed.&lt;/li&gt;&#13;
 		&lt;li&gt;Added function IsCheckScriptCompliant().&lt;/li&gt;&#13;
 		&lt;li&gt;Refactored the following Checks to use IsCheckScriptCompliant(): "CodeSanity - CodeSanity column type checks apply rules", "CodeSanity - CodeSanity linter checks apply rules" and "CodeSanity - CodeSanity table checks apply rules".&lt;/li&gt;&#13;
 		&lt;li&gt;Improved test for "CodeSanity - Catalog Item depends on data" and "CodeSanity - Client callable Script Include name" to avoid test data to be created in random application scopes.&lt;/li&gt;&#13;
@@ -625,14 +626,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>454</sys_mod_count>
+        <sys_mod_count>455</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-18 13:43:02</sys_updated_on>
+        <sys_updated_on>2025-11-19 10:53:10</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>ec6718d3db4a8510bcced03cd39619ff</id>

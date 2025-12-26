@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>UI Pages that do not have a corresponding specific "UI Page" ACL will use the default "UI Page" ACL, which may grant access to unintended users. Each specific UI Page should hence have a specific ACL that defines the specific access based on specific roles or other criteria.&#13;
+Or if the UI Page is intended to be publicly available, a corresponding sys_public record should exist. </description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - UI Page ACL</name>
+        <priority>1</priority>
+        <resolution_details>Add a specific ACL to protect the specific UI Page or add a sys_public record to make the UI Page publicly available.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		if (   x_snc_devtools.IsAclAvailableForUiPage(current) == false
+			&& x_snc_devtools.IsPublicUiPage(current) == false)
+		{
+			finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>CodeSanity - UI Page must have a specific ACL</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-12 10:42:57</sys_created_on>
+        <sys_id>1852bcaf2b8d72109083fe395e91bf46</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>CodeSanity - UI Page ACL</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_1852bcaf2b8d72109083fe395e91bf46</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-24 16:40:05</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=1852bcaf2b8d72109083fe395e91bf46"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>1852bcaf2b8d72109083fe395e91bf46</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-12 10:42:56</sys_created_on>
+        <sys_id>b262bcaf2b8d72109083fe395e91bfc9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-12 10:42:56</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

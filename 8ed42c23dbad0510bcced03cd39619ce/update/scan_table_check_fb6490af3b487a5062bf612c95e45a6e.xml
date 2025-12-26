@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>System Properties are not the right place for JSON objects.&#13;
+Complex configuration or data may be represented as JSON objects. The JSON format is typically used for data transfer and storage. The JSON format is often used for configuration files.&#13;
+The equivalent of a System Property is a single value within such a more complex data structure. Not nice-versa.&#13;
+There are legitimate use cases to express parts of the logic and rules in the form of JSON objects directly embedded in source code. A Script Include function or class may contain JSON objects as part of the source code.&#13;
+If a JSON object (i.e. the plain text representation of the JSON object) is stored in a System Property, this is probably a design flaw.&#13;
+JSON objects in System Properties "suggest" that the contents may be changed ad-hoc at and time in production. Since System Property records are not designed to contain JSON objects there are no safety mechanisms to prevent incorrect user input. An administrator might damage the JSON object representation in the System Property, which may cause the parser to fail and to cause issues when executing the dependent code.&#13;
+When JSON objects are part of JavaScript source code, the source code editor and linter checks prevent obvious mistakes when changing them.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - System Property contains JSON</name>
+        <priority>1</priority>
+        <resolution_details>If the contents of the System Property represents configuration and should be editable by administrators in production, split the complex data structure into single values or lists and into multiple System Properties.&#13;
+If the contents of the System Proprty represents part of the code logic then move the JSON object into source code (i.e. Script Includes) where it belongs. </resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var strValue = x_snc_devtools.GetStringValue(current.value);
+		if (x_snc_devtools.IsObject(x_snc_devtools.ParseJson(strValue)) == true)
+		{
+			engine.finding.increment();
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>A System Property should not contain a JSON object</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-23 15:40:22</sys_created_on>
+        <sys_id>fb6490af3b487a5062bf612c95e45a6e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CodeSanity - System Property contains JSON</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_fb6490af3b487a5062bf612c95e45a6e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-23 15:44:46</sys_updated_on>
+        <table>sys_properties</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=fb6490af3b487a5062bf612c95e45a6e"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>fb6490af3b487a5062bf612c95e45a6e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-09-23 15:40:20</sys_created_on>
+        <sys_id>bbf618233b887a5062bf612c95e45ae1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-09-23 15:40:20</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

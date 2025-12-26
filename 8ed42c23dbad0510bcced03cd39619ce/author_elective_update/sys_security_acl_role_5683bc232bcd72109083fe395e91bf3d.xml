@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-12 10:49:04</sys_created_on>
+        <sys_id>5683bc232bcd72109083fe395e91bf3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.admin</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_security_acl display_value="">c8837c232bcd72109083fe395e91bf82</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_5683bc232bcd72109083fe395e91bf3d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-12 10:49:04</sys_updated_on>
+        <sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>a8cbb5133b6b5e540fd412c5e4e45a1f</instance_id>
+        <instance_name>wildyokohama</instance_name>
+        <name>sys_security_acl_role_5683bc232bcd72109083fe395e91bf3d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-12 10:49:04</sys_created_on><sys_id>5683bc232bcd72109083fe395e91bf3d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>.admin</sys_name><sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package><sys_policy/><sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope><sys_security_acl display_value="">c8837c232bcd72109083fe395e91bf82</sys_security_acl><sys_update_name>sys_security_acl_role_5683bc232bcd72109083fe395e91bf3d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-12 10:49:04</sys_updated_on><sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>1059717697</payload_hash>
+        <record_name>.admin</record_name>
+        <reverted_from/>
+        <source>9edac1812b9d2a109083fe395e91bfca</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-12 10:49:05</sys_created_on>
+        <sys_id>bcd334632bcd72109083fe395e91bf78</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a77aef13f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-12 10:49:05</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>70d3346310cd72101248901ab9b5e178</update_guid>
+        <update_guid_history>70d3346310cd72101248901ab9b5e178:1059717697</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value=".admin">9fe338632bcd72109083fe395e91bf4f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-12 10:49:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>201ef54fec9344e28a71d00270701cc9</sys_id>
+        <sys_metadata>5683bc232bcd72109083fe395e91bf3d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.admin</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent display_value="x_snc_codesanity_manual">c8837c232bcd72109083fe395e91bf82</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_5683bc232bcd72109083fe395e91bf3d</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_5683bc232bcd72109083fe395e91bf3d">bcd334632bcd72109083fe395e91bf78</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-12 10:49:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -12,73 +12,71 @@
         <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
         <sys_class_name>sys_atf_step</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-05-20 10:40:51</sys_created_on>
-        <sys_id>042a923e9365aa50959b7fda2bba1059</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_created_on>2025-12-23 16:16:40</sys_created_on>
+        <sys_id>83f701303bc23e5062bf612c95e45ab4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
-        <sys_update_name>sys_atf_step_042a923e9365aa50959b7fda2bba1059</sys_update_name>
+        <sys_update_name>sys_atf_step_83f701303bc23e5062bf612c95e45ab4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-12 07:53:34</sys_updated_on>
+        <sys_updated_on>2025-12-23 16:17:20</sys_updated_on>
         <table/>
-        <test display_value="CodeSanity - App must not contain OOTB records">371a523e9365aa50959b7fda2bba10cf</test>
+        <test display_value="CodeSanity - Auto-generated Wizard Answers">07f7cdfc3b823e5062bf612c95e45ac8</test>
         <timeout/>
         <warning_message/>
     </sys_atf_step>
-    <sys_variable_value action="delete_multiple" query="document_key=042a923e9365aa50959b7fda2bba1059"/>
+    <sys_variable_value action="delete_multiple" query="document_key=83f701303bc23e5062bf612c95e45ab4"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_atf_step</document>
-        <document_key>042a923e9365aa50959b7fda2bba1059</document_key>
+        <document_key>83f701303bc23e5062bf612c95e45ab4</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-05-20 10:40:51</sys_created_on>
-        <sys_id>842a923e9365aa50959b7fda2bba105b</sys_id>
+        <sys_created_on>2025-12-23 16:16:40</sys_created_on>
+        <sys_id>4bf701303bc23e5062bf612c95e45ab5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-20 10:40:51</sys_updated_on>
+        <sys_updated_on>2025-12-23 16:16:40</sys_updated_on>
         <value>3.1</value>
         <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_atf_step</document>
-        <document_key>042a923e9365aa50959b7fda2bba1059</document_key>
+        <document_key>83f701303bc23e5062bf612c95e45ab4</document_key>
         <order>200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-05-20 10:40:51</sys_created_on>
-        <sys_id>cc2a923e9365aa50959b7fda2bba105b</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_created_on>2025-12-23 16:16:40</sys_created_on>
+        <sys_id>83f701303bc23e5062bf612c95e45ab6</sys_id>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-12 07:53:34</sys_updated_on>
+        <sys_updated_on>2025-12-23 16:17:20</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
 	&#13;
 	test.SetResult(true);&#13;
 	&#13;
-	var strCheck = '5a000ebe93e1aa50959b7fda2bba10cd';&#13;
+	var strCheck = '02d40d743b823e5062bf612c95e45a12';&#13;
 	&#13;
-	var grAppCodeSanity = x_snc_devtools.GetAppRecord('x_snc_codesanity');&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_app',grAppCodeSanity.sys_id,false);&#13;
-&#13;
-	var grApp = new GlideRecord('sys_app');&#13;
-	grApp.initialize();&#13;
-	grApp.scope = 'global';&#13;
-	grApp.name = 'TEST GLOBAL';&#13;
-	var strAppSysId = x_snc_devtools.GlideRecordInsert(grApp);&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_app',strAppSysId,false);&#13;
+	// Test cases that provoke findings:&#13;
 	&#13;
-	var grScriptInclude = new GlideRecord('sys_script_include');&#13;
-	grScriptInclude.initialize();&#13;
-	grScriptInclude.name = 'TestGlobal';&#13;
-	grScriptInclude.sys_scope = strAppSysId;&#13;
-	var strScriptIncludeSysId = x_snc_devtools.GlideRecordInsert(grScriptInclude);&#13;
-	x_snc_devtools.RecordSetValue('sys_script_include',strScriptIncludeSysId,'sys_created_by','glide.maint',true);&#13;
-	test.Log(x_snc_devtools.GetRecord('sys_script_include',strScriptIncludeSysId));&#13;
-	test.TestCase_InstanceScanCheck(strCheck,'sys_app',strAppSysId,true);&#13;
+	var grRecord = new GlideRecord('sys_wizard_answer');&#13;
+	grRecord.initialize();&#13;
+	grRecord.order = 100;&#13;
+	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_wizard_answer',strRecordSysId,true);&#13;
+	&#13;
+	&#13;
+	// Test cases that do NOT provoke findings:&#13;
+	&#13;
+	var grRecord = new GlideRecord('sys_wizard_answer');&#13;
+	grRecord.initialize();&#13;
+	grRecord.order = 1;&#13;
+	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_wizard_answer',strRecordSysId,false);&#13;
 	&#13;
 	&#13;
 	return test.GetResult();&#13;

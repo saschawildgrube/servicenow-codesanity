@@ -17,7 +17,7 @@
     </sys_security_acl_role>
     <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
         <file_path/>
         <instance_id>a8cbb5133b6b5e540fd412c5e4e45a1f</instance_id>
         <instance_name>wildyokohama</instance_name>
@@ -50,10 +50,10 @@
         <sys_metadata>5683bc232bcd72109083fe395e91bf3d</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>.admin</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_parent display_value="x_snc_codesanity_manual">c8837c232bcd72109083fe395e91bf82</sys_parent>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
         <sys_update_name>sys_security_acl_role_5683bc232bcd72109083fe395e91bf3d</sys_update_name>
         <sys_update_version display_value="sys_security_acl_role_5683bc232bcd72109083fe395e91bf3d">bcd334632bcd72109083fe395e91bf78</sys_update_version>

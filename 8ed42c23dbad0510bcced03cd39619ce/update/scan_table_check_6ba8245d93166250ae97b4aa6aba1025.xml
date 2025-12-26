@@ -38,9 +38,9 @@ If the Application File has been committed to source control, the authentication
         <sys_id>6ba8245d93166250ae97b4aa6aba1025</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>CodeSanity - HTTP Header contains authentication token</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_6ba8245d93166250ae97b4aa6aba1025</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-06-21 17:34:11</sys_updated_on>

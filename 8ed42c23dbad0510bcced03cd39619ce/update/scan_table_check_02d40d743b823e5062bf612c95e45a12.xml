@@ -34,9 +34,9 @@ In some cases these Wizard Answers may be useful, in other cases they may not. E
         <sys_id>02d40d743b823e5062bf612c95e45a12</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>CodeSanity - Auto-generated Wizard Answers</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_02d40d743b823e5062bf612c95e45a12</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-12-23 16:18:58</sys_updated_on>

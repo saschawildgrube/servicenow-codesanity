@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>A custom table should be configured to allow configuration - i.e. allow other applications to add e.g. UI Actions etc.&#13;
+Any capability should be built and configured in a way that allows other applications to make changes and modifications to it. </description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Custom tables are configurable</name>
+        <priority>1</priority>
+        <resolution_details>The checkbox "Allow Configuration" should be set active for the table.&#13;
+This change should be done with great care. The platform sometimes seems to respond to this change by adding new unintended ACLs to the table.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		if (x_snc_devtools.IsOotbRecord(current) == false)
+		{
+			if (current.configuration_access == false)
+			{
+				engine.finding.increment();
+			}
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>Custom tables should allow configuration</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-05 14:03:41</sys_created_on>
+        <sys_id>4d2527b43b5a3ad062bf612c95e45a8f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CodeSanity - Custom tables are configurable</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_4d2527b43b5a3ad062bf612c95e45a8f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-06 15:57:17</sys_updated_on>
+        <table>sys_db_object</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=4d2527b43b5a3ad062bf612c95e45a8f"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>4d2527b43b5a3ad062bf612c95e45a8f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-05 14:03:41</sys_created_on>
+        <sys_id>65366ff43b5a3ad062bf612c95e45a95</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-05 14:03:41</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

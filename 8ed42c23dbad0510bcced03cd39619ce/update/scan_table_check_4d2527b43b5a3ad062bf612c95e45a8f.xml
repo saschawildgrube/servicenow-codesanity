@@ -11,7 +11,7 @@ Any capability should be built and configured in a way that allows other applica
         <name>CodeSanity - Custom tables are configurable</name>
         <priority>1</priority>
         <resolution_details>The checkbox "Allow Configuration" should be set active for the table.&#13;
-This change should be done with great care. The platform sometimes seems to respond to this change by adding new unintended ACLs to the table.</resolution_details>
+This change should be done with great care. The Business Rule "Create or update access controls" may insert or update adding new unintended ACLs to the table. While making the change, it is recommended to deactivate the Business Rule temporarily. </resolution_details>
         <run_condition/>
         <score_max>100</score_max>
         <score_min>0</score_min>
@@ -35,14 +35,14 @@ This change should be done with great care. The platform sometimes seems to resp
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-01-05 14:03:41</sys_created_on>
         <sys_id>4d2527b43b5a3ad062bf612c95e45a8f</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>CodeSanity - Custom tables are configurable</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_4d2527b43b5a3ad062bf612c95e45a8f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-01-06 15:57:17</sys_updated_on>
+        <sys_updated_on>2026-01-06 16:10:31</sys_updated_on>
         <table>sys_db_object</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>

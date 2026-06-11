@@ -45,7 +45,7 @@
     <sys_element_mapping action="DELETE" query="table=var__m_atf_input_variable_58ab71985f30220012b44adb7f46661e^id=5723ff633b0c875062bf612c95e45a91"/>
     <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
         <file_path/>
         <instance_id>a8cbb5133b6b5e540fd412c5e4e45a1f</instance_id>
         <instance_name>wildyokohama</instance_name>
@@ -78,10 +78,10 @@
         <sys_metadata>5723ff633b0c875062bf612c95e45a91</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Log</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
         <sys_update_name>sys_atf_step_5723ff633b0c875062bf612c95e45a91</sys_update_name>
         <sys_update_version display_value="sys_atf_step_5723ff633b0c875062bf612c95e45a91">1b23ff633b0c875062bf612c95e45ad0</sys_update_version>

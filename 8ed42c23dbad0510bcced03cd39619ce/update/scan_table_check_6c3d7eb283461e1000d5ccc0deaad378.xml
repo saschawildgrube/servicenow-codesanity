@@ -46,9 +46,9 @@ For roles defined in global applicatons the rule applies to the "name" field. Fo
         <sys_id>6c3d7eb283461e1000d5ccc0deaad378</sys_id>
         <sys_mod_count>4</sys_mod_count>
         <sys_name>CodeSanity - Role has a valid name</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_6c3d7eb283461e1000d5ccc0deaad378</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-10-14 11:36:26</sys_updated_on>

@@ -2,7 +2,8 @@
     <scan_linter_check action="INSERT_OR_UPDATE">
         <active>true</active>
         <category>code_sanity</category>
-        <description>The JSON.parse() function throws an exception in case the given parameter is not a valid JSON string. Throwing exceptions outside a module's scope is a bad practice and often leads to unhandled exceptions with unpredicatble results.</description>
+        <description>The JSON.parse() function throws an exception in case the given parameter is not a valid JSON string. Throwing exceptions outside a module's scope is a bad practice and often leads to unhandled exceptions with unpredicatble results. Unfortunatly this bad practice is JavaScript standard behavior.&#13;
+An exception is made for sys_one_extend_capability_definition records. The platform generates these records automatically for AI capabilities contained in an application. The default script contains a call to JSON.parse() - unfortunately also without proper exception handling. Error handling however is (or should be) done by the platform's own AI execution engine.</description>
         <documentation_url/>
         <finding_type>scan_finding</finding_type>
         <name>CodeSanity - Avoid JSON.parse()</name>
@@ -23,7 +24,12 @@ Refactor the code to use ParseJson() instead of JSON.parse().</resolution_detail
 		var strTable = x_snc_devtools.GetStringValue(current.getRecordClassName());
 		var bException = false;
 
-		if (strTable == 'sys_script_include')
+
+		if (strTable == 'sys_one_extend_capability_definition')
+		{
+			bException = true;
+		}
+		else if (strTable == 'sys_script_include')
 		{
 			var strName = x_snc_devtools.GetStringValue(current.name);
 			if (strName == 'ParseJson')
@@ -31,7 +37,7 @@ Refactor the code to use ParseJson() instead of JSON.parse().</resolution_detail
 				bException = true;
 			}
 		}
-		if (strTable == 'sys_ui_script')
+		else if (strTable == 'sys_ui_script')
 		{
 			var strName = x_snc_devtools.GetStringValue(current.name);
 			if (strName == 'x_snc_devtools.ParseJson')
@@ -54,14 +60,14 @@ Refactor the code to use ParseJson() instead of JSON.parse().</resolution_detail
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-05-04 12:54:43</sys_created_on>
         <sys_id>543a44973ba4c3d462bf612c95e45a8d</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>CodeSanity - Avoid JSON.parse()</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_543a44973ba4c3d462bf612c95e45a8d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-05-11 11:49:51</sys_updated_on>
+        <sys_updated_on>2026-06-25 13:38:16</sys_updated_on>
     </scan_linter_check>
     <sys_translated_text action="delete_multiple" query="documentkey=543a44973ba4c3d462bf612c95e45a8d"/>
     <sys_es_latest_script action="INSERT_OR_UPDATE">

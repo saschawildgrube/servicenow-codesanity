@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-03 16:00:58</sys_created_on>
         <sys_id>285f04118389d25000d5ccc0deaad3c7</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_285f04118389d25000d5ccc0deaad3c7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 16:13:50</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:09:35</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - REST API Resource must have a short description">824f04118389d25000d5ccc0deaad396</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-03 16:00:58</sys_created_on>
         <sys_id>ac5f04118389d25000d5ccc0deaad3c9</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 16:13:50</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:09:35</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -63,6 +63,7 @@
 	&#13;
 	var grWS = new GlideRecord('sys_ws_definition');&#13;
 	grWS.initialize();&#13;
+	grWS.sys_scope = 'global';&#13;
 	grWS.name = 'Test1';&#13;
 	grWS.base_uri = 'test1';&#13;
 	var strWSSysId = x_snc_devtools.GlideRecordInsert(grWS);&#13;
@@ -70,6 +71,7 @@
 	// No short description is a fail&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource1';&#13;
 	grWSO.relative_path = 'res1';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;
@@ -80,6 +82,7 @@
 	// Short description is too short&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource2';&#13;
 	grWSO.relative_path = 'res2';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;
@@ -91,6 +94,7 @@
 	// Short description has 20 characters&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource3';&#13;
 	grWSO.relative_path = 'res3';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;

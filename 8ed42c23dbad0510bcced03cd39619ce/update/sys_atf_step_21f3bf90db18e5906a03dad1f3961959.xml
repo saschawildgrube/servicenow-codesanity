@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-06 10:45:30</sys_created_on>
         <sys_id>21f3bf90db18e5906a03dad1f3961959</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_21f3bf90db18e5906a03dad1f3961959</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-06 10:47:10</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:03:19</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Deprecated logging">afe3bb90db18e5906a03dad1f39619b3</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-06 10:45:30</sys_created_on>
         <sys_id>a6f33f90db18e5906a03dad1f39619cb</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-06 10:47:10</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:03:19</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
     var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
 &#13;
@@ -60,11 +60,9 @@
 &#13;
     var strCheck = '3ac2ff10db18e5906a03dad1f3961926';&#13;
 &#13;
-    var grApp = x_snc_devtools.GetAppRecord('x_dtbsg_codesanity');&#13;
-&#13;
     var grSI = new GlideRecord('sys_ui_script');&#13;
     grSI.initialize();&#13;
-    grSI.sys_scope = grApp.sys_id;&#13;
+    grSI.sys_scope = 'global';&#13;
     grSI.name = 'Test1';&#13;
     grSI.script = 'function Test1(strText) {  }';&#13;
     var strRecordSysId = x_snc_devtools.GlideRecordInsert(grSI);&#13;
@@ -72,7 +70,7 @@
 &#13;
     var grSI = new GlideRecord('sys_ui_script');&#13;
     grSI.initialize();&#13;
-    grSI.sys_scope = grApp.sys_id;&#13;
+    grSI.sys_scope = 'global';&#13;
     grSI.name = 'Test2';&#13;
     grSI.script = 'function Test1(strText) { console.log(strText); }';&#13;
     var strRecordSysId = x_snc_devtools.GlideRecordInsert(grSI);&#13;
@@ -80,7 +78,7 @@
 &#13;
     var grSI = new GlideRecord('sys_ui_script');&#13;
     grSI.initialize();&#13;
-    grSI.sys_scope = grApp.sys_id;&#13;
+    grSI.sys_scope = 'global';&#13;
     grSI.name = 'Test3';&#13;
     grSI.script = 'function Test3(strText) { jslog(strText); }';&#13;
     var strRecordSysId = x_snc_devtools.GlideRecordInsert(grSI);&#13;
@@ -88,7 +86,7 @@
 &#13;
     var grSI = new GlideRecord('sys_ui_script');&#13;
     grSI.initialize();&#13;
-    grSI.sys_scope = grApp.sys_id;&#13;
+    grSI.sys_scope = 'global';&#13;
     grSI.name = 'Test4';&#13;
     grSI.script = 'function Test4(strText) { gs.log(strText); }';&#13;
     var strRecordSysId = x_snc_devtools.GlideRecordInsert(grSI);&#13;
@@ -96,7 +94,7 @@
 &#13;
     var grSI = new GlideRecord('sys_ui_script');&#13;
     grSI.initialize();&#13;
-    grSI.sys_scope = grApp.sys_id;&#13;
+    grSI.sys_scope = 'global';&#13;
     grSI.name = 'Test5';&#13;
     grSI.script = 'function Test5(strText) { gs.print(strText); }';&#13;
     var strRecordSysId = x_snc_devtools.GlideRecordInsert(grSI);&#13;

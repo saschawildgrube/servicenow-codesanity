@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-08-07 06:18:05</sys_created_on>
         <sys_id>7861ff3497ac7110a6a07767f053afa7</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_7861ff3497ac7110a6a07767f053afa7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-05-16 12:39:43</sys_updated_on>
+        <sys_updated_on>2026-07-03 07:59:55</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - UI Action must have a unique Action name">ff413f3497ac7110a6a07767f053afda</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-08-07 06:18:05</sys_created_on>
         <sys_id>c661bf3497ac7110a6a07767f053afe4</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-05-16 12:39:44</sys_updated_on>
+        <sys_updated_on>2026-07-03 07:59:55</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -49,6 +49,7 @@
 	&#13;
 	var grRecord = new GlideRecord('sys_ui_action');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.name = '_ATF_CODESANITY_TEST1';&#13;
 	grRecord.action_name = 'atf_codesanity_test1';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
@@ -56,6 +57,7 @@
 	&#13;
 	var grRecord = new GlideRecord('sys_ui_action');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.name = '_ATF_CODESANITY_TEST10';&#13;
 	grRecord.action_name = '';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
@@ -63,6 +65,7 @@
 	&#13;
 	var grRecord = new GlideRecord('sys_ui_action');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.name = '_ATF_CODESANITY_TEST11';&#13;
 	grRecord.action_name = 'atf_codesanity_test_duplicate';&#13;
 	var strRecord1SysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
@@ -70,6 +73,7 @@
 &#13;
 	var grRecord = new GlideRecord('sys_ui_action');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.name = '_ATF_CODESANITY_TEST12';&#13;
 	grRecord.action_name = 'atf_codesanity_test_duplicate';&#13;
 	var strRecord2SysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
@@ -79,6 +83,7 @@
 	// Overriding use cases&#13;
 	var grRecord = new GlideRecord('sys_ui_action');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.table = 'incident';&#13;
 	grRecord.name = 'Assign incident to me';&#13;
 	grRecord.action_name = 'task_assign_to_me';&#13;
@@ -87,6 +92,7 @@
 	&#13;
 	var grRecord = new GlideRecord('sys_ui_action');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.table = 'incident';&#13;
 	grRecord.name = 'Assign incident to me (overrides)';&#13;
 	grRecord.action_name = 'task_assign_to_me';&#13;

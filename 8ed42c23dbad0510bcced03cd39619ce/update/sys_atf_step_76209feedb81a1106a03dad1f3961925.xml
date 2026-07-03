@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-19 14:42:33</sys_created_on>
         <sys_id>76209feedb81a1106a03dad1f3961925</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_76209feedb81a1106a03dad1f3961925</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-29 13:13:52</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:29:29</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Business Rule description">deff87eedb81a1106a03dad1f3961913</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-19 14:42:33</sys_created_on>
         <sys_id>0c309feedb81a1106a03dad1f39619e8</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-29 13:13:52</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:29:29</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -50,6 +50,7 @@
 	// no description is a fail&#13;
 	var grBR = new GlideRecord('sys_script');&#13;
 	grBR.initialize();&#13;
+	grBR.sys_scope = 'global';&#13;
 	grBR.name = 'Test1';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grBR);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script',strRecordSysId,true);&#13;
@@ -57,6 +58,7 @@
 	// A description is ok&#13;
 	var grBR = new GlideRecord('sys_script');&#13;
 	grBR.initialize();&#13;
+	grBR.sys_scope = 'global';&#13;
 	grBR.name = 'Test2';&#13;
 	grBR.description = 'Hello World!'&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grBR);&#13;

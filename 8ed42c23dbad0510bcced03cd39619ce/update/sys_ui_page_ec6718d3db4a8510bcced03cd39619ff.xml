@@ -172,6 +172,7 @@
 		&lt;li&gt;DevTools 1.142.0 is now required.&lt;/li&gt;&#13;
 		&lt;li&gt;Check "CodeSanity - Avoid JSON.parse()" now considers sys_one_extend_capability_definition records as exceptions to avoid false positives.&lt;/li&gt;&#13;
 		&lt;li&gt;ATF tests "CodeSanity - AI Agent Tool m2m Input Schema" and "CodeSanity - AI Agent Tool Input Schema" now consider if AI Agent capabilities are not installed on the instance.&lt;/li&gt;&#13;
+		&lt;li&gt;All ATF tests now set the sys_scope explicitly when creating test data to avoid changes in random scopes during ATF test execution.&lt;/li&gt;&#13;
 	&lt;/ol&gt;&#13;
 &#13;
 &#13;
@@ -669,14 +670,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 09:51:04</sys_created_on>
         <sys_id>ec6718d3db4a8510bcced03cd39619ff</sys_id>
-        <sys_mod_count>487</sys_mod_count>
+        <sys_mod_count>488</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_ui_page_ec6718d3db4a8510bcced03cd39619ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-25 13:39:22</sys_updated_on>
+        <sys_updated_on>2026-07-03 09:47:28</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>ec6718d3db4a8510bcced03cd39619ff</id>

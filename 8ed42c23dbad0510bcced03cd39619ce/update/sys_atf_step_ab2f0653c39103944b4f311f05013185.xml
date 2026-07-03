@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-11 05:16:36</sys_created_on>
         <sys_id>ab2f0653c39103944b4f311f05013185</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_ab2f0653c39103944b4f311f05013185</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-11 05:26:37</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:00:56</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - REST API Resource Authentication">1f2f0653c39103944b4f311f05013115</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-11 05:16:36</sys_created_on>
         <sys_id>2f2f0653c39103944b4f311f0501318c</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-11 05:26:37</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:00:56</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -63,6 +63,7 @@
 	&#13;
 	var grWS = new GlideRecord('sys_ws_definition');&#13;
 	grWS.initialize();&#13;
+	grWS.sys_scope = 'global';&#13;
 	grWS.name = 'Test1';&#13;
 	grWS.base_uri = 'test1';&#13;
 	var strWSSysId = x_snc_devtools.GlideRecordInsert(grWS);&#13;
@@ -70,6 +71,7 @@
 	// No required authentication is a fail&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource1';&#13;
 	grWSO.relative_path = 'res1';&#13;
 	grWSO.requires_authentication = false;&#13;
@@ -82,6 +84,7 @@
 	// No required ACL authorization is a fail&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource2';&#13;
 	grWSO.relative_path = 'res2';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;
@@ -94,6 +97,7 @@
 	// Requires authentication and ACL authorization is ok&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource3';&#13;
 	grWSO.relative_path = 'res3';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;

@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-06 17:32:36</sys_created_on>
         <sys_id>c3ef4f8797622910a6a07767f053afea</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_c3ef4f8797622910a6a07767f053afea</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-05-06 17:38:20</sys_updated_on>
+        <sys_updated_on>2026-07-17 15:59:39</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - ATF suite name is unique">f3df4f8797622910a6a07767f053af60</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-06 17:32:36</sys_created_on>
         <sys_id>ccffcf8797622910a6a07767f053af97</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-05-06 17:38:20</sys_updated_on>
+        <sys_updated_on>2026-07-17 15:59:39</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -66,21 +66,22 @@
 	&#13;
 	var grApp = new GlideRecord('sys_app');&#13;
 	grApp.initialize();&#13;
-	grApp.name = 'Test';&#13;
+	grApp.name = 'Test Alpha';&#13;
+	grApp.scope = 'global';&#13;
 	var strAppSysId = x_snc_devtools.GlideRecordInsert(grApp);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_app', strAppSysId, false);&#13;
 	&#13;
 	var grSuite = new GlideRecord('sys_atf_test_suite');&#13;
 	grSuite.initialize();&#13;
 	grSuite.sys_scope = strAppSysId;&#13;
-	grSuite.name = 'Test';&#13;
+	grSuite.name = 'Test Alpha';&#13;
 	x_snc_devtools.GlideRecordInsert(grSuite);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_app', strAppSysId, false);&#13;
 &#13;
 	var grSuite = new GlideRecord('sys_atf_test_suite');&#13;
 	grSuite.initialize();&#13;
 	grSuite.sys_scope = strAppSysId;&#13;
-	grSuite.name = 'Test';&#13;
+	grSuite.name = 'Test Alpha';&#13;
 	x_snc_devtools.GlideRecordInsert(grSuite);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_app', strAppSysId, true);&#13;
 &#13;

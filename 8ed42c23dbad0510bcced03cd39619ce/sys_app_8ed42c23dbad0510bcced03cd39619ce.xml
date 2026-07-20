@@ -48,6 +48,8 @@
         <x_snc_devtools_repo_url>https://github.com/saschawildgrube/servicenow-codesanity.git</x_snc_devtools_repo_url>
         <x_snc_devtools_showstopper>false</x_snc_devtools_showstopper>
         <x_snc_devtools_showstopper_details/>
+        <x_snc_wildgrubelab_test/>
+        <x_snc_wildgrubelab_test2/>
     </sys_app>
     <sys_translated_text action="delete_multiple" query="documentkey=8ed42c23dbad0510bcced03cd39619ce"/>
 </record_update>

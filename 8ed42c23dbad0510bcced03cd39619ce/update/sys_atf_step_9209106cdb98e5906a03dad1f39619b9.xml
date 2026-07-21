@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-06 13:27:31</sys_created_on>
         <sys_id>9209106cdb98e5906a03dad1f39619b9</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_9209106cdb98e5906a03dad1f39619b9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-06 13:29:17</sys_updated_on>
+        <sys_updated_on>2026-07-21 15:50:29</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Avoid &quot;Utils&quot; classes">ac09dc2cdb98e5906a03dad1f396192e</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-06 13:27:31</sys_created_on>
         <sys_id>bf09106cdb98e5906a03dad1f3961973</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-06 13:29:17</sys_updated_on>
+        <sys_updated_on>2026-07-21 15:50:29</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -61,7 +61,7 @@
 &#13;
 	var strCheck = 'edd6d0a8db98e5906a03dad1f396196b';&#13;
 	&#13;
-	var testdata = new x_snc_devtools.TestDataAPI('_ATF_CODESANITY_');&#13;
+	var testdata = new x_snc_devtools.TestDataAPI('ATF.CODESANITY');&#13;
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;

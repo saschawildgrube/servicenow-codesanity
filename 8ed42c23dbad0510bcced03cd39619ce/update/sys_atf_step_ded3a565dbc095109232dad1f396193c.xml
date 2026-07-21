@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-12 15:02:33</sys_created_on>
         <sys_id>ded3a565dbc095109232dad1f396193c</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_ded3a565dbc095109232dad1f396193c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-12 15:04:10</sys_updated_on>
+        <sys_updated_on>2026-07-21 07:32:33</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Throwing exceptions">8c932165dbc095109232dad1f39619ab</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-12 15:02:33</sys_created_on>
         <sys_id>b314e565dbc095109232dad1f3961954</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-12 15:04:10</sys_updated_on>
+        <sys_updated_on>2026-07-21 07:32:33</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -47,26 +47,26 @@
 &#13;
 	var strCheck = '6bd82ff8db12cd10b652edb305961910';&#13;
 	&#13;
-	var testdata = new x_snc_devtools.TestDataAPI('_ATF_CODESANITY_');&#13;
+	var testdata = new x_snc_devtools.TestDataAPI('ATF.CODESANITY');&#13;
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test1',&#13;
-		'function _ATF_CODESANITY_Test1()\n'&#13;
+		'Test_Good1',&#13;
+		'function Test_Good1()\n'&#13;
 		+'{ Throw("a ball"); }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);&#13;
 	&#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test2',&#13;
-		'function _ATF_CODESANITY_Test2()\n'&#13;
+		'Test_Good2',&#13;
+		'function Test_Good2()\n'&#13;
 		+'{ gs.info("Have you ever been to Heathrow airport?"); }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);	&#13;
 	&#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test10',&#13;
-		'function _ATF_CODESANITY_Test10()\n'&#13;
+		'Test_Bad1',&#13;
+		'function Test_Bad1()\n'&#13;
 		+'{ throw "This is not nice"; }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,true);	&#13;
 	&#13;

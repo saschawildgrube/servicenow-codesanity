@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-20 10:40:51</sys_created_on>
         <sys_id>042a923e9365aa50959b7fda2bba1059</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_042a923e9365aa50959b7fda2bba1059</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-12 07:53:34</sys_updated_on>
+        <sys_updated_on>2026-07-21 07:36:36</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - App must not contain OOTB records">371a523e9365aa50959b7fda2bba10cf</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-20 10:40:51</sys_created_on>
         <sys_id>cc2a923e9365aa50959b7fda2bba105b</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-12 07:53:34</sys_updated_on>
+        <sys_updated_on>2026-07-21 07:36:36</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -67,13 +67,13 @@
 	var grApp = new GlideRecord('sys_app');&#13;
 	grApp.initialize();&#13;
 	grApp.scope = 'global';&#13;
-	grApp.name = 'TEST GLOBAL';&#13;
+	grApp.name = 'Test Global';&#13;
 	var strAppSysId = x_snc_devtools.GlideRecordInsert(grApp);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_app',strAppSysId,false);&#13;
 	&#13;
 	var grScriptInclude = new GlideRecord('sys_script_include');&#13;
 	grScriptInclude.initialize();&#13;
-	grScriptInclude.name = 'TestGlobal';&#13;
+	grScriptInclude.name = 'Test_Global';&#13;
 	grScriptInclude.sys_scope = strAppSysId;&#13;
 	var strScriptIncludeSysId = x_snc_devtools.GlideRecordInsert(grScriptInclude);&#13;
 	x_snc_devtools.RecordSetValue('sys_script_include',strScriptIncludeSysId,'sys_created_by','glide.maint',true);&#13;

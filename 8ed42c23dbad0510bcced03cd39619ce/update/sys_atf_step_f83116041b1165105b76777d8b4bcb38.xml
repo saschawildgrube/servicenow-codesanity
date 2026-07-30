@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-24 01:58:18</sys_created_on>
         <sys_id>f83116041b1165105b76777d8b4bcb38</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_f83116041b1165105b76777d8b4bcb38</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-14 09:56:25</sys_updated_on>
+        <sys_updated_on>2026-07-30 13:38:17</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - ATF test must contain steps">c12192041b1165105b76777d8b4bcbb5</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-24 01:58:18</sys_created_on>
         <sys_id>a53116041b1165105b76777d8b4bcb1a</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-04-14 09:56:25</sys_updated_on>
+        <sys_updated_on>2026-07-30 13:38:17</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -47,14 +47,15 @@
 &#13;
 	var strCheck = '49dfce801b1165105b76777d8b4bcbfe';&#13;
 	&#13;
-	&#13;
 	// Test "CodeSanity - Installation" has test steps&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_atf_test','2c6758d3db4a8510bcced03cd3961921',false);&#13;
+&#13;
+	var strAppSysId = x_snc_devtools.AppCreate('Test Alpha','scoped','x_test_alpha');&#13;
 	&#13;
 	var grTest = new GlideRecord('sys_atf_test');&#13;
 	grTest.initialize();&#13;
 	grTest.name = 'TEST1';&#13;
-	grTest.sys_scope = x_snc_devtools.GetAppRecord('x_snc_codesanity').sys_id;&#13;
+	grTest.sys_scope = strAppSysId;&#13;
 	var strTest1SysId = x_snc_devtools.GlideRecordInsert(grTest);&#13;
 	// Test1 does not have any test steps&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_atf_test',grTest.sys_id,true);&#13;
@@ -64,7 +65,7 @@
 	grStep.active = false;&#13;
 	grStep.test = strTest1SysId;&#13;
 	grStep.step_config = '58ab71985f30220012b44adb7f46661e'; // Log&#13;
-	grStep.sys_scope = x_snc_devtools.GetAppRecord('x_snc_codesanity').sys_id;&#13;
+	grStep.sys_scope = strAppSysId;&#13;
 	var strStep1SysId = x_snc_devtools.GlideRecordInsert(grStep);&#13;
 	// Step1 is not active&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_atf_test',grTest.sys_id,true);	&#13;
@@ -75,7 +76,7 @@
 	grStep.active = true;&#13;
 	grStep.step_config = '58ab71985f30220012b44adb7f46661e'; // Log&#13;
 	grStep.test = strTest1SysId;&#13;
-	grStep.sys_scope = x_snc_devtools.GetAppRecord('x_snc_codesanity').sys_id;&#13;
+	grStep.sys_scope = strAppSysId;&#13;
 	var strStep2SysId = x_snc_devtools.GlideRecordInsert(grStep);&#13;
 	// Step2 is active&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_atf_test',grTest.sys_id,false);		&#13;

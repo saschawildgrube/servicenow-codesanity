@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-09 13:34:52</sys_created_on>
         <sys_id>04c1429d93862210ae97b4aa6aba107a</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_04c1429d93862210ae97b4aa6aba107a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-09 13:52:43</sys_updated_on>
+        <sys_updated_on>2026-07-30 13:46:36</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - User Criteria depends on data">08c1029d93862210ae97b4aa6aba1080</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-09 13:34:52</sys_created_on>
         <sys_id>08c1429d93862210ae97b4aa6aba107d</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-09 13:52:43</sys_updated_on>
+        <sys_updated_on>2026-07-30 13:46:36</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -49,19 +49,19 @@
 	&#13;
 	// Test cases that provoke findings:&#13;
 	&#13;
-	var grApp = x_snc_devtools.GetAppRecord('x_snc_codesanity');&#13;
+	var strAppSysId = x_snc_devtools.AppCreate('Test Alpha','scoped','x_test_alpha');&#13;
 &#13;
 	var grGroup = new GlideRecord('sys_user_group');&#13;
 	grGroup.initialize();&#13;
-	grGroup.name = '_ATF_TEST_CODESANITY_1';&#13;
+	grGroup.name = 'Test ATF.CODESANITY 1';&#13;
 	var strGroupSysId = x_snc_devtools.GlideRecordInsert(grGroup);&#13;
 &#13;
 	test.Log(x_snc_devtools.GetRecord('sys_user_group',strGroupSysId));&#13;
 &#13;
 	var grRecord = new GlideRecord('user_criteria');&#13;
 	grRecord.initialize();&#13;
-	grRecord.name = '_ATF_TEST_CODESANITY_USER_CRITERIA_1';&#13;
-	grRecord.sys_scope = grApp.sys_id;&#13;
+	grRecord.sys_scope = strAppSysId;&#13;
+	grRecord.name = 'Test ATF.CODESANITY User Criteria Bad';&#13;
 	grRecord.group = strGroupSysId;&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	test.Log(x_snc_devtools.GetRecord('user_criteria',grRecord.sys_id));&#13;
@@ -72,7 +72,8 @@
 	&#13;
 	var grRecord = new GlideRecord('user_criteria');&#13;
 	grRecord.initialize();&#13;
-	grRecord.name = '_ATF_TEST_CODESANITY_USER_CRITERIA_2';&#13;
+	grRecord.sys_scope = strAppSysId;&#13;
+	grRecord.name = 'Test ATF.CODESANITY User Criteria Good';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'user_criteria',strRecordSysId,false);&#13;
 	&#13;

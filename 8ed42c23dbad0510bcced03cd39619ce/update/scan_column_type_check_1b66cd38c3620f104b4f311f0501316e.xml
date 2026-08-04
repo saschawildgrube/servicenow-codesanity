@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_column_type_check">
+    <scan_column_type_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>code_sanity</category>
+        <column_type>script</column_type>
+        <description>Zurich introduced new message types with various banner colors: Success, High, Moderate and Low. This is one of these examples where good intentions cause bad outcomes. More colors may appear as more options for developers - but they make it more difficult for users to understand the situation. Did something fail? Is action required? Does something not work as intended, or will soon stop working if no action is taken? Or did something just worked they way it shoud - so no action required?&#13;
+These different nouances are well established, known to the user as "Error" (immediate action needed), "Warning" (action may be required soon) or "Info" (no further action needed).&#13;
+Any deviating color is a surprise to the user, does not convey the severity and call-to-action properly and just adds to user confusion.&#13;
+And hence, such newly introduced "fancy" message colors should be avoided.&#13;
+In addition, additional colors make it more difficult for people with visual disabilities to understand what is going on - so from a accessibility point of view - fewer colors, and more color contrast helps.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - Do not use fancy message colors</name>
+        <priority>1</priority>
+        <resolution_details>Replace any use of the new "fancy" message colors with colors that actually represent the severity of the message: Error, Warning or Info.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var ScriptRemoveComments = x_snc_devtools.ScriptRemoveComments;
+		var ScriptEmptyStringLiterals = x_snc_devtools.ScriptEmptyStringLiterals;
+		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+		
+		var strSource = GetStringValue(engine.columnValue);
+		
+		strSource = ScriptRemoveComments(strSource);
+		strSource = ScriptEmptyStringLiterals(strSource);		
+
+		if (StringCheckRegEx(strSource,'\\.\\s*addHighMessage\\s*\\(','') == true)
+		{
+			engine.finding.increment();
+		}
+		if (StringCheckRegEx(strSource,'\\.\\s*addModerateMessage\\s*\\(','') == true)
+		{
+			engine.finding.increment();
+		}		
+		if (StringCheckRegEx(strSource,'\\.\\s*addLowMessage\\s*\\(','') == true)
+		{
+			engine.finding.increment();
+		}	
+		if (StringCheckRegEx(strSource,'\\.\\s*addSuccessMessage\\s*\\(','') == true)
+		{
+			engine.finding.increment();
+		}				
+
+	}
+
+})(engine);]]></script>
+        <short_description>Do not use fancy message colors</short_description>
+        <sys_class_name>scan_column_type_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-04 09:04:39</sys_created_on>
+        <sys_id>1b66cd38c3620f104b4f311f0501316e</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>CodeSanity - Do not use fancy message colors</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_column_type_check_1b66cd38c3620f104b4f311f0501316e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-04 10:00:31</sys_updated_on>
+    </scan_column_type_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=1b66cd38c3620f104b4f311f0501316e"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>1b66cd38c3620f104b4f311f0501316e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-04 09:04:38</sys_created_on>
+        <sys_id>e63981fcc3620f104b4f311f0501310d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-04 09:04:38</sys_updated_on>
+        <table>scan_column_type_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

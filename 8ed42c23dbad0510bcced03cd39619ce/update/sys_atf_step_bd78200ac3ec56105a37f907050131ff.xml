@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-11 05:14:52</sys_created_on>
         <sys_id>bd78200ac3ec56105a37f907050131ff</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_bd78200ac3ec56105a37f907050131ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-11 05:20:27</sys_updated_on>
+        <sys_updated_on>2026-08-04 08:29:26</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Persona role in User Criteria">5b68ecc6c3ec56105a37f9070501318c</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-11 05:14:53</sys_created_on>
         <sys_id>7578600ac3ec56105a37f90705013102</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-11 05:20:27</sys_updated_on>
+        <sys_updated_on>2026-08-04 08:29:26</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual) {&#13;
     var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
 &#13;
@@ -60,16 +60,12 @@
 &#13;
     var strCheck = '93c760c6c3ec56105a37f907050131d7';&#13;
 &#13;
-	var grApp = new GlideRecord('sys_app');&#13;
-	grApp.initialize();&#13;
-	grApp.name = 'Test';&#13;
-	grApp.scope = 'test';&#13;
-	var strAppSysId = x_snc_devtools.GlideRecordInsert(grApp);&#13;
+	var strAppSysId = x_snc_devtools.AppCreate('Test Alpha','scoped','x_test_alpha');&#13;
 &#13;
 	var grRole = new GlideRecord('sys_user_role');&#13;
 	grRole.initialize();&#13;
 	grRole.sys_scope = strAppSysId;&#13;
-	grRole.name = 'test.persona_test';&#13;
+	grRole.name = 'x_test_alpha.persona_test';&#13;
 	var strRolePersonaSysId = x_snc_devtools.GlideRecordInsert(grRole);&#13;
 &#13;
 	var grUC = new GlideRecord('user_criteria');&#13;

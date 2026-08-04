@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-04 12:53:36</sys_created_on>
         <sys_id>7062ceeb3b137a1062bf612c95e45abf</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_7062ceeb3b137a1062bf612c95e45abf</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-17 14:20:58</sys_updated_on>
+        <sys_updated_on>2026-08-04 17:05:23</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - AI Agent Tool Structure">3062ceeb3b137a1062bf612c95e45a73</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-04 12:53:36</sys_created_on>
         <sys_id>3462ceeb3b137a1062bf612c95e45ac5</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-17 14:20:59</sys_updated_on>
+        <sys_updated_on>2026-08-04 17:05:23</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -70,21 +70,21 @@
 	var grAgent = new GlideRecord('sn_aia_agent');&#13;
 	grAgent.initialize();&#13;
 	grAgent.sys_scope = 'global';&#13;
-	grAgent.name = 'ATF Agent 1';&#13;
+	grAgent.name = 'Test ATF.CODESANITY Agent 1';&#13;
 	grAgent.description = 'A description.';&#13;
 	var strAgent1SysId = x_snc_devtools.GlideRecordInsert(grAgent);&#13;
 &#13;
 	var grAgent = new GlideRecord('sn_aia_agent');&#13;
 	grAgent.initialize();&#13;
 	grAgent.sys_scope = 'global';&#13;
-	grAgent.name = 'ATF Agent 2';&#13;
+	grAgent.name = 'Test ATF.CODESANITY Agent 2';&#13;
 	grAgent.description = 'A description.';&#13;
 	var strAgent2SysId = x_snc_devtools.GlideRecordInsert(grAgent);&#13;
 &#13;
 	var grTool = new GlideRecord('sn_aia_tool');&#13;
 	grTool.initialize();&#13;
 	grTool.sys_scope = 'global';&#13;
-	grTool.name = 'ATF Tool 1';&#13;
+	grTool.name = 'Test ATF.CODESANITY Tool 1';&#13;
 	grTool.description = 'A description.';&#13;
 	var strToolSysId = x_snc_devtools.GlideRecordInsert(grTool);&#13;
 &#13;
@@ -93,7 +93,7 @@
 	grRecord.agent = strAgent1SysId;&#13;
 	grRecord.tool = strToolSysId;&#13;
 	grRecord.description = 'This is a test';&#13;
-	grRecord.name = 'Agent 1 - Tool 1';&#13;
+	grRecord.name = 'Test ATF.CODESANITY - Agent 1 - Tool 1';&#13;
 	grRecord.sys_scope = 'global';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 &#13;
@@ -105,7 +105,7 @@
 	grRecord.agent = strAgent2SysId;&#13;
 	grRecord.tool = strToolSysId;&#13;
 	grRecord.description = 'This is a test';&#13;
-	grRecord.name = 'Agent 2 - Tool 1';&#13;
+	grRecord.name = 'Test ATF.CODESANITY - Agent 2 - Tool 1';&#13;
 	grRecord.sys_scope = 'global';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 &#13;

@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-20 08:14:06</sys_created_on>
         <sys_id>86d04f3a1b0521105b76777d8b4bcbaa</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_86d04f3a1b0521105b76777d8b4bcbaa</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-15 07:21:49</sys_updated_on>
+        <sys_updated_on>2026-07-21 08:37:14</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - ScanAppWithDependencies">8ec0cb3a1b0521105b76777d8b4bcb02</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-20 08:14:06</sys_created_on>
         <sys_id>a3d04f3a1b0521105b76777d8b4bcb81</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-15 07:21:49</sys_updated_on>
+        <sys_updated_on>2026-07-21 08:37:15</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -63,23 +63,23 @@
 	&#13;
 	var grApp1 = new GlideRecord('sys_app');&#13;
 	grApp1.initialize();&#13;
-	grApp1.name = '_TEST_App1';&#13;
+	grApp1.name = 'Test Alpha';&#13;
 	grApp1.version = '1.0.0';&#13;
-	grApp1.scope = 'x_snc_testapp1';&#13;
+	grApp1.scope = 'x_test_alpha';&#13;
 	var strApp1SysId = x_snc_devtools.GlideRecordInsert(grApp1);&#13;
 &#13;
 	var grApp2 = new GlideRecord('sys_app');&#13;
 	grApp2.initialize();&#13;
-	grApp2.name = '_TEST_App2';&#13;
+	grApp2.name = 'Test Beta';&#13;
 	grApp2.version = '1.0.0';&#13;
-	grApp2.scope = 'x_snc_testapp2';&#13;
+	grApp2.scope = 'x_test_beta';&#13;
 	var strApp2SysId = x_snc_devtools.GlideRecordInsert(grApp2);&#13;
 	&#13;
 	var grDependency = new GlideRecord('x_snc_devtools_dependency');&#13;
 	grDependency.initialize();&#13;
 	grDependency.sys_scope = strApp1SysId;&#13;
 	grDependency.dependency = strApp2SysId;&#13;
-	grDependency.name = 'App2';&#13;
+	grDependency.name = 'Test Beta';&#13;
 	grDependency.versions = '1.0.0';&#13;
 	x_snc_devtools.GlideRecordInsert(grDependency);		&#13;
 		&#13;

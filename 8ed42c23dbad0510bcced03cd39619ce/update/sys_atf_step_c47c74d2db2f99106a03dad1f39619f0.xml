@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-05 19:44:35</sys_created_on>
         <sys_id>c47c74d2db2f99106a03dad1f39619f0</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_c47c74d2db2f99106a03dad1f39619f0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-05 19:52:27</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:00:22</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Do not use fix scripts">b06cb0d2db2f99106a03dad1f3961913</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-05 19:44:35</sys_created_on>
         <sys_id>077cb4d2db2f99106a03dad1f3961927</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-12-05 19:52:27</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:00:22</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -50,6 +50,7 @@
 	&#13;
 	var grRecord = new GlideRecord('sys_script_fix');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.name = 'Test1';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	&#13;

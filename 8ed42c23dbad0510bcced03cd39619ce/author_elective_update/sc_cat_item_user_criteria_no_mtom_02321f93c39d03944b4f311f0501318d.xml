@@ -29,13 +29,13 @@
         <source>5ec36b10c30103104b4f311f050131c0</source>
         <source_table>sys_upgrade_history</source_table>
         <state>previous</state>
-        <sys_created_by/>
+        <sys_created_by>system</sys_created_by>
         <sys_created_on>2026-05-20 17:28:47</sys_created_on>
         <sys_id>53ab2f53c35543944b4f311f0501313c</sys_id>
-        <sys_mod_count/>
+        <sys_mod_count>0</sys_mod_count>
         <sys_recorded_at>19e466ecc980000000</sys_recorded_at>
-        <sys_updated_by/>
-        <sys_updated_on/>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-06-22 10:17:19</sys_updated_on>
         <type>Catalog Item Not Available for</type>
         <update_guid>13ab2f53cb554394562e98b21494483c</update_guid>
         <update_guid_history>13ab2f53cb554394562e98b21494483c:-1586297080</update_guid_history>

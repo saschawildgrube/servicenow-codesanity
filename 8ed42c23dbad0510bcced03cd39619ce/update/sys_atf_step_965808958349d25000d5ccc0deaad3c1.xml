@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-03 15:30:31</sys_created_on>
         <sys_id>965808958349d25000d5ccc0deaad3c1</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_965808958349d25000d5ccc0deaad3c1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 16:11:38</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:31:13</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - REST API Resource default ACL">033804958349d25000d5ccc0deaad393</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-03 15:30:31</sys_created_on>
         <sys_id>125848958349d25000d5ccc0deaad3c9</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 16:11:38</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:31:13</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -49,6 +49,7 @@
 	&#13;
 	var grWS = new GlideRecord('sys_ws_definition');&#13;
 	grWS.initialize();&#13;
+	grWS.sys_scope = 'global';&#13;
 	grWS.name = 'Test1';&#13;
 	grWS.base_uri = 'test1';&#13;
 	var strWSSysId = x_snc_devtools.GlideRecordInsert(grWS);&#13;
@@ -56,6 +57,7 @@
 	// Default ACL is a fail&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource1';&#13;
 	grWSO.relative_path = 'res1';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;
@@ -67,6 +69,7 @@
 	// Any other ACL is ok&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource2';&#13;
 	grWSO.relative_path = 'res2';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;
@@ -78,6 +81,7 @@
 	// No ACL is ok&#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
+	grWSO.sys_scope = 'global';&#13;
 	grWSO.name = 'Resource3';&#13;
 	grWSO.relative_path = 'res3';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;

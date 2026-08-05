@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-11 17:44:27</sys_created_on>
         <sys_id>691847352b6f76909083fe395e91bffa</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_691847352b6f76909083fe395e91bffa</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-11 18:02:05</sys_updated_on>
+        <sys_updated_on>2026-07-30 14:28:58</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Script Field Access">211847352b6f76909083fe395e91bfa3</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-11 17:44:27</sys_created_on>
         <sys_id>ed1887352b6f76909083fe395e91bf00</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-11 18:02:05</sys_updated_on>
+        <sys_updated_on>2026-07-30 14:28:58</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -61,14 +61,32 @@
 	&#13;
 	var strCheck = 'f8520bb12b2f76909083fe395e91bf67';&#13;
 	&#13;
+	var strAppSysId = x_snc_devtools.AppCreate('Test Alpha','scoped','x_test_alpha');&#13;
 &#13;
-	// Adding a script column to the devtools test table&#13;
+	var strTableSysId = x_snc_devtools.RecordInsertOrUpdate(&#13;
+		'sys_db_object',&#13;
+		{&#13;
+			sys_scope: strAppSysId,&#13;
+			name: 'x_test_alpha_test'&#13;
+		},&#13;
+		{&#13;
+			super_class: ''&#13;
+		},&#13;
+		{&#13;
+			label: 'Test',&#13;
+			configuration_access: true,&#13;
+			create_access: true,&#13;
+			update_access: true,&#13;
+			delete_access: true&#13;
+		});&#13;
+&#13;
+	// Adding a script column to the test table&#13;
 	var grRecord = new GlideRecord('sys_dictionary');&#13;
 	grRecord.initialize();&#13;
-	grRecord.name = 'x_snc_devtools_test';&#13;
+	grRecord.name = 'x_test_alpha_test';&#13;
 	grRecord.element = 'script_test';&#13;
 	grRecord.internal_type = 'script';&#13;
-	grRecord.sys_scope = 'd689f6901bd38450a89720a8ec4bcbfd'; // DevTools&#13;
+	grRecord.sys_scope = strAppSysId;&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 &#13;
 	// No field level ACL: that should trigger a finding&#13;
@@ -76,11 +94,11 @@
 &#13;
 	var grACL = new GlideRecord('sys_security_acl');&#13;
 	grACL.initialize();&#13;
-	grACL.name = 'x_snc_devtools_test.script_test';&#13;
+	grACL.name = 'x_test_alpha_test.script_test';&#13;
 	grACL.operation = 'write';&#13;
 	grACL.decision_type = 'deny';&#13;
 	grACL.active = true;&#13;
-	grACL.sys_scope = 'd689f6901bd38450a89720a8ec4bcbfd'; // DevTools&#13;
+	grACL.sys_scope = strAppSysId;&#13;
 	var strAclSysId = x_snc_devtools.GlideRecordInsert(grACL);&#13;
 	&#13;
 	// Field level ACL without admin role: that should still trigger a finding&#13;
@@ -92,7 +110,7 @@
 	grAclRole.initialize();&#13;
 	grAclRole.sys_security_acl = grACL.sys_id;&#13;
 	grAclRole.sys_user_role = grRoleAdmin.sys_id;&#13;
-	grAclRole.sys_scope = 'd689f6901bd38450a89720a8ec4bcbfd'; // DevTools&#13;
+	grAclRole.sys_scope = strAppSysId;&#13;
 	var strAclRoleSysId = x_snc_devtools.GlideRecordInsert(grAclRole);&#13;
 	&#13;
 	// Field level ACL with admin role: that should NOT trigger a finding&#13;

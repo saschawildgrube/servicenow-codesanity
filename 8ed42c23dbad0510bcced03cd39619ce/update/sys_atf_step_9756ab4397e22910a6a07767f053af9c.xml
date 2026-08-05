@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-06 19:10:39</sys_created_on>
         <sys_id>9756ab4397e22910a6a07767f053af9c</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_9756ab4397e22910a6a07767f053af9c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-05-06 19:14:03</sys_updated_on>
+        <sys_updated_on>2026-07-21 07:40:39</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - ATF test name is unique">37362b4397e22910a6a07767f053af86</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-05-06 19:10:39</sys_created_on>
         <sys_id>cc66eb4397e22910a6a07767f053af07</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-05-06 19:14:03</sys_updated_on>
+        <sys_updated_on>2026-07-21 07:40:39</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -66,7 +66,8 @@
 	&#13;
 	var grApp = new GlideRecord('sys_app');&#13;
 	grApp.initialize();&#13;
-	grApp.name = 'Test';&#13;
+	grApp.name = 'Test Alpha';&#13;
+	grApp.scope = 'x_test_alpha';&#13;
 	var strAppSysId = x_snc_devtools.GlideRecordInsert(grApp);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_app', strAppSysId, false);&#13;
 	&#13;

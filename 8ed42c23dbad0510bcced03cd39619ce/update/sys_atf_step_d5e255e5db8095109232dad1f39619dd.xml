@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-12 13:48:56</sys_created_on>
         <sys_id>d5e255e5db8095109232dad1f39619dd</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_d5e255e5db8095109232dad1f39619dd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-30 13:16:07</sys_updated_on>
+        <sys_updated_on>2026-07-16 18:32:16</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Avoid eval()">f2d255e5db8095109232dad1f3961930</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-12 13:48:56</sys_created_on>
         <sys_id>554319e5db8095109232dad1f396197f</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-30 13:16:07</sys_updated_on>
+        <sys_updated_on>2026-07-16 18:32:17</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var strCheck = '300febfcdb52cd10b652edb305961917';&#13;
@@ -46,26 +46,26 @@
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual, strCheck);&#13;
 	test.SetResult(true);&#13;
 	&#13;
-	var testdata = new x_snc_devtools.TestDataAPI('_ATF_CODESANITY_');&#13;
+	var testdata = new x_snc_devtools.TestDataAPI('ATF.CODESANITY');&#13;
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test1',&#13;
-		'function _ATF_CODESANITY_Test1()\n'&#13;
+		'Test_1',&#13;
+		'function Test_1()\n'&#13;
 		+'{ evaluate("nothing"); }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);&#13;
 	&#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test10',&#13;
-		'function _ATF_CODESANITY_Test10()\n'&#13;
+		'Test_10',&#13;
+		'function Test_10()\n'&#13;
 		+'{ eval("gs.info(\'Test\');"); }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,true);	&#13;
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test11',&#13;
-		'function _ATF_CODESANITY_Test11()\n'&#13;
+		'Test_11',&#13;
+		'function Test_11()\n'&#13;
 		+'{\n'&#13;
 		+'\teval(\'gs.info(\"Test\");\');\n'&#13;
 		+'}');&#13;

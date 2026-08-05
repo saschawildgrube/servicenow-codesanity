@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_kmf_module_key_policy">
+    <sys_kmf_module_key_policy action="DELETE">
+        <crypto_module display_value="sn_pwdreset_ah.password_reset">d41c3789773630100a9bcac5ec5a99e2</crypto_module>
+        <key_type display_value="Symmetric Key Encryption Key">ca005cf7c7103300af4d43c6f0976328</key_type>
+        <last_enforced>2026-07-20 13:01:55</last_enforced>
+        <result>reject</result>
+        <sys_class_name>sys_kmf_module_key_policy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 13:01:55</sys_created_on>
+        <sys_id>48bf644c93d603902de3b4aa6aba10c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_kmf_module_key_policy_48bf644c93d603902de3b4aa6aba10c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 13:01:55</sys_updated_on>
+    </sys_kmf_module_key_policy>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>b265927933572a987c42c7bb9d5c7b88</instance_id>
+        <instance_name>wildzurich</instance_name>
+        <name>sys_kmf_module_key_policy_48bf644c93d603902de3b4aa6aba10c1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_kmf_module_key_policy"><sys_kmf_module_key_policy action="INSERT_OR_UPDATE"><crypto_module display_value="sn_pwdreset_ah.password_reset">d41c3789773630100a9bcac5ec5a99e2</crypto_module><key_type display_value="Symmetric Key Encryption Key">ca005cf7c7103300af4d43c6f0976328</key_type><last_enforced>2026-07-20 13:01:55</last_enforced><result>reject</result><sys_class_name>sys_kmf_module_key_policy</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-07-20 13:01:55</sys_created_on><sys_id>48bf644c93d603902de3b4aa6aba10c1</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package><sys_policy/><sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope><sys_update_name>sys_kmf_module_key_policy_48bf644c93d603902de3b4aa6aba10c1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-07-20 13:01:55</sys_updated_on></sys_kmf_module_key_policy></record_update>]]></payload>
+        <payload_hash>522548240</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>fefe50cbc3e1c7104b4f311f0501313f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 13:01:55</sys_created_on>
+        <sys_id>48bf644c93d603902de3b4aa6aba10ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19f7f9e67f70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 13:01:55</sys_updated_on>
+        <type>Crypto Module Key Policy</type>
+        <update_guid>c4bf644c2ed6039053bd251e7c0a92c9</update_guid>
+        <update_guid_history>c4bf644c2ed6039053bd251e7c0a92c9:522548240</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-20 15:52:42</sys_created_on>
+        <sys_db_object display_value="" name="sys_kmf_module_key_policy">sys_kmf_module_key_policy</sys_db_object>
+        <sys_id>3fcc5156d099459c9459a8da417236e4</sys_id>
+        <sys_metadata>48bf644c93d603902de3b4aa6aba10c1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>sys_kmf_module_key_policy_48bf644c93d603902de3b4aa6aba10c1</sys_update_name>
+        <sys_update_version display_value="sys_kmf_module_key_policy_48bf644c93d603902de3b4aa6aba10c1">48bf644c93d603902de3b4aa6aba10ca</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-20 15:52:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-05-05 11:42:59</sys_created_on>
         <sys_id>f6c44d2b3ba00bd462bf612c95e45ad0</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_f6c44d2b3ba00bd462bf612c95e45ad0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-05-05 11:48:08</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:07:14</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - AI Agent Tool Input Schema">aac40d2b3ba00bd462bf612c95e45a97</test>
         <timeout/>
@@ -50,21 +50,28 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-05-05 11:42:59</sys_created_on>
         <sys_id>bec48d2b3ba00bd462bf612c95e45a07</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-05-05 11:48:08</sys_updated_on>
+        <sys_updated_on>2026-07-03 08:07:14</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
 	&#13;
 	test.SetResult(true);&#13;
 	&#13;
+	if (x_snc_devtools.IsNowAssistAIAgentsInstalled() == false)&#13;
+	{&#13;
+		test.Log('Now Assist AI Agent capabilities are not installed on this instance.');&#13;
+		return test.GetResult();&#13;
+	} &#13;
+&#13;
 	var strCheck = 'd71118a73b68c7d462bf612c95e45a59';&#13;
 	&#13;
 	// Test cases that provoke findings:&#13;
 	&#13;
 	var grRecord = new GlideRecord('sn_aia_tool');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.name = 'TEST Agent Tool BAD';&#13;
 	grRecord.description = 'This is a test.';&#13;
 	grRecord.input_schema = '[{"name":"business_process","description":"The Business Process\' name, number or Sys ID.","mandatory":true,}]';&#13;
@@ -76,6 +83,7 @@
 	&#13;
 	var grRecord = new GlideRecord('sn_aia_tool');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	grRecord.name = 'TEST Agent Tool GOOD';&#13;
 	grRecord.description = 'This is a test.';&#13;
 	grRecord.input_schema = '[{"name":"business_process","description":"The Business Process\' name, number or Sys ID.","mandatory":true}]';&#13;

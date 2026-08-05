@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-04-06 12:59:39</sys_created_on>
         <sys_id>47308cde2bc403949083fe395e91bf8b</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_47308cde2bc403949083fe395e91bf8b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-06 13:04:58</sys_updated_on>
+        <sys_updated_on>2026-07-16 18:46:37</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Check external parameters">8b308cde2bc403949083fe395e91bf59</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-04-06 12:59:40</sys_created_on>
         <sys_id>1b308cde2bc403949083fe395e91bf92</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-06 13:04:58</sys_updated_on>
+        <sys_updated_on>2026-07-16 18:46:37</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -61,20 +61,20 @@
 	&#13;
 	var strCheck = '6f0db30a2bc403949083fe395e91bf0b';&#13;
 	&#13;
-	var testdata = new x_snc_devtools.TestDataAPI('_ATF_CODESANITY_');&#13;
+	var testdata = new x_snc_devtools.TestDataAPI('ATF.CODESANITY');&#13;
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test1_good',&#13;
-		'function _ATF_CODESANITY_Test1_good()\n'&#13;
+		'good1',&#13;
+		'function Test_good1()\n'&#13;
 		+'{ var strParam1 = GetParam("param1"); }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);&#13;
 	&#13;
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
-		'Test1_bad',&#13;
-		'function _ATF_CODESANITY_Test1_bad()\n'&#13;
+		'bad1',&#13;
+		'function Test_bad1()\n'&#13;
 		+'{ var strParam1 = RP.getParameterValue("param1"); }\n');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,true);&#13;
 	&#13;

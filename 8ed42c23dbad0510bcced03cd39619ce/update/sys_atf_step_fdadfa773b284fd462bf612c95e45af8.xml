@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-05-06 15:09:30</sys_created_on>
         <sys_id>fdadfa773b284fd462bf612c95e45af8</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_fdadfa773b284fd462bf612c95e45af8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-05-06 15:11:14</sys_updated_on>
+        <sys_updated_on>2026-08-04 15:30:41</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Number field is read-only">69adfa773b284fd462bf612c95e45ae0</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-05-06 15:09:30</sys_created_on>
         <sys_id>31adfa773b284fd462bf612c95e45aff</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-05-06 15:11:14</sys_updated_on>
+        <sys_updated_on>2026-08-04 15:30:41</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -73,7 +73,11 @@
 		},&#13;
 		{&#13;
 			read_only_override: true,&#13;
-			read_only: true&#13;
+			read_only: true,&#13;
+&#13;
+			// This is required starting with Australia, not yet clear why&#13;
+			read_only_option: 'instance_configured',&#13;
+			read_only_option_override: true&#13;
 		},&#13;
 		{&#13;
 		});&#13;

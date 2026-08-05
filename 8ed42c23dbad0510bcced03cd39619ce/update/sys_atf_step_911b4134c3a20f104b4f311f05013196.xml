@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-04 09:12:45</sys_created_on>
+        <sys_id>911b4134c3a20f104b4f311f05013196</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_atf_step_911b4134c3a20f104b4f311f05013196</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-04 10:01:14</sys_updated_on>
+        <table/>
+        <test display_value="CodeSanity - Do not use fancy message colors">cd1b4134c3a20f104b4f311f0501312c</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=911b4134c3a20f104b4f311f05013196"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>911b4134c3a20f104b4f311f05013196</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-04 09:12:45</sys_created_on>
+        <sys_id>1d1b4134c3a20f104b4f311f050131a8</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-04 10:01:14</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+	&#13;
+	var strCheck = '1b66cd38c3620f104b4f311f0501316e';&#13;
+	&#13;
+	var testdata = new x_snc_devtools.TestDataAPI('ATF.CODESANITY');&#13;
+&#13;
+	var strScriptIncludeSysId = testdata.CreateScriptInclude(&#13;
+		'global', 'Good1', 'function Test_Good1() {}', '', 'This is a test');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strScriptIncludeSysId,false);&#13;
+&#13;
+	var strScriptIncludeSysId = testdata.CreateScriptInclude(&#13;
+		'global', 'Good2', 'function Test_Good2() { gs.addInfoMessage("INFO"); }', '', 'This is a test');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strScriptIncludeSysId,false);&#13;
+	&#13;
+	var strScriptIncludeSysId = testdata.CreateScriptInclude(&#13;
+		'global', 'Bad1', 'function Test_Bad1() { gs.addHighMessage("HIGH"); }', '', 'This is a test');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strScriptIncludeSysId,true);&#13;
+	&#13;
+	var strScriptIncludeSysId = testdata.CreateScriptInclude(&#13;
+		'global', 'Bad2', 'function Test_Bad2() { gs. addModerateMessage("MODERATE"); }', '', 'This is a test');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strScriptIncludeSysId,true);&#13;
+&#13;
+	var strScriptIncludeSysId = testdata.CreateScriptInclude(&#13;
+		'global', 'Bad3', 'function Test_Bad3() { gs.addLowMessage ("LOW"); }', '', 'This is a test');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strScriptIncludeSysId,true);&#13;
+&#13;
+	var strScriptIncludeSysId = testdata.CreateScriptInclude(&#13;
+		'global', 'Bad4', 'function Test_Bad4() { gs.addSuccessMessage ("SUCCESS"); }', '', 'This is a test');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strScriptIncludeSysId,true);	&#13;
+&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>911b4134c3a20f104b4f311f05013196</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-04 09:12:45</sys_created_on>
+        <sys_id>d91b4134c3a20f104b4f311f050131a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-04 09:12:45</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+</record_update>

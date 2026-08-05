@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-26 12:34:47</sys_created_on>
         <sys_id>2800671a3be7661062bf612c95e45ab6</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_2800671a3be7661062bf612c95e45ab6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-26 12:45:35</sys_updated_on>
+        <sys_updated_on>2026-07-21 08:56:26</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Flow Action depends on data">6800271a3be7661062bf612c95e45aa4</test>
         <timeout/>
@@ -36,9 +36,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-08-26 12:34:47</sys_created_on>
         <sys_id>2800671a3be7661062bf612c95e45ab9</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-08-26 12:45:35</sys_updated_on>
+        <sys_updated_on>2026-07-21 08:56:26</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -51,24 +51,27 @@
 	&#13;
 	var grRecord = new GlideRecord('sys_hub_action_type_definition');&#13;
 	grRecord.initialize();&#13;
+	grRecord.sys_scope = 'global';&#13;
 	var strRecordSysId = x_snc_devtools.GlideRecordInsert(grRecord);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_hub_action_type_definition',strRecordSysId,false);&#13;
 &#13;
 	// Add a step&#13;
 	var grStep = new GlideRecord('sys_hub_step_instance');&#13;
 	grStep.initialize();&#13;
+	grStep.sys_scope = 'global';&#13;
 	grStep.action = strRecordSysId;&#13;
 	var strStepSysId = x_snc_devtools.GlideRecordInsert(grStep);&#13;
 &#13;
 	// Provoke a finding&#13;
 &#13;
 	// Add a user&#13;
-	var testdata = new x_snc_devtools.TestDataAPI();&#13;
+	var testdata = new x_snc_devtools.TestDataAPI('ATF.CODESANITY');&#13;
 	var strUserSysId = testdata.CreateUser('TEST Flow Action depending on data', [], false);&#13;
 &#13;
 	// Add a variable with a data sys_id&#13;
 	var grValue = new GlideRecord('sys_variable_value');&#13;
 	grValue.initialize();&#13;
+	grValue.sys_scope = 'global';&#13;
 	grValue.document = 'sys_hub_step_instance';&#13;
 	grValue.document_key = grStep.sys_id;&#13;
 	grValue.value = 'assigned_to=' + strUserSysId;&#13;

@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-10 19:56:54</sys_created_on>
         <sys_id>d2b2d4c5db48d510bcced03cd396190d</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_d2b2d4c5db48d510bcced03cd396190d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-02-01 19:17:58</sys_updated_on>
+        <sys_updated_on>2026-06-22 13:51:59</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - Script include must contain a class or function">3072d0c5db48d510bcced03cd3961935</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-10 19:56:54</sys_created_on>
         <sys_id>98541c09db48d510bcced03cd3961995</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-02-01 19:17:58</sys_updated_on>
+        <sys_updated_on>2026-06-22 13:51:59</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -61,12 +61,12 @@
 &#13;
 	var strCheck = 'a625743fdb2f0914bcced03cd39619a8';&#13;
 	&#13;
-	var testdata = new x_snc_devtools.TestDataAPI('_ATF_CODESANITY_');&#13;
+	var testdata = new x_snc_devtools.TestDataAPI('ATF.CODESANITY');&#13;
 &#13;
 	var strRecordSysId = testdata.CreateScriptInclude(&#13;
 		'global',&#13;
 		'Test1',&#13;
-		'function _ATF_CODESANITY_Test1()\n'&#13;
+		'function Test_Test1()\n'&#13;
 		+'{ return true; }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);&#13;
 	&#13;
@@ -76,7 +76,7 @@
 		'/*\n'&#13;
 		+'  *%&amp;(){}[]=.,;:-_ abc ABC 123\n'&#13;
 		+'*/\n'&#13;
-		+'function _ATF_CODESANITY_Test2()\n'&#13;
+		+'function Test_Test2()\n'&#13;
 		+'{ return true; }');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);	&#13;
 &#13;
@@ -86,11 +86,11 @@
 		'/*\n'&#13;
 		+'  *%&amp;(){}[]=.,;:-_ abc ABC 123\n'&#13;
 		+'*/\n'&#13;
-		+'var _ATF_CODESANITY_Test3 = Class.create();\n'&#13;
-		+'\_ATF_CODESANITY_Test3.prototype = {\n'&#13;
+		+'var Test_Test3 = Class.create();\n'&#13;
+		+'\Test_Test3.prototype = {\n'&#13;
 		+'\tinitialize: function() {\n'&#13;
 		+'\t},\n'&#13;
-		+'\ttype: \'_ATF_CODESANITY_Test3\'\n'&#13;
+		+'\ttype: \'Test_Test3\'\n'&#13;
 		+'};');&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);	&#13;
 		&#13;
@@ -101,7 +101,7 @@
 		'/*\n'&#13;
 		+'  *%&amp;(){}[]=.,;:-_ abc ABC 123\n'&#13;
 		+'*/\n'&#13;
-		+'class _ATF_CODESANITY_Test4 {\n'&#13;
+		+'class Test_Test4 {\n'&#13;
 		+'\tinitialize() {\n'&#13;
 		+'\t}\n'&#13;
 		+'};');&#13;
@@ -111,7 +111,7 @@
 		'global',&#13;
 		'Test5',&#13;
 		'// A single line comment\n'&#13;
-		+'class _ATF_CODESANITY_Test5 {\n'&#13;
+		+'class Test_Test5 {\n'&#13;
 		+'\tinitialize() {\n'&#13;
 		+'\t}\n'&#13;
 		+'};');&#13;
@@ -125,8 +125,8 @@
 		+' * @tag2 world\n'		&#13;
 		+'*/\n'&#13;
 		+'\n'		&#13;
-		+'var _ATF_CODESANITY_Test6 = Class.create();\n'&#13;
-		+'\t_ATF_CODESANITY_Test6.prototype = {\n'&#13;
+		+'var Test_Test6 = Class.create();\n'&#13;
+		+'\tTest_Test6.prototype = {\n'&#13;
 		+'\tinitialize: function() {\n'&#13;
 		+'\t},\n'&#13;
 		+'\ttype: \'_ATF_CODESANITY_Test6\'\n'&#13;

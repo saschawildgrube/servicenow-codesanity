@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-04-14 11:45:05</sys_created_on>
         <sys_id>78ebfc3c3b58c39062bf612c95e45ae4</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_78ebfc3c3b58c39062bf612c95e45ae4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-14 14:09:19</sys_updated_on>
+        <sys_updated_on>2026-08-04 14:57:15</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - State field is read-only">6cebfc3c3b58c39062bf612c95e45a10</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-04-14 11:45:05</sys_created_on>
         <sys_id>b8ebfc3c3b58c39062bf612c95e45af5</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-14 14:09:19</sys_updated_on>
+        <sys_updated_on>2026-08-04 14:57:15</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -73,7 +73,7 @@
 			super_class: grTaskTable.sys_id&#13;
 		},&#13;
 		{&#13;
-			label: 'Test Not Derived From Task'&#13;
+			label: 'Test derived From Task'&#13;
 		});&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_db_object',strTableSysId,true);&#13;
 &#13;
@@ -87,15 +87,19 @@
 		},&#13;
 		{&#13;
 			read_only_override: true,&#13;
-			read_only: true&#13;
+			read_only: true,&#13;
+&#13;
+			// This is required starting with Australia, not yet clear why&#13;
+			read_only_option: 'instance_configured',&#13;
+			read_only_option_override: true&#13;
 		},&#13;
 		{&#13;
 		});&#13;
+	test.Log(x_snc_devtools.GetRecord('sys_dictionary_override',strDictOverrideSysId));&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_db_object',strTableSysId,false);&#13;
 	&#13;
 &#13;
 	// A table not derived from task&#13;
-	&#13;
 	var strTableSysId = x_snc_devtools.RecordInsertOrUpdate(&#13;
 		'sys_db_object',&#13;
 		{&#13;

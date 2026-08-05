@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-31 06:07:33</sys_created_on>
         <sys_id>37fc9039c33212905a37f907050131a9</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_step_37fc9039c33212905a37f907050131a9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-31 06:16:30</sys_updated_on>
+        <sys_updated_on>2026-07-30 14:09:38</sys_updated_on>
         <table/>
         <test display_value="CodeSanity - ATF tests for Scripted REST Resource">77fc9039c33212905a37f90705013178</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-31 06:07:34</sys_created_on>
         <sys_id>bbfc9039c33212905a37f907050131ab</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-31 06:16:30</sys_updated_on>
+        <sys_updated_on>2026-07-30 14:09:38</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -61,19 +61,19 @@
 &#13;
 	var strCheck = '0bab98b5c33212905a37f90705013113';&#13;
 &#13;
-	var grApp = x_snc_devtools.GetAppRecord('x_snc_codesanity');&#13;
+	var strAppSysId = x_snc_devtools.AppCreate('Test Alpha','scoped','x_test_alpha');&#13;
 	&#13;
 	var grWS = new GlideRecord('sys_ws_definition');&#13;
 	grWS.initialize();&#13;
-	grWS.sys_scope = grApp.sys_id;&#13;
-	grWS.name = 'Test1';&#13;
+	grWS.sys_scope = strAppSysId;&#13;
+	grWS.name = 'Test Definition 1';&#13;
 	grWS.base_uri = 'test1';&#13;
 	var strWSSysId = x_snc_devtools.GlideRecordInsert(grWS);&#13;
 &#13;
 	var grWSO = new GlideRecord('sys_ws_operation');&#13;
 	grWSO.initialize();&#13;
-	grWSO.sys_scope = grApp.sys_id;&#13;
-	grWSO.name = 'Resource1';&#13;
+	grWSO.sys_scope = strAppSysId;&#13;
+	grWSO.name = 'Test Resource 1';&#13;
 	grWSO.relative_path = 'res1';&#13;
 	grWSO.web_service_definition = strWSSysId;&#13;
 	var strWSOSysId = x_snc_devtools.GlideRecordInsert(grWSO);&#13;
@@ -81,7 +81,7 @@
 	&#13;
 	var grTest = new GlideRecord('sys_atf_test');&#13;
 	grTest.initialize();&#13;
-	grTest.sys_scope = grApp.sys_id;&#13;
+	grTest.sys_scope = strAppSysId;&#13;
 	grTest.name = x_snc_devtools.MakeTestNameForRecord(grWSO);&#13;
 	x_snc_devtools.GlideRecordInsert(grTest);&#13;
 	test.TestCase_InstanceScanCheck(strCheck,'sys_ws_operation',strWSOSysId,false);	&#13;

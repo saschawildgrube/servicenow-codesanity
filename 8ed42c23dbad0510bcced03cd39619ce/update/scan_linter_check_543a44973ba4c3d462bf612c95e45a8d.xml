@@ -62,9 +62,9 @@ Refactor the code to use ParseJson() instead of JSON.parse().</resolution_detail
         <sys_id>543a44973ba4c3d462bf612c95e45a8d</sys_id>
         <sys_mod_count>4</sys_mod_count>
         <sys_name>CodeSanity - Avoid JSON.parse()</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_543a44973ba4c3d462bf612c95e45a8d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-06-25 13:38:16</sys_updated_on>

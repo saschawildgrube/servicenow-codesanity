@@ -33,9 +33,9 @@ This is to avoid security issues like the one documented in KB3067321.</descript
         <sys_id>85ed4a5fc35103944b4f311f050131e1</sys_id>
         <sys_mod_count>3</sys_mod_count>
         <sys_name>CodeSanity - REST API Resource Authentication</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_85ed4a5fc35103944b4f311f050131e1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-06-11 07:36:27</sys_updated_on>

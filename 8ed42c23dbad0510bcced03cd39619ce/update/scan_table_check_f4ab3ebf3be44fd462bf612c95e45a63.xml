@@ -48,9 +48,9 @@ It is yet unclear why the field is not configured read-only OOTB.</description>
         <sys_id>f4ab3ebf3be44fd462bf612c95e45a63</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>CodeSanity - Number field is read-only</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_table_check_f4ab3ebf3be44fd462bf612c95e45a63</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-05-06 15:06:38</sys_updated_on>

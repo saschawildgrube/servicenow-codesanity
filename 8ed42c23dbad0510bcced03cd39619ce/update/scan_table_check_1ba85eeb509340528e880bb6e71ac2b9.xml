@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>If a Script Include contains a client-callable class derived from AbstractAjaxProcessor then any use of DevTools' GetParam() should contain the 3rd parameter "this" to ensure that the parameter is taken from the class' getParameter() function.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - GetParam with this</name>
+        <priority>1</priority>
+        <resolution_details>Add "this" as the 3rd parameter to each GetParam() call within the client-callable class.&#13;
+For example: GetParam("my_param", IsValidSysId, this)</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var StringCheckRegEx = x_snc_devtools.StringCheckRegEx;
+
+		if (GetStringValue(current.client_callable) != 'true')
+		{
+			return;
+		}
+
+		var strScript = GetStringValue(current.script);
+		strScript = x_snc_devtools.ScriptRemoveComments(strScript);
+		strScript = x_snc_devtools.ScriptEmptyStringLiterals(strScript);
+
+		if (strScript.indexOf('AbstractAjaxProcessor') == -1)
+		{
+			return;
+		}
+
+		var strRegex = ',\\s*this\\s*\\)';
+
+		var nPos = 0;
+		while (true)
+		{
+			var nGetParamPos = strScript.indexOf('GetParam(', nPos);
+			if (nGetParamPos == -1)
+			{
+				break;
+			}
+			var nClosePos = strScript.indexOf(')', nGetParamPos + 9);
+			if (nClosePos == -1)
+			{
+				break;
+			}
+			var strCall = strScript.substring(nGetParamPos, nClosePos + 1);
+			if (StringCheckRegEx(strCall, strRegex, '') != true)
+			{
+				engine.finding.increment();
+			}
+			nPos = nClosePos + 1;
+		}
+	}
+
+})(engine);
+]]></script>
+        <short_description>Client-callable Script Includes must pass "this" when using GetParam()</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-15 11:13:45</sys_created_on>
+        <sys_id>1ba85eeb509340528e880bb6e71ac2b9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CodeSanity - GetParam with this</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_1ba85eeb509340528e880bb6e71ac2b9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-15 13:09:14</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=1ba85eeb509340528e880bb6e71ac2b9"/>
+</record_update>

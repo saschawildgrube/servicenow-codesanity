@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-15 11:13:45</sys_created_on>
+        <sys_id>878456a656344a65bb2f884f1ffed125</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_atf_step_878456a656344a65bb2f884f1ffed125</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-15 13:30:19</sys_updated_on>
+        <table/>
+        <test display_value="CodeSanity - GetParam with this">9259af7b89574e9b8de973a44ed4e456</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=878456a656344a65bb2f884f1ffed125"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>878456a656344a65bb2f884f1ffed125</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-15 11:13:45</sys_created_on>
+        <sys_id>d671b4dbbb2b4fd292f5d7a1304a4c1c</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-15 13:30:19</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	var testdata = new x_snc_devtools.TestDataAPI('ATF.CODESANITY');&#13;
+&#13;
+	test.SetResult(true);&#13;
+&#13;
+	var strCheck = '1ba85eeb509340528e880bb6e71ac2b9';&#13;
+&#13;
+	// Not client callable&#13;
+	var strRecordSysId = testdata.CreateScriptInclude(&#13;
+		'global',&#13;
+		'Test_Good1',&#13;
+		'function Test_Good1()\n'&#13;
+		+'{ return true; }');&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);&#13;
+&#13;
+	// Client callable, derived from AbstractAjaxProcessor and using "this"&#13;
+	var strRecordSysId = testdata.CreateScriptInclude(&#13;
+		'global',&#13;
+		'Test_Good2',&#13;
+		"var Test_Good2 = Class.create();\n"&#13;
+		+ "Test_Good2.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {\n"&#13;
+		+ "    getTest: function() {\n"&#13;
+		+ "        var value = GetParam('test', '', this);\n"&#13;
+		+ "        return value;\n"&#13;
+		+ "    },\n"&#13;
+		+ "    type: 'Test_Good2'\n"&#13;
+		+ "});\n",&#13;
+		'public',&#13;
+		'',&#13;
+		true);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);	&#13;
+&#13;
+	// Client callable, NOT derived from AbstractAjaxProcessor, NOT using "this"&#13;
+	var strRecordSysId = testdata.CreateScriptInclude(&#13;
+		'global',&#13;
+		'Test_Good3',&#13;
+		"var Test_Good3 = Class.create();\n"&#13;
+		+ "Test_Good3.prototype = {\n"&#13;
+		+ "    process: function() {\n"&#13;
+		+ "        var value = GetParam('test', '');\n"&#13;
+		+ "        return value;\n"&#13;
+		+ "    },\n"&#13;
+		+ "    type: 'Test_Good3'\n"&#13;
+		+ "};\n",&#13;
+		'public',&#13;
+		'',&#13;
+		true);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);		&#13;
+&#13;
+	// NOT Client callable, derived from AbstractAjaxProcessor, NOT using "this"&#13;
+	var strRecordSysId = testdata.CreateScriptInclude(&#13;
+		'global',&#13;
+		'Test_Good4',&#13;
+		"var Test_Good4 = Class.create();\n"&#13;
+		+ "Test_Good4.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {\n"&#13;
+		+ "    getTest: function() {\n"&#13;
+		+ "        var value = GetParam('test', '');\n"&#13;
+		+ "        return value;\n"&#13;
+		+ "    },\n"&#13;
+		+ "    type: 'Test_Good4'\n"&#13;
+		+ "});\n",&#13;
+		'public',&#13;
+		'',&#13;
+		false);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,false);			&#13;
+&#13;
+&#13;
+&#13;
+	// Client callable, derived from AbstractAjaxProcessor, NOT using "this"&#13;
+	var strRecordSysId = testdata.CreateScriptInclude(&#13;
+		'global',&#13;
+		'Test_Bad1',&#13;
+		"var Test_Bad1 = Class.create();\n"&#13;
+		+ "Test_Bad1.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {\n"&#13;
+		+ "    getTest: function() {\n"&#13;
+		+ "        var value = GetParam('test', '');\n"&#13;
+		+ "        return value;\n"&#13;
+		+ "    },\n"&#13;
+		+ "    type: 'Test_Bad1'\n"&#13;
+		+ "});\n",&#13;
+		'public',&#13;
+		'',&#13;
+		true);&#13;
+	test.TestCase_InstanceScanCheck(strCheck,'sys_script_include',strRecordSysId,true);	&#13;
+&#13;
+	&#13;
+&#13;
+	return test.GetResult();&#13;
+})(outputs, steps, stepResult, assertEqual);&#13;
+</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>878456a656344a65bb2f884f1ffed125</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-15 11:13:45</sys_created_on>
+        <sys_id>fc8f4f2e74a64c55873f69acabfb64df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-15 11:13:45</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+</record_update>

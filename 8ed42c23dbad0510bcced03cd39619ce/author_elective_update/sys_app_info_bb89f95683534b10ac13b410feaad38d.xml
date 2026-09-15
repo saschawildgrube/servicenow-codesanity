@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_info">
+    <sys_app_info action="DELETE">
+        <properties>{"generated_using_ba":"true"}</properties>
+        <sys_class_name>sys_app_info</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-15 11:13:47</sys_created_on>
+        <sys_id>bb89f95683534b10ac13b410feaad38d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>sys_app_info_bb89f95683534b10ac13b410feaad38d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-15 11:13:47</sys_updated_on>
+    </sys_app_info>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</application>
+        <file_path/>
+        <instance_id>b265927933572a987c42c7bb9d5c7b88</instance_id>
+        <instance_name>wildzurich</instance_name>
+        <name>sys_app_info_bb89f95683534b10ac13b410feaad38d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_info"><sys_app_info action="INSERT_OR_UPDATE"><properties>{"generated_using_ba":"true"}</properties><sys_class_name>sys_app_info</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-15 11:13:47</sys_created_on><sys_id>bb89f95683534b10ac13b410feaad38d</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package><sys_policy/><sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope><sys_update_name>sys_app_info_bb89f95683534b10ac13b410feaad38d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-15 11:13:47</sys_updated_on></sys_app_info></record_update>]]></payload>
+        <payload_hash>-1011053802</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>0789395683534b10ac13b410feaad392</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-15 11:13:47</sys_created_on>
+        <sys_id>3389f95683534b10ac13b410feaad394</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a0a4c5e4560000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-15 11:13:47</sys_updated_on>
+        <type>Application Information</type>
+        <update_guid>bf89f956a6534b10c30a91e0c5652592</update_guid>
+        <update_guid_history>bf89f956a6534b10c30a91e0c5652592:-1011053802</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-15 13:03:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_info">sys_app_info</sys_db_object>
+        <sys_id>017bb672fd494e84846bcf7d960b7d24</sys_id>
+        <sys_metadata>bb89f95683534b10ac13b410feaad38d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope_delete display_value="">8c01c38fa81d4fae9bac60e1bb586744</sys_scope_delete>
+        <sys_update_name>sys_app_info_bb89f95683534b10ac13b410feaad38d</sys_update_name>
+        <sys_update_version display_value="sys_app_info_bb89f95683534b10ac13b410feaad38d">3389f95683534b10ac13b410feaad394</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-15 13:03:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

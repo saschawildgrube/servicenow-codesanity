@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>code_sanity</category>
+        <conditions/>
+        <description>State Flows are an outdated (yet not deprecated) and not well-supported pattern to control what happens if a task changes from one state to another.&#13;
+There are several flaws in the implementation that causes problems when deploying State Flow records from one instance to another.&#13;
+During execution State Flows are perceived to be slow and inefficient.</description>
+        <documentation_url>https://www.servicenow.com/docs/r/servicenow-platform/c_StateFlows.html</documentation_url>
+        <finding_type>scan_finding</finding_type>
+        <name>CodeSanity - State Flows</name>
+        <priority>1</priority>
+        <resolution_details>Replace State Flows by scripted Business Rules that respond to changes of the state value.&#13;
+One option is to refactor process implementations according to the pattern produced by x_snc_devtools.AppBuilderImplementBusinessProcess().</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	if (x_snc_codesanity.IsCheckApplicableToRecord())
+	{
+		if (x_snc_devtools.IsValidTable('sf_state_flow') == true)
+		{
+			var grStateFlows = new GlideRecord('sf_state_flow');
+			grStateFlows.addQuery('sys_scope','=',current.sys_id);
+			grStateFlows.query();
+			while (grStateFlows.next())
+			{
+				engine.finding.increment();
+			}
+		}
+	}
+
+})(engine);]]></script>
+        <short_description>Do not use State Flows</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-12 12:48:43</sys_created_on>
+        <sys_id>373f090bc3bbc3104b4f311f05013165</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CodeSanity - State Flows</sys_name>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_update_name>scan_table_check_373f090bc3bbc3104b4f311f05013165</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-12 14:43:11</sys_updated_on>
+        <table>sys_app</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_translated_text action="delete_multiple" query="documentkey=373f090bc3bbc3104b4f311f05013165"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>373f090bc3bbc3104b4f311f05013165</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-12 12:48:42</sys_created_on>
+        <sys_id>953251c3c3fbc3104b4f311f0501313e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-12 12:48:42</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

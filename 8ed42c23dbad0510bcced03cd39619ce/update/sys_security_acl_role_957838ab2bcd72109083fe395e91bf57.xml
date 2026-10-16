@@ -6,9 +6,9 @@
         <sys_id>957838ab2bcd72109083fe395e91bf57</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>.x_snc_codesanity.admin</sys_name>
-        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_security_acl display_value="x_snc_codesanity_coding_guideline">fb6874ab2bcd72109083fe395e91bf90</sys_security_acl>
         <sys_update_name>sys_security_acl_role_957838ab2bcd72109083fe395e91bf57</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>

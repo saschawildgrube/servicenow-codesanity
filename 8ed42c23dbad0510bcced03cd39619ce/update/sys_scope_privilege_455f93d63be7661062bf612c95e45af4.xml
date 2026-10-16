@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
     <sys_scope_privilege action="INSERT_OR_UPDATE">
         <operation>read</operation>
-        <source_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</source_scope>
+        <source_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</source_scope>
         <status>allowed</status>
         <sys_class_name>sys_scope_privilege</sys_class_name>
         <sys_created_by>technical.devtools.instancescan.6058</sys_created_by>
@@ -9,9 +9,9 @@
         <sys_id>455f93d63be7661062bf612c95e45af4</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>sys_hub_step_instance</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_scope_privilege_455f93d63be7661062bf612c95e45af4</sys_update_name>
         <sys_updated_by>technical.devtools.instancescan.6058</sys_updated_by>
         <sys_updated_on>2025-08-26 12:31:49</sys_updated_on>

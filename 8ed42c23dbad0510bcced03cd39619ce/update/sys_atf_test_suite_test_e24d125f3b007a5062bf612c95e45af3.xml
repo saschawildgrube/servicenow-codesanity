@@ -8,9 +8,9 @@
         <sys_id>e24d125f3b007a5062bf612c95e45af3</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>a64d9e1f3b007a5062bf612c95e45a8d</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>sys_atf_test_suite_test_e24d125f3b007a5062bf612c95e45af3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2025-09-23 06:59:07</sys_updated_on>

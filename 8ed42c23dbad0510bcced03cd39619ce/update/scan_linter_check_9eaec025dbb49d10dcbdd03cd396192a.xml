@@ -42,9 +42,9 @@ var installer = new x_snc_devtools.InstallerAPI(x_snc_devtools.GetAppName('x_snc
         <sys_id>9eaec025dbb49d10dcbdd03cd396192a</sys_id>
         <sys_mod_count>4</sys_mod_count>
         <sys_name>CodeSanity - InstallerAPI without context</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_9eaec025dbb49d10dcbdd03cd396192a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-08-02 12:27:31</sys_updated_on>

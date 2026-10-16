@@ -71,9 +71,9 @@ This includes replacing uses of "RP.getParameterValue", "gs.action.getGlideURI",
         <sys_id>6f0db30a2bc403949083fe395e91bf0b</sys_id>
         <sys_mod_count>7</sys_mod_count>
         <sys_name>CodeSanity - Check external parameters</sys_name>
-        <sys_package display_value="CodeSanity" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
+        <sys_package display_value="CodeSanity WORK IN PROGRESS" source="x_snc_codesanity">8ed42c23dbad0510bcced03cd39619ce</sys_package>
         <sys_policy/>
-        <sys_scope display_value="CodeSanity">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
+        <sys_scope display_value="CodeSanity WORK IN PROGRESS">8ed42c23dbad0510bcced03cd39619ce</sys_scope>
         <sys_update_name>scan_linter_check_6f0db30a2bc403949083fe395e91bf0b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-04-06 19:31:46</sys_updated_on>

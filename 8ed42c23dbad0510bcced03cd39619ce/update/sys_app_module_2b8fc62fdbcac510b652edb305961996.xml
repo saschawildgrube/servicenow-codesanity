@@ -23,6 +23,8 @@
         <report/>
         <require_confirmation>false</require_confirmation>
         <roles/>
+        <route/>
+        <screen/>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-11 13:15:11</sys_created_on>
@@ -41,6 +43,7 @@
         <timeline_page/>
         <title>Add new check</title>
         <uncancelable>false</uncancelable>
+        <ux_list/>
         <view_name/>
         <window_name/>
     </sys_app_module>

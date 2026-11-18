@@ -17,12 +17,14 @@
         <menu/>
         <name>CodeSanity WORK IN PROGRESS</name>
         <package_json/>
+        <package_resolver_version/>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>x_snc_codesanity</scope>
         <scoped_administration>false</scoped_administration>
         <short_description>The CodeSanity app contains a Instance Scan checks to validate source code and application files.</short_description>
+        <sn_managed>false</sn_managed>
         <source>x_snc_codesanity</source>
         <store_correlation_id/>
         <store_url/>
